@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://song-guess.pages.dev/sitemap.xml
