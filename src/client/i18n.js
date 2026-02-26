@@ -112,7 +112,14 @@ export const TRANSLATIONS = {
         'show-teams-btn': '👥 Teams',
         'teams-title': '👥 Team Management',
         'teams-subtitle': 'Manage your team or join one',
-        'teams-help': 'Note: Member contributions track points earned after the update. Only Leaders/Managers can edit roles.'
+        'teams-help': 'Note: Member contributions track points earned after the update. Only Leaders/Managers can edit roles.',
+        'chat-title': '💬 Chat',
+        'chat-welcome': 'Welcome to Song Guess Chat!',
+        'chat-scope-global': 'Global',
+        'chat-scope-room': 'Room',
+        'chat-placeholder': 'Type a message...',
+        'chat-send': 'Send',
+        'mode-fastest': 'Fastest Answer (Bonus Points)'
     },
     ZH: {
         'app-title-html': '估歌仔 <span class="highlight">Online</span>',
@@ -229,7 +236,14 @@ export const TRANSLATIONS = {
         'role-desc-manager': '可以踢除成員、更改戰隊圖標，並管理長老與成員的職位。',
         'role-desc-elder': '可以踢除成員以維持團隊秩序。',
         'role-desc-member': '戰隊的重要成員，參與遊戲獲取積分！',
-        'change-team-icon': '更換圖標'
+        'change-team-icon': '更換圖標',
+        'chat-title': '💬 聊天室',
+        'chat-welcome': '歡迎來到估歌仔聊天室！',
+        'chat-scope-global': '全服',
+        'chat-scope-room': '房間',
+        'chat-placeholder': '輸入訊息...',
+        'chat-send': '發送',
+        'mode-fastest': '最快奪標 (速度額外加分)'
     }
 };
 

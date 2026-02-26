@@ -7,7 +7,7 @@ export function registerGameplayHandlers(io, socket, allSongs) {
         // Validation
         if (typeof rounds !== 'number' || rounds <= 0 || rounds > 100) rounds = 10;
         if (typeof hearts !== 'number' || hearts <= 0 || hearts > 10) hearts = 3;
-        if (!['standard', 'elimination', 'competition'].includes(mode)) mode = 'standard';
+        if (!['standard', 'elimination', 'competition', 'fastest', 'lyrics', 'next', 'team_vs_team'].includes(mode)) mode = 'standard';
         if (typeof name !== 'string' || name.length > 50) name = socket.username || 'Guest';
 
         const roomId = Math.random().toString(36).substring(2, 6).toUpperCase();
@@ -191,7 +191,7 @@ export function registerGameplayHandlers(io, socket, allSongs) {
             }
         }
 
-        room.roundState.guesses[socket.id] = songId;
+        room.roundState.guesses[socket.id] = { songId, timestamp: Date.now() };
         const alivePlayers = room.mode === 'competition' ? 2 : room.players.filter(p => !p.eliminated).length;
 
         if (Object.keys(room.roundState.guesses).length >= alivePlayers) {
@@ -369,7 +369,8 @@ export function registerGameplayHandlers(io, socket, allSongs) {
         const turnDuration = now - room.roundState.startTime;
 
         room.players.forEach(p => {
-            const guessedSongId = room.roundState.guesses[p.id];
+            const guess = room.roundState.guesses[p.id];
+            const guessedSongId = guess?.songId;
             const isCorrect = guessedSongId === room.roundState.correctSong.id;
 
             if (room.mode === 'elimination' && !p.eliminated) {
@@ -414,6 +415,20 @@ export function registerGameplayHandlers(io, socket, allSongs) {
                 room.teamScores[p.team] += pointsAwarded;
             }
         });
+
+        // Fastest Answer Mode specific logic
+        if (room.mode === 'fastest') {
+            const correctGuesses = room.players
+                .filter(p => room.roundState.guesses[p.id]?.songId === room.roundState.correctSong.id)
+                .sort((a, b) => room.roundState.guesses[a.id].timestamp - room.roundState.guesses[b.id].timestamp);
+
+            if (correctGuesses.length > 0) {
+                const fastestPlayer = correctGuesses[0];
+                fastestPlayer.score += 30; // 30 points bonus for being fastest
+                fastestPlayer.scoreDelta += 30;
+                results[fastestPlayer.id].isFastest = true;
+            }
+        }
 
         // Persistent Team & Personal Score Updates
         const teamUpdates = {}; // teamId -> { total: points, members: { username: points } }

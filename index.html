@@ -298,6 +298,7 @@
             <select id="mode-select">
               <option value="standard" selected data-i18n="mode-standard">Standard (Fixed Rounds)</option>
               <option value="elimination" data-i18n="mode-elimination">Elimination (Survival)</option>
+              <option value="fastest" data-i18n="mode-fastest">Fastest Answer (Bonus Points)</option>
               <option value="next" data-i18n="mode-next">What's Next? (ABCD -> E)</option>
               <option value="lyrics" data-i18n="mode-lyrics">Lyrics Mode (Guess Next Line)</option>
               <option value="competition" data-i18n="mode-competition">Competition Mode (1v1 Tournament)</option>
@@ -787,6 +788,33 @@
         style="width: 100%; justify-content: center; border-color: var(--glass-border); margin-top: 20px;"
         data-i18n="back-to-menu-btn">Back to Menu</button>
     </section>
+  </div>
+
+  <!-- Chat System UI -->
+  <div id="chat-container" class="collapsed">
+    <div class="chat-header" id="chat-header">
+      <h3 data-i18n="chat-title">💬 Chat</h3>
+      <button id="chat-toggle-btn"
+        style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:1.2em;">🔼</button>
+    </div>
+
+    <div id="chat-messages">
+      <!-- Messages appear here -->
+      <div class="chat-msg system" data-i18n="chat-welcome">Welcome to Song Guess Chat!</div>
+    </div>
+
+    <div class="chat-scope-toggle">
+      <button id="scope-global-btn" class="active" data-i18n="chat-scope-global">Global</button>
+      <button id="scope-room-btn" data-i18n="chat-scope-room">Room</button>
+    </div>
+
+    <div class="chat-input-area">
+      <input type="text" id="chat-input" data-i18n-placeholder="chat-placeholder" placeholder="Type a message...">
+      <button id="chat-send-btn" class="action-btn"
+        style="padding: 5px 12px; font-size: 0.85em; border-color: var(--primary-accent); color: var(--primary-accent);">
+        <span data-i18n="chat-send">Send</span>
+      </button>
+    </div>
   </div>
 
   <!-- Playlist Creator Modal -->

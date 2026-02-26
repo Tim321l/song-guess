@@ -18,6 +18,7 @@ import { registerAdminHandlers, startAdminBroadcast, recordRoomCreated } from '.
 import { registerSocialHandlers } from './src/server/social.js';
 import { registerGameplayHandlers, handlePlayerExit } from './src/server/gameplay.js';
 import { registerTeamHandlers } from './src/server/teams.js';
+import { registerChatHandlers } from './src/server/chat.js';
 import { rooms } from './src/server/rooms.js';
 import { isIpBanned, checkRateLimit } from './src/server/rateLimiter.js';
 
@@ -133,6 +134,7 @@ io.on('connection', (socket) => {
     registerSocialHandlers(io, socket, allSongs);
     registerGameplayHandlers(io, socket, allSongs);
     registerTeamHandlers(io, socket);
+    registerChatHandlers(io, socket, activeUsers);
 });
 
 // Periodic cleanup of inactive rooms (every 2 minutes)

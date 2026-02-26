@@ -271,7 +271,6 @@ export function initGameplayHandlers() {
         updateScores();
         state.hasGuessed = true;
 
-        const buttons = document.querySelectorAll('.option-btn');
         buttons.forEach(btn => {
             const isCorrect = String(btn.dataset.id) === String(res.correctSong.id);
             btn.classList.add(isCorrect ? 'correct' : 'wrong');
@@ -285,6 +284,19 @@ export function initGameplayHandlers() {
                 }
             }
         });
+
+        // Show who was fastest if in Fastest Answer mode
+        if (state.roomMode === 'fastest') {
+            const turnMsg = document.getElementById('turn-message');
+            const fastestId = Object.keys(res.results).find(id => res.results[id].isFastest);
+            if (fastestId) {
+                const fastestPlayer = state.players.find(p => p.id === fastestId);
+                const name = fastestPlayer ? fastestPlayer.name : 'Unknown';
+                if (turnMsg) {
+                    turnMsg.innerHTML += `<br><span style="color:#f1c40f; font-size:0.8em;">⚡ ${name} was fastest! (+30 bonus)</span>`;
+                }
+            }
+        }
     });
 
     function showPointPop(points) {

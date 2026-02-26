@@ -11,6 +11,7 @@ import { switchScreen } from './client/utils.js';
 import { applyLanguage } from './client/i18n.js';
 import { handleSpotifyRedirect } from './client/spotify.js';
 import { audioPlayer } from './client/audio.js';
+import { initChatHandlers } from './client/chat.js';
 
 // --- Initialization ---
 initSocket();
@@ -23,6 +24,7 @@ initGameplayHandlers();
 initSocialHandlers();
 initSettingsHandlers();
 initTeamHandlers();
+initChatHandlers();
 handleSpotifyRedirect();
 
 // --- Global UI Logic ---
