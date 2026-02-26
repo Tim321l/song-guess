@@ -50,16 +50,43 @@ export function initChatHandlers() {
     let isDragging = false;
     let offsetX, offsetY;
 
+    const keepOnScreen = () => {
+        const rect = chatContainer.getBoundingClientRect();
+        const winW = window.innerWidth;
+        const winH = window.innerHeight;
+
+        let left = rect.left;
+        let top = rect.top;
+
+        // X bounds
+        if (left < 0) left = 0;
+        if (left + rect.width > winW) left = winW - rect.width;
+
+        // Y bounds
+        if (top < 0) top = 0;
+        if (top + rect.height > winH) top = winH - rect.height;
+
+        chatContainer.style.left = `${left}px`;
+        chatContainer.style.top = `${top}px`;
+
+        // Save current valid position
+        localStorage.setItem('chatPosition', JSON.stringify({
+            left: chatContainer.style.left,
+            top: chatContainer.style.top
+        }));
+    };
+
+    window.addEventListener('resize', keepOnScreen);
+
     chatHeader.onmousedown = (e) => {
         if (e.target === chatToggleBtn) return;
         isDragging = true;
+        chatContainer.style.transition = 'none'; // Disable transition during drag
 
-        // Get current position (needed if already moved)
         const rect = chatContainer.getBoundingClientRect();
         offsetX = e.clientX - rect.left;
         offsetY = e.clientY - rect.top;
 
-        // Ensure fixed positioning during drag
         chatContainer.style.bottom = 'auto';
         chatContainer.style.right = 'auto';
         chatContainer.style.left = `${rect.left}px`;
@@ -68,16 +95,26 @@ export function initChatHandlers() {
 
         document.onmousemove = (e) => {
             if (!isDragging) return;
-            chatContainer.style.left = `${e.clientX - offsetX}px`;
-            chatContainer.style.top = `${e.clientY - offsetY}px`;
+
+            let newX = e.clientX - offsetX;
+            let newY = e.clientY - offsetY;
+
+            // Constrain during drag
+            if (newX < 0) newX = 0;
+            if (newX + rect.width > window.innerWidth) newX = window.innerWidth - rect.width;
+            if (newY < 0) newY = 0;
+            if (newY + rect.height > window.innerHeight) newY = window.innerHeight - rect.height;
+
+            chatContainer.style.left = `${newX}px`;
+            chatContainer.style.top = `${newY}px`;
         };
 
         document.onmouseup = () => {
             isDragging = false;
             document.onmousemove = null;
             document.onmouseup = null;
+            chatContainer.style.transition = ''; // Restore transitions
 
-            // Save Position
             localStorage.setItem('chatPosition', JSON.stringify({
                 left: chatContainer.style.left,
                 top: chatContainer.style.top
