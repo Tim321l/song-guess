@@ -46,6 +46,10 @@ const globalLimiter = rateLimit({
 });
 app.use(globalLimiter);
 
+app.get('/', (req, res) => {
+    res.send('Song Guess Backend is Running! 🚀');
+});
+
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
     cors: {
