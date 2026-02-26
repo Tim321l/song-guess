@@ -271,13 +271,20 @@ export function initGameplayHandlers() {
         updateScores();
         state.hasGuessed = true;
 
+        const turnMsg = document.getElementById('turn-message');
+        if (turnMsg) {
+            const songInfo = `${res.correctSong.title} - ${res.correctSong.artist}`;
+            const lang = localStorage.getItem('songGuessLang') || 'EN';
+            const label = lang === 'ZH' ? '正確答案' : 'Correct Answer';
+            turnMsg.innerHTML = `<span style="color:#2ecc71;">${label}: ${songInfo}</span>`;
+        }
+
         const buttons = document.querySelectorAll('.option-btn');
         buttons.forEach(btn => {
             const isCorrect = String(btn.dataset.id) === String(res.correctSong.id);
             btn.classList.add(isCorrect ? 'correct' : 'wrong');
             btn.style.opacity = isCorrect ? '1' : '0.5';
 
-            // Show point pop for the player's own result
             if (res.results[socket.id]) {
                 const myResult = res.results[socket.id];
                 if (String(btn.dataset.id) === String(myResult.songIdPicked)) {
@@ -286,16 +293,12 @@ export function initGameplayHandlers() {
             }
         });
 
-        // Show who was fastest if in Fastest Answer mode
         if (state.roomMode === 'fastest') {
-            const turnMsg = document.getElementById('turn-message');
             const fastestId = Object.keys(res.results).find(id => res.results[id].isFastest);
-            if (fastestId) {
+            if (fastestId && turnMsg) {
                 const fastestPlayer = state.players.find(p => p.id === fastestId);
                 const name = fastestPlayer ? fastestPlayer.name : 'Unknown';
-                if (turnMsg) {
-                    turnMsg.innerHTML += `<br><span style="color:#f1c40f; font-size:0.8em;">⚡ ${name} was fastest! (+30 bonus)</span>`;
-                }
+                turnMsg.innerHTML += `<br><span style="color:#f1c40f; font-size:0.8em;">⚡ ${name} was fastest! (+30 bonus)</span>`;
             }
         }
     });
