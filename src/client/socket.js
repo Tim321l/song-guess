@@ -9,8 +9,12 @@ const getBackendUrl = () => {
         return 'http://localhost:3000';
     }
 
-    // If we're on a .pages.dev domain and env var is missing, we might be in trouble
-    // But let's log it to help the user
+    // If we're on a .pages.dev domain and env var is missing, use the known Render URL
+    if (window.location.hostname.endsWith('.pages.dev')) {
+        console.log('[Socket] Production environment detected. Using Render backend.');
+        return 'https://song-guess-api.onrender.com';
+    }
+
     console.warn('[Socket] VITE_BACKEND_URL is not defined. Falling back to current origin.');
     return window.location.origin;
 };

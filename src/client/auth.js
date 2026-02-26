@@ -41,44 +41,46 @@ export function handleLoginSuccess(res, username, password) {
     switchScreen('start');
 }
 
+// Google Login Handler (Global for GSI script)
+window.handleGoogleLogin = (response) => {
+    try {
+        // Safer decoding for JWT tokens (supports Unicode/UTF-8)
+        const base64Url = response.credential.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        // Adding padding for atob just in case
+        const paddedBase64 = base64.padEnd(base64.length + (4 - base64.length % 4) % 4, '=');
+        const jsonPayload = decodeURIComponent(atob(paddedBase64).split('').map(function (c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+
+        const data = JSON.parse(jsonPayload);
+        console.log("Google Login User Data:", data);
+
+        const username = data.username || data.email;
+        const googleId = data.sub;
+
+        socket.emit('googleLogin', {
+            username,
+            googleId,
+            email: data.email,
+            name: data.name,
+            icon: data.picture
+        }, (res) => {
+            if (res.success) {
+                console.log("Server Login Success:", res);
+                handleLoginSuccess(res, username, null);
+            } else {
+                alert("Server Login Failed: " + res.message);
+            }
+        });
+    } catch (e) {
+        console.error("Google Login Error:", e);
+        alert("Error processing Google login data.");
+    }
+};
+
 export function initAuthHandlers() {
-    // Google Login Handler
-    window.handleGoogleLogin = (response) => {
-        try {
-            // Safer decoding for JWT tokens (supports Unicode/UTF-8)
-            const base64Url = response.credential.split('.')[1];
-            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-            // Adding padding for atob just in case
-            const paddedBase64 = base64.padEnd(base64.length + (4 - base64.length % 4) % 4, '=');
-            const jsonPayload = decodeURIComponent(atob(paddedBase64).split('').map(function (c) {
-                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-            }).join(''));
 
-            const data = JSON.parse(jsonPayload);
-            console.log("Google Login User Data:", data);
-
-            const username = data.email;
-            const googleId = data.sub;
-
-            socket.emit('googleLogin', {
-                username,
-                googleId,
-                email: data.email,
-                name: data.name,
-                icon: data.picture
-            }, (res) => {
-                if (res.success) {
-                    console.log("Server Login Success:", res);
-                    handleLoginSuccess(res, username, null);
-                } else {
-                    alert("Server Login Failed: " + res.message);
-                }
-            });
-        } catch (e) {
-            console.error("Google Login Error:", e);
-            alert("Error processing Google login data.");
-        }
-    };
 
     document.getElementById('forgot-password-link').onclick = (e) => {
         e.preventDefault();
