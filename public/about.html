@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Song Guess Online</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f0c29;
+            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            color: white;
+            padding: 40px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #00f2fe;
+        }
+
+        h2 {
+            color: #fe4775;
+            margin-top: 30px;
+        }
+
+        a {
+            color: #00f2fe;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #fe4775;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lang = localStorage.getItem('sgLang') || 'EN';
+            const en = document.querySelectorAll('.lang-en');
+            const zh = document.querySelectorAll('.lang-zh');
+            if (lang === 'ZH') {
+                en.forEach(el => el.classList.add('hidden'));
+            } else {
+                zh.forEach(el => el.classList.add('hidden'));
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <a href="/" class="back-btn"><span class="lang-en">← Back to Game</span><span class="lang-zh">← 返回遊戲</span></a>
+
+        <!-- English Version -->
+        <div class="lang-en">
+            <h1>About Song Guess Online</h1>
+
+            <h2>What is Song Guess Online?</h2>
+            <p>Song Guess Online is a frantic, real-time multiplayer music trivia game. Challenge your friends to see
+                who can identify the latest hits the fastest! Featuring music from major global artists, C-Pop, J-Pop,
+                English hits, and community-created custom playlists.</p>
+
+            <h2>How to Play</h2>
+            <ul>
+                <li>Create a room and invite your friends using the Room Code.</li>
+                <li>Listen to the 30-second audio snippet.</li>
+                <li>Guess the correct song title and artist from the multiple-choice options.</li>
+                <li>The faster you guess correctly, the more points you earn!</li>
+                <li>The player with the most points at the end of the matches wins the crown!</li>
+            </ul>
+
+            <h2>Game Modes</h2>
+            <ul>
+                <li><strong>Standard Mode:</strong> Play a fixed number of rounds. Highest score wins.</li>
+                <li><strong>Elimination (Survival):</strong> Every round is a sudden death! Answer wrong and you are
+                    knocked out. Last player standing wins.</li>
+                <li><strong>Lyrics Mode:</strong> Read the lyrics without the music. Guess the next line correctly!</li>
+                <li><strong>Community Playlists:</strong> Connect your Spotify account to import your own custom
+                    playlists to challenge the community!</li>
+            </ul>
+
+            <h2>Support the Developer</h2>
+            <p>Song Guess Online is a passionate indie project maintained freely. If you enjoy playing, consider
+                disabling your ad-blocker or sharing the game with your friends!</p>
+        </div>
+
+        <!-- Chinese Version -->
+        <div class="lang-zh">
+            <h1>關於 Song Guess Online</h1>
+
+            <h2>什麼是 Song Guess Online?</h2>
+            <p>Song Guess Online
+                是一款緊張刺激的實時多人音樂猜謎遊戲。挑戰您的朋友，看看誰能最快辨別出最新的流行歌曲！遊戲收錄了全球主流藝術家、C-Pop、J-Pop、英文熱門歌曲，以及由社區創建的自定義歌單。</p>
+
+            <h2>如何遊玩</h2>
+            <ul>
+                <li>創建房間並使用房間代碼邀請您的朋友。</li>
+                <li>聆聽 30 秒的音樂片段。</li>
+                <li>從多項選擇中猜出正確的歌曲名稱和歌手。</li>
+                <li>猜對的速度越快，獲得的分數就越多！</li>
+                <li>比賽結束時得分最高的玩家將贏得桂冠！</li>
+            </ul>
+
+            <h2>遊戲模式</h2>
+            <ul>
+                <li><strong>標準模式:</strong> 遊玩固定輪數。分數最高者獲勝。</li>
+                <li><strong>淘汰賽 (生存模式):</strong> 每一輪都是生死關頭！答錯即被淘汰。最後存活的玩家獲獲勝。</li>
+                <li><strong>歌詞模式:</strong> 在沒有音樂的情況下閱讀歌詞。正確猜出下一回歌詞！</li>
+                <li><strong>社區歌單:</strong> 連接您的 Spotify 帳戶，導入您自己的自定義歌單來挑戰社區！</li>
+            </ul>
+
+            <h2>支持開發者</h2>
+            <p>Song Guess Online 是一個充滿熱情的獨立項目，免費維護。如果您喜歡遊玩，請考慮關閉廣告攔截器或與您的朋友分享遊戲！</p>
+        </div>
+    </div>
+</body>
+
+</html>

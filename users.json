@@ -1,0 +1,235 @@
+{
+  "tim": {
+    "password": "$2b$10$cJ/5hzkPIpWwieXx5RIWx.i0F2wO74j4RwZD6kN2q.xCFnFkqZceu",
+    "totalScore": 2491,
+    "favorites": [
+      {
+        "id": 94,
+        "title": "蝴蝶",
+        "artist": "陶喆",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/a3/33/1a/a3331ad7-8c88-01ec-cfb6-75c807066135/mzaf_6586465299617953207.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E8%9D%B4%E8%9D%B6/914664926?i=914664938&uo=4",
+        "year": 2002
+      },
+      {
+        "id": 183,
+        "title": "人非草木",
+        "artist": "吳雨霏",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/d6/d1/f0/d6d1f015-33e3-fbf7-160a-10419f22b4a1/mzaf_823770266962319637.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E4%BA%BA%E9%9D%9E%E8%8D%89%E6%9C%A8/1445858698?i=1445859147&uo=4",
+        "year": 2012
+      }
+    ],
+    "icon": "🐼",
+    "highScores": {
+      "all_elimination": 60,
+      "songsHk_standard": 2262,
+      "songsMemes_standard": 263,
+      "songsHk_elimination": 496
+    },
+    "banned": false,
+    "teamId": "TMM1D9KUH51KA",
+    "displayName": "tim"
+  },
+  "Stoffelfox": {
+    "password": "$2b$10$.r6JMZw/0KMy4uAiQPo9WuDTF68d8NYF/lfq7M0nfPHUGpcA2yFau",
+    "totalScore": -280,
+    "icon": "👤",
+    "favorites": [],
+    "highScores": {},
+    "banned": false,
+    "teamId": null,
+    "displayName": "Stoffelfox"
+  },
+  "Gordon333": {
+    "password": "$2b$10$9RVh4Zs8JxHDL/V8q8n4QeLjzQ52P3x3ZfizeAnbd9hZ9udnRzG3a",
+    "totalScore": 0,
+    "icon": "data:image/webp;base64,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",
+    "favorites": [
+      {
+        "id": 123,
+        "title": "全日愛",
+        "artist": "黎明",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/46/cb/39/46cb3968-7330-a255-6c3e-a89bf2e2d287/mzaf_13232527977832030778.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E5%85%A8%E6%97%A5%E6%84%9B/324095332?i=324095630&uo=4",
+        "year": 2000
+      }
+    ],
+    "highScores": {},
+    "banned": false,
+    "teamId": null,
+    "displayName": "Gordon333"
+  },
+  "SONG GOAT": {
+    "password": "$2b$10$zXTEosa381LetpOAhROoqu5bd23y/zC1guiivDVWWKeyYi0Ro7OqW",
+    "totalScore": 0,
+    "icon": "👤",
+    "favorites": [],
+    "highScores": {},
+    "banned": false,
+    "teamId": null,
+    "displayName": "SONG GOAT"
+  },
+  "KenNG": {
+    "password": "$2b$10$1.nQGs32O5ZtizVg7Ndlc.1oW/qPLRWQUBd/Oe9SGDT2dsZoPSL8a",
+    "totalScore": 0,
+    "icon": "👤",
+    "favorites": [],
+    "highScores": {},
+    "banned": false,
+    "teamId": null,
+    "displayName": "KenNG"
+  },
+  "tim2": {
+    "password": "$2b$10$YL4.rZYrQLjnD2GHMGr02.f8JiI/APhUzDHngMZcNW47fmIaq8xVG",
+    "totalScore": -1660,
+    "icon": "data:image/webp;base64,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",
+    "favorites": [],
+    "email": "l.tim12233@gmail.com",
+    "highScores": {
+      "songsHk_standard": 40,
+      "songsHk_elimination": 120,
+      "songsCn_elimination": 60
+    },
+    "banned": false,
+    "teamId": "TMM1D9KUH51KA",
+    "displayName": "tim2"
+  },
+  "xEatinGx": {
+    "password": "$2b$10$Fx6M95RYAZknO58nLEMK.O190J0iKrBr/fZAiFT7i0VUO82e7IxT.",
+    "totalScore": -390,
+    "icon": "👤",
+    "favorites": [],
+    "highScores": {
+      "songsHk_standard": 40
+    },
+    "banned": false,
+    "teamId": null,
+    "displayName": "xEatinGx"
+  },
+  "sao": {
+    "password": "$2b$10$JsnDXjdOCx3zpeOkKABgx.RkZSa0plxOqb6ZSmyeABTEeFIerwbqK",
+    "totalScore": 0,
+    "icon": "👤",
+    "favorites": [],
+    "highScores": {},
+    "banned": false,
+    "teamId": null,
+    "displayName": "sao"
+  },
+  "Ken": {
+    "password": "$2b$10$Tja7KMdFXXl0aRzk/.eHwOx48MOELXon0jFpCnC6abwHMxnlTo/qe",
+    "totalScore": 0,
+    "icon": "👤",
+    "favorites": [],
+    "highScores": {},
+    "banned": false,
+    "teamId": null,
+    "displayName": "Ken"
+  },
+  "tim3": {
+    "password": "$2b$10$FoV/898SY9NHf.Nh5RFNOuQ4FORJtVtNZxD4s0m6JX1pXz9qlCSWy",
+    "totalScore": 0,
+    "icon": "👤",
+    "favorites": [],
+    "highScores": {},
+    "banned": false,
+    "teamId": null,
+    "displayName": "tim3"
+  },
+  "tim4": {
+    "password": "$2b$10$Lipr7QG5T4VzEI6ZBjG58uyaCdju.txRIP8OdJshLVt4vCqxs2M7G",
+    "totalScore": 0,
+    "icon": "👤",
+    "favorites": [],
+    "highScores": {},
+    "banned": false,
+    "teamId": null,
+    "displayName": "tim4"
+  },
+  "IamUnderTheWater": {
+    "password": "$2b$10$sToKaDmEgoxJlpU62nsNdO58HCdz5aftf3ktgbmKqGBZVZmrhOMPm",
+    "totalScore": 0,
+    "icon": "data:image/webp;base64,UklGRsYHAABXRUJQVlA4WAoAAAAgAAAAfwAAbgAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDgg2AUAALAeAJ0BKoAAbwA+bSySRiQioaEwGAqQgA2JQBo2Ep9a5Q/gqV+9dGV2z/mA86P0ef530gOoR3n7IXvJHZzjo7R/4n96YqdrjeUsl8UGl0x3eg39LegD6Q9gj+Yf2HrIehr+ziU7L3STc0evqdFgPQSY4w8ZbF1AhUWFWmdCB9PdZEeQ/BtM+kMUd3BZUgRSxO2QbNyfBV3Q1NYJawSS2xODlZMkJbhRcb03e12gDKlsagkp0LnB68XLqbOD0waUpH6QOL6kZu1D4NFF8L2SpaVALgD50Y7I3ITk9ZvpIbO52iSMlmlMKxv8/BUs9valEs/5VZXXLvSUMFt1dMeAAP789BV0CUvMlH7NDIsADHyLkKQefWClz5iludqTORzv/ZXladnU+H+Nd81kMYwIQ5T1oodgo4YNoZ07y0lv8tmCGtTcz+9D9ZAoAEHP8xXfyRcXu7LB6rHyJRGC9TqQbS4RfbbszOwuXcQBvLCj4jtITsTb9zlNt9ksz/bWciLWhEqMSanHRgkK03EKqU78GuZe/1r3+/6lF3wy7kd/vcpoTh0S78FP3tDjGFHgB7zCEcC3TX/8cJHJlNNPKBkXQ3k3ORr83KxofGQt64EMW5tKZ7PJSYAMgKPY5uySK2Pst5RdA3vwDh5GFWYhB1MvilAQq/tflvROB11bfeUhFwWrAjQE4En/qHJG9E1dJLE96dghNVumYMExsSd08Eyz7NvoNzED+H+1fPt4uSxz2Q/JiIS3kUgCjpE770jTr0ghVq0Vd9Oce9+LNa7igNk2HvwEqmedTPGJf9vTN6vcGzr/1T9iwHxiHfDlGz+1aGP8nUQ9k69wLzeqa78M0g1UZy8uX49Rf+1oz/bRejXHmfjnYoInQM2qB09oJ9/h/dtG0+MhhgqjQGHe5qdxp1BO/lSu3P5WdunQzbD3vNTGpJOCHVva15IxVEoYhSApgKPhAjx37q6byPsz7A2nqoOcn7yYoZCvvjd9H4eWzLAhPrmIZhGhccq+h0AG0YDsa7lu7N2cY/svTSYO97qt6ulvy0YT/mLnZ+EhM5joQm/j3sDQ0HG+3hGeNzOlDU9nCPgFfhPnzPUlOpsj7n2nlR3EpN/k4DqXfMeT6M/RSDMZmaTgmadZUcvsCzbwDUk1UQzLaYVWsNFMwabwchs9xsWyedplZ+Ma8pK3fRRzMyBNR7eAwwJGj4pmce0Yd5130BG1iayGNgE38SZSXu+NPnWEGAMSql72LoAq7q5IC4/l9jA0HK2aEh3+bnHGv0+PTX6QY9lML93qdfPyY6ItpUlXdZ+WjVi7zk373gTjgaa30oAtdfp4pzq0unb54tQeRmswfDt9tg8vEkTnfiqzJYEsaSW3YdiniLzWBmKZUcpGFUfCnHkazGXywvY9ziq6ha9mNnQiY6B/XTFncd/WnKhcs49z1CpAyF+cRrn0e15vSiQZvhFaNlAVjRoKp4KBnl663j85KD3SsqcVnmOENfWxYJzhRgiqEDe3WJqTjtPKWE1Wknlx0JSuT4874XZgZuVKbLTNGJiiSPZTo8KimpXgynU8irdXVYHKcYGXCgxmY5uwSUys0aE+6LO/rZ5/SanQEn/pgMvUS1FWQl7fj3IBf3CoLqGZbdTdmqPUXtqOPByTSaEjniv6QSeuVHhxeJfl8WPDipyExE4p22XESDx6RHzvZlebQMY+1XplsJbP6CYfmzKSMH9TCV5/QgXd78KjaH6jLWmgVNPUugWXQIbB80FWBcwabfTVaEx5usXk/QJuvrn3XKGHTw5hSe8sCcFNqn9gpGp9CLG5m9E46ujQdwtbGUtSetYNJaV1Isre+1ViX79Rzw2ovHX4t4xfjanDG/njZqIiPU5pYOEY6o23JDo9vBOct/nnz/MBBf/tAdP7vw5Am00N76rvaP5tR0uhWmLFxP8EH26XofDhsaTXSI1Lq6lCeZpv1zBYRWQmm6Atg48rdmJvi+gsgfIU6Y8aJKlN4Izw5gAA",
+    "favorites": [
+      {
+        "id": 46,
+        "title": "ユーモア",
+        "artist": "King Gnu",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/53/17/69/531769e2-237c-8d7a-9066-3d7a4c4b485f/mzaf_15764094599519292448.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/jp/album/%E3%83%A6%E3%83%BC%E3%83%A2%E3%82%A2/1538116458?i=1538116462&uo=4",
+        "year": 2020
+      },
+      {
+        "id": 66,
+        "title": "AIZO",
+        "artist": "King Gnu",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/29/a2/1a/29a21ac0-9c04-75cc-4b46-d1ec4168c0f0/mzaf_15133126017791169575.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/jp/album/aizo/1860538546?i=1860538548&uo=4",
+        "year": 2026
+      }
+    ],
+    "highScores": {
+      "songsHk_elimination": 300
+    },
+    "banned": false,
+    "email": "",
+    "teamId": null,
+    "displayName": "IamUnderTheWater"
+  },
+  "jim1234": {
+    "password": "$2b$10$n/uDY32FTw7nvPQWs4qxQu8d4ldAAt.KxwmVtQzo/E255zU7CK0Ja",
+    "totalScore": -330,
+    "icon": "👤",
+    "favorites": [],
+    "highScores": {},
+    "banned": false,
+    "teamId": null,
+    "displayName": "jim1234"
+  },
+  "niggar": {
+    "password": "$2b$10$.codHA3hkZ9USrgnhJTmB.VREt/3hOE38ar/V.PGCgcNBnqh7rxEq",
+    "totalScore": 0,
+    "icon": "👤",
+    "favorites": [],
+    "highScores": {},
+    "banned": false,
+    "email": "",
+    "teamId": null,
+    "displayName": "niggar"
+  },
+  "testuser": {
+    "password": "$2b$10$mCzawCDIUZ9jY9duENRP/OWoapFLdJOegIXYfIM6LOZETItn.jhfG",
+    "totalScore": 0,
+    "icon": "👤",
+    "favorites": [],
+    "highScores": {},
+    "banned": false,
+    "teamId": null,
+    "displayName": "testuser"
+  },
+  "l.tim12233@gmail.com": {
+    "password": "",
+    "googleId": "117070139809652385417",
+    "email": "l.tim12233@gmail.com",
+    "icon": "https://lh3.googleusercontent.com/a/ACg8ocJOuOz5XW3t8uphZkE9yuuD2jqOQW8BrgqEe7fdFgPf9Crepw=s96-c",
+    "totalScore": 0,
+    "favorites": [],
+    "highScores": {},
+    "banned": true,
+    "teamId": null,
+    "displayName": "l.tim12233@gmail.com"
+  },
+  "l.tim2233@gmail.com": {
+    "password": "",
+    "googleId": "111625216482821301036",
+    "email": "l.tim2233@gmail.com",
+    "icon": "https://lh3.googleusercontent.com/a/ACg8ocJutH1XS5TO5-Wbs1g_BCjn6Gwg8g43NbFoh7mQOVECQULqYg=s96-c",
+    "totalScore": 0,
+    "favorites": [],
+    "highScores": {},
+    "banned": true,
+    "teamId": null,
+    "displayName": "l.tim2233@gmail.com"
+  }
+}

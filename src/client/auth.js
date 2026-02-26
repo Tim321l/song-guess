@@ -1,0 +1,142 @@
+import { state } from './state.js';
+import { socket } from './socket.js';
+import { renderIcon, switchScreen } from './utils.js';
+import { clearTeamState } from './teams.js';
+
+export function handleLoginSuccess(res, username, password) {
+    clearTeamState();
+    state.username = res.username;
+    state.name = res.displayName || res.username;
+    state.icon = res.icon || '👤';
+    state.favorites = res.favorites || [];
+    state.teamId = res.teamId || null;
+    document.getElementById('display-username').innerHTML = `<span style="margin-right:5px;">${renderIcon(state.icon)}</span> ${state.name}`;
+
+    if (res.token) {
+        localStorage.setItem('songGuessToken', res.token);
+        socket.auth = { token: res.token };
+        // Save to cookie for better persistence (24h)
+        const d = new Date();
+        d.setTime(d.getTime() + (24 * 60 * 60 * 1000));
+        document.cookie = `songGuessToken=${res.token};expires=${d.toUTCString()};path=/;SameSite=Lax`;
+    }
+
+    // Save for auto-login
+    if (username && password) {
+        localStorage.setItem('songGuessAuth', JSON.stringify({ username, password }));
+    }
+
+    // Also update the UI icon selector to match their current icon
+    document.querySelectorAll('.icon-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.innerText === state.icon) btn.classList.add('active');
+    });
+    document.getElementById('selected-icon').value = state.icon;
+    if (res.email) {
+        state.email = res.email;
+        const settingsEmail = document.getElementById('settings-email');
+        if (settingsEmail) settingsEmail.value = res.email;
+    }
+
+    switchScreen('start');
+}
+
+export function initAuthHandlers() {
+    // Google Login Handler
+    window.handleGoogleLogin = (response) => {
+        try {
+            // Safer decoding for JWT tokens (supports Unicode/UTF-8)
+            const base64Url = response.credential.split('.')[1];
+            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            // Adding padding for atob just in case
+            const paddedBase64 = base64.padEnd(base64.length + (4 - base64.length % 4) % 4, '=');
+            const jsonPayload = decodeURIComponent(atob(paddedBase64).split('').map(function (c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+
+            const data = JSON.parse(jsonPayload);
+            console.log("Google Login User Data:", data);
+
+            const username = data.email;
+            const googleId = data.sub;
+
+            socket.emit('googleLogin', {
+                username,
+                googleId,
+                email: data.email,
+                name: data.name,
+                icon: data.picture
+            }, (res) => {
+                if (res.success) {
+                    console.log("Server Login Success:", res);
+                    handleLoginSuccess(res, username, null);
+                } else {
+                    alert("Server Login Failed: " + res.message);
+                }
+            });
+        } catch (e) {
+            console.error("Google Login Error:", e);
+            alert("Error processing Google login data.");
+        }
+    };
+
+    document.getElementById('forgot-password-link').onclick = (e) => {
+        e.preventDefault();
+        switchScreen('forgot-password');
+    };
+
+    document.getElementById('back-to-login-btn').onclick = () => {
+        switchScreen('auth');
+    };
+
+    document.getElementById('send-recovery-btn').onclick = () => {
+        const email = document.getElementById('recovery-email').value.trim();
+        if (!email) return alert("Please enter your email");
+
+        socket.emit('forgotPassword', { email }, (res) => {
+            if (res.success) {
+                alert("Recover Request Sent! Please contact the admin for your new password.");
+                switchScreen('auth');
+            } else {
+                alert(res.message);
+            }
+        });
+    };
+
+    document.getElementById('login-btn').onclick = () => {
+        const username = document.getElementById('auth-username').value.trim();
+        const password = document.getElementById('auth-password').value.trim();
+        if (!username || !password) return alert("Please enter username and password");
+        socket.emit('login', { username, password }, (res) => {
+            if (res.success) {
+                handleLoginSuccess(res, username, password);
+            } else {
+                document.getElementById('auth-message').innerText = res.message;
+            }
+        });
+    };
+
+    document.getElementById('register-btn').onclick = () => {
+        const username = document.getElementById('auth-username').value.trim();
+        const password = document.getElementById('auth-password').value.trim();
+        const policyChecked = document.getElementById('auth-policy-check').checked;
+
+        if (!username || !password) return alert("Please enter username and password");
+        if (!policyChecked) {
+            const lang = localStorage.getItem('sgLang') || 'EN';
+            const msg = lang === 'ZH' ? '請先閱讀並同意私隱政策。' : 'Please read and agree to the Privacy Policy first.';
+            return alert(msg);
+        }
+
+        socket.emit('register', { username, password }, (res) => {
+            document.getElementById('auth-message').innerText = res.message;
+            if (res.success) {
+                document.getElementById('auth-message').style.color = '#2ecc71';
+                // Auto-login after register
+                handleLoginSuccess(res, username, password);
+            } else {
+                document.getElementById('auth-message').style.color = '#ff4757';
+            }
+        });
+    };
+}

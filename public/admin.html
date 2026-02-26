@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Guess – Admin Panel</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0d1117;
+            --card: #161b22;
+            --border: #30363d;
+            --accent: #58a6ff;
+            --danger: #f85149;
+            --success: #3fb950;
+            --warn: #e3b341;
+            --text: #c9d1d9;
+            --muted: #8b949e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .dashboard {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* ── Header ── */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .socket-status {
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: rgba(63, 185, 80, 0.15);
+            border: 1px solid var(--success);
+            color: var(--success);
+        }
+
+        .socket-status.offline {
+            background: rgba(248, 81, 73, 0.15);
+            border-color: var(--danger);
+            color: var(--danger);
+        }
+
+        .toggle-btn {
+            background: rgba(88, 166, 255, 0.1);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+
+        .toggle-btn:hover {
+            background: rgba(88, 166, 255, 0.2);
+        }
+
+        .toggle-btn.active {
+            background: var(--accent);
+            color: #0d1117;
+        }
+
+        .refresh-btn {
+            background: rgba(63, 185, 80, 0.1);
+            border: 1px solid var(--success);
+            color: var(--success);
+            padding: 6px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.85rem;
+        }
+
+        .refresh-btn:hover {
+            background: rgba(63, 185, 80, 0.2);
+        }
+
+        /* ── Notifications Toast ── */
+        #notifications-feed {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-width: 320px;
+        }
+
+        .notif-toast {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 10px 14px;
+            font-size: 0.85rem;
+            animation: slideIn 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .notif-toast.kick {
+            border-left: 3px solid var(--danger);
+        }
+
+        .notif-toast.ban {
+            border-left: 3px solid var(--danger);
+        }
+
+        .notif-toast.room {
+            border-left: 3px solid var(--warn);
+        }
+
+        .notif-toast.join {
+            border-left: 3px solid var(--success);
+        }
+
+        .notif-toast.system {
+            border-left: 3px solid var(--accent);
+        }
+
+        .notif-close {
+            cursor: pointer;
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(120%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* ── Stats ── */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+
+        .stat-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 18px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 0.78rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ── Health Panel ── */
+        .health-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+
+        .health-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px 15px;
+        }
+
+        .health-label {
+            font-size: 0.75rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .health-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .health-value.ok {
+            color: var(--success);
+        }
+
+        .health-value.warn {
+            color: var(--warn);
+        }
+
+        .health-value.bad {
+            color: var(--danger);
+        }
+
+        /* ── Charts ── */
+        .charts-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 18px;
+            margin-bottom: 22px;
+        }
+
+        .chart-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px;
+        }
+
+        .chart-title {
+            font-size: 0.85rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        /* ── Panels ── */
+        .panels {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-bottom: 22px;
+        }
+
+        .panel {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .panel.wide {
+            grid-column: 1 / -1;
+        }
+
+        .panel-header {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 12px 18px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-body {
+            padding: 0;
+            max-height: 360px;
+            overflow-y: auto;
+        }
+
+        .panel-body::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .panel-body::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+
+        /* ── Tables ── */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        th {
+            padding: 10px 14px;
+            text-align: left;
+            color: var(--muted);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: var(--card);
+            z-index: 1;
+        }
+
+        td {
+            padding: 9px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            vertical-align: middle;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        .badge-success {
+            background: rgba(63, 185, 80, 0.15);
+            color: var(--success);
+        }
+
+        .badge-danger {
+            background: rgba(248, 81, 73, 0.15);
+            color: var(--danger);
+        }
+
+        .badge-warn {
+            background: rgba(227, 179, 65, 0.15);
+            color: var(--warn);
+        }
+
+        .badge-info {
+            background: rgba(88, 166, 255, 0.15);
+            color: var(--accent);
+        }
+
+        /* ── Buttons ── */
+        .btn {
+            border: none;
+            padding: 4px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.78rem;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        .btn-danger {
+            background: rgba(248, 81, 73, 0.15);
+            color: var(--danger);
+            border: 1px solid var(--danger);
+        }
+
+        .btn-warn {
+            background: rgba(227, 179, 65, 0.15);
+            color: var(--warn);
+            border: 1px solid var(--warn);
+        }
+
+        .btn-success {
+            background: rgba(63, 185, 80, 0.15);
+            color: var(--success);
+            border: 1px solid var(--success);
+        }
+
+        .btn-accent {
+            background: rgba(88, 166, 255, 0.15);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        /* ── Login ── */
+        .login-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 400px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .login-card h2 {
+            margin-bottom: 20px;
+        }
+
+        .login-card input {
+            width: 100%;
+            padding: 10px 14px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .login-card button {
+            width: 100%;
+            padding: 10px;
+            background: var(--accent);
+            border: none;
+            border-radius: 8px;
+            color: #0d1117;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        /* ── Audit Log ── */
+        .audit-log {
+            font-size: 0.82rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .audit-entry {
+            padding: 7px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            display: flex;
+            gap: 12px;
+        }
+
+        .audit-ts {
+            color: var(--muted);
+            flex-shrink: 0;
+            width: 100px;
+        }
+
+        .audit-action {
+            color: var(--accent);
+            font-weight: 600;
+            flex-shrink: 0;
+            width: 160px;
+        }
+
+        .audit-detail {
+            color: var(--text);
+        }
+
+        /* ── Search ── */
+        .search-bar {
+            padding: 8px 14px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.85rem;
+            width: 200px;
+        }
+
+        /* ── Alerts ── */
+        #message-box {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 9999;
+            display: none;
+        }
+
+        #message-box.success {
+            background: rgba(63, 185, 80, 0.2);
+            border: 1px solid var(--success);
+            color: var(--success);
+        }
+
+        #message-box.error {
+            background: rgba(248, 81, 73, 0.2);
+            border: 1px solid var(--danger);
+            color: var(--danger);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .charts-row {
+                grid-template-columns: 1fr;
+            }
+
+            .panels {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .health-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* ── Input small ── */
+        .inline-input {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 3px 7px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-family: inherit;
+            width: 90px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="login-screen">
+        <div class="login-card">
+            <h2>🔐 Admin Login</h2>
+            <input type="password" id="admin-secret-input" placeholder="Admin Secret Key"
+                onkeydown="if(event.key==='Enter')doLogin()">
+            <button onclick="doLogin()">Access Panel</button>
+            <p id="login-error" style="color:var(--danger);margin-top:12px;font-size:0.85rem;"></p>
+        </div>
+    </div>
+
+    <div id="notifications-feed"></div>
+    <div id="message-box"></div>
+
+    <div id="admin-panel" class="dashboard" style="display:none;">
+        <header>
+            <h1>🎛️ Admin Control Panel</h1>
+            <div class="header-controls">
+                <span id="socket-status" class="socket-status offline">Socket: Connecting…</span>
+                <button class="toggle-btn active" id="autorefresh-btn" onclick="toggleAutoRefresh()">⟳ Auto Refresh:
+                    ON</button>
+                <button class="refresh-btn" onclick="loadData()">Refresh Now</button>
+                <button class="btn btn-danger" style="margin-left: 10px;" onclick="restartServer()">🔄 Restart
+                    Process</button>
+                <span id="last-refresh" style="font-size:0.8rem;color:var(--muted);">-</span>
+            </div>
+        </header>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value" id="stat-uptime">—</div>
+                <div class="stat-label">Uptime</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-users">—</div>
+                <div class="stat-label">Total Users</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-sessions">—</div>
+                <div class="stat-label">Online Now</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-sockets">—</div>
+                <div class="stat-label">Sockets</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-rooms">—</div>
+                <div class="stat-label">Active Rooms</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-peak">—</div>
+                <div class="stat-label">Peak Concurrent</div>
+            </div>
+        </div>
+
+        <!-- System Health -->
+        <div style="margin-bottom:8px;font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">
+            ⚙️ System Health</div>
+        <div class="health-grid">
+            <div class="health-card">
+                <div class="health-label">CPU Load (1m)</div>
+                <div class="health-value" id="h-cpu">—</div>
+            </div>
+            <div class="health-card">
+                <div class="health-label">Node Heap Used</div>
+                <div class="health-value" id="h-mem">—</div>
+            </div>
+            <div class="health-card">
+                <div class="health-label">Sys Memory</div>
+                <div class="health-value" id="h-sysmem">—</div>
+            </div>
+            <div class="health-card">
+                <div class="health-label">DB Status</div>
+                <div class="health-value ok" id="h-db">—</div>
+            </div>
+            <div class="health-card">
+                <div class="health-label">DB Size</div>
+                <div class="health-value" id="h-dbsize">—</div>
+            </div>
+            <div class="health-card">
+                <div class="health-label">Node Version</div>
+                <div class="health-value" id="h-node">—</div>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div style="margin-bottom:8px;font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">
+            📈 Activity Charts</div>
+        <div class="charts-row">
+            <div class="chart-card">
+                <div class="chart-title">Online Users (Last Hour)</div>
+                <div style="position:relative;height:140px;width:100%;"><canvas id="chart-online"></canvas></div>
+            </div>
+            <div class="chart-card">
+                <div class="chart-title">Rooms Created / Min</div>
+                <div style="position:relative;height:140px;width:100%;"><canvas id="chart-rooms"></canvas></div>
+            </div>
+            <div class="chart-card">
+                <div class="chart-title">Peak Concurrent Users</div>
+                <div style="position:relative;height:140px;width:100%;"><canvas id="chart-peak"></canvas></div>
+            </div>
+        </div>
+
+        <!-- Active Sessions + Rooms -->
+        <div class="panels">
+            <div class="panel">
+                <div class="panel-header">
+                    <span>🟢 Active Sessions (<span id="sessions-count">0</span>)</span>
+                    <input class="search-bar" placeholder="Search user…" id="sessions-search"
+                        oninput="filterTable('sessions-table','sessions-search')">
+                </div>
+                <div class="panel-body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>IP</th>
+                                <th>Ping</th>
+                                <th>Session</th>
+                                <th>Room</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sessions-table"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-header">
+                    <span>🚪 Active Rooms (<span id="rooms-count">0</span>)</span>
+                </div>
+                <div class="panel-body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Players</th>
+                                <th>Mode</th>
+                                <th>State</th>
+                                <th>Round</th>
+                                <th>Last Active</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rooms-table"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- All Users -->
+        <div class="panels">
+            <div class="panel wide">
+                <div class="panel-header">
+                    <span>👥 All Users (<span id="users-count">0</span>)</span>
+                    <input class="search-bar" placeholder="Search users…" id="users-search"
+                        oninput="filterTable('users-table','users-search')">
+                </div>
+                <div class="panel-body" style="max-height:400px;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Score</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="users-table"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recovery Requests -->
+        <div class="panels" id="recovery-section" style="display:none;">
+            <div class="panel wide">
+                <div class="panel-header">🔑 Password Recovery Requests (<span id="recovery-count">0</span>)</div>
+                <div class="panel-body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Requested</th>
+                                <th>New Password</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recovery-table"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Audit Log -->
+        <div class="panel wide" style="margin-top:0;">
+            <div class="panel-header">
+                <span>📋 Audit Log</span>
+                <button class="btn btn-accent" onclick="loadAuditLog()">Refresh Log</button>
+            </div>
+            <div class="panel-body" style="max-height:280px;" id="audit-log-body">
+                <div class="audit-log" id="audit-log-entries">
+                    <div style="padding:20px;text-align:center;color:var(--muted);">No audit entries yet.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let ADMIN_SECRET = '';
+        let autoRefresh = true;
+        let refreshTimer = null;
+        let charts = {};
+
+        const socket = io();
+
+        socket.on('connect', () => {
+            document.getElementById('socket-status').textContent = 'Socket: Connected';
+            document.getElementById('socket-status').className = 'socket-status';
+            if (ADMIN_SECRET) socket.emit('subscribeAdminLive', ADMIN_SECRET);
+        });
+        socket.on('disconnect', () => {
+            document.getElementById('socket-status').textContent = 'Socket: Offline';
+            document.getElementById('socket-status').className = 'socket-status offline';
+        });
+
+        // Real-time live updates (every 30s from server)
+        socket.on('adminLiveUpdate', (data) => {
+            document.getElementById('stat-sessions').textContent = data.activeSessions;
+            document.getElementById('stat-rooms').textContent = data.activeRooms;
+            document.getElementById('stat-sockets').textContent = data.connectedSockets;
+            document.getElementById('sessions-count').textContent = data.activeSessions;
+            document.getElementById('rooms-count').textContent = data.activeRooms;
+        });
+
+        // Real-time notifications
+        socket.on('adminNotification', (notif) => addToast(notif.type, notif.message));
+
+        // New user / room events from server
+        socket.on('adminAlert', (alert) => addToast(alert.type || 'system', alert.message));
+
+        function addToast(type, msg) {
+            const feed = document.getElementById('notifications-feed');
+            const toast = document.createElement('div');
+            toast.className = `notif-toast ${type}`;
+            toast.innerHTML = `<span>${msg}</span><span class="notif-close" onclick="this.parentElement.remove()">✕</span>`;
+            feed.prepend(toast);
+            setTimeout(() => toast.remove(), 6000);
+        }
+
+        function showMsg(msg, type = 'success') {
+            const el = document.getElementById('message-box');
+            el.textContent = msg; el.className = type; el.style.display = 'block';
+            setTimeout(() => el.style.display = 'none', 3000);
+        }
+
+        function doLogin() {
+            const secret = document.getElementById('admin-secret-input').value.trim();
+            if (!secret) return;
+            ADMIN_SECRET = secret;
+            loadData();
+        }
+
+        function loadData() {
+            socket.emit('getAdminData', ADMIN_SECRET, (res) => {
+                if (!res.success) {
+                    document.getElementById('login-error').textContent = res.message || 'Unauthorized';
+                    ADMIN_SECRET = '';
+                    return;
+                }
+                document.getElementById('login-screen').style.display = 'none';
+                document.getElementById('admin-panel').style.display = 'block';
+                socket.emit('subscribeAdminLive', ADMIN_SECRET);
+                renderDashboard(res);
+                document.getElementById('last-refresh').textContent = 'Updated: ' + new Date().toLocaleTimeString();
+                startAutoRefresh();
+            });
+        }
+
+        function loadAuditLog() {
+            socket.emit('getAuditLog', ADMIN_SECRET, (res) => {
+                if (res.success) renderAuditLog(res.log);
+            });
+        }
+
+        function toggleAutoRefresh() {
+            autoRefresh = !autoRefresh;
+            const btn = document.getElementById('autorefresh-btn');
+            btn.textContent = `⟳ Auto Refresh: ${autoRefresh ? 'ON' : 'OFF'}`;
+            btn.className = autoRefresh ? 'toggle-btn active' : 'toggle-btn';
+            if (autoRefresh) startAutoRefresh();
+            else { clearInterval(refreshTimer); refreshTimer = null; }
+        }
+
+        function startAutoRefresh() {
+            clearInterval(refreshTimer);
+            if (autoRefresh) {
+                refreshTimer = setInterval(() => { if (autoRefresh) loadData(); }, 30000);
+            }
+        }
+
+        function filterTable(tableId, searchId) {
+            const q = document.getElementById(searchId).value.toLowerCase();
+            document.querySelectorAll(`#${tableId} tr`).forEach(row => {
+                row.style.display = row.textContent.toLowerCase().includes(q) ? '' : 'none';
+            });
+        }
+
+        function fmtUptime(secs) {
+            const h = Math.floor(secs / 3600), m = Math.floor((secs % 3600) / 60), s = secs % 60;
+            return `${h}h ${m}m ${s}s`;
+        }
+
+        function fmtTime(ms) {
+            if (!ms) return '—';
+            return new Date(ms).toLocaleTimeString();
+        }
+
+        function fmtSince(ms) {
+            if (!ms) return '—';
+            const secs = Math.floor((Date.now() - ms) / 1000);
+            if (secs < 60) return `${secs}s ago`;
+            if (secs < 3600) return `${Math.floor(secs / 60)}m ago`;
+            return `${Math.floor(secs / 3600)}h ago`;
+        }
+
+        function renderDashboard(data) {
+            const { stats, health, metricsHistory, peakConcurrent, activeUsers, roomDetails, allUsers, recoveryRequests, auditLog } = data;
+
+            // Stats
+            document.getElementById('stat-uptime').textContent = fmtUptime(stats.uptime);
+            document.getElementById('stat-users').textContent = stats.totalUsers;
+            document.getElementById('stat-sessions').textContent = stats.activeSessions;
+            document.getElementById('stat-sockets').textContent = stats.connectedSockets;
+            document.getElementById('stat-rooms').textContent = stats.activeRooms;
+            document.getElementById('stat-peak').textContent = peakConcurrent;
+            document.getElementById('sessions-count').textContent = stats.activeSessions;
+            document.getElementById('rooms-count').textContent = stats.activeRooms;
+            document.getElementById('users-count').textContent = allUsers.length;
+
+            // Health
+            const cpuVal = parseFloat(health.cpuLoad);
+            document.getElementById('h-cpu').textContent = health.cpuLoad;
+            document.getElementById('h-cpu').className = 'health-value ' + (cpuVal < 1 ? 'ok' : cpuVal < 3 ? 'warn' : 'bad');
+            document.getElementById('h-mem').textContent = health.memUsedMB + ' MB / ' + health.memTotalMB + ' MB';
+            document.getElementById('h-sysmem').textContent = health.sysMemUsedMB + ' / ' + health.sysMemTotalMB;
+            document.getElementById('h-db').textContent = health.dbStatus;
+            document.getElementById('h-db').className = 'health-value ' + (health.dbStatus === 'OK' ? 'ok' : 'bad');
+            document.getElementById('h-dbsize').textContent = health.dbSizeKB + ' KB';
+            document.getElementById('h-node').textContent = health.nodeVersion;
+
+            // Charts
+            renderCharts(metricsHistory || [], peakConcurrent);
+
+            // Active Sessions
+            const sb = document.getElementById('sessions-table');
+            sb.innerHTML = '';
+            activeUsers.forEach(u => {
+                const inRoom = roomDetails.find(r => r.players && r.players.includes(u.username));
+                const row = document.createElement('tr');
+                row.innerHTML = `
+            <td><strong>${u.username}</strong></td>
+            <td style="font-size:0.78rem;color:var(--muted);">${u.ip || '—'}</td>
+            <td><span class="badge badge-info">${u.latency}ms</span></td>
+            <td style="font-size:0.78rem;">${fmtTime(u.loginTime)}</td>
+            <td>${inRoom ? `<span class="badge badge-success">${inRoom.id}</span>` : '<span class="badge" style="background:rgba(255,255,255,0.05);color:var(--muted);">Lobby</span>'}</td>
+            <td><button class="btn btn-danger" onclick="kickUser('${u.username}')">Kick</button></td>
+        `;
+                sb.appendChild(row);
+            });
+
+            // Rooms
+            const rb = document.getElementById('rooms-table');
+            rb.innerHTML = '';
+            roomDetails.forEach(r => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+            <td><strong>${r.id}</strong></td>
+            <td>${r.playerCount}</td>
+            <td><span class="badge badge-info">${r.mode}</span></td>
+            <td><span class="badge ${r.state === 'playing' ? 'badge-success' : r.state === 'lobby' ? 'badge-warn' : 'badge-info'}">${r.state}</span></td>
+            <td>${r.round}</td>
+            <td style="font-size:0.78rem;">${fmtSince(r.lastActivity)}</td>
+            <td><button class="btn btn-danger" onclick="clearRoom('${r.id}')">Clear</button></td>
+        `;
+                rb.appendChild(row);
+            });
+
+            // All Users
+            const ub = document.getElementById('users-table');
+            ub.innerHTML = '';
+            allUsers.forEach(u => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+            <td><strong>${u.username}</strong></td>
+            <td style="font-size:0.8rem;color:var(--muted);">${u.email || '—'}</td>
+            <td>${u.totalScore}</td>
+            <td><span class="badge ${u.banned ? 'badge-danger' : 'badge-success'}">${u.banned ? 'Banned' : 'Active'}</span></td>
+            <td style="display:flex;gap:5px;flex-wrap:wrap;">
+                ${u.banned
+                        ? `<button class="btn btn-success" onclick="unbanUser('${u.username}')">Unban</button>`
+                        : `<button class="btn btn-danger" onclick="banUser('${u.username}')">Ban</button>`}
+                <button class="btn btn-warn" onclick="kickUser('${u.username}')">Kick</button>
+                <button class="btn btn-accent" onclick="editUser('${u.username}','${u.email || ''}')">Edit</button>
+            </td>
+        `;
+                ub.appendChild(row);
+            });
+
+            // Recovery
+            const rkeys = Object.keys(recoveryRequests || {});
+            document.getElementById('recovery-section').style.display = rkeys.length ? '' : 'none';
+            document.getElementById('recovery-count').textContent = rkeys.length;
+            const rrb = document.getElementById('recovery-table');
+            rrb.innerHTML = '';
+            rkeys.forEach(uname => {
+                const req = recoveryRequests[uname];
+                const row = document.createElement('tr');
+                row.innerHTML = `
+            <td><strong>${uname}</strong></td>
+            <td style="font-size:0.78rem;">${fmtTime(req.requestedAt)}</td>
+            <td><input class="inline-input" id="newpw-${uname}" placeholder="New Password"></td>
+            <td><button class="btn btn-success" onclick="resetPassword('${uname}')">Set</button></td>
+        `;
+                rrb.appendChild(row);
+            });
+
+            // Audit log (last 50)
+            renderAuditLog(auditLog || []);
+        }
+
+        function renderAuditLog(log) {
+            const el = document.getElementById('audit-log-entries');
+            if (!log || log.length === 0) {
+                el.innerHTML = '<div style="padding:20px;text-align:center;color:var(--muted);">No audit entries yet.</div>';
+                return;
+            }
+            el.innerHTML = log.map(entry => `
+        <div class="audit-entry">
+            <span class="audit-ts">${new Date(entry.ts).toLocaleTimeString()}</span>
+            <span class="audit-action">${entry.action}</span>
+            <span class="audit-detail">${entry.detail}</span>
+        </div>`).join('');
+        }
+
+        function renderCharts(history, peak) {
+            const labels = history.map(m => new Date(m.ts).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+            const onlineData = history.map(m => m.onlineUsers);
+            const roomsData = history.map(m => m.roomsCreated);
+            const peakData = history.map(m => m.onlineUsers);
+
+            // Fill with placeholder if empty
+            if (!labels.length) { labels.push('Now'); onlineData.push(0); roomsData.push(0); peakData.push(0); }
+
+            const chartOpts = (label, color, data) => ({
+                type: 'line',
+                data: {
+                    labels,
+                    datasets: [{ label, data, borderColor: color, backgroundColor: color.replace(')', ',0.1)').replace('rgb', 'rgba'), fill: true, tension: 0.4, pointRadius: 2 }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { ticks: { color: '#8b949e', font: { size: 9 } }, grid: { color: 'rgba(255,255,255,0.04)' } },
+                        y: { ticks: { color: '#8b949e', font: { size: 9 } }, grid: { color: 'rgba(255,255,255,0.04)' }, beginAtZero: true }
+                    }
+                }
+            });
+
+            ['chart-online', 'chart-rooms', 'chart-peak'].forEach(id => {
+                if (charts[id]) { charts[id].destroy(); }
+            });
+            charts['chart-online'] = new Chart(document.getElementById('chart-online'), chartOpts('Online Users', 'rgb(88,166,255)', onlineData));
+            charts['chart-rooms'] = new Chart(document.getElementById('chart-rooms'), chartOpts('Rooms Created', 'rgb(63,185,80)', roomsData));
+            charts['chart-peak'] = new Chart(document.getElementById('chart-peak'), chartOpts('Peak Users', 'rgb(227,179,65)', peakData));
+        }
+
+        // ── Admin Actions ──────────────────────────────────────────────────────────────
+        function adminAction(action, target) {
+            socket.emit('adminAction', { secret: ADMIN_SECRET, action, target }, (res) => {
+                showMsg(res.message, res.success ? 'success' : 'error');
+                if (res.success) loadData();
+            });
+        }
+        function kickUser(u) { if (confirm(`Kick ${u}?`)) adminAction('kickUser', u); }
+        function banUser(u) { if (confirm(`Ban ${u}?`)) adminAction('banUser', u); }
+        function unbanUser(u) { if (confirm(`Unban ${u}?`)) adminAction('unbanUser', u); }
+        function clearRoom(id) { if (confirm(`Clear room ${id}?`)) adminAction('clearRoom', id); }
+        function resetPassword(uname) {
+            const pw = document.getElementById(`newpw-${uname}`)?.value.trim();
+            if (!pw) return showMsg('Enter a new password', 'error');
+            adminAction('setNewPassword', { username: uname, newPassword: pw });
+        }
+        function editUser(uname, email) {
+            const newU = prompt(`New username for ${uname}:`, uname);
+            if (!newU) return;
+            const newE = prompt(`New email for ${uname}:`, email);
+            const newP = prompt(`New password for ${uname} (blank = keep existing):`, '');
+            adminAction('editUser', { oldUsername: uname, newUsername: newU, newEmail: newE, newPassword: newP || undefined });
+        }
+        function restartServer() {
+            if (confirm("WARNING: This will immediately terminate the Node.js process. If you are using a process manager like nodemon or pm2, it should restart automatically. Continue?")) {
+                socket.emit('adminAction', { secret: ADMIN_SECRET, action: 'restartServer' }, (res) => {
+                    if (res.success) {
+                        showMsg("Restart signal sent. Searching for connection...", 'success');
+                        setTimeout(() => location.reload(), 3000);
+                    } else {
+                        showMsg(res.message, 'error');
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>

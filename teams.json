@@ -1,0 +1,21 @@
+{
+  "TMM1D9KUH51KA": {
+    "id": "TMM1D9KUH51KA",
+    "name": "king of song guesser",
+    "leader": "tim",
+    "score": 4539,
+    "members": [
+      "tim2",
+      "tim"
+    ],
+    "createdAt": 1771983569609,
+    "icon": "🔥",
+    "roles": {
+      "tim2": "member",
+      "tim": "leader"
+    },
+    "memberScores": {
+      "tim": 1148
+    }
+  }
+}

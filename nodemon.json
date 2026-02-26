@@ -1,0 +1,16 @@
+{
+    "watch": [
+        "server.js",
+        "src/server/**/*.js"
+    ],
+    "ext": "js,json",
+    "ignore": [
+        "node_modules",
+        "users.json",
+        "teams.json",
+        "community_playlists.json",
+        "recovery_requests.json"
+    ],
+    "delay": "1000",
+    "legacyWatch": true
+}
