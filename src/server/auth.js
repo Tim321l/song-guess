@@ -129,6 +129,9 @@ export function registerAuthHandlers(io, socket, activeUsers) {
             users[username] = user;
             await saveUsers(users);
         } else {
+            if (user.banned) {
+                return callback({ success: false, message: 'This account has been banned.' });
+            }
             if (!user.googleId) {
                 user.googleId = googleId;
                 await saveUsers(users);

@@ -26,7 +26,7 @@ initTeamHandlers();
 handleSpotifyRedirect();
 
 // --- Global UI Logic ---
-const currentLang = localStorage.getItem('sgLang') || 'EN';
+const currentLang = localStorage.getItem('songGuessLang') || 'EN';
 applyLanguage(currentLang);
 
 const savedTheme = localStorage.getItem('sgTheme') || 'midnight';
@@ -75,12 +75,12 @@ function applyTheme(theme) {
 const langBtn = document.getElementById('lang-toggle-btn');
 if (langBtn) {
     langBtn.onclick = () => {
-        const lang = localStorage.getItem('sgLang') === 'ZH' ? 'EN' : 'ZH';
-        localStorage.setItem('sgLang', lang);
+        const lang = localStorage.getItem('songGuessLang') === 'ZH' ? 'EN' : 'ZH';
+        localStorage.setItem('songGuessLang', lang);
         langBtn.innerText = `🌐 ${lang}`;
         applyLanguage(lang);
     };
-    langBtn.innerText = `🌐 ${localStorage.getItem('sgLang') || 'EN'}`;
+    langBtn.innerText = `🌐 ${localStorage.getItem('songGuessLang') || 'EN'}`;
 }
 
 // Theme Toggle

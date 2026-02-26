@@ -490,7 +490,7 @@ export function initGameplayHandlers() {
     const leaveBtn = document.getElementById('game-leave-btn');
     if (leaveBtn) {
         leaveBtn.onclick = () => {
-            if (confirm(localStorage.getItem('sgLang') === 'ZH' ? '確定要離開房間嗎？' : 'Are you sure you want to leave the room?')) {
+            if (confirm(localStorage.getItem('songGuessLang') === 'ZH' ? '確定要離開房間嗎？' : 'Are you sure you want to leave the room?')) {
                 leaveRoom();
             }
         };

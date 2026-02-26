@@ -145,7 +145,7 @@ export function initAuthHandlers() {
 
         if (!username || !password) return alert("Please enter username and password");
         if (!policyChecked) {
-            const lang = localStorage.getItem('sgLang') || 'EN';
+            const lang = localStorage.getItem('songGuessLang') || 'EN';
             const msg = lang === 'ZH' ? '請先閱讀並同意私隱政策。' : 'Please read and agree to the Privacy Policy first.';
             return alert(msg);
         }
