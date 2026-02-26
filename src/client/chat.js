@@ -24,8 +24,42 @@ export function initChatHandlers() {
     };
 
     chatHeader.onclick = (e) => {
-        if (e.target !== chatToggleBtn) toggleChat();
+        if (e.target !== chatToggleBtn && !isDragging) toggleChat();
     };
+
+    // --- Draggable Logic ---
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    chatHeader.onmousedown = (e) => {
+        if (e.target === chatToggleBtn) return;
+        isDragging = true;
+
+        // Get current position (needed if already moved)
+        const rect = chatContainer.getBoundingClientRect();
+        offsetX = e.clientX - rect.left;
+        offsetY = e.clientY - rect.top;
+
+        // Ensure fixed positioning during drag
+        chatContainer.style.bottom = 'auto';
+        chatContainer.style.right = 'auto';
+        chatContainer.style.left = `${rect.left}px`;
+        chatContainer.style.top = `${rect.top}px`;
+        chatContainer.style.margin = '0';
+
+        document.onmousemove = (e) => {
+            if (!isDragging) return;
+            chatContainer.style.left = `${e.clientX - offsetX}px`;
+            chatContainer.style.top = `${e.clientY - offsetY}px`;
+        };
+
+        document.onmouseup = () => {
+            isDragging = false;
+            document.onmousemove = null;
+            document.onmouseup = null;
+        };
+    };
+
     chatToggleBtn.onclick = (e) => {
         e.stopPropagation();
         toggleChat();
