@@ -182,6 +182,8 @@ document.getElementById('logout-btn').onclick = () => {
     state.username = '';
     state.favorites = [];
     state.teamId = null;
+    const chatContainer = document.getElementById('chat-container');
+    if (chatContainer) chatContainer.classList.add('hidden');
     switchScreen('auth');
 };
 

@@ -38,6 +38,9 @@ export function handleLoginSuccess(res, username, password) {
         if (settingsEmail) settingsEmail.value = res.email;
     }
 
+    const chatContainer = document.getElementById('chat-container');
+    if (chatContainer) chatContainer.classList.remove('hidden');
+
     switchScreen('start');
 }
 
