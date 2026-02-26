@@ -18,10 +18,29 @@ export function initChatHandlers() {
     }
 
     // Toggle collapse
-    const toggleChat = () => {
+    const toggleChat = (save = true) => {
         chatContainer.classList.toggle('collapsed');
         chatToggleBtn.innerText = chatContainer.classList.contains('collapsed') ? '🔼' : '🔽';
+        if (save) {
+            localStorage.setItem('chatCollapsed', chatContainer.classList.contains('collapsed'));
+        }
     };
+
+    // --- Persistence: Load State ---
+    const loadPersistence = () => {
+        const collapsed = localStorage.getItem('chatCollapsed') === 'true';
+        if (collapsed) toggleChat(false);
+
+        const pos = JSON.parse(localStorage.getItem('chatPosition'));
+        if (pos) {
+            chatContainer.style.bottom = 'auto';
+            chatContainer.style.right = 'auto';
+            chatContainer.style.left = pos.left;
+            chatContainer.style.top = pos.top;
+            chatContainer.style.margin = '0';
+        }
+    };
+    loadPersistence();
 
     chatHeader.onclick = (e) => {
         if (e.target !== chatToggleBtn && !isDragging) toggleChat();
@@ -57,6 +76,12 @@ export function initChatHandlers() {
             isDragging = false;
             document.onmousemove = null;
             document.onmouseup = null;
+
+            // Save Position
+            localStorage.setItem('chatPosition', JSON.stringify({
+                left: chatContainer.style.left,
+                top: chatContainer.style.top
+            }));
         };
     };
 
