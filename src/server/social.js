@@ -112,6 +112,8 @@ export function registerSocialHandlers(io, socket, allSongs) {
     socket.on('getLeaderboard', async ({ category, mode, type }, callback) => {
         if (!rl('getLeaderboard', 10, 30_000)) return callback([]);
 
+        console.log(`[Leaderboard] Request: Type=${type}, Category=${category}, Mode=${mode}`);
+
         let leaderboard = [];
 
         if (type === 'teams') {
@@ -133,8 +135,15 @@ export function registerSocialHandlers(io, socket, allSongs) {
 
         const users = await loadUsers();
 
-        if (category && mode && category !== 'all') {
-            const scoreKey = `${category}_${mode}`;
+        // If searching by specific category OR specific mode
+        // Note: category 'all' and mode 'standard' (or unset) defaults to totalScore
+        const isTotalScoreRequest = (category === 'all' || !category) && (mode === 'standard' || !mode);
+
+        if (!isTotalScoreRequest) {
+            // Highscore-based ranking
+            const scoreKey = `${category || 'all'}_${mode || 'standard'}`;
+            console.log(`[Leaderboard] Filtering by Key: ${scoreKey}`);
+
             leaderboard = Object.keys(users)
                 .map(username => ({
                     username: users[username].displayName || username,
@@ -146,6 +155,8 @@ export function registerSocialHandlers(io, socket, allSongs) {
                 .sort((a, b) => b.score - a.score)
                 .slice(0, 10);
         } else {
+            // Total Cumulative Score ranking
+            console.log(`[Leaderboard] Fetching Total Cumulative Scores`);
             leaderboard = Object.keys(users)
                 .map(username => ({
                     username: users[username].displayName || username,
@@ -153,10 +164,11 @@ export function registerSocialHandlers(io, socket, allSongs) {
                     icon: users[username].icon || '👤',
                     banned: users[username].banned || false
                 }))
-                .filter(u => !u.banned)
+                .filter(u => !u.banned && u.score > 0)
                 .sort((a, b) => b.score - a.score)
                 .slice(0, 10);
         }
+
         callback(leaderboard);
     });
 
