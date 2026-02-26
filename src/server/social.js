@@ -135,14 +135,27 @@ export function registerSocialHandlers(io, socket, allSongs) {
 
         const users = await loadUsers();
 
-        // If searching by specific category OR specific mode
-        // Note: category 'all' and mode 'standard' (or unset) defaults to totalScore
-        const isTotalScoreRequest = (category === 'all' || !category) && (mode === 'standard' || !mode);
+        // Logical Split:
+        // 1. Total Scores: Category='all' AND Mode='standard' -> Fetch cumulative totalScore
+        // 2. Mode Records: Specific Category OR specific Mode -> Fetch highScores[key]
 
-        if (!isTotalScoreRequest) {
-            // Highscore-based ranking
+        const isGlobalTotal = (category === 'all' || !category) && (mode === 'standard' || !mode);
+
+        if (isGlobalTotal) {
+            console.log(`[Leaderboard] Fetching GLOBAL TOTAL cumulative scores`);
+            leaderboard = Object.keys(users)
+                .map(username => ({
+                    username: users[username].displayName || username,
+                    score: users[username].totalScore || 0,
+                    icon: users[username].icon || '👤',
+                    banned: users[username].banned || false
+                }))
+                .filter(u => !u.banned && u.score > 0)
+                .sort((a, b) => b.score - a.score)
+                .slice(0, 10);
+        } else {
             const scoreKey = `${category || 'all'}_${mode || 'standard'}`;
-            console.log(`[Leaderboard] Filtering by Key: ${scoreKey}`);
+            console.log(`[Leaderboard] Fetching HIGH SCORE records for Key: ${scoreKey}`);
 
             leaderboard = Object.keys(users)
                 .map(username => ({
@@ -152,19 +165,6 @@ export function registerSocialHandlers(io, socket, allSongs) {
                     banned: users[username].banned || false
                 }))
                 .filter(u => u.score > 0 && !u.banned)
-                .sort((a, b) => b.score - a.score)
-                .slice(0, 10);
-        } else {
-            // Total Cumulative Score ranking
-            console.log(`[Leaderboard] Fetching Total Cumulative Scores`);
-            leaderboard = Object.keys(users)
-                .map(username => ({
-                    username: users[username].displayName || username,
-                    score: users[username].totalScore || 0,
-                    icon: users[username].icon || '👤',
-                    banned: users[username].banned || false
-                }))
-                .filter(u => !u.banned && u.score > 0)
                 .sort((a, b) => b.score - a.score)
                 .slice(0, 10);
         }

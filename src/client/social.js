@@ -82,17 +82,28 @@ export function initSocialHandlers() {
         socket.emit('getCategories', (categories) => {
             const lbCat = document.getElementById('lb-category-select');
             if (lbCat) {
+                // Keep 'Total Scores' (Global cumulative) as the first item
                 lbCat.innerHTML = '<option value="all" data-i18n="lb-cat-all">Total Scores</option>';
+
                 categories.forEach(cat => {
                     const opt = document.createElement('option');
                     opt.value = cat;
-                    // Try to match data-i18n key like 'cat-en' -> 'songsEn' (strip 'songs' and lower)
+                    // Standard labels for language hits
                     let i18nKey = 'cat-' + cat.replace('songs', '').toLowerCase();
                     opt.setAttribute('data-i18n', i18nKey);
-                    opt.innerText = cat.replace('songs', '') + ' Hits';
+
+                    // Fallback label if translations fail
+                    let label = cat.replace('songs', '') + ' Hits';
+                    if (cat.startsWith('spotify:')) label = cat.replace('spotify:', '') + ' (Spotify)';
+                    opt.innerText = label;
+
                     lbCat.appendChild(opt);
                 });
-                // Re-apply language to new options
+
+                // Keep 'all' as default
+                lbCat.value = 'all';
+
+                // Re-apply translations
                 const currentLang = localStorage.getItem('songGuessLang') || 'EN';
                 import('./i18n.js').then(m => m.applyLanguage(currentLang));
             }
