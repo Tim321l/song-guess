@@ -617,157 +617,185 @@
                 <div class="stat-label">Peak Concurrent</div>
             </div>
         </div>
-
-    </div>
-
-    <!-- Cloud Quotas -->
-    <div style="margin-bottom:8px;font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">
-        ☁️ Cloud Quotas (Est.)</div>
-    <div class="health-grid">
-        <div class="health-card">
-            <div class="health-label">Render Hours Used</div>
-            <div class="health-value" id="q-render-hours">—</div>
-            <div style="font-size:0.7rem;color:var(--muted);margin-top:4px;">Limit: 750h/mo</div>
-        </div>
-        <div class="health-card">
-            <div class="health-label">Render Quota</div>
-            <div class="health-value" id="q-render-pct">—</div>
-            <div style="height:4px;background:rgba(255,255,255,0.1);border-radius:2px;margin-top:6px;overflow:hidden;">
-                <div id="q-render-bar" style="height:100%;background:var(--accent);width:0%;"></div>
+        <!-- System Health -->
+        <div style="margin-bottom:8px;font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">
+            ⚙️ System Health</div>
+        <div class="health-grid">
+            <div class="health-card">
+                <div class="health-label">CPU Load (1m)</div>
+                <div class="health-value" id="h-cpu">—</div>
+            </div>
+            <div class="health-card">
+                <div class="health-label">Node Heap Used</div>
+                <div class="health-value" id="h-mem">—</div>
+            </div>
+            <div class="health-card">
+                <div class="health-label">Sys Memory</div>
+                <div class="health-value" id="h-sysmem">—</div>
+            </div>
+            <div class="health-card">
+                <div class="health-label">DB Status</div>
+                <div class="health-value ok" id="h-db">—</div>
+            </div>
+            <div class="health-card">
+                <div class="health-label">DB Size</div>
+                <div class="health-value" id="h-dbsize">—</div>
+            </div>
+            <div class="health-card">
+                <div class="health-label">Node Version</div>
+                <div class="health-value" id="h-node">—</div>
             </div>
         </div>
-        <div class="health-card">
-            <div class="health-label">Cloudflare Pages</div>
-            <div class="health-value ok" id="q-cf-status">Operational</div>
-        </div>
-        <div class="health-card">
-            <div class="health-label">CF Workers Limit</div>
-            <div class="health-value" id="q-cf-workers">100k / Day</div>
-        </div>
-    </div>
 
-    <!-- Charts -->
-    <div style="margin-bottom:8px;font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">
-        📈 Activity Charts</div>
-    <div class="charts-row">
-        <div class="chart-card">
-            <div class="chart-title">Online Users (Last Hour)</div>
-            <div style="position:relative;height:140px;width:100%;"><canvas id="chart-online"></canvas></div>
+        <!-- Cloud Quotas -->
+        <div style="margin-bottom:8px;font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">
+            ☁️ Cloud Quotas (Est.)</div>
+        <div class="health-grid">
+            <div class="health-card">
+                <div class="health-label">Render Hours Used</div>
+                <div class="health-value" id="q-render-hours">—</div>
+                <div style="font-size:0.7rem;color:var(--muted);margin-top:4px;">Limit: 750h/mo</div>
+            </div>
+            <div class="health-card">
+                <div class="health-label">Render Quota</div>
+                <div class="health-value" id="q-render-pct">—</div>
+                <div
+                    style="height:4px;background:rgba(255,255,255,0.1);border-radius:2px;margin-top:6px;overflow:hidden;">
+                    <div id="q-render-bar" style="height:100%;background:var(--accent);width:0%;"></div>
+                </div>
+            </div>
+            <div class="health-card">
+                <div class="health-label">Cloudflare Pages</div>
+                <div class="health-value ok" id="q-cf-status">Operational</div>
+            </div>
+            <div class="health-card">
+                <div class="health-label">CF Workers Limit</div>
+                <div class="health-value" id="q-cf-workers">100k / Day</div>
+            </div>
         </div>
-        <div class="chart-card">
-            <div class="chart-title">Rooms Created / Min</div>
-            <div style="position:relative;height:140px;width:100%;"><canvas id="chart-rooms"></canvas></div>
-        </div>
-        <div class="chart-card">
-            <div class="chart-title">Peak Concurrent Users</div>
-            <div style="position:relative;height:140px;width:100%;"><canvas id="chart-peak"></canvas></div>
-        </div>
-    </div>
 
-    <!-- Active Sessions + Rooms -->
-    <div class="panels">
-        <div class="panel">
+        <!-- Charts -->
+        <div style="margin-bottom:8px;font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">
+            📈 Activity Charts</div>
+        <div class="charts-row">
+            <div class="chart-card">
+                <div class="chart-title">Online Users (Last Hour)</div>
+                <div style="position:relative;height:140px;width:100%;"><canvas id="chart-online"></canvas></div>
+            </div>
+            <div class="chart-card">
+                <div class="chart-title">Rooms Created / Min</div>
+                <div style="position:relative;height:140px;width:100%;"><canvas id="chart-rooms"></canvas></div>
+            </div>
+            <div class="chart-card">
+                <div class="chart-title">Peak Concurrent Users</div>
+                <div style="position:relative;height:140px;width:100%;"><canvas id="chart-peak"></canvas></div>
+            </div>
+        </div>
+
+        <!-- Active Sessions + Rooms -->
+        <div class="panels">
+            <div class="panel">
+                <div class="panel-header">
+                    <span>🟢 Active Sessions (<span id="sessions-count">0</span>)</span>
+                    <input class="search-bar" placeholder="Search user…" id="sessions-search"
+                        oninput="filterTable('sessions-table','sessions-search')">
+                </div>
+                <div class="panel-body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>IP</th>
+                                <th>Ping</th>
+                                <th>Session</th>
+                                <th>Room</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sessions-table"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-header">
+                    <span>🚪 Active Rooms (<span id="rooms-count">0</span>)</span>
+                </div>
+                <div class="panel-body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Players</th>
+                                <th>Mode</th>
+                                <th>State</th>
+                                <th>Round</th>
+                                <th>Last Active</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rooms-table"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- All Users -->
+        <div class="panels">
+            <div class="panel wide">
+                <div class="panel-header">
+                    <span>👥 All Users (<span id="users-count">0</span>)</span>
+                    <input class="search-bar" placeholder="Search users…" id="users-search"
+                        oninput="filterTable('users-table','users-search')">
+                </div>
+                <div class="panel-body" style="max-height:400px;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Score</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="users-table"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recovery Requests -->
+        <div class="panels" id="recovery-section" style="display:none;">
+            <div class="panel wide">
+                <div class="panel-header">🔑 Password Recovery Requests (<span id="recovery-count">0</span>)</div>
+                <div class="panel-body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Requested</th>
+                                <th>New Password</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recovery-table"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Audit Log -->
+        <div class="panel wide" style="margin-top:0;">
             <div class="panel-header">
-                <span>🟢 Active Sessions (<span id="sessions-count">0</span>)</span>
-                <input class="search-bar" placeholder="Search user…" id="sessions-search"
-                    oninput="filterTable('sessions-table','sessions-search')">
+                <span>📋 Audit Log</span>
+                <button class="btn btn-accent" onclick="loadAuditLog()">Refresh Log</button>
             </div>
-            <div class="panel-body">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>User</th>
-                            <th>IP</th>
-                            <th>Ping</th>
-                            <th>Session</th>
-                            <th>Room</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="sessions-table"></tbody>
-                </table>
+            <div class="panel-body" style="max-height:280px;" id="audit-log-body">
+                <div class="audit-log" id="audit-log-entries">
+                    <div style="padding:20px;text-align:center;color:var(--muted);">No audit entries yet.</div>
+                </div>
             </div>
         </div>
-        <div class="panel">
-            <div class="panel-header">
-                <span>🚪 Active Rooms (<span id="rooms-count">0</span>)</span>
-            </div>
-            <div class="panel-body">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Players</th>
-                            <th>Mode</th>
-                            <th>State</th>
-                            <th>Round</th>
-                            <th>Last Active</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="rooms-table"></tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- All Users -->
-    <div class="panels">
-        <div class="panel wide">
-            <div class="panel-header">
-                <span>👥 All Users (<span id="users-count">0</span>)</span>
-                <input class="search-bar" placeholder="Search users…" id="users-search"
-                    oninput="filterTable('users-table','users-search')">
-            </div>
-            <div class="panel-body" style="max-height:400px;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Score</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="users-table"></tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- Recovery Requests -->
-    <div class="panels" id="recovery-section" style="display:none;">
-        <div class="panel wide">
-            <div class="panel-header">🔑 Password Recovery Requests (<span id="recovery-count">0</span>)</div>
-            <div class="panel-body">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Username</th>
-                            <th>Requested</th>
-                            <th>New Password</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="recovery-table"></tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- Audit Log -->
-    <div class="panel wide" style="margin-top:0;">
-        <div class="panel-header">
-            <span>📋 Audit Log</span>
-            <button class="btn btn-accent" onclick="loadAuditLog()">Refresh Log</button>
-        </div>
-        <div class="panel-body" style="max-height:280px;" id="audit-log-body">
-            <div class="audit-log" id="audit-log-entries">
-                <div style="padding:20px;text-align:center;color:var(--muted);">No audit entries yet.</div>
-            </div>
-        </div>
-    </div>
     </div>
 
     <script>
