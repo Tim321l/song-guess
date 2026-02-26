@@ -271,6 +271,7 @@ export function initGameplayHandlers() {
         updateScores();
         state.hasGuessed = true;
 
+        const buttons = document.querySelectorAll('.option-btn');
         buttons.forEach(btn => {
             const isCorrect = String(btn.dataset.id) === String(res.correctSong.id);
             btn.classList.add(isCorrect ? 'correct' : 'wrong');
