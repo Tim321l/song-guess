@@ -158,12 +158,24 @@ export function registerSocialHandlers(io, socket, allSongs) {
             console.log(`[Leaderboard] Fetching HIGH SCORE records for Key: ${scoreKey}`);
 
             leaderboard = Object.keys(users)
-                .map(username => ({
-                    username: users[username].displayName || username,
-                    score: (users[username].highScores && users[username].highScores[scoreKey]) || 0,
-                    icon: users[username].icon || '👤',
-                    banned: users[username].banned || false
-                }))
+                .map(username => {
+                    const user = users[username];
+                    let score = 0;
+                    if (user.highScores) {
+                        // Handle both Map and Plain Object access
+                        if (typeof user.highScores.get === 'function') {
+                            score = user.highScores.get(scoreKey) || 0;
+                        } else {
+                            score = user.highScores[scoreKey] || 0;
+                        }
+                    }
+                    return {
+                        username: user.displayName || username,
+                        score: score,
+                        icon: user.icon || '👤',
+                        banned: user.banned || false
+                    };
+                })
                 .filter(u => u.score > 0 && !u.banned)
                 .sort((a, b) => b.score - a.score)
                 .slice(0, 10);

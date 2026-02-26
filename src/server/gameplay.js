@@ -472,17 +472,32 @@ export function registerGameplayHandlers(io, socket, allSongs) {
                 // Personal Stats logic
                 const user = users[p.username];
                 if (user) {
-                    user.totalScore = (user.totalScore || 0) + p.scoreDelta;
-                    if (user.totalScore < 0) user.totalScore = 0;
+                    // Update Total Score (lifetime cumulative)
+                    if (p.scoreDelta !== 0) {
+                        user.totalScore = (user.totalScore || 0) + p.scoreDelta;
+                        if (user.totalScore < 0) user.totalScore = 0;
+                        usersModified = true;
+                    }
 
-                    // High Score tracking
+                    // High Score tracking (Check every turn for accuracy)
                     if (!user.highScores) user.highScores = {};
                     const catModeKey = `${room.lang}_${room.mode}`;
-                    const currentBest = user.highScores[catModeKey] || 0;
-                    if (p.score > currentBest) {
-                        user.highScores[catModeKey] = p.score;
+
+                    let currentBest = 0;
+                    if (typeof user.highScores.get === 'function') {
+                        currentBest = user.highScores.get(catModeKey) || 0;
+                    } else {
+                        currentBest = user.highScores[catModeKey] || 0;
                     }
-                    usersModified = true;
+
+                    if (p.score > currentBest) {
+                        if (typeof user.highScores.set === 'function') {
+                            user.highScores.set(catModeKey, p.score);
+                        } else {
+                            user.highScores[catModeKey] = p.score;
+                        }
+                        usersModified = true;
+                    }
                 }
             }
         });
