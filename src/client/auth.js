@@ -43,21 +43,28 @@ export function handleLoginSuccess(res, username, password) {
 
 // Google Login Handler (Global for GSI script)
 window.handleGoogleLogin = (response) => {
+    console.log("[Google Auth] Callback triggered. Initializing decoding...");
     try {
+        if (!response || !response.credential) {
+            console.error("[Google Auth] No credential received in response", response);
+            return alert("Google Login Failed: No credentials received.");
+        }
+
         // Safer decoding for JWT tokens (supports Unicode/UTF-8)
         const base64Url = response.credential.split('.')[1];
         const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        // Adding padding for atob just in case
         const paddedBase64 = base64.padEnd(base64.length + (4 - base64.length % 4) % 4, '=');
         const jsonPayload = decodeURIComponent(atob(paddedBase64).split('').map(function (c) {
             return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
         }).join(''));
 
         const data = JSON.parse(jsonPayload);
-        console.log("Google Login User Data:", data);
+        console.log("[Google Auth] Decoded User Data:", data);
 
-        const username = data.username || data.email;
+        const username = data.email;
         const googleId = data.sub;
+
+        console.log(`[Google Auth] Emitting googleLogin event for ${username}...`);
 
         socket.emit('googleLogin', {
             username,
@@ -66,16 +73,26 @@ window.handleGoogleLogin = (response) => {
             name: data.name,
             icon: data.picture
         }, (res) => {
+            console.log("[Google Auth] Server response received:", res);
             if (res.success) {
-                console.log("Server Login Success:", res);
+                console.log("[Google Auth] Success! Redirecting to game start...");
                 handleLoginSuccess(res, username, null);
             } else {
+                console.error("[Google Auth] Server rejected login:", res.message);
                 alert("Server Login Failed: " + res.message);
             }
         });
+
+        // Safety timeout if server doesn't respond
+        setTimeout(() => {
+            if (!state.username) {
+                console.warn("[Google Auth] Login timeout. Server might be lagging.");
+            }
+        }, 5000);
+
     } catch (e) {
-        console.error("Google Login Error:", e);
-        alert("Error processing Google login data.");
+        console.error("[Google Auth] Fatal error during processing:", e);
+        alert("Error processing Google login data. Check console for details.");
     }
 };
 

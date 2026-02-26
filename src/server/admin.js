@@ -53,7 +53,18 @@ function getSystemHealth(serverStartTime) {
         dbStatus,
         dbSizeKB: (dbSize / 1024).toFixed(1),
         nodeVersion: process.version,
-        platform: os.platform()
+        platform: os.platform(),
+        // Cloud Estimates
+        renderUsage: {
+            usedHours: Math.floor((Date.now() - serverStartTime) / 3600000),
+            limitHours: 750,
+            percent: ((Math.floor((Date.now() - serverStartTime) / 3600000) / 750) * 100).toFixed(1)
+        },
+        cloudflareUsage: {
+            status: 'Operational',
+            requestLimit: '100k/day (Workers)',
+            bandwidth: 'Unlimited'
+        }
     };
 }
 
