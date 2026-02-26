@@ -4,14 +4,19 @@ import { renderIcon, switchScreen } from './utils.js';
 import { stopAllAudio, audioPlayer } from './audio.js';
 
 export function renderLeaderboard(type = 'players') {
-    const category = document.getElementById('lb-category-select').value;
-    const mode = document.getElementById('lb-mode-select').value;
+    const categorySelect = document.getElementById('lb-category-select');
+    const modeSelect = document.getElementById('lb-mode-select');
+
+    const category = categorySelect.value;
+    const mode = modeSelect.value;
+
+    console.log(`[Leaderboard] Fetching ranking for Category=${category}, Mode=${mode}, Type=${type}`);
 
     socket.emit('getLeaderboard', { category, mode, type }, (leaderboard) => {
         const list = document.getElementById('leaderboard-list');
         list.innerHTML = '';
-        if (leaderboard.length === 0) {
-            list.innerHTML = '<div style="text-align:center; color:#a8b0cc; padding:20px;">No records yet!</div>';
+        if (!leaderboard || leaderboard.length === 0) {
+            list.innerHTML = '<div style="text-align:center; color:#a8b0cc; padding:20px;" data-i18n="lb-no-records">No records yet! Be the first!</div>';
         } else {
             leaderboard.forEach((user, index) => {
                 const div = document.createElement('div');
@@ -19,7 +24,7 @@ export function renderLeaderboard(type = 'players') {
                 div.style.background = user.username === state.name ? 'rgba(0,242,254,0.1)' : 'rgba(255,255,255,0.03)';
                 div.style.border = user.username === state.name ? '1px solid #00f2fe' : 'none';
                 div.style.cursor = type === 'teams' ? 'pointer' : 'default';
-                div.innerHTML = `<span><strong>#${index + 1}</strong> <span style="margin-right:5px;">${renderIcon(user.icon)}</span> ${user.username}</span> <span>${user.score} pts</span>`;
+                div.innerHTML = `<span><strong style="width:25px; display:inline-block;">#${index + 1}</strong> <span style="margin-right:5px;">${renderIcon(user.icon)}</span> ${user.username}</span> <span>${user.score} pts</span>`;
 
                 if (type === 'teams') {
                     div.onclick = () => showTeamDetailModal(user.id);
@@ -72,7 +77,28 @@ export function initSocialHandlers() {
         document.getElementById('lb-type-players').style.color = 'white';
         document.getElementById('lb-type-teams').style.background = 'transparent';
         document.getElementById('lb-type-teams').style.color = 'var(--text-main)';
-        renderLeaderboard(currentLbType);
+
+        // Populate Categories Dynamically
+        socket.emit('getCategories', (categories) => {
+            const lbCat = document.getElementById('lb-category-select');
+            if (lbCat) {
+                lbCat.innerHTML = '<option value="all" data-i18n="lb-cat-all">Total Scores</option>';
+                categories.forEach(cat => {
+                    const opt = document.createElement('option');
+                    opt.value = cat;
+                    // Try to match data-i18n key like 'cat-en' -> 'songsEn' (strip 'songs' and lower)
+                    let i18nKey = 'cat-' + cat.replace('songs', '').toLowerCase();
+                    opt.setAttribute('data-i18n', i18nKey);
+                    opt.innerText = cat.replace('songs', '') + ' Hits';
+                    lbCat.appendChild(opt);
+                });
+                // Re-apply language to new options
+                const currentLang = localStorage.getItem('songGuessLang') || 'EN';
+                import('./i18n.js').then(m => m.applyLanguage(currentLang));
+            }
+            renderLeaderboard(currentLbType);
+        });
+
         switchScreen('leaderboard');
     };
 
