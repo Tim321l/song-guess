@@ -301,9 +301,33 @@ export function registerGameplayHandlers(io, socket, allSongs) {
             ? (allSongs[correctSong.srcList] || Object.values(allSongs).flat())
             : (allSongs[room.lang] || allSongs['songsCn']);
 
+        // Deduplicate options by title
+        const usedTitles = new Set([correctSong.title]);
+        const uniqueOptions = [correctSong];
+
+        // Priority 1: Same artist, different titles
         let sameArtistSongs = shuffle(songsList.filter(s => s.id !== correctSong.id && s.artist === correctSong.artist));
-        let otherSongs = shuffle(songsList.filter(s => s.id !== correctSong.id && s.artist !== correctSong.artist));
-        let options = shuffle([correctSong, ...[...sameArtistSongs, ...otherSongs].slice(0, 3)]);
+        for (const song of sameArtistSongs) {
+            if (uniqueOptions.length >= 4) break;
+            if (!usedTitles.has(song.title)) {
+                uniqueOptions.push(song);
+                usedTitles.add(song.title);
+            }
+        }
+
+        // Priority 2: Other artists, unique titles
+        if (uniqueOptions.length < 4) {
+            let otherSongs = shuffle(songsList.filter(s => s.id !== correctSong.id && s.artist !== correctSong.artist));
+            for (const song of otherSongs) {
+                if (uniqueOptions.length >= 4) break;
+                if (!usedTitles.has(song.title)) {
+                    uniqueOptions.push(song);
+                    usedTitles.add(song.title);
+                }
+            }
+        }
+
+        let options = shuffle(uniqueOptions);
 
         room.roundState = { hasGuessed: false, correctSong, startTime: Date.now(), guesses: {} };
         const durationMs = room.diff * 1000;
