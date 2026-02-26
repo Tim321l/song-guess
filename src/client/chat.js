@@ -12,6 +12,11 @@ export function initChatHandlers() {
     const scopeRoomBtn = document.getElementById('scope-room-btn');
     const chatToggleBtn = document.getElementById('chat-toggle-btn');
 
+    if (!chatContainer || !chatHeader || !chatInput || !chatSendBtn || !chatMessages || !scopeGlobalBtn || !scopeRoomBtn || !chatToggleBtn) {
+        console.warn("[Chat] Some UI elements missing. Chat system disabled.");
+        return;
+    }
+
     // Toggle collapse
     const toggleChat = () => {
         chatContainer.classList.toggle('collapsed');

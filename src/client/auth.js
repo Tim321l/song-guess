@@ -129,6 +129,8 @@ export function initAuthHandlers() {
         const username = document.getElementById('auth-username').value.trim();
         const password = document.getElementById('auth-password').value.trim();
         if (!username || !password) return alert("Please enter username and password");
+        document.getElementById('auth-message').innerText = 'Logging in... please wait';
+        document.getElementById('auth-message').style.color = '#f1c40f';
         socket.emit('login', { username, password }, (res) => {
             if (res.success) {
                 handleLoginSuccess(res, username, password);
@@ -150,6 +152,8 @@ export function initAuthHandlers() {
             return alert(msg);
         }
 
+        document.getElementById('auth-message').innerText = 'Creating account... please wait';
+        document.getElementById('auth-message').style.color = '#f1c40f';
         socket.emit('register', { username, password }, (res) => {
             document.getElementById('auth-message').innerText = res.message;
             if (res.success) {
