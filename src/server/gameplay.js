@@ -415,20 +415,42 @@ export function registerGameplayHandlers(io, socket, allSongs) {
             }
         });
 
-        // Persistent Team Score Updates (Batched)
+        // Persistent Team & Personal Score Updates
         const teamUpdates = {}; // teamId -> { total: points, members: { username: points } }
         const users = await loadUsers();
+        let usersModified = false;
 
         room.players.forEach(p => {
             if (p.username && p.scoreDelta && p.scoreDelta !== 0) {
+                // Team logic
                 const teamId = users[p.username]?.teamId;
                 if (teamId) {
                     if (!teamUpdates[teamId]) teamUpdates[teamId] = { total: 0, members: {} };
                     teamUpdates[teamId].total += p.scoreDelta;
                     teamUpdates[teamId].members[p.username] = (teamUpdates[teamId].members[p.username] || 0) + p.scoreDelta;
                 }
+
+                // Personal Stats logic
+                const user = users[p.username];
+                if (user) {
+                    user.totalScore = (user.totalScore || 0) + p.scoreDelta;
+                    if (user.totalScore < 0) user.totalScore = 0;
+
+                    // High Score tracking
+                    if (!user.highScores) user.highScores = {};
+                    const catModeKey = `${room.lang}_${room.mode}`;
+                    const currentBest = user.highScores[catModeKey] || 0;
+                    if (p.score > currentBest) {
+                        user.highScores[catModeKey] = p.score;
+                    }
+                    usersModified = true;
+                }
             }
         });
+
+        if (usersModified) {
+            await saveUsers(users);
+        }
 
         if (Object.keys(teamUpdates).length > 0) {
             const teams = await loadTeams();

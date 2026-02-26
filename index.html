@@ -11,6 +11,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/src/style.css">
   <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script>
+    // Global Proxy for Google Sign-In Callback (Ensures it's found before main script loads)
+    window.handleGoogleLogin = function (response) {
+      if (window._handleGoogleLoginActual) {
+        window._handleGoogleLoginActual(response);
+      } else {
+        console.warn("[Google Auth] Real handler not yet ready. Stashing response...");
+        window._stashedGoogleResponse = response;
+      }
+    };
+  </script>
   <style>
     .mt-3 {
       margin-top: 15px;
@@ -94,6 +105,13 @@
         <h1>Song <span class="highlight">Guess</span> Online</h1>
       </div>
       <p class="subtitle">Login to save your scores!</p>
+
+      <!-- Connection Status Indicator -->
+      <div id="connection-status-msg"
+        style="text-align: center; margin-bottom: 15px; font-size: 0.85em; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <span class="status-dot" style="width: 8px; height: 8px; border-radius: 50%; background: #f1c40f;"></span>
+        <span id="status-text" style="color: #f1c40f;">Connecting to server... (Render wake-up)</span>
+      </div>
 
       <div class="setup-container">
         <div class="input-group">

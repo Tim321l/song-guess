@@ -41,12 +41,12 @@ export function handleLoginSuccess(res, username, password) {
     switchScreen('start');
 }
 
-// Google Login Handler (Global for GSI script)
-window.handleGoogleLogin = (response) => {
-    console.log("[Google Auth] Callback triggered. Initializing decoding...");
+// Google Login Handler Implementation
+const handleGoogleLoginActual = (response) => {
+    console.log("[Google Auth] Real handler triggered. Decoding...");
     try {
         if (!response || !response.credential) {
-            console.error("[Google Auth] No credential received in response", response);
+            console.error("[Google Auth] No credential received", response);
             return alert("Google Login Failed: No credentials received.");
         }
 
@@ -73,7 +73,7 @@ window.handleGoogleLogin = (response) => {
             name: data.name,
             icon: data.picture
         }, (res) => {
-            console.log("[Google Auth] Server response received:", res);
+            console.log("[Google Auth] Server response:", res);
             if (res.success) {
                 console.log("[Google Auth] Success! Redirecting to game start...");
                 handleLoginSuccess(res, username, null);
@@ -83,18 +83,21 @@ window.handleGoogleLogin = (response) => {
             }
         });
 
-        // Safety timeout if server doesn't respond
-        setTimeout(() => {
-            if (!state.username) {
-                console.warn("[Google Auth] Login timeout. Server might be lagging.");
-            }
-        }, 5000);
-
     } catch (e) {
-        console.error("[Google Auth] Fatal error during processing:", e);
-        alert("Error processing Google login data. Check console for details.");
+        console.error("[Google Auth] Fatal error processing login:", e);
+        alert("Error processing Google login data. Check console.");
     }
 };
+
+// Connect real handler to the global proxy
+window._handleGoogleLoginActual = handleGoogleLoginActual;
+
+// Check if there's a stashed response from before we loaded
+if (window._stashedGoogleResponse) {
+    console.log("[Google Auth] Found stashed response. Processing now...");
+    handleGoogleLoginActual(window._stashedGoogleResponse);
+    delete window._stashedGoogleResponse;
+}
 
 export function initAuthHandlers() {
 
