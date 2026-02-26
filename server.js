@@ -53,12 +53,19 @@ app.get('/', (req, res) => {
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
     cors: {
-        origin: [
-            "https://localhost:5173",
-            "http://localhost:5173",
-            /\.pages\.dev$/, // Allow all Cloudflare Pages subdomains
-            process.env.FRONTEND_URL
-        ].filter(Boolean),
+        origin: (origin, callback) => {
+            const allowedOrigins = [
+                "https://localhost:5173",
+                "http://localhost:5173",
+                process.env.FRONTEND_URL
+            ].filter(Boolean);
+
+            if (!origin || allowedOrigins.includes(origin) || origin.endsWith('.pages.dev')) {
+                callback(null, true);
+            } else {
+                callback(new Error('Not allowed by CORS'));
+            }
+        },
         methods: ["GET", "POST"],
         credentials: true
     }
