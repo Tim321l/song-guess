@@ -121,7 +121,11 @@
         'chat-scope-room': 'Room',
         'chat-placeholder': 'Type a message...',
         'chat-send': 'Send',
-        'mode-fastest': 'Fastest Answer (Bonus Points)'
+        'mode-fastest': 'Fastest Answer (Bonus Points)',
+        'report-reason-label': 'Reason for report',
+        'report-submit-btn': 'Submit Report',
+        'report-cancel-btn': 'Cancel',
+        'report-success': 'Thanks for your report!'
     },
     ZH: {
         'app-title-html': '估歌仔 <span class="highlight">Online</span>',
@@ -247,7 +251,11 @@
         'chat-scope-room': '房間',
         'chat-placeholder': '輸入訊息...',
         'chat-send': '發送',
-        'mode-fastest': '最快奪標 (速度額外加分)'
+        'mode-fastest': '最快奪標 (速度額外加分)',
+        'report-reason-label': '檢舉原因',
+        'report-submit-btn': '提交檢舉',
+        'report-cancel-btn': '取消',
+        'report-success': '感謝您的檢舉！'
     }
 };
 

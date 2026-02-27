@@ -1,7 +1,8 @@
-import { loadUsers, saveUsers, loadRecoveryRequests, saveRecoveryRequests, loadReports, loadSongs } from './db.js';
+import { loadUsers, saveUsers, loadRecoveryRequests, saveRecoveryRequests, loadReports, loadSongs, getDBStatus } from './db.js';
 import { rooms } from './rooms.js';
 import os from 'os';
 import { readFileSync, existsSync, statSync, utimesSync } from 'fs';
+import { getSuspiciousIps } from './rateLimiter.js';
 
 // ─── Audit Log (in-memory, last 200 entries) ─────────────────────────────────
 const auditLog = [];
@@ -35,13 +36,13 @@ function getSystemHealth(serverStartTime) {
     const freeMem = os.freemem();
     const usedMem = totalMem - freeMem;
 
-    let dbStatus = 'OK';
+    const dbStatus = getDBStatus();
     let dbSize = 0;
     try {
-        if (existsSync('./users.json')) {
-            dbSize = statSync('./users.json').size;
+        if (existsSync('./songs.json')) {
+            dbSize = statSync('./songs.json').size;
         }
-    } catch { dbStatus = 'Error'; }
+    } catch { /* ignore */ }
 
     return {
         uptimeSecs: Math.floor((Date.now() - serverStartTime) / 1000),
@@ -127,7 +128,8 @@ export function registerAdminHandlers(io, socket, activeUsers, ADMIN_SECRET, ser
                 success: true, stats, roomDetails,
                 activeUsers: activeUsersInfo, recoveryRequests, allUsers,
                 health, metricsHistory, peakConcurrent,
-                auditLog: auditLog.slice(0, 50)
+                auditLog: auditLog.slice(0, 50),
+                suspiciousIps: getSuspiciousIps()
             });
         } catch (error) {
             console.error('[ADMIN] Error:', error);

@@ -3,6 +3,7 @@ dotenv.config();
 
 import express from 'express';
 import { createServer } from 'http';
+import path from 'path';
 import { Server } from 'socket.io';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
@@ -47,8 +48,12 @@ const globalLimiter = rateLimit({
 });
 app.use(globalLimiter);
 
+// Static file serving - ensure we serve index.html and assets
+app.use(express.static('public'));
+app.use('/src', express.static('src'));
+
 app.get('/', (req, res) => {
-    res.send('Song Guess Backend is Running! 🚀');
+    res.sendFile(path.join(process.cwd(), 'index.html'));
 });
 
 const httpServer = createServer(app);
@@ -61,7 +66,7 @@ const io = new Server(httpServer, {
                 process.env.FRONTEND_URL
             ].filter(Boolean);
 
-            if (!origin || allowedOrigins.includes(origin) || origin.endsWith('.pages.dev')) {
+            if (!origin || allowedOrigins.includes(origin) || origin.endsWith('.pages.dev') || origin.endsWith('.onrender.com')) {
                 callback(null, true);
             } else {
                 callback(new Error('Not allowed by CORS'));
@@ -135,6 +140,18 @@ io.on('connection', (socket) => {
     registerGameplayHandlers(io, socket, allSongs);
     registerTeamHandlers(io, socket);
     registerChatHandlers(io, socket, activeUsers);
+
+    // Stats Sync Fix: If user has a valid token, add them to activeUsers immediately
+    if (socket.username && !activeUsers[socket.username]) {
+        activeUsers[socket.username] = {
+            username: socket.username,
+            socketId: socket.id,
+            startTime: Date.now(),
+            ip: ip,
+            latency: 0
+        };
+        console.log(`[AUTH] Resumed session for ${socket.username} (${socket.id})`);
+    }
 });
 
 // Periodic cleanup of inactive rooms (every 2 minutes)

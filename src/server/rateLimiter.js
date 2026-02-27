@@ -18,6 +18,8 @@ const BAN_DURATION_MS = 10 * 60 * 1000; // 10 minutes
  * Check whether an IP is currently banned.
  */
 export function isIpBanned(ip) {
+    if (ip === '::1' || ip === '127.0.0.1' || ip?.includes('localhost')) return false;
+
     const entry = suspiciousIps[ip];
     if (!entry || !entry.bannedUntil) return false;
     if (Date.now() > entry.bannedUntil) {
@@ -29,14 +31,10 @@ export function isIpBanned(ip) {
 
 /**
  * Rate-limit a socket event by IP.
- *
- * @param {string} ip        - Client IP address
- * @param {string} event     - Socket event name
- * @param {number} limit     - Max requests per window
- * @param {number} windowMs  - Window size in milliseconds
- * @returns {boolean}        - true = allowed, false = rate limited
  */
 export function checkRateLimit(ip, event, limit, windowMs) {
+    if (ip === '::1' || ip === '127.0.0.1') return true; // Whitelist local
+
     const now = Date.now();
     if (!ipRateLimits[ip]) ipRateLimits[ip] = {};
     const bucket = ipRateLimits[ip];
@@ -53,7 +51,7 @@ export function checkRateLimit(ip, event, limit, windowMs) {
         if (!suspiciousIps[ip]) suspiciousIps[ip] = { strikes: 0, bannedUntil: null };
         suspiciousIps[ip].strikes++;
 
-        if (suspiciousIps[ip].strikes >= 10) {
+        if (suspiciousIps[ip].strikes >= 20) { // Increased from 10
             suspiciousIps[ip].bannedUntil = now + BAN_DURATION_MS;
             suspiciousIps[ip].strikes = 0;
             console.warn(`[SECURITY] IP ${ip} temp-banned for repeated rate limit violations.`);
@@ -62,6 +60,11 @@ export function checkRateLimit(ip, event, limit, windowMs) {
     }
 
     return true;
+}
+
+// Export for admin monitoring
+export function getSuspiciousIps() {
+    return suspiciousIps;
 }
 
 /**

@@ -271,11 +271,29 @@ export function initGameplayHandlers() {
         if (reportBtn) {
             reportBtn.classList.remove('hidden');
             reportBtn.onclick = () => {
-                const reason = prompt(localStorage.getItem('songGuessLang') === 'ZH' ? '為什麼要檢舉這首歌？ (例如：音訊損壞、資訊錯誤)' : 'Why are you reporting this song? (e.g. Broken audio, wrong info)', 'Buggy Audio/Info');
-                if (reason) {
-                    socket.emit('reportSong', { roomId: state.roomId, songId: res.correctSong.id, reason });
-                    reportBtn.classList.add('hidden');
-                    alert(localStorage.getItem('songGuessLang') === 'ZH' ? '感謝您的檢舉！' : 'Thanks for your report!');
+                const modal = document.getElementById('song-report-modal');
+                const titleEl = document.getElementById('report-modal-song-title');
+                const reasonInput = document.getElementById('report-modal-reason');
+                const submitBtn = document.getElementById('report-modal-submit-btn');
+                const cancelBtn = document.getElementById('report-modal-cancel-btn');
+
+                if (modal && titleEl) {
+                    titleEl.innerText = res.correctSong.artist + " - " + res.correctSong.title;
+                    reasonInput.value = 'Buggy Audio/Info';
+                    modal.classList.remove('hidden');
+
+                    submitBtn.onclick = () => {
+                        const reason = reasonInput.value.trim();
+                        if (reason) {
+                            socket.emit('reportSong', { roomId: state.roomId, songId: res.correctSong.id, reason });
+                            modal.classList.add('hidden');
+                            reportBtn.classList.add('hidden');
+                            const lang = localStorage.getItem('songGuessLang') || 'EN';
+                            const msg = lang === 'ZH' ? '感謝您的檢舉！' : 'Thanks for your report!';
+                            alert(msg);
+                        }
+                    };
+                    cancelBtn.onclick = () => modal.classList.add('hidden');
                 }
             };
         }

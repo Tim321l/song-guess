@@ -20,6 +20,11 @@ export async function connectDB() {
     }
 }
 
+export function getDBStatus() {
+    const states = ['Disconnected', 'Connected', 'Connecting', 'Disconnecting'];
+    return states[mongoose.connection.readyState] || 'Unknown';
+}
+
 // Helper to convert array of documents to object keyed by username/id
 function toObject(arr, key) {
     return arr.reduce((acc, curr) => {
