@@ -382,8 +382,8 @@ export function registerGameplayHandlers(io, socket, allSongs) {
                             lyricsFound = true;
                             let textOptions = shuffle([correctAnswer, ...wrongOptionLines]);
                             const clientOptions = textOptions.map(text => ({ id: text, title: text, artist: '' }));
-                            room.roundState.correctSong = { id: correctAnswer, audioUrl: correctSong.audioUrl, title: correctSong.title, artist: correctSong.artist, appleUrl: correctSong.appleUrl };
-                            io.to(roomId).emit('newTurn', { round: room.currentRound, totalRounds: room.rounds, audioUrl: correctSong.audioUrl, options: clientOptions, lyricsPrompt: promptLines, durationMs, totalGuessTimeMs, mode: 'lyrics' });
+                            room.roundState.correctSong = { id: correctAnswer, audioUrl: correctSong.audioUrl, title: correctSong.title, artist: correctSong.artist, appleUrl: correctSong.appleUrl, startTime: correctSong.startTime || 0, endTime: correctSong.endTime || 0 };
+                            io.to(roomId).emit('newTurn', { round: room.currentRound, totalRounds: room.rounds, audioUrl: correctSong.audioUrl, options: clientOptions, lyricsPrompt: promptLines, durationMs, totalGuessTimeMs, mode: 'lyrics', startTime: correctSong.startTime || 0, endTime: correctSong.endTime || 0 });
                         }
                     }
                 }
@@ -394,7 +394,7 @@ export function registerGameplayHandlers(io, socket, allSongs) {
             }
         } else if (room.mode === 'next') {
             const clientOptions = options.map(o => ({ id: o.id, audioUrl: o.audioUrl }));
-            io.to(roomId).emit('newTurn', { round: room.currentRound, totalRounds: room.rounds, audioUrl: correctSong.audioUrl, options: clientOptions, durationMs, totalGuessTimeMs, mode: 'next' });
+            io.to(roomId).emit('newTurn', { round: room.currentRound, totalRounds: room.rounds, audioUrl: correctSong.audioUrl, options: clientOptions, durationMs, totalGuessTimeMs, mode: 'next', startTime: correctSong.startTime || 0, endTime: correctSong.endTime || 0 });
         } else {
             emitStandardTurn(room, options, durationMs, totalGuessTimeMs);
         }
@@ -409,7 +409,18 @@ export function registerGameplayHandlers(io, socket, allSongs) {
 
     function emitStandardTurn(room, options, durationMs, totalGuessTimeMs, mode) {
         const clientOptions = options.map(o => ({ id: o.id, title: o.title, artist: o.artist }));
-        io.to(room.id).emit('newTurn', { round: room.currentRound, totalRounds: room.rounds, audioUrl: room.roundState.correctSong.audioUrl, options: clientOptions, durationMs, totalGuessTimeMs, mode });
+        const correct = room.roundState.correctSong;
+        io.to(room.id).emit('newTurn', {
+            round: room.currentRound,
+            totalRounds: room.rounds,
+            audioUrl: correct.audioUrl,
+            options: clientOptions,
+            durationMs,
+            totalGuessTimeMs,
+            mode,
+            startTime: correct.startTime || 0,
+            endTime: correct.endTime || 0
+        });
     }
 
     async function endTurn(roomId) {

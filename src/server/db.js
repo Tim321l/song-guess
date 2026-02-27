@@ -28,7 +28,7 @@ export function getDBStatus() {
 // Helper to convert array of documents to object keyed by username/id
 function toObject(arr, key) {
     return arr.reduce((acc, curr) => {
-        acc[curr[key]] = curr.toObject();
+        acc[curr[key]] = curr.toObject({ flattenMaps: true });
         return acc;
     }, {});
 }
@@ -79,6 +79,15 @@ export async function saveRecoveryRequests(requests) {
         await Promise.all(promises);
     } catch (e) {
         console.error('Error saving recovery requests', e);
+    }
+}
+
+export async function deleteRecoveryRequest(username) {
+    try {
+        await RecoveryRequest.deleteOne({ username });
+        console.log(`[DB] Deleted recovery request for ${username}`);
+    } catch (e) {
+        console.error('Error deleting recovery request', e);
     }
 }
 

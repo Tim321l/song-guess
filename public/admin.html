@@ -422,6 +422,18 @@
             border: 1px solid var(--accent);
         }
 
+        .btn-sm {
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            border-radius: 6px;
+        }
+
+        .btn-info {
+            background: rgba(56, 139, 253, 0.15);
+            color: #58a6ff;
+            border: 1px solid rgba(56, 139, 253, 0.4);
+        }
+
         /* ── Login ── */
         .login-card {
             background: var(--card);
@@ -507,7 +519,7 @@
         /* ── Alerts ── */
         #message-box {
             position: fixed;
-            bottom: 20px;
+            top: 20px;
             left: 50%;
             transform: translateX(-50%);
             padding: 10px 24px;
@@ -925,6 +937,61 @@
         </div>
     </div>
 
+    <!-- Edit Song Modal -->
+    <div id="edit-song-modal" class="modal-backdrop" onclick="if(event.target===this)closeEditSongModal()">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div class="modal-title" id="edit-song-title-label">Edit Song Details</div>
+                <button class="modal-close" onclick="closeEditSongModal()">Close</button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="edit-song-id">
+                <input type="hidden" id="edit-song-report-id">
+
+                <label class="modal-label">Song Title</label>
+                <input type="text" id="edit-song-name" class="modal-input">
+
+                <label class="modal-label">Artist</label>
+                <input type="text" id="edit-song-artist" class="modal-input">
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                    <div>
+                        <label class="modal-label">Start Time (s)</label>
+                        <input type="number" id="edit-song-start" class="modal-input" step="0.1">
+                    </div>
+                    <div>
+                        <label class="modal-label">End Time (s)</label>
+                        <input type="number" id="edit-song-end" class="modal-input" step="0.1">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-info" id="edit-song-preview-btn" onclick="previewEditedSong()"
+                    style="margin-right:auto;">🎧 Preview</button>
+                <button class="btn btn-warn" onclick="closeEditSongModal()">Cancel</button>
+                <button class="btn btn-accent" onclick="saveSongEdits()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Confirm Modal -->
+    <div id="confirm-modal" class="modal-backdrop">
+        <div class="modal-card" style="max-width:320px; text-align:center;">
+            <div class="modal-header" style="justify-content:center;">
+                <div class="modal-title" id="confirm-title">Are you sure?</div>
+            </div>
+            <div class="modal-body" style="padding:15px 0;">
+                <p id="confirm-body" style="font-size:0.9rem; color:var(--muted); line-height:1.4;">This action cannot
+                    be undone.</p>
+            </div>
+            <div class="modal-actions" style="justify-content:center; gap:10px;">
+                <button id="confirm-ok-btn" class="btn btn-danger" style="flex:1;">Confirm</button>
+                <button onclick="closeConfirm()" class="btn"
+                    style="flex:1; border:1px solid var(--border);">Cancel</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         let ADMIN_SECRET = '';
         let autoRefresh = true;
@@ -1296,11 +1363,27 @@
             });
         }
 
+        let globalAudio = new Audio();
+        let currentPlayingBtn = null;
+
+        function togglePreview(url, btn) {
+            if (globalAudio.src === url && !globalAudio.paused) {
+                globalAudio.pause();
+                btn.innerHTML = '▶️ Play';
+                return;
+            }
+            if (currentPlayingBtn) currentPlayingBtn.innerHTML = '▶️ Play';
+            globalAudio.src = url;
+            globalAudio.play();
+            btn.innerHTML = '⏸️ Stop';
+            currentPlayingBtn = btn;
+            globalAudio.onended = () => { btn.innerHTML = '▶️ Play'; currentPlayingBtn = null; };
+        }
+
         function renderReports(reports) {
             const tbody = document.getElementById('reports-table');
             document.getElementById('reports-count').textContent = reports.length;
 
-            // Update badge in sidebar if it exists (for future tab system)
             const badge = document.getElementById('report-badge');
             if (badge) {
                 badge.textContent = reports.length;
@@ -1319,35 +1402,124 @@
                         <div style="font-size:0.75rem;color:var(--muted);">ID: ${r.songId}</div>
                     </td>
                     <td>${r.artist || 'Unknown'}</td>
-                    <td><span class="badge badge-danger">${r.reason}</span></td>
+                    <td><span class="badge badge-danger" style="font-size:0.7rem;">${r.reason}</span></td>
                     <td>${r.reporter}</td>
                     <td>
-                        <audio controls src="${r.audioUrl}" style="height:28px; width:150px;"></audio>
+                        <button class="btn btn-info" style="font-size:0.8rem; padding:4px 12px; min-width:80px;" 
+                            onclick="togglePreview('${r.audioUrl}', this)">▶️ Play</button>
                     </td>
                     <td>
-                        <div style="display:flex; gap:6px;">
-                            <button class="btn btn-success" onclick="ignoreReport('${r._id}')">✅ Ignore</button>
-                            <button class="btn btn-danger" onclick="removeReportedSong(${r.songId}, '${r._id}')">🗑️ Remove Song</button>
+                        <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                            <button class="btn btn-accent btn-sm" onclick="openEditSongModal('${r.songId}', '${r._id}', '${(r.title || '').replace(/'/g, "\\'")}', '${(r.artist || '').replace(/'/g, "\\'")}')">✏️ Edit</button>
+                            <button class="btn btn-success btn-sm" onclick="ignoreReport('${r._id}')">✅ Ignore</button>
+                            <button class="btn btn-danger btn-sm" onclick="removeReportedSong(${r.songId}, '${r._id}')">🗑️ Remove</button>
                         </div>
                     </td>
                 </tr>
             `).join('');
         }
 
+        // --- Custom Confirmation Modal Logic ---
+        let confirmCallback = null;
+        function showConfirm(title, message, onConfirm) {
+            document.getElementById('confirm-title').innerText = title;
+            document.getElementById('confirm-body').innerText = message;
+            confirmCallback = onConfirm;
+            document.getElementById('confirm-modal').style.display = 'flex';
+            document.getElementById('confirm-ok-btn').onclick = () => {
+                onConfirm();
+                closeConfirm();
+            };
+        }
+        function closeConfirm() {
+            document.getElementById('confirm-modal').style.display = 'none';
+        }
+
         function ignoreReport(id) {
-            if (confirm('Ignore this report?')) {
+            showConfirm('Ignore Report', 'Are you sure you want to ignore this report?', () => {
                 adminAction('ignoreReport', id);
-            }
+            });
         }
 
         function removeReportedSong(songId, reportId) {
-            if (confirm(`CRITICAL: This will permanently REMOVE this song from the database. Are you sure?`)) {
+            showConfirm('Remove Song', 'CRITICAL: This will permanently REMOVE this song from the database. Are you sure?', () => {
                 adminAction('removeReportedSong', { songId, reportId });
+            });
+        }
+
+        // --- Song Editing UI ---
+        let currentEditSongUrl = '';
+
+        function openEditSongModal(songId, reportId, title, artist) {
+            document.getElementById('edit-song-id').value = songId;
+            document.getElementById('edit-song-report-id').value = reportId;
+            document.getElementById('edit-song-name').value = title;
+            document.getElementById('edit-song-artist').value = artist;
+            currentEditSongUrl = ''; // Reset until loaded
+
+            // Try to fetch current song settings from DB to get start/end times
+            socket.emit('adminAction', { secret: ADMIN_SECRET, action: 'getSongDetails', target: songId }, (res) => {
+                if (res.success && res.song) {
+                    document.getElementById('edit-song-start').value = res.song.startTime || 0;
+                    document.getElementById('edit-song-end').value = res.song.endTime || 0;
+                    currentEditSongUrl = res.song.audioUrl;
+                } else {
+                    document.getElementById('edit-song-start').value = 0;
+                    document.getElementById('edit-song-end').value = 0;
+                }
+            });
+
+            document.getElementById('edit-song-modal').style.display = 'flex';
+        }
+
+        function previewEditedSong() {
+            if (!currentEditSongUrl) return showMsg('Song preview url not loaded yet.', 'error');
+            const start = parseFloat(document.getElementById('edit-song-start').value) || 0;
+            const end = parseFloat(document.getElementById('edit-song-end').value) || 0;
+
+            if (globalAudio.src === currentEditSongUrl && !globalAudio.paused) {
+                globalAudio.pause();
+                document.getElementById('edit-song-preview-btn').innerHTML = '🎧 Preview';
+                return;
             }
+
+            globalAudio.src = currentEditSongUrl;
+            globalAudio.currentTime = start;
+            globalAudio.play();
+            document.getElementById('edit-song-preview-btn').innerHTML = '⏸️ Stop Preview';
+
+            globalAudio.ontimeupdate = () => {
+                if (end > 0 && globalAudio.currentTime >= end) {
+                    globalAudio.pause();
+                    globalAudio.ontimeupdate = null;
+                    document.getElementById('edit-song-preview-btn').innerHTML = '🎧 Preview';
+                }
+            };
+            globalAudio.onended = () => {
+                document.getElementById('edit-song-preview-btn').innerHTML = '🎧 Preview';
+            };
+        }
+
+        function closeEditSongModal() {
+            if (!globalAudio.paused) globalAudio.pause();
+            document.getElementById('edit-song-preview-btn').innerHTML = '🎧 Preview';
+            document.getElementById('edit-song-modal').style.display = 'none';
+        }
+
+        function saveSongEdits() {
+            const data = {
+                songId: parseInt(document.getElementById('edit-song-id').value),
+                reportId: document.getElementById('edit-song-report-id').value,
+                title: document.getElementById('edit-song-name').value.trim(),
+                artist: document.getElementById('edit-song-artist').value.trim(),
+                startTime: parseFloat(document.getElementById('edit-song-start').value) || 0,
+                endTime: parseFloat(document.getElementById('edit-song-end').value) || 0
+            };
+
+            adminAction('editSong', data);
+            closeEditSongModal();
         }
     </script>
 </body>
 
 </html>
-
-

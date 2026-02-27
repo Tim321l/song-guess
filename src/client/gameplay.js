@@ -204,6 +204,18 @@ export function initGameplayHandlers() {
 
         if (state.audioAutoplayAllowed && data.audioUrl) {
             audioPlayer.src = data.audioUrl;
+            if (data.startTime) {
+                audioPlayer.currentTime = data.startTime;
+            }
+
+            // Limit play duration if endTime is set
+            audioPlayer.ontimeupdate = () => {
+                if (data.endTime && audioPlayer.currentTime >= data.endTime) {
+                    audioPlayer.pause();
+                    audioPlayer.ontimeupdate = null;
+                }
+            };
+
             audioPlayer.play().catch(e => console.log(e));
             document.getElementById('visualizer').classList.add('playing');
         }

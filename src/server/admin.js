@@ -1,4 +1,4 @@
-import { loadUsers, saveUsers, loadRecoveryRequests, saveRecoveryRequests, loadReports, loadSongs, getDBStatus } from './db.js';
+import { loadUsers, saveUsers, loadRecoveryRequests, deleteRecoveryRequest, loadReports, loadSongs, getDBStatus } from './db.js';
 import { rooms } from './rooms.js';
 import os from 'os';
 import { readFileSync, existsSync, statSync, utimesSync } from 'fs';
@@ -175,8 +175,7 @@ export function registerAdminHandlers(io, socket, activeUsers, ADMIN_SECRET, ser
             if (users[username]) {
                 users[username].password = newPassword;
                 await saveUsers(users);
-                const requests = await loadRecoveryRequests();
-                if (requests[username]) { delete requests[username]; await saveRecoveryRequests(requests); }
+                await deleteRecoveryRequest(username);
                 logAudit('RESET_PASSWORD', `Password reset for: ${username}`);
                 return callback({ success: true, message: `Password for ${username} updated.` });
             }
@@ -254,6 +253,12 @@ export function registerAdminHandlers(io, socket, activeUsers, ADMIN_SECRET, ser
             }
         }
 
+        if (action === 'getSongDetails') {
+            const { Song } = await import('./models.js');
+            const song = await Song.findOne({ id: target });
+            return callback({ success: !!song, song });
+        }
+
         if (action === 'getReports') {
             const reports = await loadReports();
             return callback({ success: true, reports });
@@ -264,6 +269,38 @@ export function registerAdminHandlers(io, socket, activeUsers, ADMIN_SECRET, ser
             await Report.findByIdAndUpdate(target, { status: 'resolved' });
             logAudit('IGNORE_REPORT', `Ignored report ID: ${target}`);
             return callback({ success: true, message: 'Report ignored.' });
+        }
+
+        if (action === 'editSong') {
+            const { songId, title, artist, startTime, endTime, reportId } = target;
+            const { Song, Report } = await import('./models.js');
+
+            const song = await Song.findOne({ id: songId });
+            if (!song) return callback({ success: false, message: 'Song not found in DB.' });
+
+            const oldLang = song.language;
+            song.title = title || song.title;
+            song.artist = artist || song.artist;
+            song.startTime = Number(startTime) || 0;
+            song.endTime = Number(endTime) || 0;
+            await song.save();
+
+            // Sync with memory cache (allSongs)
+            const langKey = `songs${oldLang.charAt(0).toUpperCase() + oldLang.slice(1)}`;
+            if (allSongs[langKey]) {
+                const index = allSongs[langKey].findIndex(s => s.id === songId);
+                if (index !== -1) {
+                    allSongs[langKey][index] = { ...allSongs[langKey][index], ...song.toObject() };
+                    console.log(`[Admin] Synced edited song ${songId} to memory cache.`);
+                }
+            }
+
+            if (reportId) {
+                await Report.findByIdAndUpdate(reportId, { status: 'resolved' });
+            }
+
+            logAudit('EDIT_SONG', `Edited song ID: ${songId} (${song.title})`);
+            return callback({ success: true, message: `Song "${song.title}" updated and report resolved.` });
         }
 
         if (action === 'removeReportedSong') {

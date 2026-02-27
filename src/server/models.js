@@ -58,6 +58,8 @@ const songSchema = new mongoose.Schema({
     year: { type: Number },
     language: { type: String, index: true }, // 'en', 'cn', etc.
     popularity: { type: Number, default: 0 },
+    startTime: { type: Number, default: 0 },
+    endTime: { type: Number, default: 0 },
     createdAt: { type: Date, default: Date.now }
 });
 
