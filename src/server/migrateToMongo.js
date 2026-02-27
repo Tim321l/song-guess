@@ -103,6 +103,54 @@ async function migrate() {
             console.log('Recovery requests migrated.');
         }
 
+        // 5. Migrate Songs
+        const { Song } = await import('./models.js');
+        const songsPath = './songs.json';
+        if (fs.existsSync(songsPath)) {
+            const songsData = JSON.parse(fs.readFileSync(songsPath, 'utf8'));
+            const categories = Object.keys(songsData);
+            console.log(`Migrating songs from ${categories.length} categories...`);
+
+            let totalSongs = 0;
+            for (const cat of categories) {
+                const songsArray = songsData[cat];
+                if (!Array.isArray(songsArray)) continue;
+
+                const lang = cat.replace('songs', '').toLowerCase() || 'en';
+                console.log(`- Language: ${lang} (${songsArray.length} songs)`);
+
+                const bulkData = songsArray.map(s => ({
+                    id: Number(s.id),
+                    title: s.title,
+                    artist: s.artist,
+                    audioUrl: s.audioUrl,
+                    appleUrl: s.appleUrl,
+                    year: s.year,
+                    language: lang,
+                    popularity: s.popularity || 0,
+                    startTime: s.startTime || 0,
+                    endTime: s.endTime || 0
+                }));
+
+                // Use insertMany in chunks for speed
+                const chunkSize = 1000;
+                for (let i = 0; i < bulkData.length; i += chunkSize) {
+                    const chunk = bulkData.slice(i, i + chunkSize);
+                    // Filter out existing IDs to avoid duplicates if re-running
+                    const ids = chunk.map(c => c.id);
+                    const existing = await Song.find({ id: { $in: ids } }, 'id');
+                    const existingIds = new Set(existing.map(e => e.id));
+                    const toInsert = chunk.filter(c => !existingIds.has(c.id));
+
+                    if (toInsert.length > 0) {
+                        await Song.insertMany(toInsert);
+                    }
+                    totalSongs += toInsert.length;
+                }
+            }
+            console.log(`Songs migrated. Added ${totalSongs} new songs.`);
+        }
+
         console.log('Migration completed successfully.');
         process.exit(0);
     } catch (error) {

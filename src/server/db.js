@@ -163,25 +163,32 @@ export async function migratePasswords() {
 
 export async function loadSongs() {
     try {
+        // First try to load from MongoDB
+        const dbSongs = await Song.find({});
+        if (dbSongs.length > 0) {
+            const grouped = {};
+            dbSongs.forEach(s => {
+                const langKey = `songs${s.language.charAt(0).toUpperCase() + s.language.slice(1)}`;
+                if (!grouped[langKey]) grouped[langKey] = [];
+                grouped[langKey].push(s.toObject());
+            });
+            console.log(`[System] Loaded ${dbSongs.length} songs from DB.`);
+            return grouped;
+        }
+
+        // Fallback to songs.json if DB is empty
         const __filename = fileURLToPath(import.meta.url);
         const __dirname = path.dirname(__filename);
-        // Look for songs.json in the project root (one level up from src/server)
         const songsPath = path.join(__dirname, '../../songs.json');
 
         if (fs.existsSync(songsPath)) {
             const data = fs.readFileSync(songsPath, 'utf8');
             const grouped = JSON.parse(data);
+            console.log(`[System] Loaded songs from songs.json (DB was empty).`);
             return grouped;
         } else {
-            console.warn(`[System] songs.json not found at ${songsPath}. Attempting DB fallback...`);
-            const songs = await Song.find({});
-            const grouped = {};
-            songs.forEach(s => {
-                const langKey = `songs${s.language.charAt(0).toUpperCase() + s.language.slice(1)}`;
-                if (!grouped[langKey]) grouped[langKey] = [];
-                grouped[langKey].push(s.toObject());
-            });
-            return grouped;
+            console.warn(`[System] No songs found in DB or songs.json.`);
+            return {};
         }
     } catch (e) {
         console.error('Error loading songs', e);

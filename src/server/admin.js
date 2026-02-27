@@ -255,7 +255,7 @@ export function registerAdminHandlers(io, socket, activeUsers, ADMIN_SECRET, ser
 
         if (action === 'getSongDetails') {
             const { Song } = await import('./models.js');
-            const song = await Song.findOne({ id: target });
+            const song = await Song.findOne({ id: Number(target) });
             return callback({ success: !!song, song });
         }
 
@@ -272,7 +272,8 @@ export function registerAdminHandlers(io, socket, activeUsers, ADMIN_SECRET, ser
         }
 
         if (action === 'editSong') {
-            const { songId, title, artist, startTime, endTime, reportId } = target;
+            let { songId, title, artist, startTime, endTime, reportId } = target;
+            songId = Number(songId);
             const { Song, Report } = await import('./models.js');
 
             const song = await Song.findOne({ id: songId });
@@ -304,7 +305,8 @@ export function registerAdminHandlers(io, socket, activeUsers, ADMIN_SECRET, ser
         }
 
         if (action === 'removeReportedSong') {
-            const { songId, reportId } = target;
+            let { songId, reportId } = target;
+            songId = Number(songId);
             const { Song, Report } = await import('./models.js');
 
             const song = await Song.findOne({ id: songId });
