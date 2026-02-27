@@ -476,9 +476,14 @@
               style="width: 80px; cursor: pointer;">
           </div>
           <!-- Leave Room Button -->
-          <button id="game-leave-btn" class="action-btn"
-            style="padding: 5px 12px; font-size: 0.8em; border-color: #ff4757; color: #ff4757; background: rgba(255, 71, 87, 0.05);"
-            data-i18n="leave-room-header-btn">🚪 Leave</button>
+          <div style="display: flex; gap: 8px;">
+            <button id="report-song-btn" class="action-btn hidden"
+              style="padding: 5px 12px; font-size: 0.8em; border-color: #e67e22; color: #e67e22; background: rgba(230, 126, 34, 0.05);"
+              data-i18n="report-song-btn">🚩 Report</button>
+            <button id="game-leave-btn" class="action-btn"
+              style="padding: 5px 12px; font-size: 0.8em; border-color: #ff4757; color: #ff4757; background: rgba(255, 71, 87, 0.05);"
+              data-i18n="leave-room-header-btn">🚪 Leave</button>
+          </div>
         </div>
         <div class="scores" id="scores-display"
           style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">

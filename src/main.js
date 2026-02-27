@@ -174,6 +174,7 @@ function tryAutoLoginWithAuth() {
 
 // Global Event Listeners
 document.getElementById('logout-btn').onclick = () => {
+    socket.emit('logout');
     localStorage.removeItem('songGuessAuth');
     localStorage.removeItem('songGuessToken');
     document.cookie = "songGuessToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";

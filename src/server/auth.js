@@ -1,11 +1,28 @@
-import bcrypt from 'bcryptjs';
+﻿import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { loadUsers, saveUsers, loadRecoveryRequests, saveRecoveryRequests } from './db.js';
 import { getClientIp } from './utils.js';
 import { rooms } from './rooms.js';
 import { checkRateLimit, isIpBanned } from './rateLimiter.js';
+import { User } from './models.js';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'songguess_fallback_secret_key';
+
+async function markUserLogin(username) {
+    try {
+        await User.findOneAndUpdate({ username }, { lastLogin: new Date() });
+    } catch (err) {
+        console.error('[AUTH] Failed to update lastLogin:', err);
+    }
+}
+
+async function markUserLogout(username) {
+    try {
+        await User.findOneAndUpdate({ username }, { lastLogout: new Date() });
+    } catch (err) {
+        console.error('[AUTH] Failed to update lastLogout:', err);
+    }
+}
 
 export function registerAuthHandlers(io, socket, activeUsers) {
     socket.on('loginWithToken', async ({ token }, callback) => {
@@ -23,6 +40,8 @@ export function registerAuthHandlers(io, socket, activeUsers) {
                     loginTime: Date.now(),
                     latency: 0
                 };
+
+                await markUserLogin(username);
 
                 callback({
                     success: true,
@@ -74,6 +93,15 @@ export function registerAuthHandlers(io, socket, activeUsers) {
         // Generate JWT Token for immediate login
         const token = jwt.sign({ username }, JWT_SECRET, { expiresIn: '24h' });
 
+        socket.username = username;
+        activeUsers[username] = {
+            socketId: socket.id,
+            ip: getClientIp(socket),
+            loginTime: Date.now(),
+            latency: 0
+        };
+        await markUserLogin(username);
+
         callback({ success: true, message: 'Registration successful!', username, token, displayName: username, icon: '👤', favorites: [] });
     });
 
@@ -106,6 +134,8 @@ export function registerAuthHandlers(io, socket, activeUsers) {
                 latency: 0
             };
             socket.username = username;
+
+            await markUserLogin(username);
 
             // Generate JWT Token (valid for 24h)
             const token = jwt.sign({ username }, JWT_SECRET, { expiresIn: '24h' });
@@ -151,6 +181,8 @@ export function registerAuthHandlers(io, socket, activeUsers) {
             latency: 0
         };
         socket.username = username;
+
+        await markUserLogin(username);
 
         // Generate JWT Token (valid for 24h)
         const token = jwt.sign({ username }, JWT_SECRET, { expiresIn: '24h' });
@@ -247,4 +279,24 @@ export function registerAuthHandlers(io, socket, activeUsers) {
             displayName: users[username].displayName
         });
     });
+
+    socket.on('logout', async (callback) => {
+        const username = socket.username;
+        if (username) {
+            await markUserLogout(username);
+            if (activeUsers[username] && activeUsers[username].socketId === socket.id) {
+                delete activeUsers[username];
+            }
+        }
+        socket.username = null;
+        if (callback) callback({ success: true });
+    });
+
+    socket.on('disconnect', async () => {
+        const username = socket.username;
+        if (username) {
+            await markUserLogout(username);
+        }
+    });
 }
+

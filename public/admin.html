@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -558,6 +558,81 @@
             font-family: inherit;
             width: 90px;
         }
+
+        /* Modal */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9998;
+        }
+
+        .modal-card {
+            width: min(520px, 92vw);
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 18px 18px 16px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .modal-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .modal-close {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            border-radius: 8px;
+            padding: 4px 8px;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            display: grid;
+            gap: 10px;
+        }
+
+        .modal-label {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        .modal-input {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            width: 100%;
+        }
+
+        .modal-hint {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-top: 12px;
+        }
     </style>
 </head>
 
@@ -739,6 +814,31 @@
             </div>
         </div>
 
+        <!-- Song Reports -->
+        <div class="panels">
+            <div class="panel wide">
+                <div class="panel-header">
+                    <span>🚩 Pending Song Reports (<span id="reports-count">0</span>)</span>
+                    <button class="btn btn-accent" onclick="loadReports()">Refresh Reports</button>
+                </div>
+                <div class="panel-body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Song (ID)</th>
+                                <th>Artist</th>
+                                <th>Reason</th>
+                                <th>Reporter</th>
+                                <th>Player</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reports-table"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
         <!-- All Users -->
         <div class="panels">
             <div class="panel wide">
@@ -754,6 +854,8 @@
                                 <th>Username</th>
                                 <th>Email</th>
                                 <th>Score</th>
+                                <th>Last Login</th>
+                                <th>Last Logout</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
@@ -798,6 +900,31 @@
         </div>
     </div>
 
+    <div id="edit-user-modal" class="modal-backdrop" onclick="if(event.target===this)closeEditUserModal()">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="edit-user-title">
+            <div class="modal-header">
+                <div class="modal-title" id="edit-user-title">Edit User</div>
+                <button class="modal-close" onclick="closeEditUserModal()">Close</button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="edit-old-username">
+                <label class="modal-label" for="edit-username">Username</label>
+                <input class="modal-input" id="edit-username" autocomplete="off">
+
+                <label class="modal-label" for="edit-email">Email</label>
+                <input class="modal-input" id="edit-email" autocomplete="off">
+
+                <label class="modal-label" for="edit-password">New Password</label>
+                <input class="modal-input" id="edit-password" type="password" autocomplete="new-password">
+                <div class="modal-hint">Leave password blank to keep the current password.</div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-warn" onclick="closeEditUserModal()">Cancel</button>
+                <button class="btn btn-accent" onclick="saveUserEdits()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         let ADMIN_SECRET = '';
         let autoRefresh = true;
@@ -824,13 +951,18 @@
             document.getElementById('socket-status').className = 'socket-status offline';
         });
 
-        // Real-time live updates (every 30s from server)
+        // Real-time live updates (every 5s from server)
         socket.on('adminLiveUpdate', (data) => {
             document.getElementById('stat-sessions').textContent = data.activeSessions;
             document.getElementById('stat-rooms').textContent = data.activeRooms;
             document.getElementById('stat-sockets').textContent = data.connectedSockets;
             document.getElementById('sessions-count').textContent = data.activeSessions;
             document.getElementById('rooms-count').textContent = data.activeRooms;
+
+            if (data.activeUsers) {
+                // Update sessions table live - note room info might be stale until next full data load
+                renderSessionsTable(data.activeUsers, []);
+            }
         });
 
         // Real-time notifications
@@ -872,6 +1004,7 @@
                 document.getElementById('admin-panel').style.display = 'block';
                 socket.emit('subscribeAdminLive', ADMIN_SECRET);
                 renderDashboard(res);
+                loadReports();
                 document.getElementById('last-refresh').textContent = 'Updated: ' + new Date().toLocaleTimeString();
                 startAutoRefresh();
             });
@@ -924,6 +1057,11 @@
             return `${Math.floor(secs / 3600)}h ago`;
         }
 
+        function fmtDateTime(ms) {
+            if (!ms) return '--';
+            return new Date(ms).toLocaleString();
+        }
+
         function renderDashboard(data) {
             const { stats, health, metricsHistory, peakConcurrent, activeUsers, roomDetails, allUsers, recoveryRequests, auditLog } = data;
 
@@ -966,21 +1104,7 @@
             renderCharts(metricsHistory || [], peakConcurrent);
 
             // Active Sessions
-            const sb = document.getElementById('sessions-table');
-            sb.innerHTML = '';
-            activeUsers.forEach(u => {
-                const inRoom = roomDetails.find(r => r.players && r.players.includes(u.username));
-                const row = document.createElement('tr');
-                row.innerHTML = `
-            <td><strong>${u.username}</strong></td>
-            <td style="font-size:0.78rem;color:var(--muted);">${u.ip || '—'}</td>
-            <td><span class="badge badge-info">${u.latency}ms</span></td>
-            <td style="font-size:0.78rem;">${fmtTime(u.loginTime)}</td>
-            <td>${inRoom ? `<span class="badge badge-success">${inRoom.id}</span>` : '<span class="badge" style="background:rgba(255,255,255,0.05);color:var(--muted);">Lobby</span>'}</td>
-            <td><button class="btn btn-danger" onclick="kickUser('${u.username}')">Kick</button></td>
-        `;
-                sb.appendChild(row);
-            });
+            renderSessionsTable(activeUsers, roomDetails);
 
             // Rooms
             const rb = document.getElementById('rooms-table');
@@ -1006,15 +1130,17 @@
                 const row = document.createElement('tr');
                 row.innerHTML = `
             <td><strong>${u.username}</strong></td>
-            <td style="font-size:0.8rem;color:var(--muted);">${u.email || '—'}</td>
+            <td style="font-size:0.8rem;color:var(--muted);">${u.email || '--'}</td>
             <td>${u.totalScore}</td>
+            <td style="font-size:0.78rem;">${fmtDateTime(u.lastLogin)}</td>
+            <td style="font-size:0.78rem;">${fmtDateTime(u.lastLogout)}</td>
             <td><span class="badge ${u.banned ? 'badge-danger' : 'badge-success'}">${u.banned ? 'Banned' : 'Active'}</span></td>
             <td style="display:flex;gap:5px;flex-wrap:wrap;">
                 ${u.banned
                         ? `<button class="btn btn-success" onclick="unbanUser('${u.username}')">Unban</button>`
                         : `<button class="btn btn-danger" onclick="banUser('${u.username}')">Ban</button>`}
                 <button class="btn btn-warn" onclick="kickUser('${u.username}')">Kick</button>
-                <button class="btn btn-accent" onclick="editUser('${u.username}','${u.email || ''}')">Edit</button>
+                <button class="btn btn-accent" onclick="openEditUserModal('${u.username}','${u.email || ''}')">Edit</button>
             </td>
         `;
                 ub.appendChild(row);
@@ -1042,6 +1168,28 @@
             renderAuditLog(auditLog || []);
         }
 
+        function renderSessionsTable(activeUsers, roomDetails) {
+            const sb = document.getElementById('sessions-table');
+            sb.innerHTML = '';
+            activeUsers.forEach(u => {
+                const inRoom = roomDetails.find(r => r.players && r.players.includes(u.username));
+                const row = document.createElement('tr');
+                row.innerHTML = `
+            <td><strong>${u.username}</strong></td>
+            <td style="font-size:0.78rem;color:var(--muted);">${u.ip || '—'}</td>
+            <td><span class="badge badge-info">${u.latency}ms</span></td>
+            <td style="font-size:0.78rem;">${fmtTime(u.loginTime)}</td>
+            <td>${inRoom ? `<span class="badge badge-success">${inRoom.id}</span>` : '<span class="badge" style="background:rgba(255,255,255,0.05);color:var(--muted);">Lobby</span>'}</td>
+            <td><button class="btn btn-danger" onclick="kickUser('${u.username}')">Kick</button></td>
+        `;
+                sb.appendChild(row);
+            });
+
+            // Re-apply filter if searching
+            const q = document.getElementById('sessions-search').value.toLowerCase();
+            if (q) filterTable('sessions-table', 'sessions-search');
+        }
+
         function renderAuditLog(log) {
             const el = document.getElementById('audit-log-entries');
             if (!log || log.length === 0) {
@@ -1062,7 +1210,6 @@
             const roomsData = history.map(m => m.roomsCreated);
             const peakData = history.map(m => m.onlineUsers);
 
-            // Fill with placeholder if empty
             if (!labels.length) { labels.push('Now'); onlineData.push(0); roomsData.push(0); peakData.push(0); }
 
             const chartOpts = (label, color, data) => ({
@@ -1089,7 +1236,6 @@
             charts['chart-peak'] = new Chart(document.getElementById('chart-peak'), chartOpts('Peak Users', 'rgb(227,179,65)', peakData));
         }
 
-        // ── Admin Actions ──────────────────────────────────────────────────────────────
         function adminAction(action, target) {
             socket.emit('adminAction', { secret: ADMIN_SECRET, action, target }, (res) => {
                 showMsg(res.message, res.success ? 'success' : 'error');
@@ -1105,12 +1251,30 @@
             if (!pw) return showMsg('Enter a new password', 'error');
             adminAction('setNewPassword', { username: uname, newPassword: pw });
         }
-        function editUser(uname, email) {
-            const newU = prompt(`New username for ${uname}:`, uname);
-            if (!newU) return;
-            const newE = prompt(`New email for ${uname}:`, email);
-            const newP = prompt(`New password for ${uname} (blank = keep existing):`, '');
-            adminAction('editUser', { oldUsername: uname, newUsername: newU, newEmail: newE, newPassword: newP || undefined });
+        function openEditUserModal(uname, email) {
+            const modal = document.getElementById('edit-user-modal');
+            const title = document.getElementById('edit-user-title');
+            document.getElementById('edit-old-username').value = uname;
+            document.getElementById('edit-username').value = uname;
+            document.getElementById('edit-email').value = email || '';
+            document.getElementById('edit-password').value = '';
+            if (title) title.textContent = `Edit User: ${uname}`;
+            if (modal) modal.style.display = 'flex';
+        }
+
+        function closeEditUserModal() {
+            const modal = document.getElementById('edit-user-modal');
+            if (modal) modal.style.display = 'none';
+        }
+
+        function saveUserEdits() {
+            const oldU = document.getElementById('edit-old-username').value.trim();
+            const newU = document.getElementById('edit-username').value.trim();
+            const newE = document.getElementById('edit-email').value.trim();
+            const newP = document.getElementById('edit-password').value.trim();
+            if (!newU) return showMsg('Username is required', 'error');
+            adminAction('editUser', { oldUsername: oldU, newUsername: newU, newEmail: newE, newPassword: newP || undefined });
+            closeEditUserModal();
         }
         function restartServer() {
             if (confirm("WARNING: This will immediately terminate the Node.js process. If you are using a process manager like nodemon or pm2, it should restart automatically. Continue?")) {
@@ -1124,7 +1288,66 @@
                 });
             }
         }
+
+        // Song Reporting System
+        function loadReports() {
+            socket.emit('adminAction', { secret: ADMIN_SECRET, action: 'getReports' }, (res) => {
+                if (res.success) renderReports(res.reports);
+            });
+        }
+
+        function renderReports(reports) {
+            const tbody = document.getElementById('reports-table');
+            document.getElementById('reports-count').textContent = reports.length;
+
+            // Update badge in sidebar if it exists (for future tab system)
+            const badge = document.getElementById('report-badge');
+            if (badge) {
+                badge.textContent = reports.length;
+                badge.classList.toggle('hidden', reports.length === 0);
+            }
+
+            if (!reports || reports.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:20px;">No pending reports ✅</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = reports.map(r => `
+                <tr>
+                    <td>
+                        <div style="font-weight:600;">${r.title || 'Unknown'}</div>
+                        <div style="font-size:0.75rem;color:var(--muted);">ID: ${r.songId}</div>
+                    </td>
+                    <td>${r.artist || 'Unknown'}</td>
+                    <td><span class="badge badge-danger">${r.reason}</span></td>
+                    <td>${r.reporter}</td>
+                    <td>
+                        <audio controls src="${r.audioUrl}" style="height:28px; width:150px;"></audio>
+                    </td>
+                    <td>
+                        <div style="display:flex; gap:6px;">
+                            <button class="btn btn-success" onclick="ignoreReport('${r._id}')">✅ Ignore</button>
+                            <button class="btn btn-danger" onclick="removeReportedSong(${r.songId}, '${r._id}')">🗑️ Remove Song</button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function ignoreReport(id) {
+            if (confirm('Ignore this report?')) {
+                adminAction('ignoreReport', id);
+            }
+        }
+
+        function removeReportedSong(songId, reportId) {
+            if (confirm(`CRITICAL: This will permanently REMOVE this song from the database. Are you sure?`)) {
+                adminAction('removeReportedSong', { songId, reportId });
+            }
+        }
     </script>
 </body>
 
 </html>
+
+

@@ -1,7 +1,10 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
 import dotenv from 'dotenv';
-import { User, Team, Playlist, RecoveryRequest, Song } from './models.js';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { User, Team, Playlist, RecoveryRequest, Song, Report } from './models.js';
 
 dotenv.config();
 
@@ -146,16 +149,48 @@ export async function migratePasswords() {
 
 export async function loadSongs() {
     try {
-        const songs = await Song.find({});
-        const grouped = {};
-        songs.forEach(s => {
-            const langKey = `songs${s.language.charAt(0).toUpperCase() + s.language.slice(1)}`;
-            if (!grouped[langKey]) grouped[langKey] = [];
-            grouped[langKey].push(s.toObject());
-        });
-        return grouped;
+        const __filename = fileURLToPath(import.meta.url);
+        const __dirname = path.dirname(__filename);
+        // Look for songs.json in the project root (one level up from src/server)
+        const songsPath = path.join(__dirname, '../../songs.json');
+
+        if (fs.existsSync(songsPath)) {
+            const data = fs.readFileSync(songsPath, 'utf8');
+            const grouped = JSON.parse(data);
+            return grouped;
+        } else {
+            console.warn(`[System] songs.json not found at ${songsPath}. Attempting DB fallback...`);
+            const songs = await Song.find({});
+            const grouped = {};
+            songs.forEach(s => {
+                const langKey = `songs${s.language.charAt(0).toUpperCase() + s.language.slice(1)}`;
+                if (!grouped[langKey]) grouped[langKey] = [];
+                grouped[langKey].push(s.toObject());
+            });
+            return grouped;
+        }
     } catch (e) {
-        console.error('Error loading songs from DB', e);
+        console.error('Error loading songs', e);
         return {};
+    }
+}
+
+export async function loadReports() {
+    try {
+        return await Report.find({ status: 'pending' }).sort({ createdAt: -1 });
+    } catch (e) {
+        console.error('Error loading reports', e);
+        return [];
+    }
+}
+
+export async function saveReport(reportData) {
+    try {
+        const report = new Report(reportData);
+        await report.save();
+        return true;
+    } catch (e) {
+        console.error('Error saving report', e);
+        return false;
     }
 }

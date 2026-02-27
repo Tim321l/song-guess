@@ -1,4 +1,4 @@
-import { loadUsers, saveUsers, loadRecoveryRequests, saveRecoveryRequests } from './db.js';
+import { loadUsers, saveUsers, loadRecoveryRequests, saveRecoveryRequests, loadReports, loadSongs } from './db.js';
 import { rooms } from './rooms.js';
 import os from 'os';
 import { readFileSync, existsSync, statSync, utimesSync } from 'fs';
@@ -68,7 +68,7 @@ function getSystemHealth(serverStartTime) {
     };
 }
 
-export function registerAdminHandlers(io, socket, activeUsers, ADMIN_SECRET, serverStartTime) {
+export function registerAdminHandlers(io, socket, activeUsers, ADMIN_SECRET, serverStartTime, allSongs) {
     // Share activeUsers globally for metrics sampling
     global._activeUsers = activeUsers;
 
@@ -92,7 +92,9 @@ export function registerAdminHandlers(io, socket, activeUsers, ADMIN_SECRET, ser
                 username: name,
                 email: usersData[name].email || '',
                 totalScore: usersData[name].totalScore || 0,
-                banned: usersData[name].banned || false
+                banned: usersData[name].banned || false,
+                lastLogin: usersData[name].lastLogin || null,
+                lastLogout: usersData[name].lastLogout || null
             }));
 
             const roomDetails = Object.keys(rooms).map(rid => ({
@@ -183,16 +185,40 @@ export function registerAdminHandlers(io, socket, activeUsers, ADMIN_SECRET, ser
             const { oldUsername, newUsername, newPassword, newEmail } = target;
             const users = await loadUsers();
             if (!users[oldUsername]) return callback({ success: false, message: 'User not found.' });
+
+            let targetUname = oldUsername;
+
             if (newUsername && newUsername !== oldUsername) {
                 if (users[newUsername]) return callback({ success: false, message: 'New username already taken.' });
+
+                // Rename logic for MongoDB compatibility
+                const { User } = await import('./models.js');
+                const userDoc = await User.findOne({ username: oldUsername });
+                if (userDoc) {
+                    userDoc.username = newUsername;
+                    if (newPassword) userDoc.password = newPassword;
+                    if (newEmail !== undefined) userDoc.email = newEmail;
+                    await userDoc.save();
+
+                    // Optional: If you had a standard delete/insert pattern, you'd ensure the old one is gone.
+                    // But with Mongoose .save() on a fetched doc after changing the unique key, it usually works
+                    // or causes a duplicate error if not handled. Here we check availability first.
+                }
+
                 users[newUsername] = users[oldUsername];
                 delete users[oldUsername];
-                if (activeUsers[oldUsername]) { activeUsers[newUsername] = activeUsers[oldUsername]; delete activeUsers[oldUsername]; }
+                if (activeUsers[oldUsername]) {
+                    activeUsers[newUsername] = activeUsers[oldUsername];
+                    delete activeUsers[oldUsername];
+                }
+                targetUname = newUsername;
+            } else {
+                // Just updating other fields
+                if (newPassword) users[oldUsername].password = newPassword;
+                if (newEmail !== undefined) users[oldUsername].email = newEmail;
+                await saveUsers(users);
             }
-            const targetUname = newUsername || oldUsername;
-            if (newPassword) users[targetUname].password = newPassword;
-            if (newEmail !== undefined) users[targetUname].email = newEmail;
-            await saveUsers(users);
+
             logAudit('EDIT_USER', `Edited user: ${oldUsername}${newUsername && newUsername !== oldUsername ? ' → ' + newUsername : ''}`);
             return callback({ success: true, message: `User ${oldUsername} updated.` });
         }
@@ -226,6 +252,45 @@ export function registerAdminHandlers(io, socket, activeUsers, ADMIN_SECRET, ser
             }
         }
 
+        if (action === 'getReports') {
+            const reports = await loadReports();
+            return callback({ success: true, reports });
+        }
+
+        if (action === 'ignoreReport') {
+            const { Report } = await import('./models.js');
+            await Report.findByIdAndUpdate(target, { status: 'resolved' });
+            logAudit('IGNORE_REPORT', `Ignored report ID: ${target}`);
+            return callback({ success: true, message: 'Report ignored.' });
+        }
+
+        if (action === 'removeReportedSong') {
+            const { songId, reportId } = target;
+            const { Song, Report } = await import('./models.js');
+
+            const song = await Song.findOne({ id: songId });
+            if (!song) return callback({ success: false, message: 'Song not found in DB.' });
+
+            const lang = song.language;
+            const title = song.title;
+            await Song.deleteOne({ id: songId });
+
+            if (reportId) {
+                await Report.findByIdAndUpdate(reportId, { status: 'resolved' });
+            }
+
+            // Sync with memory cache (allSongs)
+            const langKey = `songs${lang.charAt(0).toUpperCase() + lang.slice(1)}`;
+            if (allSongs[langKey]) {
+                const initialLen = allSongs[langKey].length;
+                allSongs[langKey] = allSongs[langKey].filter(s => s.id !== songId);
+                console.log(`[Admin] Removed song ${songId} from memory cache (${initialLen} -> ${allSongs[langKey].length})`);
+            }
+
+            logAudit('REMOVE_SONG', `Removed song ID: ${songId} (${title})`);
+            return callback({ success: true, message: `Song "${title}" removed from DB and cache.` });
+        }
+
         console.log('[ADMIN] Action received:', action, 'Target:', target); if (action === 'restartServer') {
             logAudit('RESTART_SERVER', 'Admin triggered server restart via file touch');
             io.emit('adminNotification', { type: 'system', message: '⚠️ Server is restarting...' });
@@ -255,14 +320,26 @@ export function registerAdminHandlers(io, socket, activeUsers, ADMIN_SECRET, ser
     });
 }
 
-// Broadcast live metrics every 30 seconds to subscribed admins
+// Broadcast live metrics every 5 seconds to subscribed admins
 export function startAdminBroadcast(io, activeUsers, serverStartTime) {
     setInterval(() => {
+        const activeUsersInfo = Object.keys(activeUsers).map(uname => {
+            const session = activeUsers[uname];
+            return {
+                username: uname,
+                ip: session.ip,
+                latency: session.latency || 0,
+                loginTime: session.loginTime,
+                lastAction: session.lastAction || null
+            };
+        });
+
         const liveData = {
             activeSessions: Object.keys(activeUsers).length,
             activeRooms: Object.keys(rooms).length,
-            connectedSockets: io.engine.clientsCount
+            connectedSockets: io.engine.clientsCount,
+            activeUsers: activeUsersInfo
         };
         io.to('admin-live').emit('adminLiveUpdate', liveData);
-    }, 30_000);
+    }, 5000);
 }

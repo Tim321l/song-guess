@@ -12,7 +12,8 @@ const userSchema = new mongoose.Schema({
     totalScore: { type: Number, default: 0 },
     favorites: { type: Array, default: [] },
     createdAt: { type: Date, default: Date.now },
-    lastLogin: { type: Date }
+    lastLogin: { type: Date },
+    lastLogout: { type: Date }
 });
 
 const teamSchema = new mongoose.Schema({
@@ -60,8 +61,20 @@ const songSchema = new mongoose.Schema({
     createdAt: { type: Date, default: Date.now }
 });
 
+const reportSchema = new mongoose.Schema({
+    songId: { type: Number, required: true },
+    title: String,
+    artist: String,
+    audioUrl: String,
+    reporter: String,
+    reason: { type: String, default: 'Buggy Audio/Info' },
+    status: { type: String, default: 'pending' }, // 'pending', 'resolved'
+    createdAt: { type: Date, default: Date.now }
+});
+
 export const User = mongoose.model('User', userSchema);
 export const Team = mongoose.model('Team', teamSchema);
 export const Playlist = mongoose.model('Playlist', playlistSchema);
 export const RecoveryRequest = mongoose.model('RecoveryRequest', recoveryRequestSchema);
 export const Song = mongoose.model('Song', songSchema);
+export const Report = mongoose.model('Report', reportSchema);

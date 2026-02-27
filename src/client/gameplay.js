@@ -151,6 +151,9 @@ export function initGameplayHandlers() {
         state.hasGuessed = false;
         updateScores();
 
+        const reportBtn = document.getElementById('report-song-btn');
+        if (reportBtn) reportBtn.classList.add('hidden');
+
         const turnMsg = document.getElementById('turn-message');
         document.getElementById('round-display').innerText = `${data.round} / ${data.totalRounds}`;
         const grid = document.getElementById('options-grid');
@@ -261,6 +264,19 @@ export function initGameplayHandlers() {
         audioPlayer.pause();
         document.getElementById('visualizer').classList.remove('playing');
         clearInterval(state.timerInterval);
+
+        const reportBtn = document.getElementById('report-song-btn');
+        if (reportBtn) {
+            reportBtn.classList.remove('hidden');
+            reportBtn.onclick = () => {
+                const reason = prompt(localStorage.getItem('songGuessLang') === 'ZH' ? '為什麼要檢舉這首歌？ (例如：音訊損壞、資訊錯誤)' : 'Why are you reporting this song? (e.g. Broken audio, wrong info)', 'Buggy Audio/Info');
+                if (reason) {
+                    socket.emit('reportSong', { roomId: state.roomId, songId: res.correctSong.id, reason });
+                    reportBtn.classList.add('hidden');
+                    alert(localStorage.getItem('songGuessLang') === 'ZH' ? '感謝您的檢舉！' : 'Thanks for your report!');
+                }
+            };
+        }
 
         state.players = res.players;
         if (res.teamScores) state.teamScores = res.teamScores;

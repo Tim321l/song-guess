@@ -1,6 +1,6 @@
 import { rooms, setRoomTimeout } from './rooms.js';
 import { shuffle } from './utils.js';
-import { loadUsers, saveUsers, loadCommunityPlaylists, loadTeams, saveTeams, loadTeams as loadTeamsDb, saveTeams as saveTeamsDb } from './db.js';
+import { loadUsers, saveUsers, loadCommunityPlaylists, loadTeams, saveTeams, loadTeams as loadTeamsDb, saveTeams as saveTeamsDb, saveReport } from './db.js';
 
 export function registerGameplayHandlers(io, socket, allSongs) {
     socket.on('createRoom', ({ name, icon, mode, rounds, hearts, diff, lang, customSongs, isPublic }, callback) => {
@@ -247,6 +247,34 @@ export function registerGameplayHandlers(io, socket, allSongs) {
             });
 
             io.to(roomId).emit('roomReset', { players: room.players });
+        }
+    });
+
+    socket.on('reportSong', async ({ roomId, songId, reason }) => {
+        const room = rooms[roomId];
+        if (!room || !room.roundState || !room.roundState.correctSong) return;
+
+        // Verify the song being reported is the correct one from the current round
+        if (room.roundState.correctSong.id !== songId) return;
+
+        const reportData = {
+            songId: songId,
+            title: room.roundState.correctSong.title,
+            artist: room.roundState.correctSong.artist,
+            audioUrl: room.roundState.correctSong.audioUrl,
+            reporter: socket.username || 'Guest',
+            reason: reason || 'Buggy Audio/Info',
+            createdAt: new Date()
+        };
+
+        const success = await saveReport(reportData);
+        if (success) {
+            console.log(`[Report] Song ${songId} reported by ${reportData.reporter}`);
+            // Notify admins if any are online (optional but good for real-time)
+            io.to('admin-live').emit('adminNotification', {
+                type: 'REPORT',
+                message: `New song report for "${reportData.title}" by ${reportData.reporter}`
+            });
         }
     });
 

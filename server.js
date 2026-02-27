@@ -130,7 +130,7 @@ io.on('connection', (socket) => {
 
     // Register modularized handlers
     registerAuthHandlers(io, socket, activeUsers);
-    registerAdminHandlers(io, socket, activeUsers, ADMIN_SECRET, serverStartTime);
+    registerAdminHandlers(io, socket, activeUsers, ADMIN_SECRET, serverStartTime, allSongs);
     registerSocialHandlers(io, socket, allSongs);
     registerGameplayHandlers(io, socket, allSongs);
     registerTeamHandlers(io, socket);
