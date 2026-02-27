@@ -153,6 +153,8 @@ export function initGameplayHandlers() {
 
         const reportBtn = document.getElementById('report-song-btn');
         if (reportBtn) reportBtn.classList.add('hidden');
+        const favBtn = document.getElementById('favorite-song-btn');
+        if (favBtn) favBtn.classList.add('hidden');
 
         const turnMsg = document.getElementById('turn-message');
         document.getElementById('round-display').innerText = `${data.round} / ${data.totalRounds}`;
@@ -275,6 +277,30 @@ export function initGameplayHandlers() {
                     reportBtn.classList.add('hidden');
                     alert(localStorage.getItem('songGuessLang') === 'ZH' ? '感謝您的檢舉！' : 'Thanks for your report!');
                 }
+            };
+        }
+
+        const favBtn = document.getElementById('favorite-song-btn');
+        if (favBtn) {
+            const song = res.correctSong;
+            const isFav = state.favorites.some(s => String(s.id) === String(song.id));
+            const lang = localStorage.getItem('songGuessLang') || 'EN';
+            const labelAdd = lang === 'ZH' ? '⭐ 收藏' : '⭐ Favorite';
+            const labelAdded = lang === 'ZH' ? '✅ 已收藏' : '✅ Favorited';
+            favBtn.classList.remove('hidden');
+            favBtn.textContent = isFav ? labelAdded : labelAdd;
+            favBtn.onclick = () => {
+                if (!state.username) {
+                    alert(lang === 'ZH' ? '請先登入後收藏' : 'Please login to save favorites.');
+                    return;
+                }
+                socket.emit('toggleFavorite', { username: state.username, song }, (resp) => {
+                    if (resp && resp.success) {
+                        state.favorites = resp.favorites || [];
+                        const nowFav = state.favorites.some(s => String(s.id) === String(song.id));
+                        favBtn.textContent = nowFav ? labelAdded : labelAdd;
+                    }
+                });
             };
         }
 

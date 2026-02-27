@@ -1,4 +1,4 @@
-export const TRANSLATIONS = {
+﻿export const TRANSLATIONS = {
     EN: {
         'app-title-html': 'Song <span class="highlight">Guess</span> Online',
         'auth-subtitle': 'Login to save your scores!',
@@ -109,6 +109,8 @@ export const TRANSLATIONS = {
         'searching-rooms': 'Searching for rooms...',
         'leave-room-btn': '🚪 Leave Room',
         'leave-room-header-btn': '🚪 Leave',
+        'favorite-song-btn': '⭐ Favorite',
+        'report-song-btn': '🚩 Report',
         'show-teams-btn': '👥 Teams',
         'teams-title': '👥 Team Management',
         'teams-subtitle': 'Manage your team or join one',
@@ -224,6 +226,8 @@ export const TRANSLATIONS = {
         'searching-rooms': '正在搜尋房間...',
         'leave-room-btn': '🚪 離開房間',
         'leave-room-header-btn': '🚪 離開',
+        'favorite-song-btn': '⭐ 收藏',
+        'report-song-btn': '🚩 檢舉',
         'show-teams-btn': '👥 團隊',
         'teams-title': '👥 團隊管理',
         'teams-subtitle': '管理您的團隊或加入一個',

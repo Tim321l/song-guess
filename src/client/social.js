@@ -155,7 +155,7 @@ export function initSocialHandlers() {
     window.removeFavoriteLocal = (songId) => {
         const song = state.favorites.find(s => s.id === songId);
         if (!song) return;
-        socket.emit('toggleFavorite', { username: state.name, song: song }, (res) => {
+        socket.emit('toggleFavorite', { username: state.username, song: song }, (res) => {
             if (res.success) {
                 state.favorites = res.favorites;
                 renderFavorites();
