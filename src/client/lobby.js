@@ -41,8 +41,19 @@ export function initLobbyHandlers() {
             select.innerHTML = '<option value="all">Mixed / All Categories</option>';
 
             categories.forEach(cat => {
-                // Simple label generation for now, real translations should be moved too
+                // Better labels for categories
                 let label = cat.replace('songs', '') + ' Hits';
+                if (cat === 'songsHk8090s') label = '80s-90s Hits (HK Classic)';
+                if (cat === 'songsHk2000s') label = '2000s Hits (HK Pop)';
+                if (cat === 'songsIn') label = 'India Hits';
+                if (cat === 'songsJp') label = 'Japanese Hits';
+                if (cat === 'songsKr') label = 'Korean Hits';
+                if (cat === 'songsEs') label = 'Spanish / Latin Hits';
+                if (cat === 'songsFr') label = 'French Hits';
+                if (cat === 'songsEn') label = 'English Hits';
+                if (cat === 'songsCn') label = 'Chinese Hits';
+                if (cat === 'songsTh') label = 'Thai Hits';
+
                 if (cat.startsWith('spotify:')) {
                     label = cat.replace('spotify:', '') + ' (Spotify)';
                 }
@@ -172,6 +183,11 @@ function renderPublicRoomsList(rooms) {
 
         let modeLabel = room.mode.charAt(0).toUpperCase() + room.mode.slice(1);
         let catLabel = room.lang.replace('songs', '') + ' Hits';
+        if (room.lang === 'songsHk8090s') catLabel = '80s-90s Hits';
+        if (room.lang === 'songsHk2000s') catLabel = '2000s Hits';
+        if (room.lang === 'songsIn') catLabel = 'India Hits';
+        if (room.lang === 'songsJp') catLabel = 'Japanese Hits';
+        if (room.lang === 'songsKr') catLabel = 'Korean Hits';
 
         div.innerHTML = `
             <div style="text-align: left;">

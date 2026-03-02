@@ -831,7 +831,11 @@
             <div class="panel wide">
                 <div class="panel-header">
                     <span>🚩 Pending Song Reports (<span id="reports-count">0</span>)</span>
-                    <button class="btn btn-accent" onclick="loadReports()">Refresh Reports</button>
+                    <div style="display:flex; gap:10px;">
+                        <button class="btn btn-info" onclick="syncSongsToJson()"
+                            title="Save all DB edits back to songs.json root file">💾 Sync to JSON</button>
+                        <button class="btn btn-accent" onclick="loadReports()">Refresh Reports</button>
+                    </div>
                 </div>
                 <div class="panel-body">
                     <table>
@@ -1518,6 +1522,17 @@
 
             adminAction('editSong', data);
             closeEditSongModal();
+        }
+        function syncSongsToJson() {
+            showConfirm('Are you sure you want to write ALL database edits into the "songs.json" file? This will permanently overwrite the static file.', () => {
+                socket.emit('adminAction', { secret: ADMIN_SECRET, action: 'syncSongsToJson' }, (res) => {
+                    if (res.success) {
+                        showMsg(res.message, 'success');
+                    } else {
+                        showMsg(res.message, 'error');
+                    }
+                });
+            });
         }
     </script>
 </body>

@@ -163,36 +163,61 @@ export async function migratePasswords() {
 
 export async function loadSongs() {
     try {
-        // First try to load from MongoDB
+        const __filename = fileURLToPath(import.meta.url);
+        const __dirname = path.dirname(__filename);
+        const songsPath = path.join(__dirname, '../../songs.json');
+        let grouped = {};
+
+        // 1. Load from songs.json as base
+        if (fs.existsSync(songsPath)) {
+            const data = fs.readFileSync(songsPath, 'utf8');
+            grouped = JSON.parse(data);
+            console.log(`[System] Base songs loaded from songs.json.`);
+        }
+
+        // 2. Load from MongoDB and overlay increments
         const dbSongs = await Song.find({});
         if (dbSongs.length > 0) {
-            const grouped = {};
+            let overrides = 0;
             dbSongs.forEach(s => {
                 const langKey = `songs${s.language.charAt(0).toUpperCase() + s.language.slice(1)}`;
                 if (!grouped[langKey]) grouped[langKey] = [];
-                grouped[langKey].push(s.toObject());
+
+                // Overlay/Merge
+                const index = grouped[langKey].findIndex(item => Number(item.id) === s.id);
+                if (index !== -1) {
+                    grouped[langKey][index] = { ...grouped[langKey][index], ...s.toObject() };
+                    overrides++;
+                } else {
+                    // New song not in JSON
+                    grouped[langKey].push(s.toObject());
+                }
             });
-            console.log(`[System] Loaded ${dbSongs.length} songs from DB.`);
-            return grouped;
+            console.log(`[System] Overlaid ${overrides} edits from MongoDB.`);
         }
 
-        // Fallback to songs.json if DB is empty
+        return grouped;
+    } catch (e) {
+        console.error('Error loading songs with overlay:', e);
+        return {};
+    }
+}
+
+export async function saveAllSongsToJson(allSongs) {
+    try {
         const __filename = fileURLToPath(import.meta.url);
         const __dirname = path.dirname(__filename);
         const songsPath = path.join(__dirname, '../../songs.json');
 
-        if (fs.existsSync(songsPath)) {
-            const data = fs.readFileSync(songsPath, 'utf8');
-            const grouped = JSON.parse(data);
-            console.log(`[System] Loaded songs from songs.json (DB was empty).`);
-            return grouped;
-        } else {
-            console.warn(`[System] No songs found in DB or songs.json.`);
-            return {};
-        }
+        // Clean up Mongoose specific fields if any
+        const cleanData = JSON.parse(JSON.stringify(allSongs));
+
+        fs.writeFileSync(songsPath, JSON.stringify(cleanData, null, 2), 'utf8');
+        console.log(`[System] All songs synced to ${songsPath}`);
+        return true;
     } catch (e) {
-        console.error('Error loading songs', e);
-        return {};
+        console.error('Error saving all songs to JSON:', e);
+        return false;
     }
 }
 

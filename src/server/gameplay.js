@@ -336,7 +336,7 @@ export function registerGameplayHandlers(io, socket, allSongs) {
         // Priority 1: Same artist, different titles
         let sameArtistSongs = shuffle(songsList.filter(s => s.id !== correctSong.id && s.artist === correctSong.artist));
         for (const song of sameArtistSongs) {
-            if (uniqueOptions.length >= 4) break;
+            if (uniqueOptions.length >= 20) break;
             if (!usedTitles.has(song.title)) {
                 uniqueOptions.push(song);
                 usedTitles.add(song.title);
@@ -344,10 +344,10 @@ export function registerGameplayHandlers(io, socket, allSongs) {
         }
 
         // Priority 2: Other artists, unique titles
-        if (uniqueOptions.length < 4) {
+        if (uniqueOptions.length < 20) {
             let otherSongs = shuffle(songsList.filter(s => s.id !== correctSong.id && s.artist !== correctSong.artist));
             for (const song of otherSongs) {
-                if (uniqueOptions.length >= 4) break;
+                if (uniqueOptions.length >= 20) break;
                 if (!usedTitles.has(song.title)) {
                     uniqueOptions.push(song);
                     usedTitles.add(song.title);

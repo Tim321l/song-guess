@@ -1,4 +1,4 @@
-import { loadUsers, saveUsers, loadRecoveryRequests, deleteRecoveryRequest, loadReports, loadSongs, getDBStatus } from './db.js';
+import { loadUsers, saveUsers, loadRecoveryRequests, deleteRecoveryRequest, loadReports, loadSongs, getDBStatus, saveAllSongsToJson } from './db.js';
 import { rooms } from './rooms.js';
 import os from 'os';
 import { readFileSync, existsSync, statSync, utimesSync } from 'fs';
@@ -302,6 +302,16 @@ export function registerAdminHandlers(io, socket, activeUsers, ADMIN_SECRET, ser
 
             logAudit('EDIT_SONG', `Edited song ID: ${songId} (${song.title})`);
             return callback({ success: true, message: `Song "${song.title}" updated and report resolved.` });
+        }
+
+        if (action === 'syncSongsToJson') {
+            const success = await saveAllSongsToJson(allSongs);
+            if (success) {
+                logAudit('SYNC_JSON', 'Synchronized database edits to songs.json');
+                return callback({ success: true, message: 'All songs successfully synced to songs.json file.' });
+            } else {
+                return callback({ success: false, message: 'Failed to write to songs.json.' });
+            }
         }
 
         if (action === 'removeReportedSong') {
