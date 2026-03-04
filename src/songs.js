@@ -5909,886 +5909,6 @@ export const songsEs = [
 export const songsMemes = [
   {
     id: 10001,
-    title: "Gangnam Style",
-    artist: "PSY",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3d/65/ae/3d65ae0a-7b2c-f14d-5680-cdafaa8cfb2d/mzaf_11206445915046452880.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/gangnam-style/1445144506?i=1445144527&uo=4",
-    year: 2012
-  },
-  {
-    id: 10002,
-    title: "Baby Shark",
-    artist: "Pinkfong",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/02/d5/bb/02d5bb3e-0b02-d107-e67a-d54a1c7b977a/mzaf_17590281178329794907.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/baby-shark/1264976423?i=1264976429&uo=4",
-    year: 2017
-  },
-  {
-    id: 10003,
-    title: "We Are Number One (Remix)",
-    artist: "Dunderpatrullen",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/82/74/71/8274715e-1cf0-8199-c970-d695ff20ee7b/mzaf_11947548888552524355.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/we-are-number-one-remix/1229569802?i=1229569809&uo=4",
-    year: 2017
-  },
-  {
-    id: 10004,
-    title: "Entry of the Gladiators",
-    artist: "The Great American Main Street Band",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e7/cb/6b/e7cb6b45-7d73-0fe4-0f89-7e969e453428/mzaf_1429054610440846503.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/entry-of-the-gladiators/724927429?i=724927723&uo=4",
-    year: 1993
-  },
-  {
-    id: 10005,
-    title: "Big Enough (feat. Molly Lewis, Jimmy Barnes) [Is This Short Enough?]",
-    artist: "Kirin J Callinan",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/12/23/8f/12238f22-c8d3-efd1-04f7-6fbf74f3d3d8/mzaf_18296500272211785095.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/big-enough-feat-molly-lewis-jimmy-barnes-is-this-short/1650870248?i=1650870251&uo=4",
-    year: 2017
-  },
-  {
-    id: 10006,
-    title: "Can You Feel My Heart (Live at the Royal Albert Hall) [Ultra HD Version]",
-    artist: "Bring Me The Horizon",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/87/36/cf/8736cfd6-f0d1-1b43-9b15-69ebefce1b33/mzaf_7209753048005614004.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/can-you-feel-my-heart-live-at-the-royal-albert-hall/1545140321?i=1545140514&uo=4",
-    year: 2020
-  },
-  {
-    id: 10007,
-    title: "Everybody Scream",
-    artist: "Florence + the Machine",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d8/96/76/d89676ff-ef0f-2249-9a47-ac7570aa18ae/mzaf_12968948278174208343.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/everybody-scream/1833586446?i=1833586452&uo=4",
-    year: 2025
-  },
-  {
-    id: 10008,
-    title: "Baby",
-    artist: "Justin Bieber",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/90/a9/75/90a9753f-99d3-7dbb-0399-03acd1f33452/mzaf_2418336983375781620.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/baby/1704256802?i=1704257328&uo=4",
-    year: 2010
-  },
-  {
-    id: 10009,
-    title: "Big Enough Screaming Cowboy Meme (8 Bit Version)",
-    artist: "8 Bit Universe",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/3c/0a/4a/3c0a4ad1-0e41-f065-5f8f-17e57242c18b/mzaf_6521136603246799929.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/big-enough-screaming-cowboy-meme-8-bit-version/1330499867?i=1330499872&uo=4",
-    year: 2017
-  },
-  {
-    id: 10010,
-    title: "We are number one",
-    artist: "LazyTown",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fc/c1/da/fcc1da17-cff1-830c-2a00-10ca6714d11e/mzaf_8395500506314744928.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/we-are-number-one/1860354043?i=1860354297&uo=4",
-    year: 2025
-  },
-  {
-    id: 10011,
-    title: "Sandstorm (Darude Remix) [Mixed]",
-    artist: "Darude",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/49/e2/9b/49e29b6e-49f4-6872-c704-e35b07703a3c/mzaf_17328417247696209519.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/sandstorm-darude-remix-mixed/1828765021?i=1828765426&uo=4",
-    year: 2025
-  },
-  {
-    id: 10012,
-    title: "Crab Rave",
-    artist: "Noisestorm",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/19/39/b0/1939b0c7-e551-a7b5-8901-b3422c801f9a/mzaf_17413254458689540375.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/crab-rave/1395991205?i=1395991207&uo=4",
-    year: 2018
-  },
-  {
-    id: 10013,
-    title: "Astronomia (Coffin Dance)",
-    artist: "HUTS",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/4d/a4/6b/4da46b3c-d34b-aac2-44bf-e32499efe6f4/mzaf_10616735135219823051.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/astronomia-coffin-dance/1511556691?i=1511556692&uo=4",
-    year: 2020
-  },
-  {
-    id: 10014,
-    title: "You Are a Pirate",
-    artist: "Alestorm",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/71/f2/3b/71f23ba3-4475-a079-824b-81e49b32ad04/mzaf_7716437243285988507.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/you-are-a-pirate/1519490532?i=1519490546&uo=4",
-    year: 2011
-  },
-  {
-    id: 10015,
-    title: "Chocolate Rain",
-    artist: "Tay Zonday",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/63/81/cb/6381cb1b-426a-8d8d-9294-73759ca773aa/mzaf_2544458792656697717.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/chocolate-rain/350211864?i=350211904&uo=4",
-    year: 2010
-  },
-  {
-    id: 10016,
-    title: "Coconut Mall (From \"Mario Kart Wii\")",
-    artist: "Qumu",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/fd/2a/6c/fd2a6ce9-6364-9103-9935-6872dc5e6442/mzaf_7813951580698056703.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/coconut-mall-from-mario-kart-wii/1456308442?i=1456308443&uo=4",
-    year: 2019
-  },
-  {
-    id: 10017,
-    title: "Вокализ (Тро-ло-ло)",
-    artist: "Eduard Khil",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/f3/b8/ef/f3b8ef27-1d9e-67a2-e341-5ec18004e4b0/mzaf_7983549338350880017.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/%D0%B2%D0%BE%D0%BA%D0%B0%D0%BB%D0%B8%D0%B7-%D1%82%D1%80%D0%BE-%D0%BB%D0%BE-%D0%BB%D0%BE/1681500029?i=1681500031&uo=4",
-    year: 2016
-  },
-  {
-    id: 10018,
-    title: "Gas Gas Gas",
-    artist: "Tsuko G.",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/4b/01/bf/4b01bfe9-0504-25b3-fa68-91355e9321f2/mzaf_14327655941785092325.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/gas-gas-gas/1696058180?i=1696058194&uo=4",
-    year: 2017
-  },
-  {
-    id: 10019,
-    title: "Super Mario Bros. Theme",
-    artist: "Video Game Players",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/fa/5b/24/fa5b245e-c0aa-4b62-cc56-1a23f67b3e7d/mzaf_6552044248282165302.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/super-mario-bros-theme/983087229?i=983087230&uo=4",
-    year: 2015
-  },
-  {
-    id: 10020,
-    title: "Mii Channel",
-    artist: "VGR",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e8/43/bd/e843bd11-44d8-bd88-92b3-0f6f3e50f6f0/mzaf_10391689931369757336.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/mii-channel/1323251381?i=1323251405&uo=4",
-    year: 2017
-  },
-  {
-    id: 10021,
-    title: "NUMA-NUMA",
-    artist: "Gansan & Артём Белый",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/62/10/e9/6210e9cb-44fa-093e-60eb-61f3860b0217/mzaf_1267471712816072909.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/numa-numa/1828281224?i=1828281225&uo=4",
-    year: 2025
-  },
-  {
-    id: 10022,
-    title: "Wii Shop Channel",
-    artist: "Blue Brew Music",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/ec/ee/6c/ecee6ce0-4586-c874-2917-157e1e593590/mzaf_13578309214457336224.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/wii-shop-channel/1708009319?i=1708009320&uo=4",
-    year: 2023
-  },
-  {
-    id: 10023,
-    title: "Zelda Theme",
-    artist: "Stars in the Void",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/28/47/30/28473037-3288-0483-e3b1-caf09fcd0098/mzaf_4622636540240734200.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/zelda-theme/1871954342?i=1871954355&uo=4",
-    year: 2026
-  },
-  {
-    id: 10024,
-    title: "Murder in My Mind",
-    artist: "sped now",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7c/69/4f/7c694fac-54fd-f260-e8ba-3db7b6b2a34b/mzaf_2869823849045925741.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/murder-in-my-mind/1829083408?i=1829083410&uo=4",
-    year: 2025
-  },
-  {
-    id: 10025,
-    title: "Megalovania (feat. ThunderScott)",
-    artist: "RichaadEB",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e5/21/b5/e521b557-038e-3c83-8226-17f6ae25b43e/mzaf_8202198605087269554.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/megalovania-feat-thunderscott/1742116463?i=1742116464&uo=4",
-    year: 2019
-  },
-  {
-    id: 10026,
-    title: "Into The Night (English Version)",
-    artist: "YOASOBI",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/19/d7/1b/19d71bd4-6adb-4149-293d-958c39e35183/mzaf_722920354107427825.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/into-the-night-english-version/1571239531?i=1571239689&uo=4",
-    year: 2021
-  },
-  {
-    id: 10027,
-    title: "Flyday Chinatown (Slowed + Reverb)",
-    artist: "EVADE FROM 宇宙",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fe/78/0b/fe780b8d-2805-4053-4d2b-b5f5f4bf89d2/mzaf_1764632131118759496.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/flyday-chinatown-slowed-reverb/1814684529?i=1814684535&uo=4",
-    year: 2025
-  },
-  {
-    id: 10028,
-    title: "The HampsterDance Song",
-    artist: "Hampton the Hampster",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/f4/7c/ae/f47cae71-21a6-9743-c5f5-95c11ca8fa42/mzaf_10825937857542032714.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/the-hampsterdance-song/1437025347?i=1437025351&uo=4",
-    year: 2000
-  },
-  {
-    id: 10029,
-    title: "Ievan Polkka (feat. Sari Kauranen, Hanni Autere, Anita Lehtola-Tollin, Timo Väänänen, Sanna Kurki-Suonio & Tellu Turkka) [Extended Mix]",
-    artist: "Loituma",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/39/1c/ee/391cee7f-ffdc-2144-4dfc-2c122ba511c9/mzaf_7773951235165851770.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/ievan-polkka-feat-sari-kauranen-hanni-autere-anita/1782745794?i=1782745795&uo=4",
-    year: 2007
-  },
-  {
-    id: 10030,
-    title: "Can You Feel My Heart (feat. Andrew Zink)",
-    artist: "Varien",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/21/05/57/210557cc-82f5-beb4-d559-af29ebd24c3a/mzaf_10376811667122805565.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/can-you-feel-my-heart-feat-andrew-zink/1478633166?i=1478633169&uo=4",
-    year: 2019
-  },
-  {
-    id: 10031,
-    title: "Cupid (Twin Version)",
-    artist: "FIFTY FIFTY",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a4/df/71/a4df717f-1722-7f9f-1e3b-153731a4f868/mzaf_11832332831241388958.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/cupid-twin-version/1762365314?i=1762365716&uo=4",
-    year: 2023
-  },
-  {
-    id: 10032,
-    title: "Megalovania",
-    artist: "Augustine Mayuga Gonzales",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/ea/3b/db/ea3bdbc0-faef-b78d-3a40-f1db040bd13f/mzaf_14131044551103283307.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/megalovania/1592284234?i=1592284459&uo=4",
-    year: 2017
-  },
-  {
-    id: 10033,
-    title: "RAVE",
-    artist: "Dxrk ダーク",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/2b/d2/d1/2bd2d1f7-f992-cbaa-223c-c2623f6e29c1/mzaf_13505719909370365573.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/rave/1612134731?i=1612134734&uo=4",
-    year: 2022
-  },
-  {
-    id: 10034,
-    title: "It's Raining Men",
-    artist: "The Weather Girls",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a1/c9/e4/a1c9e400-326c-906a-2c63-de316f2f054c/mzaf_14890438451166061786.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/its-raining-men/1442896615?i=1442897218&uo=4",
-    year: 1982
-  },
-  {
-    id: 10035,
-    title: "Astronomia (Vicetone & Tony Igy Cover)",
-    artist: "Reflex Soundz",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/48/35/4b/48354b89-5374-1237-1e05-0946ae31c9bd/mzaf_3016849398978785453.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/astronomia-vicetone-tony-igy-cover/1594353106?i=1594353107&uo=4",
-    year: 2020
-  },
-  {
-    id: 10036,
-    title: "Crab Rave (Phonk)",
-    artist: "h6itam",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/88/e4/c0/88e4c03e-2c1b-efdc-a193-8c3a56fa158e/mzaf_4666214121868487367.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/crab-rave-phonk/1672637290?i=1672637291&uo=4",
-    year: 2023
-  },
-  {
-    id: 10037,
-    title: "Pizza Theme (From Spiderman 2: The Game)",
-    artist: "Sheet Music Boss",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/66/33/4c/66334c9c-756a-255d-07d0-66321d2f64b2/mzaf_1340664809757475288.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/pizza-theme-from-spiderman-2-the-game/1569479609?i=1569480066&uo=4",
-    year: 2021
-  },
-  {
-    id: 10038,
-    title: "Lazy Song",
-    artist: "Conkarah",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/48/dd/62/48dd6272-3402-d7a6-957e-f4ed869794f7/mzaf_13403922055625884618.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/lazy-song/1814054201?i=1814054203&uo=4",
-    year: 2020
-  },
-  {
-    id: 10039,
-    title: "Scatman (Ski-Ba-Bop-Ba-Dop-Bop) [Extended Radio Version]",
-    artist: "Scatman John",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/42/ab/d7/42abd77a-0a2e-4cbf-bc39-ef2c502b3215/mzaf_5691360403126985438.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/scatman-ski-ba-bop-ba-dop-bop-extended-radio-version/330231807?i=330232217&uo=4",
-    year: 1995
-  },
-  {
-    id: 10040,
-    title: "Mine Diamonds (Slowed + Reverbed)",
-    artist: "Mcap Steve",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/14/22/32/1422321e-3ffd-b2e5-66bd-e24bd7199bba/mzaf_8865266463754662841.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/mine-diamonds-slowed-reverbed/1711262190?i=1711262191&uo=4",
-    year: 2023
-  },
-  {
-    id: 10041,
-    title: "Gimme! Gimme! Gimme! (A Man After Midnight)",
-    artist: "ABBA",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b6/89/f4/b689f49d-17f0-4c23-0008-a2846ff3d216/mzaf_4518780566099169041.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/gimme-gimme-gimme-a-man-after-midnight/1422648512?i=1422648970&uo=4",
-    year: 1979
-  },
-  {
-    id: 10042,
-    title: "The Fox (What Does the Fox Say?)",
-    artist: "Ylvis",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/53/e4/44/53e4446d-3162-ee21-8e31-bfa16c53f38c/mzaf_12946431043245579822.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/the-fox-what-does-the-fox-say/690233609?i=690233856&uo=4",
-    year: 2013
-  },
-  {
-    id: 10043,
-    title: "Sigma Phonk",
-    artist: "Phxnk Murdxr, ФОНК & PHONK",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/ca/b4/81/cab4814d-9546-199c-3eb3-24d31776215d/mzaf_4003134635013139207.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/sigma-phonk/1719997051?i=1719997052&uo=4",
-    year: 2023
-  },
-  {
-    id: 10044,
-    title: "RAVE (Slowed)",
-    artist: "Dxrk ダーク",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/38/fd/55/38fd5594-383d-43f3-5f8e-a760f599c591/mzaf_12145884856955418119.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/rave-slowed/1618995664?i=1618995974&uo=4",
-    year: 2022
-  },
-  {
-    id: 10045,
-    title: "Careless Whisper",
-    artist: "George Michael",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/21/89/59/21895916-e570-019b-1dce-fd19a9e4d6b8/mzaf_253631016813185496.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/careless-whisper/193084944?i=193085066&uo=4",
-    year: 1984
-  },
-  {
-    id: 10046,
-    title: "Are You Bored Yet? (feat. Clairo)",
-    artist: "Wallows",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/17/8a/67/178a67b5-069a-3608-c202-6de8fcdffbcd/mzaf_12434960487527373454.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/are-you-bored-yet-feat-clairo/1450670646?i=1450670650&uo=4",
-    year: 2019
-  },
-  {
-    id: 10047,
-    title: "Tetris Theme",
-    artist: "Video Game Players",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/88/15/ea/8815ea3d-6865-9702-ddfb-7b2cba63d6e7/mzaf_15418558721969202772.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/tetris-theme/983087229?i=983087235&uo=4",
-    year: 2015
-  },
-  {
-    id: 10048,
-    title: "Phonky Town",
-    artist: "PRODBYJXN",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/7e/3b/d3/7e3bd319-a264-7e4d-0698-88f503791f9e/mzaf_13623358283499119731.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/phonky-town/1630677443?i=1630677444&uo=4",
-    year: 2022
-  },
-  {
-    id: 10049,
-    title: "Bangarang (Skrillex Dubstep piano)",
-    artist: "Norman Dück",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/11/07/07/11070760-c970-a46a-ddde-0928a1da9e20/mzaf_5283822510827762128.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/bangarang-skrillex-dubstep-piano/760198771?i=760198808&uo=4",
-    year: 2013
-  },
-  {
-    id: 10050,
-    title: "Wii Shop Channel (Frutiger Aero Bitcrushed Old Speaker Lofi Mix)",
-    artist: "Nostalgiacore",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7d/f6/7e/7df67e0d-9970-69a7-14d8-878d9046d0e8/mzaf_8727662449626534214.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/wii-shop-channel-frutiger-aero-bitcrushed-old-speaker/1854404174?i=1854404177&uo=4",
-    year: 2025
-  },
-  {
-    id: 10051,
-    title: "SIGMA PHONK",
-    artist: "Neelame & Lefortov",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/ca/0a/28/ca0a28d2-1bcc-2f3b-01c0-e8b95f720397/mzaf_14821872563874638827.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/sigma-phonk/1671112734?i=1671113177&uo=4",
-    year: 2023
-  },
-  {
-    id: 10052,
-    title: "PPAP (Pen Pineapple Apple Pen) [Long Version]",
-    artist: "PIKOTARO",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/b7/85/98/b78598aa-284b-9cb5-8caf-068838066600/mzaf_8821895894493071775.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/ppap-pen-pineapple-apple-pen-long-version/1711651633?i=1711651634&uo=4",
-    year: 2016
-  },
-  {
-    id: 10053,
-    title: "Take on Me",
-    artist: "Weezer",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/99/c6/8e/99c68eb1-033e-1ed3-468c-f871591c27bf/mzaf_14044676931350767712.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/take-on-me/1450270988?i=1450271321&uo=4",
-    year: 2019
-  },
-  {
-    id: 10054,
-    title: "Sandstorm (2025 Remix) [136 Bpm]",
-    artist: "D'rude",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/5a/08/2c/5a082c96-18d6-54d4-8365-6e7dd8306588/mzaf_12386430229876210618.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/sandstorm-2025-remix-136-bpm/1540110211?i=1540110666&uo=4",
-    year: 2020
-  },
-  {
-    id: 10055,
-    title: "Main Theme",
-    artist: "String Player Gamer",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/55/f8/90/55f89035-b377-592e-e78c-e964f7fa0f64/mzaf_14029531046357353138.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/main-theme/866136652?i=866136852&uo=4",
-    year: 2014
-  },
-  {
-    id: 10056,
-    title: "Tetris Theme (Korobeiniki)",
-    artist: "London Philharmonic Orchestra & Andrew Skeet",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/6a/72/bd/6a72bdad-e416-2ce9-f2b3-fab1bb4bf191/mzaf_9107893411792510711.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/tetris-theme-korobeiniki/472994506?i=472994757&uo=4",
-    year: 2011
-  },
-  {
-    id: 10057,
-    title: "Brazil Phonk",
-    artist: "MXSIK!",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/bd/b5/02/bdb50210-50d3-c666-fbfa-625da2f3d530/mzaf_3659642496648290935.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/brazil-phonk/1709060314?i=1709060318&uo=4",
-    year: 2023
-  },
-  {
-    id: 10058,
-    title: "Omfg Hello",
-    artist: "TheAtlanticCraft, Jasun Nation & Adrian Portus Pianist",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/51/70/93/51709305-3d28-fc37-4132-fc9073019805/mzaf_3117936832298814747.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/omfg-hello/1659692267?i=1659692285&uo=4",
-    year: 2022
-  },
-  {
-    id: 10059,
-    title: "Blue (Da Ba Dee) [Gabry Ponte Ice Pop Radio]",
-    artist: "Eiffel 65",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/f2/81/66/f28166b6-32aa-12c9-28ae-3e90629de3ef/mzaf_15462082455327455088.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/blue-da-ba-dee-gabry-ponte-ice-pop-radio/358199826?i=358200264&uo=4",
-    year: 1998
-  },
-  {
-    id: 10060,
-    title: "Double Rainbow",
-    artist: "Katy Perry",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9f/ef/08/9fef0856-8e26-d0c1-082d-017e4ea98e0b/mzaf_13850352067247173785.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/double-rainbow/1440818542?i=1440819649&uo=4",
-    year: 2013
-  },
-  {
-    id: 10061,
-    title: "The Duck Song",
-    artist: "The Duck",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/f7/e4/15/f7e4152f-79ae-fb4d-b96d-69a8f5aacc26/mzaf_15460125440111522832.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/the-duck-song/860318360?i=860318403&uo=4",
-    year: 2014
-  },
-  {
-    id: 10062,
-    title: "Rasputin (2007 Remastered Version)",
-    artist: "Boney M.",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/2a/2a/22/2a2a22f9-0068-9376-6a4a-58eba930dcbe/mzaf_13938777033634640015.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/rasputin-2007-remastered-version/250727571?i=250727626&uo=4",
-    year: 1978
-  },
-  {
-    id: 10063,
-    title: "Gangnam Style (Instrumental)",
-    artist: "PSY",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d3/1b/20/d31b20c5-eeab-f088-e000-6dd56752c44b/mzaf_22587871275665023.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/gangnam-style-instrumental/1445173531?i=1445173540&uo=4",
-    year: 2013
-  },
-  {
-    id: 10064,
-    title: "Pac Man Theme",
-    artist: "Theme Mania",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/4e/b4/ce/4eb4ce1a-8543-2fb7-7677-2c410c33d8e7/mzaf_6343167549364132396.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/pac-man-theme/372255637?i=372255690&uo=4",
-    year: 2009
-  },
-  {
-    id: 10065,
-    title: "Song for Denise (Wide Walking Version)",
-    artist: "Piano Fantasia",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a1/0e/e0/a10ee033-2ca5-8a74-0aad-011855f3e24f/mzaf_2308590751148216305.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/song-for-denise-wide-walking-version/1569232595?i=1569233300&uo=4",
-    year: 2021
-  },
-  {
-    id: 10066,
-    title: "The Trololo Song: A Tribute to Eduard Khil (Metal Version)",
-    artist: "Rodrigo Barros",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/12/c3/ad/12c3ad47-b2c8-7ead-01df-ba5cf12eedce/mzaf_10523224567092784917.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/the-trololo-song-a-tribute-to-eduard-khil-metal-version/1696861680?i=1696861694&uo=4",
-    year: 2023
-  },
-  {
-    id: 10067,
-    title: "Sweden",
-    artist: "C418",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/af/31/01/af310107-0572-ec8a-0e8b-d99035407230/mzaf_13152283240780583171.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/sweden/1867885113?i=1867885632&uo=4",
-    year: 2011
-  },
-  {
-    id: 10068,
-    title: "The Only Thing They Fear Is You",
-    artist: "Doom Music & Timeless Music",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d9/42/16/d94216c5-ef70-7940-bb3a-5270e4866798/mzaf_10185084004217265296.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/the-only-thing-they-fear-is-you/1835126343?i=1835126584&uo=4",
-    year: 2025
-  },
-  {
-    id: 10069,
-    title: "Devil Trigger (Power Glove Battle Version)",
-    artist: "Power Glove",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ee/d2/f3/eed2f3bf-2d46-699d-6119-723033dfc0dc/mzaf_16599046554059517250.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/devil-trigger-power-glove-battle-version/1804212616?i=1804212618&uo=4",
-    year: 2025
-  },
-  {
-    id: 10070,
-    title: "Alone",
-    artist: "Marshmello",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b1/3e/7d/b13e7d69-4213-302d-e758-1a7973165719/mzaf_10436877470185704690.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/alone/1110086888?i=1110087159&uo=4",
-    year: 2016
-  },
-  {
-    id: 10071,
-    title: "Faded",
-    artist: "Alan Walker",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/f4/32/01/f43201b9-4bba-7654-2e43-d59e2d907e9f/mzaf_2440137894989713967.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/faded/1196294554?i=1196294581&uo=4",
-    year: 2015
-  },
-  {
-    id: 10072,
-    title: "Brazil Phonk",
-    artist: "1RMAX",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/02/58/70/02587068-bbec-3810-cbd7-1ca3144047e1/mzaf_4280703004288757304.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/brazil-phonk/1689119402?i=1689119403&uo=4",
-    year: 2023
-  },
-  {
-    id: 10073,
-    title: "Pac-Man Theme (Dance Mix)",
-    artist: "Dream Chaser",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/4e/39/1e/4e391e7f-1968-0073-eef7-96e029bd3254/mzaf_9578214800544958549.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/pac-man-theme-dance-mix/436729487?i=436729489&uo=4",
-    year: 2011
-  },
-  {
-    id: 10074,
-    title: "My Heart",
-    artist: "Odeal",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3c/de/9e/3cde9ec7-ae3b-474f-929d-e378bc0deab7/mzaf_10930974026711194666.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/my-heart/1822666383?i=1822666386&uo=4",
-    year: 2025
-  },
-  {
-    id: 10075,
-    title: "Ppap (Cat Version)",
-    artist: "N2 Cat Crew",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/79/0a/a0/790aa0f6-8140-74ec-d27f-92fdf87ccdf3/mzaf_2544878496296379059.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/ppap-cat-version/1252105913?i=1252106698&uo=4",
-    year: 2017
-  },
-  {
-    id: 10076,
-    title: "The Duck Song 2",
-    artist: "Bryant Oden",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e6/2a/3c/e62a3c26-1a1e-16f2-c5f4-8003a2dcbfce/mzaf_3016109011756556302.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/the-duck-song-2/437019959?i=437020145&uo=4",
-    year: 2009
-  },
-  {
-    id: 10077,
-    title: "Dr. Livesey Vs Gigachad  Piano Battle",
-    artist: "PACIL",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/30/39/f0/3039f0f4-8239-f034-f9d4-0b3043adf14f/mzaf_9977302013277555870.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/dr-livesey-vs-gigachad-piano-battle/1661999436?i=1661999437&uo=4",
-    year: 2023
-  },
-  {
-    id: 10078,
-    title: "DEJA VU",
-    artist: "Dave Rodgers",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/67/e4/8c/67e48c67-42af-1233-50d6-0f1437ad4b79/mzaf_11979145100800254835.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/deja-vu/1477944583?i=1477944584&uo=4",
-    year: 2019
-  },
-  {
-    id: 10079,
-    title: "Friday (Extended Mix) [Rebecca's Black & White Remix]",
-    artist: "Flo Rida",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ea/89/1b/ea891bc1-43c2-b708-267a-fca62b6c89e2/mzaf_2023153935874228213.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/friday-extended-mix-rebeccas-black-white-remix/1821636621?i=1821636623&uo=4",
-    year: 2024
-  },
-  {
-    id: 10080,
-    title: "Astronomia (Extended Mix)",
-    artist: "Tony Igy",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/20/df/d5/20dfd5e6-2ffb-23d0-8bb6-2949453b7074/mzaf_12699833450512337749.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/astronomia-extended-mix/1648916519?i=1648916520&uo=4",
-    year: 2014
-  },
-  {
-    id: 10081,
-    title: "Mayonaka no Door - Stay with Me (Cover)",
-    artist: "Miho Karasawa",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/1e/f4/ad/1ef4ad48-bdcc-0233-f0dd-3a0fd08bd65d/mzaf_6971025262255203366.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/mayonaka-no-door-stay-with-me-cover/388901751?i=388901850&uo=4",
-    year: 2004
-  },
-  {
-    id: 10082,
-    title: "Astronomia (Mixed)",
-    artist: "Vicetone & Tony Igy",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a5/2d/53/a52d53b8-13f3-1b33-a545-cad5233706e4/mzaf_7608787343658198984.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/astronomia-mixed/1573824277?i=1573824303&uo=4",
-    year: 2021
-  },
-  {
-    id: 10083,
-    title: "Double Rainbow",
-    artist: "Dog Music, Dog Music Therapy & Dog Music Dreams",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/24/a1/c5/24a1c5ea-b94c-26f3-7443-45f04bda2769/mzaf_13758920257067159693.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/double-rainbow/1523887539?i=1523887544&uo=4",
-    year: 2020
-  },
-  {
-    id: 10084,
-    title: "The Spectre (Instrumental)",
-    artist: "RavilZ",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a0/c7/d2/a0c7d237-9ff5-8ebe-a297-aa9e194e7551/mzaf_6338090959332943059.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/the-spectre-instrumental/1762590640?i=1762590645&uo=4",
-    year: 2023
-  },
-  {
-    id: 10085,
-    title: "Bed Intruder Song (Pete Proto Remix)",
-    artist: "Antoine Dodson & Pete Proto",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/66/ed/c5/66edc5d0-7e8b-2adb-f43e-65fdeab7c11c/mzaf_17328252813355245487.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/bed-intruder-song-pete-proto-remix/424627279?i=424627315&uo=4",
-    year: 2011
-  },
-  {
-    id: 10086,
-    title: "Brazil Phonk",
-    artist: "ФОНК",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/ab/f4/c7/abf4c751-268b-cde1-d57b-625a90d18169/mzaf_14456883371081160231.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/brazil-phonk/1714468354?i=1714468355&uo=4",
-    year: 2023
-  },
-  {
-    id: 10087,
-    title: "E1m1 - At Dooms Gate (From \"Doom\") [feat. ToxicxEternity]",
-    artist: "FamilyJules",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/74/62/14/74621459-d656-5d5f-0ef9-f392428db886/mzaf_3348727734206761683.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/e1m1-at-dooms-gate-from-doom-feat-toxicxeternity/1617944096?i=1617944105&uo=4",
-    year: 2020
-  },
-  {
-    id: 10088,
-    title: "The Hamster Dance",
-    artist: "DJ Krazy",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/55/2b/76/552b7663-9775-e94f-1187-4ca444bc25f8/mzaf_14506001374796742751.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/the-hamster-dance/674910941?i=674911114&uo=4",
-    year: 2013
-  },
-  {
-    id: 10089,
-    title: "Sahara Phonk (Arabic Drift)",
-    artist: "Phonk or DIE, hozoneonfire & HOZONE",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/33/5b/49/335b49d6-b931-4d65-5a6a-3929e814533b/mzaf_10935004130257280216.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/sahara-phonk-arabic-drift/1779260012?i=1779260019&uo=4",
-    year: 2024
-  },
-  {
-    id: 10090,
-    title: "Tetris Theme (8-Bit Version)",
-    artist: "8-Bit Universe",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ae/4c/5c/ae4c5c57-59ee-0e66-fe37-ab17c2a80265/mzaf_9422462164441449973.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/tetris-theme-8-bit-version/894910287?i=894910328&uo=4",
-    year: 2014
-  },
-  {
-    id: 10091,
-    title: "Bury the Light (Epic Version)",
-    artist: "Carameii",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/41/05/d7/4105d7b1-d6f1-9acd-7d49-79180ce93761/mzaf_15464736007360826045.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/bury-the-light-epic-version/1726961614?i=1726961625&uo=4",
-    year: 2022
-  },
-  {
-    id: 10092,
-    title: "Take On Me",
-    artist: "a-ha",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/75/59/46/755946b7-b806-722a-052a-ac2817b73003/mzaf_9236712906892068518.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/take-on-me/392429592?i=392429593&uo=4",
-    year: 1985
-  },
-  {
-    id: 10093,
-    title: "Cotton Eye Joe",
-    artist: "Gummy Bear",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/2d/56/91/2d56915a-4c6b-d256-8f9d-509dbfcf7602/mzaf_4113420340618578893.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/cotton-eye-joe/1504304842?i=1504304843&uo=4",
-    year: 2010
-  },
-  {
-    id: 10094,
-    title: "Friday (Rebecca's Black & White Remix)",
-    artist: "Flo Rida",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3c/5d/fb/3c5dfbd7-9297-ed1c-53ab-f084a27838bd/mzaf_8016580373681033753.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/friday-rebeccas-black-white-remix/1821636621?i=1821636622&uo=4",
-    year: 2024
-  },
-  {
-    id: 10095,
-    title: "Megalovania (Epic Orchestral Cover)",
-    artist: "Kāru",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/78/65/9a/78659ab0-20f3-ca6e-3a4d-896b6cadfef7/mzaf_1181738906179797449.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/megalovania-epic-orchestral-cover/1641711620?i=1641711636&uo=4",
-    year: 2022
-  },
-  {
-    id: 10096,
-    title: "Shooting Stars (Shazam Dub)",
-    artist: "Bag Raiders",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/b5/c8/e8/b5c8e85f-88a2-2055-5958-f9c9440629e5/mzaf_6063760291044180813.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/shooting-stars-shazam-dub/1440810476?i=1440811648&uo=4",
-    year: 2010
-  },
-  {
-    id: 10097,
-    title: "Wait a Minute!",
-    artist: "WILLOW",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/c3/ef/ed/c3efedf2-89d1-2c40-3496-6141dcf6063a/mzaf_23268240071252276.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/wait-a-minute/1440923499?i=1440924420&uo=4",
-    year: 2015
-  },
-  {
-    id: 10098,
-    title: "Rasputin",
-    artist: "Boney M.",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ce/f4/88/cef48846-e265-b9b2-f71e-1c47c7c56e0a/mzaf_11320931180470497407.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/rasputin/553356934?i=553356946&uo=4",
-    year: 1978
-  },
-  {
-    id: 10099,
-    title: "Oh Klahoma",
-    artist: "Jack Stauber",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d6/af/66/d6af66cc-6d27-df36-094e-d2bcd20144ad/mzaf_11298589522970753304.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/oh-klahoma/1223266768?i=1223267133&uo=4",
-    year: 2017
-  },
-  {
-    id: 10100,
-    title: "The Only Thing They Fear Is You (From \"Doom: Eternal\")",
-    artist: "FamilyJules",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/f5/a1/5f/f5a15fbb-598f-7a96-41c9-be726f1d16ae/mzaf_12063671139370543192.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/the-only-thing-they-fear-is-you-from-doom-eternal/1617944096?i=1617944320&uo=4",
-    year: 2020
-  },
-  {
-    id: 10101,
-    title: "All Star",
-    artist: "Smash Mouth",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b0/03/ef/b003ef4c-1a22-6b15-e851-fb106ad96a3b/mzaf_3320656447657988367.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/all-star/1440915299?i=1440915693&uo=4",
-    year: 1999
-  },
-  {
-    id: 10102,
-    title: "GigaChad Theme - Epic Version",
-    artist: "Kalypso",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/35/3f/34/353f347e-d7c5-03c9-a07b-02e48d78b031/mzaf_3368080452618250012.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/gigachad-theme-epic-version/1670147080?i=1670147081&uo=4",
-    year: 2023
-  },
-  {
-    id: 10103,
-    title: "Murder in My Mind (Sped Up)",
-    artist: "sped now",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d8/cc/d7/d8ccd7a8-0f47-4c5d-3dfe-bb2bf0118028/mzaf_6595488689284295747.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/murder-in-my-mind-sped-up/1829083408?i=1829083409&uo=4",
-    year: 2025
-  },
-  {
-    id: 10104,
-    title: "Despacito",
-    artist: "Luis Fonsi & Daddy Yankee",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/40/5b/e7/405be722-3ec9-ba27-7469-002182d57b39/mzaf_14120258742032474456.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/despacito/1447401519?i=1447401620&uo=4",
-    year: 2017
-  },
-  {
-    id: 10105,
-    title: "Devil Trigger",
-    artist: "Casey Edwards",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/16/bc/ee/16bceeaa-573c-47a6-2d4f-5cdd566a8571/mzaf_10419537066989784601.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/devil-trigger/1455566901?i=1455567243&uo=4",
-    year: 2019
-  },
-  {
-    id: 10106,
-    title: "Close Eyes",
-    artist: "Kronos XL",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/84/fd/c3/84fdc349-0f0a-3892-30e3-09dde857ef4d/mzaf_16613799983418381140.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/close-eyes/1627933026?i=1627933030&uo=4",
-    year: 2022
-  },
-  {
-    id: 10107,
-    title: "Bury the Light (Game Edit)",
-    artist: "Casey Edwards",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/42/cc/9c/42cc9c53-9c4a-c64b-15ef-fea70ae84279/mzaf_17282137594237545903.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/bury-the-light-game-edit/1545880007?i=1545880021&uo=4",
-    year: 2021
-  },
-  {
-    id: 10108,
-    title: "Aishite Aishite Aishite",
-    artist: "Trickle",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e9/09/5d/e9095d5c-9e03-cb97-0ba0-46d70f4d653e/mzaf_11041562813218844465.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/aishite-aishite-aishite/1801636162?i=1801636163&uo=4",
-    year: 2025
-  },
-  {
-    id: 10109,
-    title: "Mii Channel (From \"Nintendo Wii Mii Channel\") [feat. Gabe Nekrutman & Chris Allison]",
-    artist: "insaneintherainmusic",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/91/b2/4f/91b24f53-4b51-5f29-c12c-8afd98191cf1/mzaf_3405921851282769091.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/mii-channel-from-nintendo-wii-mii-channel-feat-gabe/1298920715?i=1298921008&uo=4",
-    year: 2017
-  },
-  {
-    id: 10110,
-    title: "Baby (Acoustic Version)",
-    artist: "Justin Bieber",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b7/4c/55/b74c5536-8cb0-7b6d-e302-5d4beb05d056/mzaf_8710077479693946936.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/baby-acoustic-version/1440662143?i=1440662337&uo=4",
-    year: 2010
-  },
-  {
-    id: 10111,
     title: "My Heart",
     artist: "Different Heaven & Eh!de",
     audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a5/33/83/a53383cc-2321-1592-17bc-829b0bc28e71/mzaf_13537799068417477520.plus.aac.p.m4a",
@@ -6796,199 +5916,7 @@ export const songsMemes = [
     year: 2013
   },
   {
-    id: 10112,
-    title: "The Perfect Girl (The Motion Retrowave Remix)",
-    artist: "Mareux",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/2b/8f/a8/2b8fa8bf-1f14-f6d9-0d5a-a3c52da6b0ce/mzaf_9468258677925264507.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/the-perfect-girl-the-motion-retrowave-remix/1623926592?i=1623926599&uo=4",
-    year: 2021
-  },
-  {
-    id: 10113,
-    title: "Gokuraku Jodo(Karaoke)",
-    artist: "POPS HIT MANIA",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/af/b5/0e/afb50e1f-1710-4005-475c-a1632b4d77d2/mzaf_1884320592766320698.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/gokuraku-jodo-karaoke/1740713964?i=1740713966&uo=4",
-    year: 2024
-  },
-  {
-    id: 10114,
-    title: "Pixel Galaxy",
-    artist: "Snail's House",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/95/90/56/959056cb-acba-9b6a-f013-7e89922676db/mzaf_6530555734580609672.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/pixel-galaxy/1304454906?i=1304455173&uo=4",
-    year: 2017
-  },
-  {
-    id: 10115,
-    title: "GigaChad Theme (Samurai Version)",
-    artist: "Carameii",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/aa/92/c5/aa92c5f8-f57f-39c1-3325-b44e7c26c18b/mzaf_11969675913403043409.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/gigachad-theme-samurai-version/1726987245?i=1726987579&uo=4",
-    year: 2022
-  },
-  {
-    id: 10116,
-    title: "Numa Numa",
-    artist: "GPF",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/32/7a/a7/327aa774-f584-3283-d235-a43e82d14597/mzaf_8057117647301455085.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/numa-numa/1699041153?i=1699041154&uo=4",
-    year: 2023
-  },
-  {
-    id: 10117,
-    title: "Hopes and Dreams (From \"Undertale\")",
-    artist: "FalKKonE",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/58/5a/20/585a209f-3bb9-e9e3-4e96-915ae7f764c0/mzaf_7900971665794533615.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/hopes-and-dreams-from-undertale/1210186480?i=1210186619&uo=4",
-    year: 2017
-  },
-  {
-    id: 10118,
-    title: "Pac Man Theme",
-    artist: "Peterson Games",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/ed/ca/00/edca0038-6d12-cef6-827a-11bd03d59132/mzaf_10500865881167484906.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/pac-man-theme/1675064402?i=1675064415&uo=4",
-    year: 2023
-  },
-  {
-    id: 10119,
-    title: "Caramelldansen",
-    artist: "Caramella Girls",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/6f/ce/21/6fce2128-16e5-ca68-4740-5aa19531967b/mzaf_4206433795640452081.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/caramelldansen/1495013032?i=1495013033&uo=4",
-    year: 2008
-  },
-  {
-    id: 10120,
-    title: "Chocolate Rain",
-    artist: "Dave Days",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/51/ce/89/51ce8978-e946-080d-c204-a44b806a907f/mzaf_5666759070525943872.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/chocolate-rain/310337725?i=310337751&uo=4",
-    year: 2009
-  },
-  {
-    id: 10121,
-    title: "Coconut Mall",
-    artist: "VGR",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/02/be/a7/02bea761-b3b4-c270-ab99-a1668acc67d0/mzaf_8914626482176312130.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/coconut-mall/1462476558?i=1462476561&uo=4",
-    year: 2019
-  },
-  {
-    id: 10122,
-    title: "Baby Shark",
-    artist: "CoComelon",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/01/69/b8/0169b847-f8c3-b001-6fd9-67ba376b7fce/mzaf_8777806946091108875.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/baby-shark/1584039361?i=1584039472&uo=4",
-    year: 2020
-  },
-  {
-    id: 10123,
-    title: "Pastel (feat. Snail's House)",
-    artist: "Moe Shop",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/89/dc/ad/89dcad34-3569-3e87-b76e-7d7e34669cdd/mzaf_2659685469838019056.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/pastel-feat-snails-house/1417639431?i=1417639698&uo=4",
-    year: 2017
-  },
-  {
-    id: 10124,
-    title: "Take On Me (2015 Remastered Version)",
-    artist: "a-ha",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bd/56/37/bd56373a-78f2-6c5c-3074-c520d885ce4a/mzaf_2495719049309140162.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/take-on-me-2015-remastered-version/1037562339?i=1037562348&uo=4",
-    year: 1985
-  },
-  {
-    id: 10125,
-    title: "Wii Shop Channel",
-    artist: "VGR",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/55/31/55/55315509-98f9-9c09-4ae4-937310aa8842/mzaf_277727487537941460.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/wii-shop-channel/1222271995?i=1222272102&uo=4",
-    year: 2017
-  },
-  {
-    id: 10126,
-    title: "Can You Feel My Heart (Mothica Version)",
-    artist: "MOTHICA",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/2c/08/50/2c0850f0-2171-8812-4399-9055931a8f9d/mzaf_5784836198821344394.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/can-you-feel-my-heart-mothica-version/1658100765?i=1658101426&uo=4",
-    year: 2021
-  },
-  {
-    id: 10127,
-    title: "Mine Diamonds",
-    artist: "Mcap Steve",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8e/90/7b/8e907b21-442b-73e5-3d53-b75d51c6b8d8/mzaf_16888860060582861878.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/mine-diamonds/1834440503?i=1834440521&uo=4",
-    year: 2017
-  },
-  {
-    id: 10128,
-    title: "Bangarang (130 BPM Instrumental Version)",
-    artist: "Remix Kit",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/84/7d/1c/847d1c95-e158-9383-1c43-427183bfaf5e/mzaf_15550756991668108167.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/bangarang-130-bpm-instrumental-version/517093873?i=517093953&uo=4",
-    year: 2012
-  },
-  {
-    id: 10129,
-    title: "Snow halation (UMI Mix)",
-    artist: "園田海未 (CV.三森すずこ) from μ's",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/d3/1e/b8/d31eb8f8-af06-eb19-b9c5-d00362d13f23/mzaf_15171295206066062668.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/snow-halation-umi-mix/1440137834?i=1440137838&uo=4",
-    year: 2011
-  },
-  {
-    id: 10130,
-    title: "Ymca",
-    artist: "The Moonies",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/fd/a7/fe/fda7fea2-2d97-6d22-76ae-523e2bbf0e9c/mzaf_15479010871981760184.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/ymca/1634336160?i=1634336448&uo=4",
-    year: 2022
-  },
-  {
-    id: 10131,
-    title: "Entry of the Gladiators",
-    artist: "United States Marine Band",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/be/bd/65/bebd65f3-00f4-a9c8-a4bf-4b7c83604bac/mzaf_12862896681355562709.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/entry-of-the-gladiators/200516145?i=200516638&uo=4",
-    year: 2006
-  },
-  {
-    id: 10132,
-    title: "Sahara (feat. Skrillex)",
-    artist: "DJ Snake",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/4b/e8/ab/4be8ab49-1dfd-e35d-d58f-0507dac7b0eb/mzaf_14631198735724040787.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/sahara-feat-skrillex/1440867448?i=1440867460&uo=4",
-    year: 2016
-  },
-  {
-    id: 10133,
-    title: "Scary Monsters and Nice Sprites (Dirtyphonics Remix)",
-    artist: "Skrillex",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/df/84/a8/df84a83d-c77d-513e-2fe1-a197c60f4f44/mzaf_16711118049900728276.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/scary-monsters-and-nice-sprites-dirtyphonics-remix/444335382?i=444335393&uo=4",
-    year: 2011
-  },
-  {
-    id: 10134,
-    title: "Despacito (feat. Justin Bieber) [Remix]",
-    artist: "Luis Fonsi & Daddy Yankee",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a9/8a/b4/a98ab479-5782-fe7b-57dc-a04be6c38462/mzaf_11605981746719020256.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/despacito-feat-justin-bieber-remix/1447401519?i=1447401626&uo=4",
-    year: 2017
-  },
-  {
-    id: 10135,
-    title: "Llama Song",
-    artist: "It's Music",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/05/ac/c2/05acc260-9f6f-912d-d782-5b6a16445170/mzaf_2363709535681689020.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/llama-song/1481410984?i=1481410992&uo=4",
-    year: 2019
-  },
-  {
-    id: 10136,
+    id: 10002,
     title: "At Doom's Gate (DOOM E1M1)",
     artist: "Daniel Tidwell",
     audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e2/a0/28/e2a028a5-8b83-44b7-060c-636089c6dd65/mzaf_6030667494035919397.plus.aac.p.m4a",
@@ -6996,95 +5924,79 @@ export const songsMemes = [
     year: 2015
   },
   {
-    id: 10137,
-    title: "Brain Power (Long Version)",
-    artist: "NOMA",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d2/66/3e/d2663e55-41a7-ef9a-aaa1-07a7142be877/mzaf_656697578954840452.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/brain-power-long-version/1566090890?i=1566091611&uo=4",
-    year: 2014
-  },
-  {
-    id: 10138,
-    title: "Nyan Cat",
-    artist: "Les Dupont",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/a6/b9/16/a6b916e9-f688-994a-5f9a-84da6f4b23a5/mzaf_7718419855641718816.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/nyan-cat/1608619181?i=1608619423&uo=4",
-    year: 2012
-  },
-  {
-    id: 10139,
-    title: "Bling-Bang-Bang-Born",
-    artist: "Creepy Nuts",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/ab/ee/99/abee99ed-b939-5d0f-43cb-11dfbdba00b5/mzaf_9186164617284703862.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/bling-bang-bang-born/1720332180?i=1720332181&uo=4",
-    year: 2024
-  },
-  {
-    id: 10140,
-    title: "Blue (Da Ba Dee) [Gabry Ponte Ice Pop Mix]",
-    artist: "Eiffel 65",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/70/4e/39/704e3951-5dc3-a0b0-d8ae-731b81fa897e/mzaf_17440538127908886563.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/blue-da-ba-dee-gabry-ponte-ice-pop-mix/257424513?i=257424857&uo=4",
-    year: 1998
-  },
-  {
-    id: 10141,
-    title: "The Perfect Girl (Soft Kill Remix)",
-    artist: "Mareux",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/50/d0/60/50d06073-d1b8-4657-49dc-a050d381f88e/mzaf_14604396605932677062.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/the-perfect-girl-soft-kill-remix/1614616868?i=1614616882&uo=4",
-    year: 2021
-  },
-  {
-    id: 10142,
-    title: "Running In The 90s",
-    artist: "Tsuko G.",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/37/58/67/375867c6-ab11-8ba0-1871-39c2aabe0cbe/mzaf_15800137147190137201.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/running-in-the-90s/1792519648?i=1792519651&uo=4",
-    year: 2017
-  },
-  {
-    id: 10143,
-    title: "Chicken Wing Song",
-    artist: "Benjix",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/7e/75/39/7e7539aa-856e-9363-c1dd-838e49ae7921/mzaf_14419924036583242687.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/chicken-wing-song/1517126208?i=1517126210&uo=4",
+    id: 10003,
+    title: "Halo Theme - Epic Version",
+    artist: "Samuel Kim",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ac/0e/72/ac0e722e-787a-72d9-658b-28fb3f38c2df/mzaf_9330119011111679542.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/halo-theme-epic-version/1527604949?i=1527604950&uo=4",
     year: 2020
   },
   {
-    id: 10144,
-    title: "Renai Circulation",
-    artist: "MONOGATARI Series",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/f3/06/d9/f306d97f-bee4-3cad-98a3-65fbd5e4ba7b/mzaf_9852758338510764595.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/renai-circulation/1439324785?i=1439324904&uo=4",
-    year: 2010
+    id: 10004,
+    title: "Tetris Theme (Remix)",
+    artist: "M.I.C.O.Y.C",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/49/58/0c/49580c98-1a09-a5ee-59ba-7e967ef6abed/mzaf_9231787716377642841.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/tetris-theme-remix/1486170142?i=1486170375&uo=4",
+    year: 2019
   },
   {
-    id: 10145,
-    title: "Rasputin",
-    artist: "Majestic & Boney M.",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/27/bb/57/27bb572c-83ab-da42-c2c9-3105dfc8f7d0/mzaf_17163248986556799542.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/rasputin/1553504894?i=1553504896&uo=4",
+    id: 10005,
+    title: "Metamorphosis (Interworld)",
+    artist: "MR. $KS",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/72/f7/9b/72f79bf2-252a-34b3-37fd-339c54c375fa/mzaf_14324721780164828933.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/metamorphosis-interworld/1805886845?i=1805886846&uo=4",
+    year: 2025
+  },
+  {
+    id: 10006,
+    title: "Main Theme",
+    artist: "String Player Gamer",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/55/f8/90/55f89035-b377-592e-e78c-e964f7fa0f64/mzaf_14029531046357353138.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/main-theme/866136652?i=866136852&uo=4",
+    year: 2014
+  },
+  {
+    id: 10007,
+    title: "Moskau (Moscow)",
+    artist: "GENGHIS KHAN",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/eb/d4/df/ebd4df09-e093-7189-bac6-73f6c43532b3/mzaf_11147800992756365814.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/moskau-moscow/1575686620?i=1575686622&uo=4",
+    year: 1979
+  },
+  {
+    id: 10008,
+    title: "Entry of the Gladiators",
+    artist: "Kidsongs",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/94/69/f5/9469f516-f7b2-db78-8959-82cbd606d669/mzaf_238982074557636318.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/entry-of-the-gladiators/466433872?i=466433906&uo=4",
+    year: 1993
+  },
+  {
+    id: 10009,
+    title: "Вокализ (Тро-ло-ло)",
+    artist: "Eduard Khil",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/f3/b8/ef/f3b8ef27-1d9e-67a2-e341-5ec18004e4b0/mzaf_7983549338350880017.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/%D0%B2%D0%BE%D0%BA%D0%B0%D0%BB%D0%B8%D0%B7-%D1%82%D1%80%D0%BE-%D0%BB%D0%BE-%D0%BB%D0%BE/1681500029?i=1681500031&uo=4",
+    year: 2016
+  },
+  {
+    id: 10010,
+    title: "All Star",
+    artist: "Smash Mouth",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b0/03/ef/b003ef4c-1a22-6b15-e851-fb106ad96a3b/mzaf_3320656447657988367.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/all-star/1440915299?i=1440915693&uo=4",
+    year: 1999
+  },
+  {
+    id: 10011,
+    title: "The Perfect Girl (The Motion Retrowave Remix)",
+    artist: "Mareux",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/2b/8f/a8/2b8fa8bf-1f14-f6d9-0d5a-a3c52da6b0ce/mzaf_9468258677925264507.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/the-perfect-girl-the-motion-retrowave-remix/1623926592?i=1623926599&uo=4",
     year: 2021
   },
   {
-    id: 10146,
-    title: "Loituma Ievan Polkka (Remix)",
-    artist: "Linard Janson",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/d4/9b/d3/d49bd3ea-4261-d783-3d8e-9079d157a01b/mzaf_14437683856838667941.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/loituma-ievan-polkka-remix/1621544450?i=1621544451&uo=4",
-    year: 2022
-  },
-  {
-    id: 10147,
-    title: "Dragostea Din Tei (Numa Numa)",
-    artist: "PelleK",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/ff/f4/51/fff451d5-f5f1-e00d-a35e-4d2c3a4c01a3/mzaf_13460831710116683968.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/dragostea-din-tei-numa-numa/1050361481?i=1050361487&uo=4",
-    year: 2015
-  },
-  {
-    id: 10148,
+    id: 10012,
     title: "Never Gonna Give You Up",
     artist: "The Black Keys",
     audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ba/9d/d6/ba9dd60f-c703-a398-7fc9-fbe4e70f22a0/mzaf_4757715701376373329.plus.aac.p.m4a",
@@ -7092,19 +6004,1107 @@ export const songsMemes = [
     year: 2010
   },
   {
-    id: 10149,
-    title: "METAMORPHOSIS (INTERWORLD)",
-    artist: "DJ Trending",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/c0/40/98/c040985a-12b3-65f9-1e36-edb62ddbbad7/mzaf_4522111136903825563.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/metamorphosis-interworld/1650641975?i=1650641977&uo=4",
+    id: 10013,
+    title: "PPAP(Pen-Pineapple-Apple-Pen)",
+    artist: "PIKOTARO",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/06/97/0f/06970fa3-7ca6-2232-a930-8ab91326c285/mzaf_8717199119131892606.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/ppap-pen-pineapple-apple-pen/1410087087?i=1410087093&uo=4",
+    year: 2016
+  },
+  {
+    id: 10014,
+    title: "Megalovania",
+    artist: "Augustine Mayuga Gonzales",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/ea/3b/db/ea3bdbc0-faef-b78d-3a40-f1db040bd13f/mzaf_14131044551103283307.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/megalovania/1592284234?i=1592284459&uo=4",
+    year: 2017
+  },
+  {
+    id: 10015,
+    title: "Interworld - Metamorphosis (REMIX)",
+    artist: "Din1c & CXERK",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/0f/13/fc/0f13fcbd-792b-3988-353d-f67540a065db/mzaf_6602421494245035147.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/interworld-metamorphosis-remix/1664590364?i=1664590636&uo=4",
+    year: 2023
+  },
+  {
+    id: 10016,
+    title: "I'm a Believer",
+    artist: "Smash Mouth",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/47/8b/c7/478bc7a7-a5a3-51e8-c73e-e8db97c02cad/mzaf_2995114628790427774.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/im-a-believer/1440719240?i=1440719761&uo=4",
+    year: 2001
+  },
+  {
+    id: 10017,
+    title: "Nyan Cat",
+    artist: "Fouste",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/54/d7/a8/54d7a8d5-efd4-1361-2720-bd3154cb6e5a/mzaf_4875490607409290301.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/nyan-cat/1820173364?i=1820173365&uo=4",
+    year: 2019
+  },
+  {
+    id: 10018,
+    title: "The Hamster Dance",
+    artist: "DJ Krazy",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/55/2b/76/552b7663-9775-e94f-1187-4ca444bc25f8/mzaf_14506001374796742751.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/the-hamster-dance/674910941?i=674911114&uo=4",
+    year: 2013
+  },
+  {
+    id: 10019,
+    title: "Mine Diamonds",
+    artist: "Minecraft Steve",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/88/05/77/880577b6-3866-8f4a-c25d-32472aa067d6/mzaf_15126771402751168758.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/mine-diamonds/1707184178?i=1707184179&uo=4",
+    year: 2023
+  },
+  {
+    id: 10020,
+    title: "Astronomia (Vicetone & Tony Igy Cover)",
+    artist: "Reflex Soundz",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/48/35/4b/48354b89-5374-1237-1e05-0946ae31c9bd/mzaf_3016849398978785453.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/astronomia-vicetone-tony-igy-cover/1594353106?i=1594353107&uo=4",
+    year: 2020
+  },
+  {
+    id: 10021,
+    title: "Coconut Mall (From \"Mario Kart Wii\")",
+    artist: "Arcade Player",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/d7/a6/df/d7a6dff2-eba8-39b1-19da-451a5cba51f2/mzaf_11439979023409378442.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/coconut-mall-from-mario-kart-wii/1525839990?i=1525839994&uo=4",
+    year: 2020
+  },
+  {
+    id: 10022,
+    title: "The Perfect Girl",
+    artist: "Mareux",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/88/c8/d9/88c8d97d-3223-30fe-c63f-4c197d2a2ab8/mzaf_114039310112023062.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/the-perfect-girl/1600167810?i=1600167814&uo=4",
+    year: 2021
+  },
+  {
+    id: 10023,
+    title: "Never Gonna Give You Up",
+    artist: "Rick Astley",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/3a/d6/9a/3ad69a5b-1fdc-c0ca-069b-541cef78e9d6/mzaf_12029354858253493617.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/never-gonna-give-you-up/1559885420?i=1559885421&uo=4",
+    year: 1987
+  },
+  {
+    id: 10024,
+    title: "Friday",
+    artist: "Rebecca Black",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/32/f9/76/32f9764e-8703-450e-95b3-d83d4eea7289/mzaf_2661788675734745718.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/friday/1650021643?i=1650021644&uo=4",
+    year: 2011
+  },
+  {
+    id: 10025,
+    title: "Scary Monsters and Nice Sprites (Dirtyphonics Remix)",
+    artist: "Skrillex",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/df/84/a8/df84a83d-c77d-513e-2fe1-a197c60f4f44/mzaf_16711118049900728276.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/scary-monsters-and-nice-sprites-dirtyphonics-remix/444335382?i=444335393&uo=4",
+    year: 2011
+  },
+  {
+    id: 10026,
+    title: "The Spectre",
+    artist: "Alan Walker",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/20/2f/34/202f348d-f72a-2034-63ce-3d8e6bcccd1d/mzaf_9112786095946866809.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/the-spectre/1277697257?i=1277697262&uo=4",
+    year: 2017
+  },
+  {
+    id: 10027,
+    title: "Sahara",
+    artist: "Grzzak",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/0f/5e/46/0f5e4623-8c1d-fef8-5200-7ef304f2060f/mzaf_10752984939128810300.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/sahara/1717483134?i=1717483135&uo=4",
     year: 2022
   },
   {
-    id: 10150,
-    title: "Congratulations (Originally Performed by Pewdiepie) [Karaoke Version]",
-    artist: "Rockaraoke",
-    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/4c/52/83/4c5283f6-9509-bf97-091a-1eca061d2cf8/mzaf_15143027552802919240.plus.aac.p.m4a",
-    appleUrl: "https://music.apple.com/us/album/congratulations-originally-performed-by-pewdiepie-karaoke/1644485690?i=1644485701&uo=4",
+    id: 10028,
+    title: "Coconut Mall (From \"Mario Kart Wii\")",
+    artist: "Qumu",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/fd/2a/6c/fd2a6ce9-6364-9103-9935-6872dc5e6442/mzaf_7813951580698056703.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/coconut-mall-from-mario-kart-wii/1456308442?i=1456308443&uo=4",
+    year: 2019
+  },
+  {
+    id: 10029,
+    title: "The Spectre (Instrumental)",
+    artist: "RavilZ",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a0/c7/d2/a0c7d237-9ff5-8ebe-a297-aa9e194e7551/mzaf_6338090959332943059.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/the-spectre-instrumental/1762590640?i=1762590645&uo=4",
+    year: 2023
+  },
+  {
+    id: 10030,
+    title: "RAVE",
+    artist: "Dxrk ダーク",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/2b/d2/d1/2bd2d1f7-f992-cbaa-223c-c2623f6e29c1/mzaf_13505719909370365573.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/rave/1612134731?i=1612134734&uo=4",
     year: 2022
+  },
+  {
+    id: 10031,
+    title: "Double Rainbow",
+    artist: "Katy Perry",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9f/ef/08/9fef0856-8e26-d0c1-082d-017e4ea98e0b/mzaf_13850352067247173785.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/double-rainbow/1440818542?i=1440819649&uo=4",
+    year: 2013
+  },
+  {
+    id: 10032,
+    title: "Spider-Man - Classic Theme (Epic Version)",
+    artist: "Alala",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/e0/76/a1/e076a186-d621-8e49-a781-52a2ab789d9f/mzaf_15356141474228220035.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/spider-man-classic-theme-epic-version/1410734608?i=1410735402&uo=4",
+    year: 2018
+  },
+  {
+    id: 10033,
+    title: "Brain Power (Long Version)",
+    artist: "NOMA",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d2/66/3e/d2663e55-41a7-ef9a-aaa1-07a7142be877/mzaf_656697578954840452.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/brain-power-long-version/1566090890?i=1566091611&uo=4",
+    year: 2014
+  },
+  {
+    id: 10034,
+    title: "Day 'N' Nite (Nightmare)",
+    artist: "Kid Cudi",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b6/9b/f5/b69bf55e-6169-78fc-7c1c-d50e447c2235/mzaf_13085101814416587306.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/day-n-nite-nightmare/1607887760?i=1607888738&uo=4",
+    year: 2008
+  },
+  {
+    id: 10035,
+    title: "The Legend of Zelda - Main Theme (Epic Version)",
+    artist: "Alala",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/b4/a4/98/b4a49819-8f41-f639-399b-e9e627cbe2b5/mzaf_12952483460205203879.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/the-legend-of-zelda-main-theme-epic-version/1581129689?i=1581129690&uo=4",
+    year: 2021
+  },
+  {
+    id: 10036,
+    title: "Halo Theme",
+    artist: "Munx Gregoriana",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/dd/c9/4e/ddc94e13-7e1b-1d46-e8d1-3b4c5af9293c/mzaf_2143209391192483819.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/halo-theme/1677760073?i=1677760074&uo=4",
+    year: 2023
+  },
+  {
+    id: 10037,
+    title: "Hotline",
+    artist: "Kaito Shoma",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/13/ad/e2/13ade27d-bee8-42da-fb5a-cc1670212f5d/mzaf_5656384181138051107.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/hotline/1562245399?i=1562245406&uo=4",
+    year: 2020
+  },
+  {
+    id: 10038,
+    title: "Chicken Wing Song",
+    artist: "Benjix",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/7e/75/39/7e7539aa-856e-9363-c1dd-838e49ae7921/mzaf_14419924036583242687.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/chicken-wing-song/1517126208?i=1517126210&uo=4",
+    year: 2020
+  },
+  {
+    id: 10039,
+    title: "Devil Trigger",
+    artist: "Casey Edwards",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/16/bc/ee/16bceeaa-573c-47a6-2d4f-5cdd566a8571/mzaf_10419537066989784601.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/devil-trigger/1455566901?i=1455567243&uo=4",
+    year: 2019
+  },
+  {
+    id: 10040,
+    title: "Kawaii Future Bass - Soft and Fluffy Time",
+    artist: "jonico",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c0/87/45/c08745ce-fbe5-0833-35fa-05a5946ffe22/mzaf_4365994593059927775.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/kawaii-future-bass-soft-and-fluffy-time/1773353019?i=1773353020&uo=4",
+    year: 2024
+  },
+  {
+    id: 10041,
+    title: "Gangnam Style",
+    artist: "KIDZ BOP Kids",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/7e/96/bf/7e96bffb-46cd-9ab6-c7ca-6e8f2206a3b3/mzaf_8122060273184404623.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/gangnam-style/1440955941?i=1440956180&uo=4",
+    year: 2013
+  },
+  {
+    id: 10042,
+    title: "The Legend of Zelda Theme",
+    artist: "Video Game Players",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/50/06/3d/50063dc3-51c8-19be-8a14-f16c889cbfbd/mzaf_15456652224850600286.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/the-legend-of-zelda-theme/983087229?i=983087232&uo=4",
+    year: 2015
+  },
+  {
+    id: 10043,
+    title: "Can You Feel My Heart (Live at the Royal Albert Hall)",
+    artist: "Bring Me The Horizon",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/e1/1a/1b/e11a1b2e-a726-bffc-d971-e6509e30bb77/mzaf_16095554912017420238.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/can-you-feel-my-heart-live-at-the-royal-albert-hall/1544058517?i=1544059014&uo=4",
+    year: 2020
+  },
+  {
+    id: 10044,
+    title: "At Doom's Gate (Doom E1m1)",
+    artist: "Nemistade",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/c5/80/5e/c5805ecc-66f4-16f3-5fc8-8a230408b4fb/mzaf_17357572358095929167.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/at-dooms-gate-doom-e1m1/1717644931?i=1717644932&uo=4",
+    year: 2023
+  },
+  {
+    id: 10045,
+    title: "The Fox (What Does the Fox Say?)",
+    artist: "Ylvis",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/53/e4/44/53e4446d-3162-ee21-8e31-bfa16c53f38c/mzaf_12946431043245579822.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/the-fox-what-does-the-fox-say/690233609?i=690233856&uo=4",
+    year: 2013
+  },
+  {
+    id: 10046,
+    title: "The Perfect Girl (Soft Kill Remix)",
+    artist: "Mareux",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/50/d0/60/50d06073-d1b8-4657-49dc-a050d381f88e/mzaf_14604396605932677062.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/the-perfect-girl-soft-kill-remix/1614616868?i=1614616882&uo=4",
+    year: 2021
+  },
+  {
+    id: 10047,
+    title: "Devil Trigger (Power Glove Battle Version)",
+    artist: "Power Glove",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ee/d2/f3/eed2f3bf-2d46-699d-6119-723033dfc0dc/mzaf_16599046554059517250.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/devil-trigger-power-glove-battle-version/1804212616?i=1804212618&uo=4",
+    year: 2025
+  },
+  {
+    id: 10048,
+    title: "Scatman (ski-ba-bop-ba-dop-bop)",
+    artist: "Scatman John",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/4e/b4/a0/4eb4a0de-6255-bf3e-ff48-bb90c2873120/mzaf_10083067139817580282.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/scatman-ski-ba-bop-ba-dop-bop/330241094?i=330241516&uo=4",
+    year: 1994
+  },
+  {
+    id: 10049,
+    title: "Sandstorm (Darude Remix) [Mixed]",
+    artist: "Darude",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/49/e2/9b/49e29b6e-49f4-6872-c704-e35b07703a3c/mzaf_17328417247696209519.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/sandstorm-darude-remix-mixed/1828765021?i=1828765426&uo=4",
+    year: 2025
+  },
+  {
+    id: 10050,
+    title: "Trololo Man (Doctor Werewolf Troll Face Mix)",
+    artist: "Doctor Werewolf & Eduard Khil",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/15/e2/93/15e293b1-1b92-c01c-ddd2-b4d1fe8d46e8/mzaf_7024195433270870469.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/trololo-man-doctor-werewolf-troll-face-mix/1420793172?i=1420793195&uo=4",
+    year: 2011
+  },
+  {
+    id: 10051,
+    title: "7th Element",
+    artist: "Sheet Music Boss",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/bd/dd/41/bddd4147-57ec-a85a-b54b-241fe23348ed/mzaf_6126300966700107033.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/7th-element/1569479609?i=1569480078&uo=4",
+    year: 2021
+  },
+  {
+    id: 10052,
+    title: "First of the Year",
+    artist: "Darren Garvey",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/73/13/ea/7313ea5d-afb9-86e2-03a6-ff004678579b/mzaf_95612844078338469.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/first-of-the-year/1619533072?i=1619533073&uo=4",
+    year: 2018
+  },
+  {
+    id: 10053,
+    title: "Megalovania",
+    artist: "Toby Fox",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/25/ed/8b/25ed8b44-fcbf-e901-4080-2b038334e6fc/mzaf_3554902685686560817.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/megalovania/1528217465?i=1528217897&uo=4",
+    year: 2015
+  },
+  {
+    id: 10054,
+    title: "Blue (Da Ba Dee) [Radio Mix]",
+    artist: "Blue Boys",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/3c/c0/70/3cc070ed-5171-54c8-42fd-27a275cae296/mzaf_8594746587010679137.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/blue-da-ba-dee-radio-mix/252747424?i=252747435&uo=4",
+    year: 2007
+  },
+  {
+    id: 10055,
+    title: "Baby Shark",
+    artist: "Pinkfong",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/02/d5/bb/02d5bb3e-0b02-d107-e67a-d54a1c7b977a/mzaf_17590281178329794907.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/baby-shark/1264976423?i=1264976429&uo=4",
+    year: 2017
+  },
+  {
+    id: 10056,
+    title: "Tunak Tunak Tun (Remix) [Mixed]",
+    artist: "Daler Mehndi",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8c/13/f9/8c13f9bc-2726-101f-74b7-79dbd6b56fed/mzaf_7180739148863358822.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/tunak-tunak-tun-remix-mixed/1783246170?i=1783246184&uo=4",
+    year: 2024
+  },
+  {
+    id: 10057,
+    title: "Caramelldansen",
+    artist: "Caramell",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d2/5a/dc/d25adc5d-e0bc-6ee2-41d2-5e131afbe400/mzaf_8694215729796960181.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/caramelldansen/1505925178?i=1505925183&uo=4",
+    year: 2001
+  },
+  {
+    id: 10058,
+    title: "Spider-Man",
+    artist: "John Paesano",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/71/cd/f3/71cdf38b-05b4-e3b9-fd1d-40b5097053fe/mzaf_12605966851789081553.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/spider-man/1435822264?i=1435822267&uo=4",
+    year: 2018
+  },
+  {
+    id: 10059,
+    title: "The Lazy Song",
+    artist: "Bruno Mars",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/21/14/e0/2114e026-94b3-0c98-9cd8-2e65cfe86e2d/mzaf_6998689149239318183.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/the-lazy-song/576670451?i=576670462&uo=4",
+    year: 2010
+  },
+  {
+    id: 10060,
+    title: "Spectre",
+    artist: "Alan Walker",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/94/60/0d/94600d65-1f9c-b65a-1d42-781f14cf57b4/mzaf_2436335591724441554.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/spectre/1630021932?i=1630021935&uo=4",
+    year: 2015
+  },
+  {
+    id: 10061,
+    title: "Friday (Rebecca's Black & White Remix)",
+    artist: "Flo Rida",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3c/5d/fb/3c5dfbd7-9297-ed1c-53ab-f084a27838bd/mzaf_8016580373681033753.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/friday-rebeccas-black-white-remix/1821636621?i=1821636622&uo=4",
+    year: 2024
+  },
+  {
+    id: 10062,
+    title: "Racing Into the Night",
+    artist: "Skinny Hamster",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/9c/47/c3/9c47c3bc-1ed8-2ab9-e552-827b9900f05b/mzaf_11320452138844237285.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/racing-into-the-night/1677088033?i=1677088034&uo=4",
+    year: 2023
+  },
+  {
+    id: 10063,
+    title: "Friday (Extended Mix) [Rebecca's Black & White Remix]",
+    artist: "Flo Rida",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ea/89/1b/ea891bc1-43c2-b708-267a-fca62b6c89e2/mzaf_2023153935874228213.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/friday-extended-mix-rebeccas-black-white-remix/1821636621?i=1821636623&uo=4",
+    year: 2024
+  },
+  {
+    id: 10064,
+    title: "Ievan Polkka (feat. Sari Kauranen, Hanni Autere, Anita Lehtola-Tollin, Timo Väänänen, Sanna Kurki-Suonio & Tellu Turkka) [Extended Mix]",
+    artist: "Loituma",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/0a/59/d2/0a59d2b1-3671-ef3c-3593-cdc67f5c2b99/mzaf_2201680021139696838.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/ievan-polkka-feat-sari-kauranen-hanni-autere-anita/1880575638?i=1880575641&uo=4",
+    year: 2007
+  },
+  {
+    id: 10065,
+    title: "Numa Numa",
+    artist: "GPF",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/32/7a/a7/327aa774-f584-3283-d235-a43e82d14597/mzaf_8057117647301455085.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/numa-numa/1699041153?i=1699041154&uo=4",
+    year: 2023
+  },
+  {
+    id: 10066,
+    title: "Indoor Kei Nara Track Maker",
+    artist: "Yunomi",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/ec/f9/58/ecf958de-4464-8caa-07af-7abaa0f67921/mzaf_15848538599567388642.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/indoor-kei-nara-track-maker/1328749288?i=1328749466&uo=4",
+    year: 2017
+  },
+  {
+    id: 10067,
+    title: "Can You Feel My Heart",
+    artist: "Bring Me The Horizon",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/2d/0c/e3/2d0ce34b-f92f-a685-e9e9-fa88e4f9ab8e/mzaf_15928914092567315421.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/can-you-feel-my-heart/1485070495?i=1485070702&uo=4",
+    year: 2013
+  },
+  {
+    id: 10068,
+    title: "Cotton Eye Joe",
+    artist: "Rednex",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/ed/53/22/ed53229c-92a5-4cd4-ab2e-5165b2b18cec/mzaf_7615928454011112758.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/cotton-eye-joe/255961168?i=255961201&uo=4",
+    year: 1994
+  },
+  {
+    id: 10069,
+    title: "Scatman (Ski-Ba-Bop-Ba-Dop-Bop) [New Radio Edit]",
+    artist: "Scatman John",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/cb/60/bd/cb60bd78-1c6f-64e5-b342-dbe79a9a22d9/mzaf_7902159418958456554.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/scatman-ski-ba-bop-ba-dop-bop-new-radio-edit/330231807?i=330232139&uo=4",
+    year: 1995
+  },
+  {
+    id: 10070,
+    title: "Jellyfish (feat. Roller Girl)",
+    artist: "Yunomi",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/c6/03/48/c6034885-c8f3-89c6-e9a5-c65cf3908ed1/mzaf_8742406260533609549.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/jellyfish-feat-roller-girl/1395136171?i=1395136176&uo=4",
+    year: 2018
+  },
+  {
+    id: 10071,
+    title: "Scary Monsters and Nice Sprites (Noisa Remix)",
+    artist: "Skrillex",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/43/ee/66/43ee6633-117e-5e44-6156-0a0cca34a9c8/mzaf_16250180499687089920.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/scary-monsters-and-nice-sprites-noisa-remix/409001929?i=409001998&uo=4",
+    year: 2010
+  },
+  {
+    id: 10072,
+    title: "Faded (Slowed Remix)",
+    artist: "Alan Walker",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ec/0a/67/ec0a6759-6b90-5bb5-1e75-c7cdf00f16f6/mzaf_345788604402492466.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/faded-slowed-remix/1634020336?i=1634020343&uo=4",
+    year: 2022
+  },
+  {
+    id: 10073,
+    title: "Racing Into the Night (Yoru ni Kakeru)",
+    artist: "Shayne Orok",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/fe/f8/f7/fef8f703-72dc-18d0-a731-62999dec1c76/mzaf_11227056274961701165.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/racing-into-the-night-yoru-ni-kakeru/1526315264?i=1526315265&uo=4",
+    year: 2020
+  },
+  {
+    id: 10074,
+    title: "Close Eyes",
+    artist: "Amanda Bray",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/17/28/b5/1728b57d-3a90-1184-8dd7-7b0f2f6e37cb/mzaf_14249898129825223550.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/close-eyes/985810960?i=985811297&uo=4",
+    year: 2015
+  },
+  {
+    id: 10075,
+    title: "Badgers",
+    artist: "Hornet",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/Music1/v4/09/71/d3/0971d359-eba4-c88e-4a46-e587f058dbae/mzaf_5498827610861389880.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/badgers/215826685?i=215826847&uo=4",
+    year: 2006
+  },
+  {
+    id: 10076,
+    title: "Y.M.C.A.",
+    artist: "Village People",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/35/cc/73/35cc73ff-e066-6508-5da6-ff7388c5218b/mzaf_1097522515788886155.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/y-m-c-a/1440825055?i=1440825374&uo=4",
+    year: 2007
+  },
+  {
+    id: 10077,
+    title: "Baka Mitai",
+    artist: "Little V.",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/d9/71/13/d971139b-a45b-aef6-b7d2-44d25970a300/mzaf_10736427947147103725.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/baka-mitai/1647483387?i=1647483388&uo=4",
+    year: 2020
+  },
+  {
+    id: 10078,
+    title: "The Chicken Wing Song",
+    artist: "Lankybox",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/ca/f5/f9/caf5f94c-09da-6f8b-a5c3-7f17ba22d8b9/mzaf_4316318499542346321.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/the-chicken-wing-song/1591271491?i=1591271492&uo=4",
+    year: 2020
+  },
+  {
+    id: 10079,
+    title: "Cupid (Twin Version)",
+    artist: "FIFTY FIFTY",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a4/df/71/a4df717f-1722-7f9f-1e3b-153731a4f868/mzaf_11832332831241388958.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/cupid-twin-version/1762365314?i=1762365716&uo=4",
+    year: 2023
+  },
+  {
+    id: 10080,
+    title: "Pleaser",
+    artist: "Wallows",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/24/42/9c/24429cae-e70f-eb2a-70c3-10008bdd63a7/mzaf_4288250902373101067.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/pleaser/1363234542?i=1363234543&uo=4",
+    year: 2017
+  },
+  {
+    id: 10081,
+    title: "Big Enough (feat. Molly Lewis, Jimmy Barnes) [Is This Short Enough?]",
+    artist: "Kirin J Callinan",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/12/23/8f/12238f22-c8d3-efd1-04f7-6fbf74f3d3d8/mzaf_18296500272211785095.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/big-enough-feat-molly-lewis-jimmy-barnes-is-this-short/1650870248?i=1650870251&uo=4",
+    year: 2017
+  },
+  {
+    id: 10082,
+    title: "The HampsterDance Song",
+    artist: "Hampton the Hampster",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/f4/7c/ae/f47cae71-21a6-9743-c5f5-95c11ca8fa42/mzaf_10825937857542032714.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/the-hampsterdance-song/1437025347?i=1437025351&uo=4",
+    year: 2000
+  },
+  {
+    id: 10083,
+    title: "I'm Blue",
+    artist: "MaxSky",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/7f/cf/01/7fcf0161-8462-4ca0-cb35-88f19e9ad3c8/mzaf_16096205353593760387.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/im-blue/1479602464?i=1479602465&uo=4",
+    year: 2019
+  },
+  {
+    id: 10084,
+    title: "Murder in My Mind",
+    artist: "sped now",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7c/69/4f/7c694fac-54fd-f260-e8ba-3db7b6b2a34b/mzaf_2869823849045925741.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/murder-in-my-mind/1829083408?i=1829083410&uo=4",
+    year: 2025
+  },
+  {
+    id: 10085,
+    title: "You Are a Pirate",
+    artist: "LazyTown",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/04/20/72/042072ae-5369-ab2b-43cb-20aa354cb4f8/mzaf_3544712718087743210.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/you-are-a-pirate/824384537?i=824384567&uo=4",
+    year: 2005
+  },
+  {
+    id: 10086,
+    title: "Cotton Eye Joe",
+    artist: "Gummy Bear",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/2d/56/91/2d56915a-4c6b-d256-8f9d-509dbfcf7602/mzaf_4113420340618578893.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/cotton-eye-joe/1504304842?i=1504304843&uo=4",
+    year: 2010
+  },
+  {
+    id: 10087,
+    title: "Close Eyes",
+    artist: "Kronos XL",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/84/fd/c3/84fdc349-0f0a-3892-30e3-09dde857ef4d/mzaf_16613799983418381140.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/close-eyes/1627933026?i=1627933030&uo=4",
+    year: 2022
+  },
+  {
+    id: 10088,
+    title: "The Llama Song",
+    artist: "The Mudcakes",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/08/e4/7a/08e47a26-71c2-b5e0-85fa-36f96ce16fc3/mzaf_12967081264521647061.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/the-llama-song/1506678487?i=1506678488&uo=4",
+    year: 2020
+  },
+  {
+    id: 10089,
+    title: "You Are a Pirate",
+    artist: "Alestorm",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/71/f2/3b/71f23ba3-4475-a079-824b-81e49b32ad04/mzaf_7716437243285988507.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/you-are-a-pirate/1519490532?i=1519490546&uo=4",
+    year: 2011
+  },
+  {
+    id: 10090,
+    title: "Baby Shark",
+    artist: "Super Simple Songs",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/c3/42/ae/c342aeeb-4070-e2a7-16eb-8605f77e0cae/mzaf_11968765214356121274.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/baby-shark/1537567714?i=1537567715&uo=4",
+    year: 2017
+  },
+  {
+    id: 10091,
+    title: "Bananaphone",
+    artist: "Raffi",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/dc/2c/c1/dc2cc190-c997-908c-990d-ea6fcd7d8ba1/mzaf_9001140571998489144.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/bananaphone/1440781474?i=1440781730&uo=4",
+    year: 1994
+  },
+  {
+    id: 10092,
+    title: "Plastic Love",
+    artist: "Friday Night Plans",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/33/c4/b9/33c4b986-773d-0a26-c35a-6c3c5d17f542/mzaf_9643031119605809382.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/plastic-love/1500906447?i=1500906449&uo=4",
+    year: 2018
+  },
+  {
+    id: 10093,
+    title: "Can You Feel My Heart (Live at the Royal Albert Hall) [Ultra HD Version]",
+    artist: "Bring Me The Horizon",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/87/36/cf/8736cfd6-f0d1-1b43-9b15-69ebefce1b33/mzaf_7209753048005614004.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/can-you-feel-my-heart-live-at-the-royal-albert-hall/1545140321?i=1545140514&uo=4",
+    year: 2020
+  },
+  {
+    id: 10094,
+    title: "Plastic Love",
+    artist: "Mariya Takeuchi",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/bf/83/69/bf8369db-79cc-822e-d36f-37b2e6fdb451/mzaf_10229507402446470387.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/plastic-love/1541673202?i=1541673399&uo=4",
+    year: 1984
+  },
+  {
+    id: 10095,
+    title: "Close Eyes",
+    artist: "Iwakura & Yatomi",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/4d/69/89/4d69898f-b8df-9ca0-5dbc-3b34e85fe7f2/mzaf_16602414006798813893.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/close-eyes/1675192553?i=1675192557&uo=4",
+    year: 2023
+  },
+  {
+    id: 10096,
+    title: "Snow halation (HONOKA Mix)",
+    artist: "高坂穂乃果 (CV.新田恵海) from μ's",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/11/29/91/112991fc-24ff-9337-6c7e-8ff86b20e89d/mzaf_17967591185956004790.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/snow-halation-honoka-mix/1440138562?i=1440138567&uo=4",
+    year: 2012
+  },
+  {
+    id: 10097,
+    title: "Remember When",
+    artist: "Wallows",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2d/f1/52/2df15241-bbae-20b2-3d8d-9ab7d0acd9f2/mzaf_14401500480373255187.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/remember-when/1450670646?i=1450670657&uo=4",
+    year: 2019
+  },
+  {
+    id: 10098,
+    title: "Sandstorm",
+    artist: "Darude",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/b2/c3/b6/b2c3b692-4c6e-96b4-0b80-a9f2fceee842/mzaf_15150202186372680773.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/sandstorm/338349017?i=338349243&uo=4",
+    year: 1999
+  },
+  {
+    id: 10099,
+    title: "We are number one",
+    artist: "LazyTown",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fc/c1/da/fcc1da17-cff1-830c-2a00-10ca6714d11e/mzaf_8395500506314744928.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/we-are-number-one/1860354043?i=1860354297&uo=4",
+    year: 2025
+  },
+  {
+    id: 10100,
+    title: "Nyan Cat",
+    artist: "Les Dupont",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/a6/b9/16/a6b916e9-f688-994a-5f9a-84da6f4b23a5/mzaf_7718419855641718816.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/nyan-cat/1608619181?i=1608619423&uo=4",
+    year: 2012
+  },
+  {
+    id: 10101,
+    title: "RAVE (Sped Up)",
+    artist: "Dxrk ダーク",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/f3/aa/76/f3aa7699-1060-9bad-e815-72cddd6848c9/mzaf_9229972556850797822.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/rave-sped-up/1634072263?i=1634072480&uo=4",
+    year: 2022
+  },
+  {
+    id: 10102,
+    title: "The Fox",
+    artist: "Peter, Paul & Mary",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/b5/94/99/b5949916-1cb1-00ef-9e38-c284987b5e70/mzaf_17699750777931405219.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/the-fox/826330019?i=826330033&uo=4",
+    year: 1993
+  },
+  {
+    id: 10103,
+    title: "Coconut Mall",
+    artist: "VGR",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/02/be/a7/02bea761-b3b4-c270-ab99-a1668acc67d0/mzaf_8914626482176312130.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/coconut-mall/1462476558?i=1462476561&uo=4",
+    year: 2019
+  },
+  {
+    id: 10104,
+    title: "Shooting Stars (Shazam Dub)",
+    artist: "Bag Raiders",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/b5/c8/e8/b5c8e85f-88a2-2055-5958-f9c9440629e5/mzaf_6063760291044180813.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/shooting-stars-shazam-dub/1440810476?i=1440811648&uo=4",
+    year: 2010
+  },
+  {
+    id: 10105,
+    title: "Lazy Song",
+    artist: "Conkarah",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/48/dd/62/48dd6272-3402-d7a6-957e-f4ed869794f7/mzaf_13403922055625884618.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/lazy-song/1814054201?i=1814054203&uo=4",
+    year: 2020
+  },
+  {
+    id: 10106,
+    title: "Blue (Da Ba Dee) [Gabry Ponte Video Edit]",
+    artist: "Eiffel 65",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/73/e4/da/73e4dab9-da0f-1586-1de4-8df93b2e05a7/mzaf_6310693176124969758.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/blue-da-ba-dee-gabry-ponte-video-edit/257424513?i=257425447&uo=4",
+    year: 1998
+  },
+  {
+    id: 10107,
+    title: "Entry of the Gladiators",
+    artist: "United States Marine Band",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/be/bd/65/bebd65f3-00f4-a9c8-a4bf-4b7c83604bac/mzaf_12862896681355562709.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/entry-of-the-gladiators/200516145?i=200516638&uo=4",
+    year: 2006
+  },
+  {
+    id: 10108,
+    title: "Astronomia (Extended Mix)",
+    artist: "Tony Igy",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/20/df/d5/20dfd5e6-2ffb-23d0-8bb6-2949453b7074/mzaf_12699833450512337749.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/astronomia-extended-mix/1648916519?i=1648916520&uo=4",
+    year: 2014
+  },
+  {
+    id: 10109,
+    title: "Rasputin (Club Mix)",
+    artist: "Boney M.",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/09/e3/c1/09e3c11f-38ae-a743-eaef-4b84762c30db/mzaf_732755332547556953.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/rasputin-club-mix/418008817?i=418008884&uo=4",
+    year: 2011
+  },
+  {
+    id: 10110,
+    title: "Sahara (feat. Skrillex)",
+    artist: "DJ Snake",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/4b/e8/ab/4be8ab49-1dfd-e35d-d58f-0507dac7b0eb/mzaf_14631198735724040787.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/sahara-feat-skrillex/1440867448?i=1440867460&uo=4",
+    year: 2016
+  },
+  {
+    id: 10111,
+    title: "Sahara Remix (feat. Hensonn)",
+    artist: "Killettic",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/5a/e7/a7/5ae7a76f-7460-bb18-bfab-02bb6c90020b/mzaf_15685735625886950974.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/sahara-remix-feat-hensonn/1659904852?i=1659904853&uo=4",
+    year: 2022
+  },
+  {
+    id: 10112,
+    title: "Blue (Da Ba Dee) [Gabry Ponte Ice Pop Radio]",
+    artist: "Eiffel 65",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/f2/81/66/f28166b6-32aa-12c9-28ae-3e90629de3ef/mzaf_15462082455327455088.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/blue-da-ba-dee-gabry-ponte-ice-pop-radio/358199826?i=358200264&uo=4",
+    year: 1998
+  },
+  {
+    id: 10113,
+    title: "The Duck Song",
+    artist: "The Duck",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/f7/e4/15/f7e4152f-79ae-fb4d-b96d-69a8f5aacc26/mzaf_15460125440111522832.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/the-duck-song/860318360?i=860318403&uo=4",
+    year: 2014
+  },
+  {
+    id: 10114,
+    title: "chocolate rain",
+    artist: "HM Surf, Crwsox & Secret Tapes",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d1/ea/b2/d1eab290-3162-8e48-098d-36afe5b190de/mzaf_6969920554671124782.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/chocolate-rain/1799631506?i=1799631520&uo=4",
+    year: 2019
+  },
+  {
+    id: 10115,
+    title: "Cupid - Twin Ver. (FIFTY FIFTY) [Sped Up Version]",
+    artist: "FIFTY FIFTY",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ba/56/84/ba568462-5882-ee29-846b-4a14d3fc4424/mzaf_14509376037159859971.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/cupid-twin-ver-fifty-fifty-sped-up-version/1762749292?i=1762749294&uo=4",
+    year: 1999
+  },
+  {
+    id: 10116,
+    title: "MEGALOVANIA (Pegboard Nerds Remix)",
+    artist: "Toby Fox",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/04/3a/e1/043ae100-6f68-ed3f-e8b9-a72b04f9d284/mzaf_13153360762708146576.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/megalovania-pegboard-nerds-remix/1838883536?i=1838883546&uo=4",
+    year: 2025
+  },
+  {
+    id: 10117,
+    title: "Everybody Scream",
+    artist: "Florence + the Machine",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d8/96/76/d89676ff-ef0f-2249-9a47-ac7570aa18ae/mzaf_12968948278174208343.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/everybody-scream/1833586446?i=1833586452&uo=4",
+    year: 2025
+  },
+  {
+    id: 10118,
+    title: "Baka Mitai [Ishin Spec Edition]",
+    artist: "Hajime Saito(Takaya Kuroda)",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/c1/2d/3f/c12d3f6f-6e09-325e-a804-2d0efd4db408/mzaf_13134961158735907174.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/baka-mitai-ishin-spec-edition/1656182148?i=1656182157&uo=4",
+    year: 2023
+  },
+  {
+    id: 10119,
+    title: "Entry of the Gladiators",
+    artist: "The Great American Main Street Band",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e7/cb/6b/e7cb6b45-7d73-0fe4-0f89-7e969e453428/mzaf_1429054610440846503.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/entry-of-the-gladiators/724927429?i=724927723&uo=4",
+    year: 1993
+  },
+  {
+    id: 10120,
+    title: "Can You Feel My Heart (feat. Andrew Zink)",
+    artist: "Varien",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/21/05/57/210557cc-82f5-beb4-d559-af29ebd24c3a/mzaf_10376811667122805565.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/can-you-feel-my-heart-feat-andrew-zink/1478633166?i=1478633169&uo=4",
+    year: 2019
+  },
+  {
+    id: 10121,
+    title: "Devil Trigger",
+    artist: "Ali Edwards & Casey Edwards",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/bc/07/b7/bc07b7d0-e6e8-4be9-b044-598793ed4b72/mzaf_5025113057862556932.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/devil-trigger/1387376925?i=1387376930&uo=4",
+    year: 2018
+  },
+  {
+    id: 10122,
+    title: "My Heart",
+    artist: "Odeal",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3c/de/9e/3cde9ec7-ae3b-474f-929d-e378bc0deab7/mzaf_10930974026711194666.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/my-heart/1822666383?i=1822666386&uo=4",
+    year: 2025
+  },
+  {
+    id: 10123,
+    title: "Platinum Disco (From \"Nisemonogatari\")",
+    artist: "Lofi Lia",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/af/36/8b/af368b3e-db5c-5120-193e-aff0471bb7be/mzaf_7017962466349794486.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/platinum-disco-from-nisemonogatari/1696343041?i=1696343042&uo=4",
+    year: 2022
+  },
+  {
+    id: 10124,
+    title: "First Of The Year",
+    artist: "Cuco",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/4c/c8/53/4cc853d0-8f81-c7bd-28ff-b932e29eb773/mzaf_7356078786750371666.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/first-of-the-year/1660127300?i=1660127308&uo=4",
+    year: 2022
+  },
+  {
+    id: 10125,
+    title: "Halo Theme Mjolnir Mix",
+    artist: "Martin O'Donnell & Michael Salvatori",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/b5/ae/e5/b5aee53d-4b13-739b-fe6c-37431b69ffa4/mzaf_12813766150027144746.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/halo-theme-mjolnir-mix/1682511658?i=1682511805&uo=4",
+    year: 2004
+  },
+  {
+    id: 10126,
+    title: "We Are Number One (Remix)",
+    artist: "Dunderpatrullen",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/82/74/71/8274715e-1cf0-8199-c970-d695ff20ee7b/mzaf_11947548888552524355.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/we-are-number-one-remix/1229569802?i=1229569809&uo=4",
+    year: 2017
+  },
+  {
+    id: 10127,
+    title: "Nyan Cat Theme",
+    artist: "Nyan Cat",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/90/c7/7c/90c77c7b-c92e-e337-2946-68c9efc99d41/mzaf_6451463869997248647.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/nyan-cat-theme/1222331948?i=1222332881&uo=4",
+    year: 2012
+  },
+  {
+    id: 10128,
+    title: "Song for Denise (Maxi version)",
+    artist: "Piano Fantasia",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/7a/a4/25/7aa425d0-cc18-27a9-f84b-7c73e7539048/mzaf_18422576675814116686.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/song-for-denise-maxi-version/512140852?i=512141370&uo=4",
+    year: 2012
+  },
+  {
+    id: 10129,
+    title: "Mine Diamonds (Slowed + Reverbed)",
+    artist: "Mcap Steve",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/14/22/32/1422321e-3ffd-b2e5-66bd-e24bd7199bba/mzaf_8865266463754662841.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/mine-diamonds-slowed-reverbed/1711262190?i=1711262191&uo=4",
+    year: 2023
+  },
+  {
+    id: 10130,
+    title: "Chocolate Rain",
+    artist: "Flo Milli",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/62/bc/dd/62bcdda3-da7a-6237-1043-c9bc40d09cbf/mzaf_8902335236491029291.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/chocolate-rain/1705120277?i=1705120279&uo=4",
+    year: 2023
+  },
+  {
+    id: 10131,
+    title: "Mine Diamonds",
+    artist: "Mcap Steve",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8e/90/7b/8e907b21-442b-73e5-3d53-b75d51c6b8d8/mzaf_16888860060582861878.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/mine-diamonds/1834440503?i=1834440521&uo=4",
+    year: 2017
+  },
+  {
+    id: 10132,
+    title: "Megalovania (Epic Orchestral Cover)",
+    artist: "Kāru",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/78/65/9a/78659ab0-20f3-ca6e-3a4d-896b6cadfef7/mzaf_1181738906179797449.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/megalovania-epic-orchestral-cover/1641711620?i=1641711636&uo=4",
+    year: 2022
+  },
+  {
+    id: 10133,
+    title: "PHONK - all alone [donttrustthem]",
+    artist: "donttrustthem",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/70/65/e5/7065e530-cec1-a0c5-dde2-a8875bb225e4/mzaf_7673415765294323869.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/phonk-all-alone-donttrustthem/1631612988?i=1631612989&uo=4",
+    year: 2022
+  },
+  {
+    id: 10134,
+    title: "My Heart",
+    artist: "Paramore",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/cd/4f/45/cd4f4560-c4f9-6d6f-0cc2-9afa5184d319/mzaf_1530681275412659391.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/my-heart/606661046?i=606661236&uo=4",
+    year: 2005
+  },
+  {
+    id: 10135,
+    title: "Alone (Mixed)",
+    artist: "Marshmello",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d0/ec/c2/d0ecc2ef-c000-1c82-8396-1d4ebd99647e/mzaf_14188119624524507844.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/alone-mixed/1451396035?i=1451396327&uo=4",
+    year: 2019
+  },
+  {
+    id: 10136,
+    title: "Llama Song",
+    artist: "It's Music",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/05/ac/c2/05acc260-9f6f-912d-d782-5b6a16445170/mzaf_2363709535681689020.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/llama-song/1481410984?i=1481410992&uo=4",
+    year: 2019
+  },
+  {
+    id: 10137,
+    title: "YMCA (Minions Remix)",
+    artist: "Kiddoyish & Funny Minions Guys",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/99/8c/a3/998ca300-3d81-51e1-68e6-65287d23aa7b/mzaf_5322715096411390398.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/ymca-minions-remix/1615676677?i=1615676690&uo=4",
+    year: 2022
+  },
+  {
+    id: 10138,
+    title: "Day 'n' Nite",
+    artist: "Kid Cudi",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f7/07/23/f707231e-ed5b-4e50-499c-114232d369ab/mzaf_7872385221426664785.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/day-n-nite/1440744775?i=1440745246&uo=4",
+    year: 2008
+  },
+  {
+    id: 10139,
+    title: "Into The Night (English Version)",
+    artist: "YOASOBI",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/19/d7/1b/19d71bd4-6adb-4149-293d-958c39e35183/mzaf_722920354107427825.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/into-the-night-english-version/1571239531?i=1571239689&uo=4",
+    year: 2021
+  },
+  {
+    id: 10140,
+    title: "Fade",
+    artist: "Alan Walker",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2b/fe/e6/2bfee66b-a7a9-26c0-87b3-d673a25203cf/mzaf_11342691149314708812.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/fade/1630021932?i=1630021933&uo=4",
+    year: 2022
+  },
+  {
+    id: 10141,
+    title: "Badgers Badgers Badgers",
+    artist: "Have I Got News For You",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/de/dc/99/dedc99be-8664-d14d-c30a-cc9e4866b165/mzaf_9859614712251827011.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/badgers-badgers-badgers/293734678?i=293734770&uo=4",
+    year: 2008
+  },
+  {
+    id: 10142,
+    title: "Bakamitai(Taxi Driver Edition)",
+    artist: "Kazuma Kiryu(Takaya Kuroda)",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/9d/ce/75/9dce7506-dfe4-a1c9-970c-b8bba9a9e2fc/mzaf_17197830620007480354.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/bakamitai-taxi-driver-edition/1492276149?i=1492276897&uo=4",
+    year: 2024
+  },
+  {
+    id: 10143,
+    title: "Never Gonna Give You Up (2022 Remaster)",
+    artist: "Rick Astley",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/b0/d8/aa/b0d8aa8e-1a38-6287-508d-27693174249e/mzaf_12819981103726582013.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/never-gonna-give-you-up-2022-remaster/1624945511?i=1624945512&uo=4",
+    year: 1987
+  },
+  {
+    id: 10144,
+    title: "Stayin’ Alive (Serban Mix)",
+    artist: "Bee Gees",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/48/e5/50/48e550f1-c619-3c9e-682b-95f3019e0deb/mzaf_13768777209903029093.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/stayin-alive-serban-mix/1442259177?i=1442259638&uo=4",
+    year: 1977
+  },
+  {
+    id: 10145,
+    title: "Rasputin (2007 Remastered Version)",
+    artist: "Boney M.",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/2a/2a/22/2a2a22f9-0068-9376-6a4a-58eba930dcbe/mzaf_13938777033634640015.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/rasputin-2007-remastered-version/250727571?i=250727626&uo=4",
+    year: 1978
+  },
+  {
+    id: 10146,
+    title: "Caramelldansen (English Version)",
+    artist: "Charli Chan",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/9b/45/dd/9b45dd31-b9e5-f33c-8ace-4ec0041f1db3/mzaf_9765984806067576407.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/caramelldansen-english-version/1658183537?i=1658183542&uo=4",
+    year: 2022
+  },
+  {
+    id: 10147,
+    title: "Crab Rave",
+    artist: "Noisestorm",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/19/39/b0/1939b0c7-e551-a7b5-8901-b3422c801f9a/mzaf_17413254458689540375.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/crab-rave/1395991205?i=1395991207&uo=4",
+    year: 2018
+  },
+  {
+    id: 10148,
+    title: "Alone",
+    artist: "Marshmello",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b1/3e/7d/b13e7d69-4213-302d-e758-1a7973165719/mzaf_10436877470185704690.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/alone/1110086888?i=1110087159&uo=4",
+    year: 2016
+  },
+  {
+    id: 10149,
+    title: "Big Enough (feat. Alex Cameron, Molly Lewis, Jimmy Barnes) [Radio Edit]",
+    artist: "Kirin J Callinan",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/a2/8d/bb/a28dbb5c-aa34-2dd6-1c67-1bd3bbf41bc3/mzaf_8867102220809298355.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/big-enough-feat-alex-cameron-molly-lewis-jimmy-barnes/1650870248?i=1650870250&uo=4",
+    year: 2017
+  },
+  {
+    id: 10150,
+    title: "Banana Phone",
+    artist: "Alien Chaos & Hyperburst",
+    audioUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/78/92/87/789287d6-0d96-fac5-128e-1002989f6009/mzaf_14473830414827442194.plus.aac.p.m4a",
+    appleUrl: "https://music.apple.com/us/album/banana-phone/1458054171?i=1458054327&uo=4",
+    year: 2019
   }
 ];
