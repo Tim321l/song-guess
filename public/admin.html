@@ -915,6 +915,8 @@
                                 <th>Email</th>
                                 <th>Score</th>
                                 <th>Status</th>
+                                <th>Last Login</th>
+                                <th>Last Logout</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -1281,6 +1283,8 @@
             <td style="font-size:0.8rem;color:var(--muted);">${u.email || '--'}</td>
             <td>${u.totalScore}</td>
             <td><span class="badge ${u.banned ? 'badge-danger' : 'badge-success'}">${u.banned ? 'Banned' : 'Active'}</span></td>
+            <td style="font-size:0.8rem;color:var(--muted);">${fmtDateTime(u.lastLogin)}</td>
+            <td style="font-size:0.8rem;color:var(--muted);">${fmtDateTime(u.lastLogout)}</td>
             <td style="display:flex;gap:5px;flex-wrap:wrap;">
                 ${u.banned
                         ? `<button class="btn btn-success" onclick="unbanUser('${u.username}')">Unban</button>`
