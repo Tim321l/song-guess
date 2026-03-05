@@ -2,6 +2,7 @@ import { state } from './state.js';
 import { socket } from './socket.js';
 import { renderIcon, switchScreen } from './utils.js';
 import { clearTeamState } from './teams.js';
+import { showNewsPopupIfNeeded } from '../main.js';
 
 export function handleLoginSuccess(res, username, password) {
     clearTeamState();
@@ -42,6 +43,7 @@ export function handleLoginSuccess(res, username, password) {
     if (chatContainer) chatContainer.classList.remove('hidden');
 
     switchScreen('start');
+    setTimeout(() => showNewsPopupIfNeeded(), 500); // Slight delay for smoother UX
 }
 
 // Google Login Handler Implementation

@@ -245,4 +245,36 @@ socket.on('kick', (reason) => {
     location.reload();
 });
 
+// ── News / Announcement Popup ────────────────────────────────────────────────
+window.closeNewsPopup = function (dismissForToday) {
+    const overlay = document.getElementById('news-popup-overlay');
+    if (overlay) overlay.style.display = 'none';
+    if (dismissForToday) {
+        const today = new Date().toISOString().slice(0, 10); // "YYYY-MM-DD"
+        localStorage.setItem('sgNewsDismissed', today);
+    }
+};
+
+export function showNewsPopupIfNeeded() {
+    const today = new Date().toISOString().slice(0, 10);
+    const dismissed = localStorage.getItem('sgNewsDismissed');
+    if (dismissed === today) return; // Already dismissed today
+
+    socket.emit('getAnnouncement', (res) => {
+        if (!res || !res.success || !res.announcement) return;
+        const { title, body, updatedAt } = res.announcement;
+        const overlay = document.getElementById('news-popup-overlay');
+        const titleEl = document.getElementById('news-popup-title');
+        const bodyEl = document.getElementById('news-popup-body');
+        const dateEl = document.getElementById('news-popup-date');
+        if (!overlay || !titleEl || !bodyEl) return;
+        titleEl.textContent = title;
+        bodyEl.innerHTML = body; // Supports HTML
+        if (dateEl && updatedAt) {
+            dateEl.textContent = 'Updated: ' + new Date(updatedAt).toLocaleDateString();
+        }
+        overlay.style.display = 'flex';
+    });
+}
+
 console.log("Song Guess Modular Client Initialized.");

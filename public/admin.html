@@ -944,6 +944,34 @@
             </div>
         </div>
 
+        <!-- News / Announcement -->
+        <div class="panel wide" style="margin-top:0;">
+            <div class="panel-header">
+                <span>📢 News / Announcement Popup</span>
+                <button class="btn btn-accent" onclick="loadAnnouncement()">Refresh</button>
+            </div>
+            <div class="panel-body">
+                <div class="input-group">
+                    <label style="display:flex; align-items:center; gap:10px; cursor:pointer;">
+                        <input type="checkbox" id="news-enabled" style="width:18px;height:18px;">
+                        <strong>Enable News Popup</strong> (shows to users after login)
+                    </label>
+                </div>
+                <div class="input-group">
+                    <label>Title</label>
+                    <input type="text" id="news-title" placeholder="e.g. Server Update Completed">
+                </div>
+                <div class="input-group">
+                    <label>Body Content (HTML supported)</label>
+                    <textarea id="news-body" rows="4" placeholder="e.g. Welcome to the new version!"></textarea>
+                </div>
+                <div style="margin-top:15px;">
+                    <button class="btn btn-success" onclick="saveAnnouncement()">Publish Announcement</button>
+                    <span id="news-status-msg" style="margin-left:15px; color:var(--muted); font-size:0.9em;"></span>
+                </div>
+            </div>
+        </div>
+
         <!-- Audit Log -->
         <div class="panel wide" style="margin-top:0;">
             <div class="panel-header">
@@ -1118,6 +1146,7 @@
                 socket.emit('subscribeAdminLive', ADMIN_SECRET);
                 renderDashboard(res);
                 loadReports();
+                loadAnnouncement();
                 document.getElementById('last-refresh').textContent = 'Updated: ' + new Date().toLocaleTimeString();
                 startAutoRefresh();
             });
@@ -1398,6 +1427,43 @@
                     }
                 });
             }
+        }
+
+        function loadAnnouncement() {
+            socket.emit('getAnnouncementAdmin', ADMIN_SECRET, (res) => {
+                if (res.success && res.announcement) {
+                    document.getElementById('news-enabled').checked = res.announcement.enabled;
+                    document.getElementById('news-title').value = res.announcement.title || '';
+                    document.getElementById('news-body').value = res.announcement.body || '';
+                    const msgEl = document.getElementById('news-status-msg');
+                    if (res.announcement.updatedAt) {
+                        msgEl.innerText = 'Last updated: ' + new Date(res.announcement.updatedAt).toLocaleString();
+                    } else {
+                        msgEl.innerText = '';
+                    }
+                }
+            });
+        }
+
+        function saveAnnouncement() {
+            const enabled = document.getElementById('news-enabled').checked;
+            const title = document.getElementById('news-title').value.trim();
+            const body = document.getElementById('news-body').value.trim();
+
+            if (enabled && !title) return alert("Title is required if enabling news.");
+
+            socket.emit('adminAction', {
+                secret: ADMIN_SECRET,
+                action: 'setAnnouncement',
+                target: { enabled, title, body }
+            }, (res) => {
+                if (res.success) {
+                    showMsg("Announcement published correctly!", 'success');
+                    loadAnnouncement();
+                } else {
+                    showMsg("Failed to publish: " + res.message, 'error');
+                }
+            });
         }
 
         // Song Reporting System

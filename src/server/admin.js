@@ -11,6 +11,15 @@ export function logAudit(action, detail = '') {
     if (auditLog.length > 200) auditLog.pop();
 }
 
+// ─── Announcement / News (in-memory) ─────────────────────────────────────────
+let announcementData = {
+    title: '',
+    body: '',
+    enabled: false,
+    updatedAt: null
+};
+export function getAnnouncement() { return announcementData; }
+
 // ─── Metrics History (for charts, stored in 1-min buckets) ───────────────────
 const metricsHistory = [];  // [{ ts, onlineUsers, activeRooms, roomsCreated }]
 let roomsCreatedThisMinute = 0;
@@ -142,6 +151,11 @@ export function registerAdminHandlers(io, socket, activeUsers, ADMIN_SECRET, ser
         callback({ success: true, log: auditLog });
     });
 
+    socket.on('getAnnouncementAdmin', (secret, callback) => {
+        if (secret !== ADMIN_SECRET) return callback({ success: false, message: 'Unauthorized' });
+        callback({ success: true, announcement: announcementData });
+    });
+
     socket.on('adminAction', async ({ secret, action, target }, callback) => {
         if (secret !== ADMIN_SECRET) return callback({ success: false, message: 'Unauthorized' });
 
@@ -260,6 +274,13 @@ export function registerAdminHandlers(io, socket, activeUsers, ADMIN_SECRET, ser
             const { Song } = await import('./models.js');
             const song = await Song.findOne({ id: Number(target) });
             return callback({ success: !!song, song });
+        }
+
+        if (action === 'setAnnouncement') {
+            const { title = '', body = '', enabled = false } = target || {};
+            announcementData = { title: String(title), body: String(body), enabled: Boolean(enabled), updatedAt: new Date().toISOString() };
+            logAudit('SET_ANNOUNCEMENT', `Announcement "${title}" – enabled: ${enabled}`);
+            return callback({ success: true, message: 'Announcement updated.' });
         }
 
         if (action === 'getReports') {

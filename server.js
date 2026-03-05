@@ -15,7 +15,7 @@ let allSongs = {};
 // Internal modules
 import { migratePasswords, connectDB, loadSongs, updateUser } from './src/server/db.js';
 import { registerAuthHandlers } from './src/server/auth.js';
-import { registerAdminHandlers, startAdminBroadcast, recordRoomCreated } from './src/server/admin.js';
+import { registerAdminHandlers, startAdminBroadcast, recordRoomCreated, getAnnouncement } from './src/server/admin.js';
 import { registerSocialHandlers } from './src/server/social.js';
 import { registerGameplayHandlers, handlePlayerExit } from './src/server/gameplay.js';
 import { registerTeamHandlers } from './src/server/teams.js';
@@ -123,6 +123,17 @@ io.on('connection', (socket) => {
     socket.on('pong_latency', (startTime) => {
         if (socket.username && activeUsers[socket.username]) {
             activeUsers[socket.username].latency = Date.now() - startTime;
+        }
+    });
+
+    // Public: any logged-in user can fetch the current announcement
+    socket.on('getAnnouncement', (callback) => {
+        if (typeof callback !== 'function') return;
+        const ann = getAnnouncement();
+        if (ann.enabled && ann.title) {
+            callback({ success: true, announcement: ann });
+        } else {
+            callback({ success: false });
         }
     });
 
