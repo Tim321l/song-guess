@@ -185,3 +185,19 @@ httpServer.listen(PORT, async () => {
     await migratePasswords();
     startAdminBroadcast(io, activeUsers, serverStartTime);
 });
+
+// Keep-Alive Mechanism to prevent sleep (Render Free Tier)
+const RENDER_URL = process.env.RENDER_URL;
+if (RENDER_URL) {
+    console.log(`[System] Keep-alive initialized for: ${RENDER_URL}`);
+    setInterval(async () => {
+        try {
+            await fetch(RENDER_URL);
+            console.log(`[System] Keep-alive ping sent to ${RENDER_URL} (${new Date().toLocaleTimeString()})`);
+        } catch (err) {
+            console.error('[System] Keep-alive ping failed:', err.message);
+        }
+    }, 14 * 60 * 1000); // Ping every 14 minutes
+} else {
+    console.warn('[System] RENDER_URL not set. Server may go to sleep on Render free tier.');
+}
