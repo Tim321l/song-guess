@@ -135,7 +135,14 @@
         'feature-multi-title': 'Multiplayer',
         'feature-multi-desc': 'Compete with friends or players worldwide in real-time.',
         'feature-leader-title': 'Leaderboards',
-        'feature-leader-desc': 'Climb the ranks and become a legendary Song Guesser.'
+        'feature-leader-desc': 'Climb the ranks and become a legendary Song Guesser.',
+        'footer-about': 'About',
+        'footer-privacy': 'Privacy Policy',
+        'footer-copyright': '© 2026 Song Guess Online',
+        'about-list-1': '10,000+ Songs across English, Chinese, and more',
+        'about-list-2': 'Real-time multiplayer lobbies',
+        'about-list-3': 'Custom playlists and team features',
+        'back-to-game': '← Back to Game'
     },
     ZH: {
         'app-title-html': '估歌仔 <span class="highlight">Online</span>',
@@ -275,7 +282,14 @@
         'feature-multi-title': '多人對戰',
         'feature-multi-desc': '即時與好友或全球玩家一較高下。',
         'feature-leader-title': '排行榜',
-        'feature-leader-desc': '提升排名，成為傳奇的估歌王！'
+        'feature-leader-desc': '提升排名，成為傳奇的估歌王！',
+        'footer-about': '關於我們',
+        'footer-privacy': '私隱政策',
+        'footer-copyright': '© 2026 估歌仔 Online',
+        'about-list-1': '10,000+ 首來自各國語言的熱門歌曲',
+        'about-list-2': '即時多人對戰房間',
+        'about-list-3': '自定義播放清單與團隊功能',
+        'back-to-game': '← 返回遊戲'
     }
 };
 

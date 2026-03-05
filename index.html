@@ -98,8 +98,40 @@
       ">
     </div>
 
+    <!-- Landing Screen -->
+    <section id="landing-screen" class="screen glass-panel">
+      <div class="landing-hero">
+        <div class="icon-pulse">🎮</div>
+        <h1 data-i18n="landing-hero-title">Guess the Song, Beat the Clock!</h1>
+        <p class="subtitle" data-i18n="landing-hero-subtitle">The ultimate real-time multiplayer music trivia
+          experience. Join thousands of players and prove your musical knowledge!</p>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <span class="feature-icon">🎸</span>
+            <h3 data-i18n="feature-songs-title">10,000+ Songs</h3>
+            <p data-i18n="feature-songs-desc">Massive library across all genres and decades.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">👥</span>
+            <h3 data-i18n="feature-multi-title">Multiplayer</h3>
+            <p data-i18n="feature-multi-desc">Compete with friends or players worldwide in real-time.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">🏆</span>
+            <h3 data-i18n="feature-leader-title">Leaderboards</h3>
+            <p data-i18n="feature-leader-desc">Climb the ranks and become a legendary Song Guesser.</p>
+          </div>
+        </div>
+
+        <div class="cta-container">
+          <button id="play-now-btn" class="huge-btn" data-i18n="play-now-btn">Play Now 🎵</button>
+        </div>
+      </div>
+    </section>
+
     <!-- Auth Screen -->
-    <section id="auth-screen" class="screen active glass-panel">
+    <section id="auth-screen" class="screen hidden glass-panel">
       <div class="logo-container">
         <div class="icon-pulse">🎵</div>
         <h1>Song <span class="highlight">Guess</span> Online</h1>
@@ -167,9 +199,9 @@
           <p data-i18n="about-desc">Song Guess is a real-time multiplayer music trivia game. Challenge your friends to
             identify songs from different eras and languages!</p>
           <ul style="margin-top: 10px; margin-left: 20px; color: var(--text-muted);">
-            <li>10,000+ Songs across English, Chinese, and more</li>
-            <li>Real-time multiplayer lobbies</li>
-            <li>Custom playlists and team features</li>
+            <li data-i18n="about-list-1">10,000+ Songs across English, Chinese, and more</li>
+            <li data-i18n="about-list-2">Real-time multiplayer lobbies</li>
+            <li data-i18n="about-list-3">Custom playlists and team features</li>
           </ul>
         </div>
         <p id="auth-message" style="color: #ff4757; margin-top: 10px; font-size: 0.9em; text-align: center;"></p>
@@ -976,10 +1008,11 @@
 
   <footer
     style="position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; padding: 15px; font-size: 0.85em; color: var(--text-muted); background: var(--glass-bg); backdrop-filter: blur(5px); z-index: 9998; border-top: 1px solid var(--glass-border);">
-    <a href="/about.html" style="color: #00f2fe; text-decoration: none; margin: 0 15px; font-weight: 500;">About</a> |
-    <a href="/privacy.html" style="color: #00f2fe; text-decoration: none; margin: 0 15px; font-weight: 500;">Privacy
-      Policy</a> |
-    <span style="margin-left: 10px;">© 2026 Song Guess Online</span>
+    <a href="/about.html" style="color: #00f2fe; text-decoration: none; margin: 0 15px; font-weight: 500;"
+      data-i18n="footer-about">About</a> |
+    <a href="/privacy.html" style="color: #00f2fe; text-decoration: none; margin: 0 15px; font-weight: 500;"
+      data-i18n="footer-privacy">Privacy Policy</a> |
+    <span style="margin-left: 10px;" data-i18n="footer-copyright">© 2026 Song Guess Online</span>
   </footer>
 
   <script type="module" src="/src/main.js"></script>
