@@ -63,7 +63,15 @@ app.use(express.static('public'));
 app.use('/src', express.static('src'));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(process.cwd(), 'index.html'));
+    res.redirect('/play.html');
+});
+
+app.get('/play', (req, res) => {
+    res.sendFile(path.join(process.cwd(), 'play.html'));
+});
+
+app.get('/play.html', (req, res) => {
+    res.sendFile(path.join(process.cwd(), 'play.html'));
 });
 
 const httpServer = createServer(app);

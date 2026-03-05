@@ -13,5 +13,12 @@ export default defineConfig({
                 ws: true
             }
         }
+    },
+    build: {
+        rollupOptions: {
+            input: {
+                main: 'play.html'
+            }
+        }
     }
 });
