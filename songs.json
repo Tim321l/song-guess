@@ -49490,5 +49490,775 @@
       "appleUrl": "https://music.apple.com/th/album/people-you-may-know-feat-stamp/1685796573?i=1685796647&uo=4",
       "year": 2023
     }
+  ],
+  "songsJayChou": [
+    {
+      "id": 15,
+      "title": "最長的電影",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/f6/da/f1/f6daf1f2-9c4f-f02e-412f-73f3d5a147b2/mzaf_1909116634468117981.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E6%9C%80%E9%95%B7%E7%9A%84%E9%9B%BB%E5%BD%B1/536030690?i=536030702&uo=4",
+      "year": 2007
+    },
+    {
+      "id": 30,
+      "title": "半島鐵盒",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/51/43/89/5143896f-4d7b-f1b2-04d9-f4a60351442f/mzaf_3702135241729636934.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E5%8D%8A%E5%B3%B6%E9%90%B5%E7%9B%92/536161722?i=536162079&uo=4",
+      "year": 2002
+    },
+    {
+      "id": 122,
+      "title": "簡單愛",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/a3/b0/88/a3b088c9-dac4-fa2e-5292-94d64d50a46e/mzaf_806348827827822268.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E7%B0%A1%E5%96%AE%E6%84%9B/535739206?i=535739351&uo=4",
+      "year": 2001
+    },
+    {
+      "id": 242,
+      "title": "不該 (with 張惠妹)",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/9f/9d/ba/9f9dba5b-ecce-da04-cf59-5c1a00b33651/mzaf_9243543629939192261.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E4%B8%8D%E8%A9%B2-with-%E5%BC%B5%E6%83%A0%E5%A6%B9/1118757859?i=1118757873&uo=4",
+      "year": 2016
+    },
+    {
+      "id": 315,
+      "title": "夜曲",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/cd/80/49/cd8049a8-f655-a320-fe39-399582e94ed4/mzaf_2752455179820135985.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E5%A4%9C%E6%9B%B2/536009641?i=536009642&uo=4",
+      "year": 2005
+    },
+    {
+      "id": 318,
+      "title": "稻香",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/c3/c4/e0/c3c4e033-2bd0-e0fc-3195-3ec68299f19f/mzaf_9545722078596740089.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E7%A8%BB%E9%A6%99/1624000713?i=1624001324&uo=4",
+      "year": 2008
+    },
+    {
+      "id": 355,
+      "title": "星晴",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/82/2f/d2/822fd273-c8e2-1c65-f9c0-7721395c7bc3/mzaf_9228112348047222128.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E6%98%9F%E6%99%B4/535790918?i=535791111&uo=4",
+      "year": 2000
+    },
+    {
+      "id": 464,
+      "title": "說好不哭",
+      "artist": "周杰倫 & 五月天 阿信",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/09/56/a3/0956a3ba-1d87-1297-eaa2-6520a9297375/mzaf_9451698682107745612.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E8%AA%AA%E5%A5%BD%E4%B8%8D%E5%93%AD/1480229674?i=1480229675&uo=4",
+      "year": 2019
+    },
+    {
+      "id": 465,
+      "title": "擱淺",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f7/e6/e6/f7e6e6e4-4dfa-7e7f-b905-a67738621992/mzaf_5977864392377716485.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E6%93%B1%E6%B7%BA/536114662?i=536115199&uo=4",
+      "year": 2004
+    },
+    {
+      "id": 487,
+      "title": "聽見下雨的聲音",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/fa/a7/ae/faa7aea1-4e31-6c3d-c0a7-f4a13e5998ea/mzaf_13445831742774764242.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E8%81%BD%E8%A6%8B%E4%B8%8B%E9%9B%A8%E7%9A%84%E8%81%B2%E9%9F%B3/944321428?i=944321451&uo=4",
+      "year": 2014
+    },
+    {
+      "id": 565,
+      "title": "晴天",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/68/46/5d/68465d87-99db-f0e5-dcdb-5b8e3fe64a49/mzaf_4654864440578879672.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E6%99%B4%E5%A4%A9/535824731?i=535824738&uo=4",
+      "year": 2003
+    },
+    {
+      "id": 620,
+      "title": "等你下課 (with 楊瑞代)",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a8/71/c7/a871c786-97b6-2ad3-fbe4-c9b095aaa301/mzaf_7248052418097230069.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E7%AD%89%E4%BD%A0%E4%B8%8B%E8%AA%B2-with-%E6%A5%8A%E7%91%9E%E4%BB%A3/1336404440?i=1336404847&uo=4",
+      "year": 2018
+    },
+    {
+      "id": 664,
+      "title": "楓",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c2/5c/42/c25c4280-7e69-d202-c8c8-8b8dffcc343c/mzaf_11337512128383496020.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E6%A5%93/536009641?i=536009647&uo=4",
+      "year": 2005
+    },
+    {
+      "id": 669,
+      "title": "一路向北 (Bonus Track)",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c6/31/90/c63190f7-38b1-c2b8-eed0-f23afeb04241/mzaf_1376931491740407381.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E4%B8%80%E8%B7%AF%E5%90%91%E5%8C%97-bonus-track/536009641?i=536009753&uo=4",
+      "year": 2005
+    },
+    {
+      "id": 791,
+      "title": "東風破",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/82/b2/ee/82b2eea7-01df-4937-4330-1ee84465a78b/mzaf_12186016166479852213.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E6%9D%B1%E9%A2%A8%E7%A0%B4/535824731?i=535824740&uo=4",
+      "year": 2003
+    },
+    {
+      "id": 846,
+      "title": "七里香",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/99/4e/e2/994ee285-7c0d-73ab-85b7-8d3899a17242/mzaf_12441330510018253101.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E4%B8%83%E9%87%8C%E9%A6%99/536114662?i=536115195&uo=4",
+      "year": 2004
+    },
+    {
+      "id": 852,
+      "title": "告白氣球",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/8f/bc/20/8fbc20d5-ed30-3c34-7e66-2201ffba3695/mzaf_1061751424505493111.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E5%91%8A%E7%99%BD%E6%B0%A3%E7%90%83/1118757859?i=1118757877&uo=4",
+      "year": 2016
+    },
+    {
+      "id": 866,
+      "title": "珊瑚海 (feat. 梁心頤)",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/be/98/7a/be987a2b-efca-efeb-940d-2762769ee39f/mzaf_17336756863684346815.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E7%8F%8A%E7%91%9A%E6%B5%B7-feat-%E6%A2%81%E5%BF%83%E9%A0%A4/536009641?i=536009751&uo=4",
+      "year": 2005
+    },
+    {
+      "id": 917,
+      "title": "可愛女人",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/3b/7f/12/3b7f12ed-2e6f-85f4-6491-833b57863954/mzaf_15827152652647650378.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E5%8F%AF%E6%84%9B%E5%A5%B3%E4%BA%BA/535790918?i=535791109&uo=4",
+      "year": 2000
+    },
+    {
+      "id": 943,
+      "title": "我不配",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/12/5b/f6/125bf6e8-3f2d-1763-6016-e4a3f7f1c282/mzaf_4377209350496891945.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E6%88%91%E4%B8%8D%E9%85%8D/536030690?i=536030699&uo=4",
+      "year": 2007
+    },
+    {
+      "id": 956,
+      "title": "説了再見",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/8b/c0/4d/8bc04d73-32aa-695e-ae82-896e8abfb792/mzaf_9393385538591333394.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E8%AA%AC%E4%BA%86%E5%86%8D%E8%A6%8B/536247746?i=536248195&uo=4",
+      "year": 2010
+    },
+    {
+      "id": 1001,
+      "title": "完美主義",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/20/7d/e4/207de44b-0a3c-eaca-0caa-a0880ca0d78e/mzaf_11754136400022713328.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E5%AE%8C%E7%BE%8E%E4%B8%BB%E7%BE%A9/535790918?i=535791110&uo=4",
+      "year": 2000
+    },
+    {
+      "id": 1002,
+      "title": "娘子",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/04/16/8a/04168a51-33ef-2409-a945-855b06df123c/mzaf_13495858265368224631.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E5%A8%98%E5%AD%90/535790918?i=535791112&uo=4",
+      "year": 2000
+    },
+    {
+      "id": 1003,
+      "title": "鬥牛",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/74/3b/6a/743b6af7-84b3-7a3d-4664-5eff29369209/mzaf_12343465171032883572.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E9%AC%A5%E7%89%9B/535790918?i=535791113&uo=4",
+      "year": 2000
+    },
+    {
+      "id": 1004,
+      "title": "黑色幽默",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/69/cf/19/69cf19d5-0cbd-2fde-10e9-d41a39038745/mzaf_14938892924129168050.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E9%BB%91%E8%89%B2%E5%B9%BD%E9%BB%98/535790918?i=535791114&uo=4",
+      "year": 2000
+    },
+    {
+      "id": 1005,
+      "title": "伊斯坦堡",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/25/b3/42/25b34299-7080-5a2e-e431-7fa0d51aad3d/mzaf_6997102756848598235.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E4%BC%8A%E6%96%AF%E5%9D%A6%E5%A0%A1/535790918?i=535791115&uo=4",
+      "year": 2000
+    },
+    {
+      "id": 1006,
+      "title": "印地安老斑鳩",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/5f/61/cb/5f61cbef-65fd-72de-ce8c-5438e9b4d7aa/mzaf_9553700505718087528.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E5%8D%B0%E5%9C%B0%E5%AE%89%E8%80%81%E6%96%91%E9%B3%A9/535790918?i=535791116&uo=4",
+      "year": 2000
+    },
+    {
+      "id": 1007,
+      "title": "龍捲風",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d6/c5/65/d6c565ed-edd6-dda2-04a7-d4df48b493c4/mzaf_10476909795209709534.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E9%BE%8D%E6%8D%B2%E9%A2%A8/535790918?i=535791117&uo=4",
+      "year": 2000
+    },
+    {
+      "id": 1008,
+      "title": "反方向的鐘",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/2b/41/97/2b419756-c1eb-8ece-2f9e-8a6c3d152a0d/mzaf_6760903793918232499.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E5%8F%8D%E6%96%B9%E5%90%91%E7%9A%84%E9%90%98/535790918?i=535791118&uo=4",
+      "year": 2000
+    },
+    {
+      "id": 1009,
+      "title": "愛在西元前",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/d1/93/62/d19362ca-9653-10c8-1f40-0362e97f2989/mzaf_8169118584404749930.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E6%84%9B%E5%9C%A8%E8%A5%BF%E5%85%83%E5%89%8D/535739206?i=535739349&uo=4",
+      "year": 2001
+    },
+    {
+      "id": 1010,
+      "title": "爸我回來了",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/ca/7a/54/ca7a54bb-caf8-b4e9-e664-5d2e6956a647/mzaf_9716676873986735528.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E7%88%B8%E6%88%91%E5%9B%9E%E4%BE%86%E4%BA%86/535739206?i=535739350&uo=4",
+      "year": 2001
+    },
+    {
+      "id": 1011,
+      "title": "忍者",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/c1/db/59/c1db59d6-0009-2aef-1cf6-3549f251dfb2/mzaf_3857022612455962198.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E5%BF%8D%E8%80%85/535739206?i=535739352&uo=4",
+      "year": 2001
+    },
+    {
+      "id": 1012,
+      "title": "開不了口",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/b8/c8/43/b8c843e6-855f-4d7a-4c8a-0ef89b021b80/mzaf_16860384043003336265.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E9%96%8B%E4%B8%8D%E4%BA%86%E5%8F%A3/535739206?i=535739353&uo=4",
+      "year": 2001
+    },
+    {
+      "id": 1013,
+      "title": "上海一九四三",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/44/ff/ca/44ffcaa1-03b4-851b-2870-1ee26269f8fd/mzaf_18359593055667986723.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E4%B8%8A%E6%B5%B7%E4%B8%80%E4%B9%9D%E5%9B%9B%E4%B8%89/535739206?i=535739354&uo=4",
+      "year": 2001
+    },
+    {
+      "id": 1014,
+      "title": "自導自演",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/72/47/e0/7247e0a5-776b-c0d0-9762-4d209f308560/mzaf_1825821115713528916.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E8%87%AA%E5%B0%8E%E8%87%AA%E6%BC%94/536247746?i=536248203&uo=4",
+      "year": 2001
+    },
+    {
+      "id": 1015,
+      "title": "威廉古堡",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/aa/5c/7b/aa5c7b84-4c1e-8a35-9919-a2aed83be70b/mzaf_18310105397381875951.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E5%A8%81%E5%BB%89%E5%8F%A4%E5%A0%A1/535739206?i=535739357&uo=4",
+      "year": 2001
+    },
+    {
+      "id": 1016,
+      "title": "雙截棍 (Live)",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/8e/fb/3a/8efb3a35-6f03-7dfb-1b57-826ac5c30587/mzaf_7265864569953513371.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E9%9B%99%E6%88%AA%E6%A3%8D-live/1108410359?i=1108410488&uo=4",
+      "year": 2001
+    },
+    {
+      "id": 1017,
+      "title": "安靜",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/0a/47/a8/0a47a841-15f8-3dc8-0403-da7d30e89f67/mzaf_1027002373549116132.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E5%AE%89%E9%9D%9C/535739206?i=535739359&uo=4",
+      "year": 2001
+    },
+    {
+      "id": 1018,
+      "title": "半獸人",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/d0/8d/f8/d08df838-24c6-746e-fde7-eff02832c94f/mzaf_10215574569283766826.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E5%8D%8A%E7%8D%B8%E4%BA%BA/536161722?i=536162077&uo=4",
+      "year": 2002
+    },
+    {
+      "id": 1019,
+      "title": "暗號",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/b6/0b/9f/b60b9f8f-37cb-a564-e3fa-8b40e63ec1ca/mzaf_7281651371309382842.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E6%9A%97%E8%99%9F/536161722?i=536162080&uo=4",
+      "year": 2002
+    },
+    {
+      "id": 1020,
+      "title": "龍拳",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/6f/be/5b/6fbe5bb6-6b9f-340c-9b97-6101569bebb6/mzaf_5809760437756869180.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E9%BE%8D%E6%8B%B3/536161722?i=536162082&uo=4",
+      "year": 2002
+    },
+    {
+      "id": 1021,
+      "title": "牛仔很忙",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/59/c6/c0/59c6c04e-11e7-8a3a-f72c-2721eac07b8e/mzaf_15794583610849925138.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E7%89%9B%E4%BB%94%E5%BE%88%E5%BF%99/536030690?i=536030693&uo=4",
+      "year": 2002
+    },
+    {
+      "id": 1022,
+      "title": "爺爺泡的茶",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/f5/a1/05/f5a1058e-b747-7c53-907f-d04de1faa6bc/mzaf_3261918373364934193.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E7%88%BA%E7%88%BA%E6%B3%A1%E7%9A%84%E8%8C%B6/536161722?i=536162086&uo=4",
+      "year": 2002
+    },
+    {
+      "id": 1023,
+      "title": "米蘭的小鐵匠",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/82/e9/f9/82e9f9ac-10ad-a686-520c-9e9e192ab1bb/mzaf_14449034260322258220.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E7%B1%B3%E8%98%AD%E7%9A%84%E5%B0%8F%E9%90%B5%E5%8C%A0/536161722?i=536162269&uo=4",
+      "year": 2002
+    },
+    {
+      "id": 1024,
+      "title": "最後的戰役",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/97/63/a3/9763a381-2a74-2962-1d67-ed896e515ade/mzaf_4559314893824653238.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E6%9C%80%E5%BE%8C%E7%9A%84%E6%88%B0%E5%BD%B9/536161722?i=536162284&uo=4",
+      "year": 2002
+    },
+    {
+      "id": 1025,
+      "title": "以父之名",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a8/0d/61/a80d6144-fd5b-7935-085d-7b534b93fb6f/mzaf_13926473028436223071.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E4%BB%A5%E7%88%B6%E4%B9%8B%E5%90%8D/535824731?i=535824736&uo=4",
+      "year": 2003
+    },
+    {
+      "id": 1026,
+      "title": "三年二班",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5a/de/0c/5ade0c03-9776-ed86-52d6-6165f0463931/mzaf_11282699172046887636.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E4%B8%89%E5%B9%B4%E4%BA%8C%E7%8F%AD/535824731?i=535824739&uo=4",
+      "year": 2003
+    },
+    {
+      "id": 1027,
+      "title": "紅模仿",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/09/27/c6/0927c6a3-2a1d-48a5-f107-de1ba3003eca/mzaf_8111767201876224787.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E7%B4%85%E6%A8%A1%E4%BB%BF/536285027?i=536285262&uo=4",
+      "year": 2003
+    },
+    {
+      "id": 1028,
+      "title": "千里之外 (feat. 費玉清)",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/bc/86/c3/bc86c3e8-21ae-8e3b-9994-4ec59f721602/mzaf_6613429870420194916.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E5%8D%83%E9%87%8C%E4%B9%8B%E5%A4%96-feat-%E8%B2%BB%E7%8E%89%E6%B8%85/536285027?i=536285259&uo=4",
+      "year": 2003
+    },
+    {
+      "id": 1029,
+      "title": "梯田",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ed/c7/ec/edc7ecd9-2578-ed58-4745-3f5b7ab25fa5/mzaf_3893334401371299968.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E6%A2%AF%E7%94%B0/535824731?i=535824745&uo=4",
+      "year": 2003
+    },
+    {
+      "id": 1030,
+      "title": "雙刀",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/17/8d/1e/178d1e39-8039-fc3d-772c-0d17eda8cb38/mzaf_402702062937946909.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E9%9B%99%E5%88%80/535824731?i=535824746&uo=4",
+      "year": 2003
+    },
+    {
+      "id": 1031,
+      "title": "超人不會飛",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/c3/6b/df/c36bdf9d-9e3a-3a01-70bc-5e3d17e13843/mzaf_6066606269992637625.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E8%B6%85%E4%BA%BA%E4%B8%8D%E6%9C%83%E9%A3%9B/536247746?i=536248204&uo=4",
+      "year": 2004
+    },
+    {
+      "id": 1032,
+      "title": "亂舞春秋",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e3/26/bc/e326bcf5-24c7-f24c-c40a-bef7836a5183/mzaf_17194988213519941440.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E4%BA%82%E8%88%9E%E6%98%A5%E7%A7%8B/536114662?i=536115200&uo=4",
+      "year": 2004
+    },
+    {
+      "id": 1033,
+      "title": "麥芽糖",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f9/2a/cd/f92acdf4-0034-9f4f-7a81-6fad96e1e64a/mzaf_14558266007577970845.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E9%BA%A5%E8%8A%BD%E7%B3%96/536009641?i=536009750&uo=4",
+      "year": 2005
+    },
+    {
+      "id": 1034,
+      "title": "千里之外 (Live)",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/91/81/52/918152ef-92f4-d4dc-c3e4-b35638ecc35c/mzaf_8018226676215640858.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E5%8D%83%E9%87%8C%E4%B9%8B%E5%A4%96-live/536743616?i=536743858&uo=4",
+      "year": 2006
+    },
+    {
+      "id": 1035,
+      "title": "心雨",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a8/06/a4/a806a41e-88f0-d779-0b2f-1b4308aabcf9/mzaf_13427340461877017886.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E5%BF%83%E9%9B%A8/536285027?i=536285263&uo=4",
+      "year": 2006
+    },
+    {
+      "id": 1036,
+      "title": "陽光宅男",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/71/ef/f6/71eff667-6df4-b7a0-07ad-70b2d2e0e727/mzaf_7061108066523901586.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E9%99%BD%E5%85%89%E5%AE%85%E7%94%B7/536030690?i=536030696&uo=4",
+      "year": 2007
+    },
+    {
+      "id": 1037,
+      "title": "龍戰騎士",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/89/c5/8b/89c58b6f-d26e-e16b-7f27-053ff0e4f1ca/mzaf_7709936337729543490.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E9%BE%8D%E6%88%B0%E9%A8%8E%E5%A3%AB/1624000713?i=1624000714&uo=4",
+      "year": 2008
+    },
+    {
+      "id": 1038,
+      "title": "給我一首歌的時間",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/bf/e6/00/bfe600e9-50a2-53dc-ed16-45df13d64a65/mzaf_5755074420038339048.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E7%B5%A6%E6%88%91%E4%B8%80%E9%A6%96%E6%AD%8C%E7%9A%84%E6%99%82%E9%96%93/1624000713?i=1624000715&uo=4",
+      "year": 2008
+    },
+    {
+      "id": 1039,
+      "title": "時光機",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/3b/a8/10/3ba81069-d6ff-b18f-2026-06a0b2dfac42/mzaf_15174046205629627439.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E6%99%82%E5%85%89%E6%A9%9F/1624000713?i=1624001322&uo=4",
+      "year": 2008
+    },
+    {
+      "id": 1040,
+      "title": "雨下一整晩",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e5/e6/aa/e5e6aa5b-48d5-1f0b-206e-697d7e1f48ec/mzaf_1635515354601530499.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E9%9B%A8%E4%B8%8B%E4%B8%80%E6%95%B4%E6%99%A9/536247746?i=536248199&uo=4",
+      "year": 2010
+    },
+    {
+      "id": 1041,
+      "title": "迷魂曲",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/80/10/7a/80107af5-48cf-25e5-580d-38829505bb9c/mzaf_11862089494316028335.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E8%BF%B7%E9%AD%82%E6%9B%B2/535754551?i=535754617&uo=4",
+      "year": 2011
+    },
+    {
+      "id": 1042,
+      "title": "Mine Mine",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/9a/34/54/9a3454ad-f53c-f658-1487-e92cb5852ec9/mzaf_10887357853319447159.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/mine-mine/535754551?i=535754619&uo=4",
+      "year": 2011
+    },
+    {
+      "id": 1043,
+      "title": "公主病",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/5c/05/af/5c05afef-c60c-3cfa-966f-929e173f4afd/mzaf_8471727683268608552.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E5%85%AC%E4%B8%BB%E7%97%85/535754551?i=535754620&uo=4",
+      "year": 2011
+    },
+    {
+      "id": 1044,
+      "title": "你好嗎",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/48/16/e1/4816e14a-08d4-c41f-b263-18c958b08869/mzaf_3936903567688768652.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E4%BD%A0%E5%A5%BD%E5%97%8E/535754551?i=535754621&uo=4",
+      "year": 2011
+    },
+    {
+      "id": 1045,
+      "title": "療傷燒肉粽",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/0c/a1/76/0ca17624-0424-a889-6323-2d73e440599d/mzaf_18169022167009612472.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E7%99%82%E5%82%B7%E7%87%92%E8%82%89%E7%B2%BD/535754551?i=535754622&uo=4",
+      "year": 2011
+    },
+    {
+      "id": 1046,
+      "title": "皮影戲",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/f8/2f/2d/f82f2dd1-e940-e54b-3608-d1900988d3b6/mzaf_11885133264024496185.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E7%9A%AE%E5%BD%B1%E6%88%B2/535754551?i=535754672&uo=4",
+      "year": 2011
+    },
+    {
+      "id": 1047,
+      "title": "超跑女神",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/37/2c/fd/372cfd0c-d566-36b1-ba9c-ca59f3e9dcf4/mzaf_13976367387004683513.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E8%B6%85%E8%B7%91%E5%A5%B3%E7%A5%9E/535754551?i=535754673&uo=4",
+      "year": 2011
+    },
+    {
+      "id": 1048,
+      "title": "愛你沒差",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/09/08/96/0908969b-001f-1806-45d9-287e0b9e7ea5/mzaf_2321870461665004322.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E6%84%9B%E4%BD%A0%E6%B2%92%E5%B7%AE/587743633?i=587743641&uo=4",
+      "year": 2011
+    },
+    {
+      "id": 1049,
+      "title": "手語",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/4f/f2/37/4ff237d8-c349-3dc9-a5d3-34a076bb60ca/mzaf_186384386267800864.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/tw/album/%E6%89%8B%E8%AA%9E/587743633?i=587743635&uo=4",
+      "year": 2012
+    },
+    {
+      "id": 1050,
+      "title": "陽明山",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/8c/69/91/8c6991a4-c85a-7b65-8582-b5449d0e01d1/mzaf_16792483190885730682.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E9%99%BD%E6%98%8E%E5%B1%B1/1721457634?i=1721457636&uo=4",
+      "year": 2014
+    },
+    {
+      "id": 1051,
+      "title": "竊愛",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/9c/f1/37/9cf13764-45bc-17f5-840e-c41a3950feea/mzaf_4325905638652047988.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E7%AB%8A%E6%84%9B/1721457634?i=1721457637&uo=4",
+      "year": 2014
+    },
+    {
+      "id": 1052,
+      "title": "算什麼男人",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/00/25/23/002523f1-d2d4-ce94-0f93-4bf63e35b178/mzaf_13577184851018241098.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E7%AE%97%E4%BB%80%E9%BA%BC%E7%94%B7%E4%BA%BA/1721457634?i=1721457640&uo=4",
+      "year": 2014
+    },
+    {
+      "id": 1053,
+      "title": "紅塵客棧",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/2a/53/df/2a53df4d-aac5-b944-6eaa-ac8a0826f530/mzaf_18301465739036066706.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E7%B4%85%E5%A1%B5%E5%AE%A2%E6%A3%A7/1721467014?i=1721467261&uo=4",
+      "year": 2014
+    },
+    {
+      "id": 1054,
+      "title": "一口氣全唸對",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/a7/2f/61/a72f6192-729e-1919-2e5e-a73a9b695828/mzaf_15275135129933850688.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E4%B8%80%E5%8F%A3%E6%B0%A3%E5%85%A8%E5%94%B8%E5%B0%8D/1721457634?i=1721458217&uo=4",
+      "year": 2014
+    },
+    {
+      "id": 1055,
+      "title": "我要夏天",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/96/47/ab/9647aba7-3cdd-ac47-3feb-6f6fbc36af13/mzaf_9914660817947532565.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E6%88%91%E8%A6%81%E5%A4%8F%E5%A4%A9/1721457634?i=1721458219&uo=4",
+      "year": 2014
+    },
+    {
+      "id": 1056,
+      "title": "聽爸爸的話",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/40/79/a3/4079a36a-6e7c-cb47-cc3c-a7124e9369bc/mzaf_12415227672732226388.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E8%81%BD%E7%88%B8%E7%88%B8%E7%9A%84%E8%A9%B1/1721457634?i=1721458231&uo=4",
+      "year": 2014
+    },
+    {
+      "id": 1057,
+      "title": "美人魚",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/37/c2/34/37c2349b-ecb9-890e-4f8f-3c3c178fc4fa/mzaf_7349499334490661202.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E7%BE%8E%E4%BA%BA%E9%AD%9A/1721457634?i=1721458236&uo=4",
+      "year": 2014
+    },
+    {
+      "id": 1058,
+      "title": "手寫的從前",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/29/42/27/2942274c-0865-7af3-8c2c-3021d1d6890b/mzaf_2595870497830818394.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E6%89%8B%E5%AF%AB%E7%9A%84%E5%BE%9E%E5%89%8D/1721457634?i=1721458221&uo=4",
+      "year": 2014
+    },
+    {
+      "id": 1059,
+      "title": "鞋子特大號",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/e8/cc/13/e8cc136b-8f45-5df0-0d45-9f87c3831619/mzaf_6417601702259211308.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E9%9E%8B%E5%AD%90%E7%89%B9%E5%A4%A7%E8%99%9F/1721457634?i=1721458226&uo=4",
+      "year": 2014
+    },
+    {
+      "id": 1060,
+      "title": "床邊故事",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/fa/67/f5/fa67f50f-ca2c-50ae-791d-e628982947ae/mzaf_9459815297468923170.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E5%BA%8A%E9%82%8A%E6%95%85%E4%BA%8B/1721456244?i=1721456252&uo=4",
+      "year": 2016
+    },
+    {
+      "id": 1061,
+      "title": "說走就走",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/54/da/13/54da13cb-39ee-1af8-a2a2-2d8c14499fab/mzaf_11485415050547034945.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E8%AA%AA%E8%B5%B0%E5%B0%B1%E8%B5%B0/1721456244?i=1721456255&uo=4",
+      "year": 2016
+    },
+    {
+      "id": 1062,
+      "title": "一點點",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/83/fe/54/83fe54d6-44be-194a-fa70-2033eabca3ce/mzaf_15046456071972352367.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E4%B8%80%E9%BB%9E%E9%BB%9E/1721456244?i=1721456256&uo=4",
+      "year": 2016
+    },
+    {
+      "id": 1063,
+      "title": "前世情人",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/b0/1d/b0/b01db080-a846-31d0-1668-8ace14990ed0/mzaf_10364700618656732464.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E5%89%8D%E4%B8%96%E6%83%85%E4%BA%BA/1721456244?i=1721456264&uo=4",
+      "year": 2016
+    },
+    {
+      "id": 1064,
+      "title": "英雄 (Live)",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8f/e7/51/8fe7519e-2a33-2d0c-6299-10f026a26efb/mzaf_15160191799268851919.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E8%8B%B1%E9%9B%84-live/1721464851?i=1721464852&uo=4",
+      "year": 2016
+    },
+    {
+      "id": 1065,
+      "title": "不該 (feat. 張惠妹)",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/33/a9/1b/33a91b12-c0a5-40ab-61ed-f7dd94958272/mzaf_8243591709745784085.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E4%B8%8D%E8%A9%B2-feat-%E5%BC%B5%E6%83%A0%E5%A6%B9/1721456244?i=1721456390&uo=4",
+      "year": 2016
+    },
+    {
+      "id": 1066,
+      "title": "土耳其冰淇淋",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/94/80/5b/94805b0e-5475-9d15-21b4-c2cfde43144b/mzaf_7261017943849558258.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E5%9C%9F%E8%80%B3%E5%85%B6%E5%86%B0%E6%B7%87%E6%B7%8B/1721456244?i=1721456392&uo=4",
+      "year": 2016
+    },
+    {
+      "id": 1067,
+      "title": "等你下課",
+      "artist": "周杰倫 & 楊瑞代",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/99/7c/60/997c608e-b440-ce89-9fa0-d13645b89f0f/mzaf_15715303819469213651.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E7%AD%89%E4%BD%A0%E4%B8%8B%E8%AA%B2/1721450090?i=1721450095&uo=4",
+      "year": 2016
+    },
+    {
+      "id": 1068,
+      "title": "Now You See Me",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/e2/a2/5d/e2a25de2-3c5b-5e51-e525-862f5a5cc89a/mzaf_9423961058358369090.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/now-you-see-me/1721456244?i=1721456397&uo=4",
+      "year": 2016
+    },
+    {
+      "id": 1069,
+      "title": "愛情廢柴",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/45/3f/48/453f48a9-0b54-f670-55a7-96da8bcc9578/mzaf_17892934714951187691.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E6%84%9B%E6%83%85%E5%BB%A2%E6%9F%B4/1721456244?i=1721456399&uo=4",
+      "year": 2016
+    },
+    {
+      "id": 1070,
+      "title": "最偉大的作品",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/80/c8/19/80c8193f-bce4-0e52-6e47-886082ae3fd4/mzaf_16328349732884924385.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E6%9C%80%E5%81%89%E5%A4%A7%E7%9A%84%E4%BD%9C%E5%93%81/1721454339?i=1721454344&uo=4",
+      "year": 2022
+    },
+    {
+      "id": 1071,
+      "title": "還在流浪",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/96/fd/c2/96fdc2a6-fc19-81d5-7b18-c8f333b39d1c/mzaf_9656246008937828120.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E9%82%84%E5%9C%A8%E6%B5%81%E6%B5%AA/1721454339?i=1721454345&uo=4",
+      "year": 2022
+    },
+    {
+      "id": 1072,
+      "title": "倒影",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/ca/b6/37/cab637f4-2320-5771-f313-ee48c1ae5b84/mzaf_17938106938138380694.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E5%80%92%E5%BD%B1/1721454339?i=1721454758&uo=4",
+      "year": 2022
+    },
+    {
+      "id": 1073,
+      "title": "紅顏如霜",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/4f/92/c3/4f92c39c-09f9-b5b4-bd1d-a585ff79fa91/mzaf_5059808927792432016.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E7%B4%85%E9%A1%8F%E5%A6%82%E9%9C%9C/1721454339?i=1721454746&uo=4",
+      "year": 2022
+    },
+    {
+      "id": 1074,
+      "title": "Mojito",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/8e/fb/01/8efb013d-1b01-bdbd-18b7-bbfe6d9ba5a2/mzaf_18324019893960247481.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/mojito/1721454339?i=1721454749&uo=4",
+      "year": 2022
+    },
+    {
+      "id": 1075,
+      "title": "不愛我就拉倒",
+      "artist": "周杰倫",
+      "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/d3/19/68/d3196814-e298-77c2-d30f-d9fafc8f066a/mzaf_9076666211879522976.plus.aac.p.m4a",
+      "appleUrl": "https://music.apple.com/hk/album/%E4%B8%8D%E6%84%9B%E6%88%91%E5%B0%B1%E6%8B%89%E5%80%92/1721449073?i=1721449077&uo=4",
+      "year": 2022
+    }
   ]
 }
