@@ -27,7 +27,17 @@ const app = express();
 
 // Security Middlewares
 app.use(helmet({
-    contentSecurityPolicy: false, // Disable CSP to allow simple loading of assets/iframes if needed for now
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            scriptSrc: ["'self'", "'unsafe-inline'", "https://accounts.google.com", "https://cdn.socket.io", "https://cdn.jsdelivr.net"],
+            styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+            imgSrc: ["'self'", "data:", "https://*.googleusercontent.com", "https://upload.wikimedia.org", "https://www.gstatic.com"],
+            connectSrc: ["'self'", "wss:", "https://*"],
+            frameSrc: ["'self'", "https://accounts.google.com"],
+            fontSrc: ["'self'", "https://fonts.gstatic.com"],
+        },
+    },
 }));
 app.use(express.json({ limit: '10kb' })); // Body parser, limit size to 10kb
 app.use(cookieParser());
