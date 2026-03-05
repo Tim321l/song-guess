@@ -161,14 +161,14 @@ function tryAutoLoginWithAuth() {
                     handleLoginSuccess(res, username, password);
                 } else {
                     localStorage.removeItem('songGuessAuth');
-                    switchScreen('auth');
+                    switchScreen('landing');
                 }
             });
         } catch (e) {
-            switchScreen('auth');
+            switchScreen('landing');
         }
     } else {
-        switchScreen('auth');
+        switchScreen('landing');
     }
 }
 
@@ -185,8 +185,13 @@ document.getElementById('logout-btn').onclick = () => {
     state.teamId = null;
     const chatContainer = document.getElementById('chat-container');
     if (chatContainer) chatContainer.classList.add('hidden');
-    switchScreen('auth');
+    switchScreen('landing');
 };
+
+const playNowBtn = document.getElementById('play-now-btn');
+if (playNowBtn) {
+    playNowBtn.onclick = () => switchScreen('auth');
+}
 
 document.getElementById('show-settings-btn').onclick = () => {
     const emailInput = document.getElementById('settings-email');

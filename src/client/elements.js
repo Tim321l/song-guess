@@ -1,4 +1,5 @@
 export const screens = {
+    landing: document.getElementById('landing-screen'),
     auth: document.getElementById('auth-screen'),
     start: document.getElementById('start-screen'),
     lobby: document.getElementById('lobby-screen'),

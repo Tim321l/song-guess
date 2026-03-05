@@ -53,6 +53,7 @@ export function initLobbyHandlers() {
                 if (cat === 'songsEn') label = 'English Hits';
                 if (cat === 'songsCn') label = 'Chinese Hits';
                 if (cat === 'songsTh') label = 'Thai Hits';
+                if (cat === 'songsEason') label = 'Eason Chan Hits';
 
                 if (cat.startsWith('spotify:')) {
                     label = cat.replace('spotify:', '') + ' (Spotify)';

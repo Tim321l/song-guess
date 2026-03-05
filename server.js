@@ -13,7 +13,7 @@ import jwt from 'jsonwebtoken';
 let allSongs = {};
 
 // Internal modules
-import { migratePasswords, connectDB, loadSongs } from './src/server/db.js';
+import { migratePasswords, connectDB, loadSongs, updateUser } from './src/server/db.js';
 import { registerAuthHandlers } from './src/server/auth.js';
 import { registerAdminHandlers, startAdminBroadcast, recordRoomCreated } from './src/server/admin.js';
 import { registerSocialHandlers } from './src/server/social.js';
@@ -128,6 +128,7 @@ io.on('connection', (socket) => {
 
     socket.on('disconnect', () => {
         if (socket.username && activeUsers[socket.username] && activeUsers[socket.username].socketId === socket.id) {
+            updateUser(socket.username, { lastLogout: new Date() });
             delete activeUsers[socket.username];
         }
         handlePlayerExit(io, socket);

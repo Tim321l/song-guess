@@ -89,6 +89,7 @@
         'cat-hk': 'Hong Kong Hits',
         'cat-kr': 'Korean Hits',
         'cat-es': 'Spanish Hits',
+        'cat-eason': 'Eason Chan Hits',
         'cat-child': 'Child / Disney Songs',
         'cat-hk8090s': 'HK Classic (1980-2000)',
         'cat-hk2000s': 'HK Pop (2000-2010)',
@@ -125,7 +126,16 @@
         'report-reason-label': 'Reason for report',
         'report-submit-btn': 'Submit Report',
         'report-cancel-btn': 'Cancel',
-        'report-success': 'Thanks for your report!'
+        'report-success': 'Thanks for your report!',
+        'landing-hero-title': 'Guess the Song, Beat the Clock!',
+        'landing-hero-subtitle': 'The ultimate real-time multiplayer music trivia experience. Join thousands of players and prove your musical knowledge!',
+        'play-now-btn': 'Play Now 🎵',
+        'feature-songs-title': '10,000+ Songs',
+        'feature-songs-desc': 'Massive library across all genres and decades.',
+        'feature-multi-title': 'Multiplayer',
+        'feature-multi-desc': 'Compete with friends or players worldwide in real-time.',
+        'feature-leader-title': 'Leaderboards',
+        'feature-leader-desc': 'Climb the ranks and become a legendary Song Guesser.'
     },
     ZH: {
         'app-title-html': '估歌仔 <span class="highlight">Online</span>',
@@ -163,6 +173,7 @@
         'cat-hk': '粵語流行樂',
         'cat-kr': '韓文流行樂',
         'cat-es': '西班牙文流行樂',
+        'cat-eason': '陳奕迅歌曲 (Eason Hits)',
         'cat-child': '兒童 / 迪士尼歌曲',
         'cat-hk8090s': '粵語經典 (1980-2000)',
         'cat-hk2000s': '粵語流行 (2000-2010)',
@@ -255,7 +266,16 @@
         'report-reason-label': '檢舉原因',
         'report-submit-btn': '提交檢舉',
         'report-cancel-btn': '取消',
-        'report-success': '感謝您的檢舉！'
+        'report-success': '感謝您的檢舉！',
+        'landing-hero-title': '聽歌識曲，挑戰時速！',
+        'landing-hero-subtitle': '最極致的即時多人音樂競猜體驗。加入成千上萬的玩家，證明你的音樂知識！',
+        'play-now-btn': '立即開始 🎵',
+        'feature-songs-title': '10,000+ 歌曲',
+        'feature-songs-desc': '涵蓋各個年代與風格的海量樂庫。',
+        'feature-multi-title': '多人對戰',
+        'feature-multi-desc': '即時與好友或全球玩家一較高下。',
+        'feature-leader-title': '排行榜',
+        'feature-leader-desc': '提升排名，成為傳奇的估歌王！'
     }
 };
 

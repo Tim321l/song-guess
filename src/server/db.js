@@ -60,6 +60,15 @@ export async function saveUsers(users) {
     }
 }
 
+export async function updateUser(username, updateData) {
+    try {
+        const { _id, ...data } = updateData;
+        await User.findOneAndUpdate({ username }, data, { upsert: true });
+    } catch (e) {
+        console.error(`Error updating user ${username}`, e);
+    }
+}
+
 export async function loadRecoveryRequests() {
     try {
         const requests = await RecoveryRequest.find({});

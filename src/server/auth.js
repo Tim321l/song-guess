@@ -1,6 +1,6 @@
 ﻿import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { loadUsers, saveUsers, loadRecoveryRequests, saveRecoveryRequests } from './db.js';
+import { loadUsers, saveUsers, updateUser, loadRecoveryRequests, saveRecoveryRequests } from './db.js';
 import { getClientIp } from './utils.js';
 import { rooms } from './rooms.js';
 import { checkRateLimit, isIpBanned } from './rateLimiter.js';

@@ -7108,3 +7108,734 @@ export const songsMemes = [
     year: 2019
   }
 ];
+export const songsEason = [
+    {
+        "id": 6,
+        "title": "因為愛情",
+        "artist": "陳奕迅 & 王菲",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a9/1a/37/a91a37d8-ffb6-9987-7fb9-4c289e61031b/mzaf_5653102795119921087.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E5%9B%A0%E7%82%BA%E6%84%9B%E6%83%85/1443711302?i=1443711905&uo=4",
+        "year": 2011
+    },
+    {
+        "id": 26,
+        "title": "心的距離",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/f5/f3/02/f5f30241-0183-f1c8-c7a1-ff46f7b3aeb4/mzaf_6750236111440426600.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E5%BF%83%E7%9A%84%E8%B7%9D%E9%9B%A2/1442429995?i=1442430114&uo=4",
+        "year": 2009
+    },
+    {
+        "id": 39,
+        "title": "讓我留在你身邊",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/4b/c2/c6/4bc2c662-63fa-e274-d2a1-0f2e409327ac/mzaf_613344317884016579.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E8%AE%93%E6%88%91%E7%95%99%E5%9C%A8%E4%BD%A0%E8%BA%AB%E9%82%8A/1445291082?i=1445291088&uo=4",
+        "year": 2016
+    },
+    {
+        "id": 63,
+        "title": "富士山下",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/f5/07/f1/f507f161-4354-12ab-301d-554c51026a09/mzaf_11240395305988690830.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E5%AF%8C%E5%A3%AB%E5%B1%B1%E4%B8%8B/1490822079?i=1490822088&uo=4",
+        "year": 2006
+    },
+    {
+        "id": 75,
+        "title": "內疚",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/91/5b/34/915b34fe-87b4-c98c-721c-a7caa2a023a3/mzaf_11551770316804043297.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E5%85%A7%E7%96%9A/1443783500?i=1443783991&uo=4",
+        "year": 2011
+    },
+    {
+        "id": 141,
+        "title": "紅玫瑰",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/88/28/c4/8828c442-e008-0470-8a2d-f0fb55d080da/mzaf_8397343126428642161.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E7%B4%85%E7%8E%AB%E7%91%B0/1443352354?i=1443352461&uo=4",
+        "year": 2007
+    },
+    {
+        "id": 249,
+        "title": "誰來剪月光",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/bf/4c/dd/bf4cddba-ba0f-8eb6-8234-1431c2427f47/mzaf_16241662293317829654.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E8%AA%B0%E4%BE%86%E5%89%AA%E6%9C%88%E5%85%89/1440909180?i=1440909321&uo=4",
+        "year": 2017
+    },
+    {
+        "id": 319,
+        "title": "天使的禮物",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/57/ce/fc/57cefcdc-915d-7c0e-5c4c-4d68a51be562/mzaf_3631564999054806508.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E5%A4%A9%E4%BD%BF%E7%9A%84%E7%A6%AE%E7%89%A9/667921627?i=667921847&uo=4",
+        "year": 2002
+    },
+    {
+        "id": 323,
+        "title": "十年",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/e7/77/04/e7770492-18d1-e5dc-0765-ddacbbe068c5/mzaf_1628518296724984899.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E5%8D%81%E5%B9%B4/542922079?i=542922095&uo=4",
+        "year": 2003
+    },
+    {
+        "id": 346,
+        "title": "I Do",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/f7/73/e0/f773e046-2b38-c7ae-788e-6d6aaac5b11c/mzaf_11935376165124733580.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/i-do/1452838886?i=1452838887&uo=4",
+        "year": 2016
+    },
+    {
+        "id": 432,
+        "title": "完",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/03/a5/d8/03a5d88f-5173-71c2-a2cf-541ca25b28cb/mzaf_10817343255010970274.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E5%AE%8C/1445753233?i=1445753767&uo=4",
+        "year": 2012
+    },
+    {
+        "id": 441,
+        "title": "歲月如歌",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d4/ed/ab/d4edab2c-1cc8-05a3-a3db-4b52c5a7bc56/mzaf_6586276179830073275.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E6%AD%B2%E6%9C%88%E5%A6%82%E6%AD%8C/542676848?i=542677437&uo=4",
+        "year": 2003
+    },
+    {
+        "id": 451,
+        "title": "淘汰",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e6/11/36/e6113629-cb54-87b4-fedc-6826c56b469c/mzaf_9249987539965107721.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E6%B7%98%E6%B1%B0/1443352354?i=1443352455&uo=4",
+        "year": 2007
+    },
+    {
+        "id": 459,
+        "title": "Special Thanks To 1",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/f5/37/a2/f537a296-26c7-9f15-b46f-10feaf28bb96/mzaf_4283354369728822897.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/special-thanks-to-1/542612232?i=542612238&uo=4",
+        "year": 2002
+    },
+    {
+        "id": 471,
+        "title": "不睡 (國)",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/28/22/68/2822685c-7c0b-d0ee-a41f-40153425edd4/mzaf_2918965375165582185.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E4%B8%8D%E7%9D%A1-%E5%9C%8B/1443826314?i=1443826541&uo=4",
+        "year": 2005
+    },
+    {
+        "id": 473,
+        "title": "白玫瑰",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/a5/40/21/a54021d3-ae7e-3a6d-8c9f-047643333415/mzaf_14576263365673966348.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E7%99%BD%E7%8E%AB%E7%91%B0/1720091272?i=1720091287&uo=4",
+        "year": 2006
+    },
+    {
+        "id": 483,
+        "title": "Nothing Ever Happened",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d2/11/fc/d211fc43-4ef3-1796-4290-fbaf17cbed3c/mzaf_15357309004391451405.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/nothing-ever-happened/1442429995?i=1442430105&uo=4",
+        "year": 2009
+    },
+    {
+        "id": 500,
+        "title": "孤獨患者",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/42/10/c7/4210c7da-5902-9c34-030c-5007813d3a43/mzaf_3816786750881960613.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E5%AD%A4%E7%8D%A8%E6%82%A3%E8%80%85/1443783500?i=1443783507&uo=4",
+        "year": 2011
+    },
+    {
+        "id": 514,
+        "title": "K歌之王 (Live)",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/bb/fc/0e/bbfc0eb6-648e-5efb-fbf6-df1151de544a/mzaf_9560524959852010668.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/k%E6%AD%8C%E4%B9%8B%E7%8E%8B-live/1462045568?i=1462045572&uo=4",
+        "year": 2007
+    },
+    {
+        "id": 522,
+        "title": "謀情害命",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/60/c1/2d/60c12d57-3b96-4f2c-1b84-93675ce763ff/mzaf_3183395955258208352.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E8%AC%80%E6%83%85%E5%AE%B3%E5%91%BD/1442429995?i=1442430108&uo=4",
+        "year": 2009
+    },
+    {
+        "id": 523,
+        "title": "像一句廣告",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/b1/05/46/b10546a5-44a6-45c1-25a7-f1ac221cac27/mzaf_1145260320921760883.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E5%83%8F%E4%B8%80%E5%8F%A5%E5%BB%A3%E5%91%8A/651455891?i=651456039&uo=4",
+        "year": 2003
+    },
+    {
+        "id": 531,
+        "title": "第一個雅皮士 (國)",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/df/c4/9e/dfc49eb2-3ff0-70df-c10c-e0ad8aaabc05/mzaf_14987950271839195447.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E7%AC%AC%E4%B8%80%E5%80%8B%E9%9B%85%E7%9A%AE%E5%A3%AB-%E5%9C%8B/1443816775?i=1443817007&uo=4",
+        "year": 2007
+    },
+    {
+        "id": 552,
+        "title": "淘汰 (Live)",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/1a/85/aa/1a85aac5-65f1-d0c6-7a6e-8a3836c2787d/mzaf_2939245447017467823.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E6%B7%98%E6%B1%B0-live/1462045568?i=1462045623&uo=4",
+        "year": 2007
+    },
+    {
+        "id": 561,
+        "title": "浮誇 (Live)",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/99/47/23/9947236c-b2a4-6955-8963-417fbe0076e4/mzaf_3060562146605281134.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E6%B5%AE%E8%AA%87-live/1462045568?i=1462045620&uo=4",
+        "year": 2007
+    },
+    {
+        "id": 563,
+        "title": "不然你要我怎麼樣 (國)",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/e8/a5/0d/e8a50d4e-be18-ff35-805f-ef8122ebe0ff/mzaf_4332906932217312277.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E4%B8%8D%E7%84%B6%E4%BD%A0%E8%A6%81%E6%88%91%E6%80%8E%E9%BA%BC%E6%A8%A3-%E5%9C%8B/1443826314?i=1443826544&uo=4",
+        "year": 2005
+    },
+    {
+        "id": 578,
+        "title": "瘋狂的朋友",
+        "artist": "陳奕迅 & eason and the duo band",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/93/b3/8f/93b38f1a-a132-38a5-6965-2e48486d6955/mzaf_2103398093471067333.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E7%98%8B%E7%8B%82%E7%9A%84%E6%9C%8B%E5%8F%8B/1441543918?i=1441543928&uo=4",
+        "year": 2018
+    },
+    {
+        "id": 582,
+        "title": "床頭燈",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/9f/de/9f/9fde9f4d-3f05-07bf-aa1b-733c59f66be5/mzaf_17681300527758406146.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E5%BA%8A%E9%A0%AD%E7%87%88/1442429995?i=1442430115&uo=4",
+        "year": 2009
+    },
+    {
+        "id": 586,
+        "title": "明天何其多",
+        "artist": "譚詠麟 & 陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e4/21/a9/e421a914-abfe-33c6-f027-9e51f0150978/mzaf_12637151745209872397.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E6%98%8E%E5%A4%A9%E4%BD%95%E5%85%B6%E5%A4%9A/1442596766?i=1442597218&uo=4",
+        "year": 2017
+    },
+    {
+        "id": 589,
+        "title": "你為什麼哭了呢 (Sang in Jamaica)",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d5/59/8f/d5598f01-98bf-9219-da6c-0935f5c2b66d/mzaf_18223951829923383326.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E4%BD%A0%E7%82%BA%E4%BB%80%E9%BA%BC%E5%93%AD%E4%BA%86%E5%91%A2-sang-in-jamaica/1442429995?i=1442430107&uo=4",
+        "year": 2009
+    },
+    {
+        "id": 603,
+        "title": "孤勇者 (《英雄聯盟:雙城之戰》動畫劇集中文主題曲)",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/f7/f6/13/f7f6132c-51e6-6858-a9e1-f4c72054a4b3/mzaf_4119948267591107416.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E5%AD%A4%E5%8B%87%E8%80%85-%E8%8B%B1%E9%9B%84%E8%81%AF%E7%9B%9F-%E9%9B%99%E5%9F%8E%E4%B9%8B%E6%88%B0-%E5%8B%95%E7%95%AB%E5%8A%87%E9%9B%86%E4%B8%AD%E6%96%87%E4%B8%BB%E9%A1%8C%E6%9B%B2/1596938776?i=1596938779&uo=4",
+        "year": 2021
+    },
+    {
+        "id": 612,
+        "title": "多少",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/42/4e/1a/424e1af2-c929-0f40-5f42-a5edbfabf07e/mzaf_10044127734228202931.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E5%A4%9A%E5%B0%91/1442429995?i=1442430103&uo=4",
+        "year": 2009
+    },
+    {
+        "id": 622,
+        "title": "給你",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a5/a1/00/a5a1009b-473a-ce5a-b4a1-d9551d459826/mzaf_999091613789479476.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E7%B5%A6%E4%BD%A0/1442429995?i=1442430116&uo=4",
+        "year": 2009
+    },
+    {
+        "id": 634,
+        "title": "我也不會那麼做",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/24/26/13/2426137a-ff98-3e12-d80c-2cbe69c5c481/mzaf_13833411031019808764.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E6%88%91%E4%B9%9F%E4%B8%8D%E6%9C%83%E9%82%A3%E9%BA%BC%E5%81%9A/651455891?i=651456043&uo=4",
+        "year": 2001
+    },
+    {
+        "id": 641,
+        "title": "一個靈魂的獨白",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/f3/b3/dd/f3b3dd72-e05a-bf64-f98b-9edcde8178a8/mzaf_8075147623414604128.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E4%B8%80%E5%80%8B%E9%9D%88%E9%AD%82%E7%9A%84%E7%8D%A8%E7%99%BD/1422674966?i=1422675255&uo=4",
+        "year": 2015
+    },
+    {
+        "id": 667,
+        "title": "最佳損友 (Live)",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/4c/a4/ac/4ca4acd0-422e-bad0-b95a-5524a9d33e36/mzaf_9945469571325557326.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E6%9C%80%E4%BD%B3%E6%90%8D%E5%8F%8B-live/1462045568?i=1462045579&uo=4",
+        "year": 2007
+    },
+    {
+        "id": 673,
+        "title": "愛情轉移",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/5a/ee/83/5aee8371-70a0-4f53-7ff5-dc0823beabee/mzaf_10611587849510578238.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E6%84%9B%E6%83%85%E8%BD%89%E7%A7%BB/1443352354?i=1443352465&uo=4",
+        "year": 2007
+    },
+    {
+        "id": 677,
+        "title": "我們 (《後來的我們》電影主題曲)",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/24/e0/fe/24e0fefa-8c70-c430-d357-1eb342ac3671/mzaf_11199503810427642674.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E6%88%91%E5%80%91-%E5%BE%8C%E4%BE%86%E7%9A%84%E6%88%91%E5%80%91-%E9%9B%BB%E5%BD%B1%E4%B8%BB%E9%A1%8C%E6%9B%B2/1365353242?i=1365353246&uo=4",
+        "year": 2018
+    },
+    {
+        "id": 705,
+        "title": "煙味 (國)",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/8a/4c/7d/8a4c7d2f-8204-8e40-9c9a-1be75a6c031f/mzaf_14798933895683034868.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E7%85%99%E5%91%B3-%E5%9C%8B/1443826314?i=1443826322&uo=4",
+        "year": 2007
+    },
+    {
+        "id": 726,
+        "title": "對不起 謝謝 (國)",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/90/c5/50/90c550c3-5994-f1e0-1664-a22ecb840f61/mzaf_11859729943303767140.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E5%B0%8D%E4%B8%8D%E8%B5%B7-%E8%AC%9D%E8%AC%9D-%E5%9C%8B/1443826314?i=1443826327&uo=4",
+        "year": 2005
+    },
+    {
+        "id": 739,
+        "title": "紅玫瑰 (國)",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/08/30/54/08305485-cd7d-05e9-c4eb-aaacba39adeb/mzaf_265138244605931193.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E7%B4%85%E7%8E%AB%E7%91%B0-%E5%9C%8B/1443826314?i=1443826542&uo=4",
+        "year": 2007
+    },
+    {
+        "id": 745,
+        "title": "從何說起 (Old Radio Mix)",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/d8/f8/02/d8f802bb-648c-d018-dcad-7185c4c8e5cf/mzaf_9221752081760193297.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E5%BE%9E%E4%BD%95%E8%AA%AA%E8%B5%B7-old-radio-mix/1442429995?i=1442430118&uo=4",
+        "year": 2009
+    },
+    {
+        "id": 767,
+        "title": "愛情轉移 (國)",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/6d/3a/38/6d3a38c0-58e1-f90a-b553-0f4d9e372428/mzaf_16653505949762819096.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E6%84%9B%E6%83%85%E8%BD%89%E7%A7%BB-%E5%9C%8B/1443816775?i=1443817002&uo=4",
+        "year": 2007
+    },
+    {
+        "id": 786,
+        "title": "第一個雅皮士",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/56/40/a8/5640a8a4-f9e7-86c1-5c91-3500fcf79855/mzaf_5221025452170200079.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E7%AC%AC%E4%B8%80%E5%80%8B%E9%9B%85%E7%9A%AE%E5%A3%AB/1443352354?i=1443352471&uo=4",
+        "year": 2007
+    },
+    {
+        "id": 821,
+        "title": "不如不見 (Live)",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/b6/b2/c0/b6b2c02d-af2d-08ec-9b75-8018b2d6cfca/mzaf_5536766195662884274.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E4%B8%8D%E5%A6%82%E4%B8%8D%E8%A6%8B-live/1462045568?i=1462045575&uo=4",
+        "year": 2007
+    },
+    {
+        "id": 822,
+        "title": "開不了心",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/8f/c4/85/8fc485f9-a758-f041-4f7c-b7a1b0157864/mzaf_5999960445870764339.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E9%96%8B%E4%B8%8D%E4%BA%86%E5%BF%83/542698905?i=542698950&uo=4",
+        "year": 2005
+    },
+    {
+        "id": 850,
+        "title": "這樣的一個麻煩",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/d5/9b/c9/d59bc98d-63ce-e70d-8d09-6aaf76945e8a/mzaf_3371560682544374737.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E9%80%99%E6%A8%A3%E7%9A%84%E4%B8%80%E5%80%8B%E9%BA%BB%E7%85%A9/1442429995?i=1442430102&uo=4",
+        "year": 2009
+    },
+    {
+        "id": 855,
+        "title": "好久不見",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/a2/9f/f5/a29ff5f2-a1fd-3e3f-c24d-7f23b51fb8a9/mzaf_12792671251703431473.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E5%A5%BD%E4%B9%85%E4%B8%8D%E8%A6%8B/1443352354?i=1443352467&uo=4",
+        "year": 2007
+    },
+    {
+        "id": 862,
+        "title": "這樣很好 (《英雄聯盟:雙城之戰》動畫第二季原聲)",
+        "artist": "陳奕迅, Arcane & League of Legends Music",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b4/ec/54/b4ec54a8-fdf9-1920-8861-1fa0503b0986/mzaf_15080345002306050956.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E9%80%99%E6%A8%A3%E5%BE%88%E5%A5%BD-%E8%8B%B1%E9%9B%84%E8%81%AF%E7%9B%9F-%E9%9B%99%E5%9F%8E%E4%B9%8B%E6%88%B0-%E5%8B%95%E7%95%AB%E7%AC%AC%E4%BA%8C%E5%AD%A3%E5%8E%9F%E8%81%B2/1777959863?i=1777959888&uo=4",
+        "year": 2024
+    },
+    {
+        "id": 868,
+        "title": "不如這樣",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/44/da/8b/44da8b25-8267-66eb-148c-2b6a02d7cb77/mzaf_16722107791028786409.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E4%B8%8D%E5%A6%82%E9%80%99%E6%A8%A3/651455891?i=651456041&uo=4",
+        "year": 2001
+    },
+    {
+        "id": 875,
+        "title": "在你身邊",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/4e/2b/ae/4e2bae65-bbfc-a674-2a60-c3eea59ca7ee/mzaf_5878767314054344459.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E5%9C%A8%E4%BD%A0%E8%BA%AB%E9%82%8A/1442429995?i=1442430007&uo=4",
+        "year": 2009
+    },
+    {
+        "id": 887,
+        "title": "你給我聽好",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/86/ab/6b/86ab6b39-5282-e256-bdeb-44b221c951ae/mzaf_7976407272175193412.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E4%BD%A0%E7%B5%A6%E6%88%91%E8%81%BD%E5%A5%BD/1422694136?i=1422694843&uo=4",
+        "year": 2014
+    },
+    {
+        "id": 901,
+        "title": "還有什麼可以送給你",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e2/d3/b0/e2d3b00a-ee20-0ce8-24cd-79aa50acf60a/mzaf_1598810012285059526.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E9%82%84%E6%9C%89%E4%BB%80%E9%BA%BC%E5%8F%AF%E4%BB%A5%E9%80%81%E7%B5%A6%E4%BD%A0/1490822198?i=1490822202&uo=4",
+        "year": 2009
+    },
+    {
+        "id": 903,
+        "title": "蚊",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/f5/98/7a/f5987a95-6219-05bf-2873-8b416090870a/mzaf_3350730930086229505.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E8%9A%8A/1445753233?i=1445753741&uo=4",
+        "year": 2012
+    },
+    {
+        "id": 904,
+        "title": "沙龍",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/9a/10/5e/9a105e86-94e6-cdfc-4c79-149deafde7a1/mzaf_16653830379179894918.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E6%B2%99%E9%BE%8D/1490822198?i=1490822213&uo=4",
+        "year": 2009
+    },
+    {
+        "id": 944,
+        "title": "Let It Out",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/de/b2/35/deb23560-cfc5-2786-c617-d39fbed21b74/mzaf_8585251389942116571.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/let-it-out/1445753233?i=1445753746&uo=4",
+        "year": 2012
+    },
+    {
+        "id": 947,
+        "title": "十年 (Live)",
+        "artist": "韓紅 & 陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/b7/0e/cc/b70ecc85-d683-2938-6f35-3be3b7bde142/mzaf_13138540579532375953.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E5%8D%81%E5%B9%B4-live/1699516222?i=1699517084&uo=4",
+        "year": 2015
+    },
+    {
+        "id": 953,
+        "title": "碌卡",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/54/69/12/5469129e-16a5-d25b-effd-eee77088f779/mzaf_3669093077363244879.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E7%A2%8C%E5%8D%A1/1445753233?i=1445753430&uo=4",
+        "year": 2012
+    },
+    {
+        "id": 962,
+        "title": "不如不見",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/0e/a1/b8/0ea1b83a-fc16-4219-2e3d-0c42acdcac83/mzaf_14170943717294801026.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E4%B8%8D%E5%A6%82%E4%B8%8D%E8%A6%8B/1720091272?i=1720091291&uo=4",
+        "year": 2006
+    },
+    {
+        "id": 979,
+        "title": "讓我留在你身邊 (電影《擺渡人》歌曲 (第36屆香港電影金像獎提名))",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/4d/a9/9b/4da99b86-01ac-89df-934e-2420404dc681/mzaf_2537422860536886006.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E8%AE%93%E6%88%91%E7%95%99%E5%9C%A8%E4%BD%A0%E8%BA%AB%E9%82%8A-%E9%9B%BB%E5%BD%B1-%E6%93%BA%E6%B8%A1%E4%BA%BA-%E6%AD%8C%E6%9B%B2-%E7%AC%AC36%E5%B1%86%E9%A6%99%E6%B8%AF%E9%9B%BB%E5%BD%B1%E9%87%91%E5%83%8F%E7%8D%8E%E6%8F%90%E5%90%8D/1616118754?i=1616118960&uo=4",
+        "year": 2016
+    },
+    {
+        "id": 981,
+        "title": "淘汰 (國)",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/c3/0c/51/c30c5118-00d6-b25b-2003-dadfaf379dca/mzaf_2850148904120337497.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E6%B7%98%E6%B1%B0-%E5%9C%8B/1443816775?i=1443816782&uo=4",
+        "year": 2007
+    },
+    {
+        "id": 990,
+        "title": "富士山下 (Live)",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/3e/2b/8e/3e2b8ea1-8dba-ee3d-794b-d7c606c61c2a/mzaf_7776926852710712101.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E5%AF%8C%E5%A3%AB%E5%B1%B1%E4%B8%8B-live/1462045568?i=1462045574&uo=4",
+        "year": 2007
+    },
+    {
+        "id": 995,
+        "title": "浮誇",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/9f/1e/6e/9f1e6e19-7763-7bad-e452-f5d92997b723/mzaf_12644981637415395233.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/tw/album/%E6%B5%AE%E8%AA%87/1443374875?i=1443375396&uo=4",
+        "year": 2005
+    },
+    {
+        "id": 3,
+        "title": "幸福摩天輪",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a2/f6/6f/a2f66fb4-714a-fade-aa22-0f7d16bddae5/mzaf_14755915867212507317.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E5%B9%B8%E7%A6%8F%E6%91%A9%E5%A4%A9%E8%BC%AA/892514705?i=892514706&uo=4",
+        "year": 1999
+    },
+    {
+        "id": 8,
+        "title": "沙龍",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/9a/10/5e/9a105e86-94e6-cdfc-4c79-149deafde7a1/mzaf_16653830379179894918.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E6%B2%99%E9%BE%8D/1490822198?i=1490822213&uo=4",
+        "year": 2009
+    },
+    {
+        "id": 18,
+        "title": "因為愛情",
+        "artist": "陳奕迅 & 王菲",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a9/1a/37/a91a37d8-ffb6-9987-7fb9-4c289e61031b/mzaf_5653102795119921087.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E5%9B%A0%E7%82%BA%E6%84%9B%E6%83%85/1443711302?i=1443711905&uo=4",
+        "year": 2011
+    },
+    {
+        "id": 32,
+        "title": "歲月如歌",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/1c/6f/15/1c6f153d-a449-dde1-6c89-a1da1568dc45/mzaf_11803939443543767448.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E6%AD%B2%E6%9C%88%E5%A6%82%E6%AD%8C/542910172?i=542910175&uo=4",
+        "year": 2003
+    },
+    {
+        "id": 64,
+        "title": "淘汰 (國)",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/c3/0c/51/c30c5118-00d6-b25b-2003-dadfaf379dca/mzaf_2850148904120337497.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E6%B7%98%E6%B1%B0-%E5%9C%8B/1443816775?i=1443816782&uo=4",
+        "year": 2007
+    },
+    {
+        "id": 164,
+        "title": "盲婚啞嫁",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/ad/ec/bc/adecbc21-8b17-73b0-e787-e58723aaf485/mzaf_13339913069989251134.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E7%9B%B2%E5%A9%9A%E5%95%9E%E5%AB%81/1662768448?i=1662768449&uo=4",
+        "year": 2023
+    },
+    {
+        "id": 232,
+        "title": "葡萄成熟時",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/0d/c7/fd/0dc7fd6d-c4b5-3fb6-eba7-2176bde7be7e/mzaf_14987516353811243604.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E8%91%A1%E8%90%84%E6%88%90%E7%86%9F%E6%99%82/1443374875?i=1443375474&uo=4",
+        "year": 2005
+    },
+    {
+        "id": 262,
+        "title": "是但求其愛",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/52/ed/26/52ed26b4-46ff-3fff-bb82-6d3d7c112485/mzaf_14442430902466744338.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E6%98%AF%E4%BD%86%E6%B1%82%E5%85%B6%E6%84%9B/1539122228?i=1539122249&uo=4",
+        "year": 2020
+    },
+    {
+        "id": 308,
+        "title": "黃金時代",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/5b/e2/52/5be25293-f5d6-a75f-e3ca-5906f7aa9c69/mzaf_10965841418092775816.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E9%BB%83%E9%87%91%E6%99%82%E4%BB%A3/892745229?i=892745297&uo=4",
+        "year": 1998
+    },
+    {
+        "id": 320,
+        "title": "天下無雙",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e7/a8/1e/e7a81e49-7864-95f4-7cc4-d7eb96cfa150/mzaf_4210430894884449512.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E5%A4%A9%E4%B8%8B%E7%84%A1%E9%9B%99/892745229?i=892745296&uo=4",
+        "year": 1998
+    },
+    {
+        "id": 421,
+        "title": "與我常在",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/15/2c/8e/152c8e23-f5a5-1254-bcf3-beaf79bb4953/mzaf_2072597208777322774.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E8%88%87%E6%88%91%E5%B8%B8%E5%9C%A8/892735096?i=892735125&uo=4",
+        "year": 1997
+    },
+    {
+        "id": 474,
+        "title": "夕陽無限好",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/c7/a6/a2/c7a6a259-bcbb-fbef-69ce-51469ddb0a4b/mzaf_3485186845327229404.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E5%A4%95%E9%99%BD%E7%84%A1%E9%99%90%E5%A5%BD/1443374875?i=1443375265&uo=4",
+        "year": 2005
+    },
+    {
+        "id": 503,
+        "title": "落花流水",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/0e/ef/ea/0eefeaf9-716d-0803-e25f-0ed3468c0a2f/mzaf_12426913253486017385.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E8%90%BD%E8%8A%B1%E6%B5%81%E6%B0%B4/1442912707?i=1442913410&uo=4",
+        "year": 2006
+    },
+    {
+        "id": 528,
+        "title": "無人之境",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/dd/6b/f7/dd6bf72c-81d7-6ab3-6b07-450c72de613f/mzaf_3732944810043122212.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E7%84%A1%E4%BA%BA%E4%B9%8B%E5%A2%83/1443717418?i=1443717616&uo=4",
+        "year": 2009
+    },
+    {
+        "id": 626,
+        "title": "七百 年 後 ",
+        "artist": " 陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/49/07/29/4907298b-2168-c0a5-9066-5062d56c0101/mzaf_594330936380746906.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E4%B8%83%E7%99%BE%E5%B9%B4%E5%BE%8C/1490822198?i=1490822208&uo=4",
+        "year": 2009
+    },
+    {
+        "id": 740,
+        "title": "十面埋伏",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/49/94/31/4994318e-8a3e-b2d6-d571-5d863e674f73/mzaf_6062321914900143389.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E5%8D%81%E9%9D%A2%E5%9F%8B%E4%BC%8F/542910172?i=542910174&uo=4",
+        "year": 2003
+    },
+    {
+        "id": 769,
+        "title": "富士山下",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/f5/07/f1/f507f161-4354-12ab-301d-554c51026a09/mzaf_11240395305988690830.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E5%AF%8C%E5%A3%AB%E5%B1%B1%E4%B8%8B/1490822079?i=1490822088&uo=4",
+        "year": 2006
+    },
+    {
+        "id": 793,
+        "title": "K歌之王",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/ae/74/93/ae749313-7543-b55c-f179-e3ad898c4e1c/mzaf_3321450057877342599.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/k%E6%AD%8C%E4%B9%8B%E7%8E%8B/542910172?i=542910173&uo=4",
+        "year": 2000
+    },
+    {
+        "id": 794,
+        "title": "幾許風雨",
+        "artist": "羅文 & 陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/42/59/79/425979e8-071b-6eb5-4d1d-55604ec143b0/mzaf_15425878986828568764.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E5%B9%BE%E8%A8%B1%E9%A2%A8%E9%9B%A8/544777743?i=544777827&uo=4",
+        "year": 2002
+    },
+    {
+        "id": 902,
+        "title": "我的快樂時代",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/8e/87/24/8e8724ef-a30c-76a9-16ca-7477f271b6dd/mzaf_2586658453338413000.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E6%88%91%E7%9A%84%E5%BF%AB%E6%A8%82%E6%99%82%E4%BB%A3/892745229?i=892745294&uo=4",
+        "year": 1998
+    },
+    {
+        "id": 910,
+        "title": "四季",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/d2/d2/87/d2d28761-2efc-fe74-f15d-c118ae6d3c51/mzaf_3775180561173388608.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E5%9B%9B%E5%AD%A3/1445302735?i=1445302741&uo=4",
+        "year": 2016
+    },
+    {
+        "id": 911,
+        "title": "單車",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/f3/6a/24/f36a2487-0add-7593-7e41-3e63156b66ac/mzaf_3209399011291975010.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E5%96%AE%E8%BB%8A/542910172?i=542910184&uo=4",
+        "year": 2001
+    },
+    {
+        "id": 1044,
+        "title": "無條件",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/bd/b5/c1/bdb5c164-a752-f51e-48d0-6b132387c90a/mzaf_6119182278826022963.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E7%84%A1%E6%A2%9D%E4%BB%B6/1422674966?i=1422674971&uo=4",
+        "year": 2015
+    },
+    {
+        "id": 1118,
+        "title": "人來人往",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/c7/87/a3/c787a380-b0a8-cfd2-ba47-a0312519cd34/mzaf_3584428608596112943.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E4%BA%BA%E4%BE%86%E4%BA%BA%E5%BE%80/542910172?i=542910181&uo=4",
+        "year": 2000
+    },
+    {
+        "id": 1166,
+        "title": "今日",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/20/af/66/20af6615-bf16-cec4-312b-5f022c2a44e8/mzaf_14311008853774227167.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E4%BB%8A%E6%97%A5/892819866?i=89222895&uo=4",
+        "year": 1999
+    },
+    {
+        "id": 1330,
+        "title": "陀飛輪",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/19/31/c7/1931c700-5350-6622-0d94-2785af146557/mzaf_18004352385029570151.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E9%99%80%E9%A3%9B%E8%BC%AA/1443717418?i=1443717750&uo=4",
+        "year": 2009
+    },
+    {
+        "id": 1339,
+        "title": "我有我愛你",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/8f/a3/f3/8fa3f3ec-a362-28d6-1214-0cb2b0cf2607/mzaf_11143683845996546714.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E6%88%91%E6%9C%89%E6%88%91%E6%84%9B%E4%BD%A0/542611601?i=542611605&uo=4",
+        "year": 2000
+    },
+    {
+        "id": 1367,
+        "title": "浮誇",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/9f/1e/6e/9f1e6e19-7763-7bad-e452-f5d92997b723/mzaf_12644981637415395233.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E6%B5%AE%E8%AA%87/1443374875?i=1443375396&uo=4",
+        "year": 2005
+    },
+    {
+        "id": 1438,
+        "title": "一絲不掛",
+        "artist": "陳奕迅",
+        "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/6a/76/40/6a764022-e2e7-a3cd-33fe-f4bbcd584eb8/mzaf_9912148295988568156.plus.aac.p.m4a",
+        "appleUrl": "https://music.apple.com/hk/album/%E4%B8%80%E7%B5%B2%E4%B8%8D%E6%8E%9B/1443717418?i=1443717740&uo=4",
+        "year": 2009
+    }
+];
+

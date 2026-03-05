@@ -570,81 +570,6 @@
             font-family: inherit;
             width: 90px;
         }
-
-        /* Modal */
-        .modal-backdrop {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.6);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 9998;
-        }
-
-        .modal-card {
-            width: min(520px, 92vw);
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 18px 18px 16px;
-            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
-        }
-
-        .modal-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 12px;
-        }
-
-        .modal-title {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .modal-close {
-            background: transparent;
-            border: 1px solid var(--border);
-            color: var(--muted);
-            border-radius: 8px;
-            padding: 4px 8px;
-            cursor: pointer;
-        }
-
-        .modal-body {
-            display: grid;
-            gap: 10px;
-        }
-
-        .modal-label {
-            font-size: 0.75rem;
-            color: var(--muted);
-        }
-
-        .modal-input {
-            background: rgba(255, 255, 255, 0.07);
-            border: 1px solid var(--border);
-            color: var(--text);
-            padding: 8px 10px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-family: inherit;
-            width: 100%;
-        }
-
-        .modal-hint {
-            font-size: 0.75rem;
-            color: var(--muted);
-        }
-
-        .modal-actions {
-            display: flex;
-            justify-content: flex-end;
-            gap: 8px;
-            margin-top: 12px;
-        }
     </style>
 </head>
 
@@ -870,8 +795,6 @@
                                 <th>Username</th>
                                 <th>Email</th>
                                 <th>Score</th>
-                                <th>Last Login</th>
-                                <th>Last Logout</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
@@ -1117,7 +1040,13 @@
 
         function fmtTime(ms) {
             if (!ms) return '—';
-            return new Date(ms).toLocaleTimeString();
+            return new Date(ms).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }
+
+        function fmtDateTime(ms) {
+            if (!ms) return '—';
+            const d = new Date(ms);
+            return d.toLocaleDateString([], { month: 'short', day: 'numeric' }) + ' ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         }
 
         function fmtSince(ms) {
@@ -1203,15 +1132,13 @@
             <td><strong>${u.username}</strong></td>
             <td style="font-size:0.8rem;color:var(--muted);">${u.email || '--'}</td>
             <td>${u.totalScore}</td>
-            <td style="font-size:0.78rem;">${fmtDateTime(u.lastLogin)}</td>
-            <td style="font-size:0.78rem;">${fmtDateTime(u.lastLogout)}</td>
             <td><span class="badge ${u.banned ? 'badge-danger' : 'badge-success'}">${u.banned ? 'Banned' : 'Active'}</span></td>
             <td style="display:flex;gap:5px;flex-wrap:wrap;">
                 ${u.banned
                         ? `<button class="btn btn-success" onclick="unbanUser('${u.username}')">Unban</button>`
                         : `<button class="btn btn-danger" onclick="banUser('${u.username}')">Ban</button>`}
                 <button class="btn btn-warn" onclick="kickUser('${u.username}')">Kick</button>
-                <button class="btn btn-accent" onclick="openEditUserModal('${u.username}','${u.email || ''}')">Edit</button>
+                <button class="btn btn-accent" onclick="editUser('${u.username}','${u.email || ''}')">Edit</button>
             </td>
         `;
                 ub.appendChild(row);
@@ -1322,30 +1249,12 @@
             if (!pw) return showMsg('Enter a new password', 'error');
             adminAction('setNewPassword', { username: uname, newPassword: pw });
         }
-        function openEditUserModal(uname, email) {
-            const modal = document.getElementById('edit-user-modal');
-            const title = document.getElementById('edit-user-title');
-            document.getElementById('edit-old-username').value = uname;
-            document.getElementById('edit-username').value = uname;
-            document.getElementById('edit-email').value = email || '';
-            document.getElementById('edit-password').value = '';
-            if (title) title.textContent = `Edit User: ${uname}`;
-            if (modal) modal.style.display = 'flex';
-        }
-
-        function closeEditUserModal() {
-            const modal = document.getElementById('edit-user-modal');
-            if (modal) modal.style.display = 'none';
-        }
-
-        function saveUserEdits() {
-            const oldU = document.getElementById('edit-old-username').value.trim();
-            const newU = document.getElementById('edit-username').value.trim();
-            const newE = document.getElementById('edit-email').value.trim();
-            const newP = document.getElementById('edit-password').value.trim();
-            if (!newU) return showMsg('Username is required', 'error');
-            adminAction('editUser', { oldUsername: oldU, newUsername: newU, newEmail: newE, newPassword: newP || undefined });
-            closeEditUserModal();
+        function editUser(uname, email) {
+            const newU = prompt(`New username for ${uname}:`, uname);
+            if (!newU) return;
+            const newE = prompt(`New email for ${uname}:`, email);
+            const newP = prompt(`New password for ${uname} (blank = keep existing):`, '');
+            adminAction('editUser', { oldUsername: uname, newUsername: newU, newEmail: newE, newPassword: newP || undefined });
         }
         function restartServer() {
             if (confirm("WARNING: This will immediately terminate the Node.js process. If you are using a process manager like nodemon or pm2, it should restart automatically. Continue?")) {
@@ -1535,6 +1444,41 @@
             });
         }
     </script>
+
+    <!-- Edit User Modal -->
+    <div id="edit-user-modal" class="modal-overlay">
+        <div class="modal-card">
+            <h3>📝 Edit Player Details</h3>
+            <input type="hidden" id="edit-old-username">
+
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" id="edit-username" placeholder="Username">
+            </div>
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" id="edit-email" placeholder="Email Address">
+            </div>
+
+            <div class="input-group">
+                <label>Total Score</label>
+                <input type="number" id="edit-score" placeholder="Total Score">
+            </div>
+
+            <div class="input-group">
+                <label>New Password (Optional)</label>
+                <input type="password" id="edit-password" placeholder="Leave blank to keep current">
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn btn-accent" onclick="saveUserEdit()">Save Changes</button>
+                <button class="btn"
+                    style="background:rgba(255,255,255,0.05);color:var(--text);border:1px solid var(--border);"
+                    onclick="closeEditModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

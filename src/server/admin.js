@@ -183,7 +183,7 @@ export function registerAdminHandlers(io, socket, activeUsers, ADMIN_SECRET, ser
         }
 
         if (action === 'editUser') {
-            const { oldUsername, newUsername, newPassword, newEmail } = target;
+            const { oldUsername, newUsername, newPassword, newEmail, newScore } = target;
             const users = await loadUsers();
             if (!users[oldUsername]) return callback({ success: false, message: 'User not found.' });
 
@@ -219,7 +219,10 @@ export function registerAdminHandlers(io, socket, activeUsers, ADMIN_SECRET, ser
                 if (newEmail !== undefined) users[oldUsername].email = newEmail;
                 await saveUsers(users);
             }
-
+            if (newPassword) users[targetUname].password = newPassword;
+            if (newEmail !== undefined) users[targetUname].email = newEmail;
+            if (newScore !== undefined) users[targetUname].totalScore = Number(newScore);
+            await saveUsers(users);
             logAudit('EDIT_USER', `Edited user: ${oldUsername}${newUsername && newUsername !== oldUsername ? ' → ' + newUsername : ''}`);
             return callback({ success: true, message: `User ${oldUsername} updated.` });
         }
