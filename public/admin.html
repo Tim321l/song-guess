@@ -570,6 +570,125 @@
             font-family: inherit;
             width: 90px;
         }
+
+        /* ── Modals ── */
+        .modal-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-backdrop.open {
+            display: flex;
+        }
+
+        .modal-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 0;
+            width: 100%;
+            max-width: 480px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            animation: modalIn 0.2s ease;
+        }
+
+        @keyframes modalIn {
+            from {
+                transform: scale(0.93) translateY(-10px);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .modal-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .modal-close {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.15s;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+        .modal-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .modal-label {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .modal-input {
+            width: 100%;
+            padding: 9px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.15s;
+        }
+
+        .modal-input:focus {
+            border-color: var(--accent);
+        }
+
+        .modal-hint {
+            font-size: 0.78rem;
+            color: var(--muted);
+            margin-top: -4px;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            padding: 14px 20px;
+            border-top: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.02);
+        }
     </style>
 </head>
 
@@ -1250,11 +1369,23 @@
             adminAction('setNewPassword', { username: uname, newPassword: pw });
         }
         function editUser(uname, email) {
-            const newU = prompt(`New username for ${uname}:`, uname);
-            if (!newU) return;
-            const newE = prompt(`New email for ${uname}:`, email);
-            const newP = prompt(`New password for ${uname} (blank = keep existing):`, '');
-            adminAction('editUser', { oldUsername: uname, newUsername: newU, newEmail: newE, newPassword: newP || undefined });
+            document.getElementById('edit-old-username').value = uname;
+            document.getElementById('edit-username').value = uname;
+            document.getElementById('edit-email').value = email || '';
+            document.getElementById('edit-password').value = '';
+            document.getElementById('edit-user-modal').classList.add('open');
+        }
+        function closeEditUserModal() {
+            document.getElementById('edit-user-modal').classList.remove('open');
+        }
+        function saveUserEdits() {
+            const oldUsername = document.getElementById('edit-old-username').value;
+            const newUsername = document.getElementById('edit-username').value.trim();
+            const newEmail = document.getElementById('edit-email').value.trim();
+            const newPassword = document.getElementById('edit-password').value.trim();
+            if (!newUsername) return showMsg('Username cannot be empty', 'error');
+            adminAction('editUser', { oldUsername, newUsername, newEmail, newPassword: newPassword || undefined });
+            closeEditUserModal();
         }
         function restartServer() {
             if (confirm("WARNING: This will immediately terminate the Node.js process. If you are using a process manager like nodemon or pm2, it should restart automatically. Continue?")) {
@@ -1338,14 +1469,14 @@
             document.getElementById('confirm-title').innerText = title;
             document.getElementById('confirm-body').innerText = message;
             confirmCallback = onConfirm;
-            document.getElementById('confirm-modal').style.display = 'flex';
+            document.getElementById('confirm-modal').classList.add('open');
             document.getElementById('confirm-ok-btn').onclick = () => {
                 onConfirm();
                 closeConfirm();
             };
         }
         function closeConfirm() {
-            document.getElementById('confirm-modal').style.display = 'none';
+            document.getElementById('confirm-modal').classList.remove('open');
         }
 
         function ignoreReport(id) {
@@ -1382,7 +1513,7 @@
                 }
             });
 
-            document.getElementById('edit-song-modal').style.display = 'flex';
+            document.getElementById('edit-song-modal').classList.add('open');
         }
 
         function previewEditedSong() {
@@ -1416,7 +1547,7 @@
         function closeEditSongModal() {
             if (!globalAudio.paused) globalAudio.pause();
             document.getElementById('edit-song-preview-btn').innerHTML = '🎧 Preview';
-            document.getElementById('edit-song-modal').style.display = 'none';
+            document.getElementById('edit-song-modal').classList.remove('open');
         }
 
         function saveSongEdits() {
@@ -1445,40 +1576,6 @@
         }
     </script>
 
-    <!-- Edit User Modal -->
-    <div id="edit-user-modal" class="modal-overlay">
-        <div class="modal-card">
-            <h3>📝 Edit Player Details</h3>
-            <input type="hidden" id="edit-old-username">
-
-            <div class="input-group">
-                <label>Username</label>
-                <input type="text" id="edit-username" placeholder="Username">
-            </div>
-
-            <div class="input-group">
-                <label>Email Address</label>
-                <input type="email" id="edit-email" placeholder="Email Address">
-            </div>
-
-            <div class="input-group">
-                <label>Total Score</label>
-                <input type="number" id="edit-score" placeholder="Total Score">
-            </div>
-
-            <div class="input-group">
-                <label>New Password (Optional)</label>
-                <input type="password" id="edit-password" placeholder="Leave blank to keep current">
-            </div>
-
-            <div class="modal-actions">
-                <button class="btn btn-accent" onclick="saveUserEdit()">Save Changes</button>
-                <button class="btn"
-                    style="background:rgba(255,255,255,0.05);color:var(--text);border:1px solid var(--border);"
-                    onclick="closeEditModal()">Cancel</button>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>
