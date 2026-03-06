@@ -145,9 +145,11 @@ export function initGameplayHandlers() {
         document.getElementById('options-grid').classList.remove('hidden');
         if (state.isHost) document.getElementById('host-controls').classList.remove('hidden');
 
-        // Show bar info
+        // Show bar info and game audio info
         document.getElementById('bar-game-info').classList.remove('hidden');
         document.getElementById('bar-leave-btn').classList.remove('hidden');
+        const gameAudio = document.getElementById('game-audio-container');
+        if (gameAudio) gameAudio.classList.remove('hidden');
     });
 
     socket.on('newTurn', (data) => {
@@ -509,6 +511,8 @@ export function initGameplayHandlers() {
         if (hostControls) hostControls.classList.add('hidden');
         document.getElementById('bar-game-info').classList.add('hidden');
         document.getElementById('bar-leave-btn').classList.add('hidden');
+        const gameAudio = document.getElementById('game-audio-container');
+        if (gameAudio) gameAudio.classList.add('hidden');
 
         // Play Again button (host only)
         const playAgainBtn = document.getElementById('play-again-btn');
@@ -567,6 +571,8 @@ export function initGameplayHandlers() {
 
         document.getElementById('bar-game-info').classList.add('hidden');
         document.getElementById('bar-leave-btn').classList.add('hidden');
+        const gameAudio = document.getElementById('game-audio-container');
+        if (gameAudio) gameAudio.classList.add('hidden');
 
         switchScreen('lobby');
     });

@@ -575,23 +575,6 @@
         </div>
       </div>
 
-      <div class="audio-player-container hidden" style="margin-bottom: 20px;">
-        <div class="visualizer" id="visualizer">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </div>
-
-        <div class="time-progress">
-          <div class="progress-bar" id="progress-bar">
-            <div class="progress-fill" id="progress-fill"></div>
-          </div>
-          <span id="time-left">0:05</span>
-        </div>
-      </div>
 
       <div class="guess-container" style="display: flex; flex-direction: column; align-items: center;">
         <!-- Needs click interaction before audio plays on some browsers -->
@@ -625,6 +608,25 @@
 
         <div class="btn-grid hidden" id="options-grid" style="width: 100%;">
           <!-- Options will be injected via JS -->
+        </div>
+
+        <div class="audio-player-container" id="game-audio-container"
+          style="margin-top: 25px; width: 100%; max-width: 500px;">
+          <div class="visualizer" id="visualizer">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+
+          <div class="time-progress">
+            <div class="progress-bar" id="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <span id="time-left">0:05</span>
+          </div>
         </div>
 
         <!-- Promote Status List (Shown during turnResult) -->
