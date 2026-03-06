@@ -81,11 +81,18 @@ export function initLandingHandlers() {
         'feature-card-leaderboard': {
             title: 'Leaderboard',
             render: (data = []) => {
+                const renderIcon = (icon) => {
+                    if (!icon) return '👤';
+                    if (icon.startsWith('data:') || icon.startsWith('http')) {
+                        return `<img src="${icon}" style="width:28px;height:28px;border-radius:50%;object-fit:cover;vertical-align:middle;" />`;
+                    }
+                    return icon;
+                };
                 let listHtml = data.map((p, i) => `
                     <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; background: rgba(255,255,255,0.03); border-radius: 10px; margin-bottom: 8px;">
                         <div style="display: flex; align-items: center; gap: 15px;">
                             <span style="font-weight: 800; color: #00f2fe; width: 25px;">#${i + 1}</span>
-                            <span style="font-size: 1.2rem;">${p.icon || '👤'}</span>
+                            <span style="font-size: 1.2rem;">${renderIcon(p.icon)}</span>
                             <span style="font-weight: 600;">${p.username}</span>
                         </div>
                         <div style="font-weight: 800; color: var(--primary-accent);">${p.score.toLocaleString()} pts</div>
@@ -129,12 +136,18 @@ export function initLandingHandlers() {
         modal.style.display = 'none';
     };
 
-    // Close on background click
-    modal.onclick = (e) => {
+    // Close on background click only (not on modal content)
+    modal.addEventListener('click', (e) => {
         if (e.target === modal) closeModal();
-    };
+    });
 
-    if (closeBtn) closeBtn.onclick = closeModal;
+    // Close button - use addEventListener with stopPropagation to avoid conflicts
+    if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeModal();
+        });
+    }
 
     Object.keys(cards).forEach(id => {
         const el = document.getElementById(id);
