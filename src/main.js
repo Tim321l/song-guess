@@ -101,7 +101,6 @@ if (themeBtn) {
 
 // Volume Sync
 const mainVol = document.getElementById('volume-slider');
-const gameVol = document.getElementById('game-volume-slider');
 const globalVol = document.getElementById('global-volume-slider');
 const volLabel = document.getElementById('volume-label');
 const volIcon = document.getElementById('vol-icon');
@@ -109,7 +108,6 @@ const volIcon = document.getElementById('vol-icon');
 function syncVolume(v) {
     audioPlayer.volume = v;
     if (mainVol) mainVol.value = v;
-    if (gameVol) gameVol.value = v;
     if (globalVol) globalVol.value = v;
     if (volLabel) volLabel.innerText = `(${Math.round(v * 100)}%)`;
 
@@ -122,7 +120,6 @@ function syncVolume(v) {
 }
 
 if (mainVol) mainVol.oninput = (e) => syncVolume(parseFloat(e.target.value));
-if (gameVol) gameVol.oninput = (e) => syncVolume(parseFloat(e.target.value));
 if (globalVol) globalVol.oninput = (e) => syncVolume(parseFloat(e.target.value));
 
 // Init volume
