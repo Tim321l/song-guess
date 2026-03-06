@@ -1,0 +1,610 @@
+[
+  {
+    "id": 1,
+    "title": "A・RA・SHI",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/76/3e/23/763e23cd-b836-613a-70eb-da8fbfc2bd14/mzaf_8801191512420236061.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/a-ra-shi/1497106914?i=1497106919&uo=4",
+    "year": 1999
+  },
+  {
+    "id": 2,
+    "title": "SUNRISE日本",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7c/ac/1b/7cac1b43-f1e9-a2be-1820-2b07bcdfaec2/mzaf_6107390690242361289.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/sunrise%E6%97%A5%E6%9C%AC/1497106914?i=1497106923&uo=4",
+    "year": 2000
+  },
+  {
+    "id": 3,
+    "title": "HORIZON",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/cb/d3/4a/cbd34ad1-a07d-6efa-a497-16ac57167a04/mzaf_14923231055207171843.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/horizon/1573386004?i=1573386160&uo=4",
+    "year": 2000
+  },
+  {
+    "id": 4,
+    "title": "台風ジェネレーション -Typhoon Generation-",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/ba/0b/3e/ba0b3e4f-91cf-2553-39d3-3ae5ab44200a/mzaf_16821394552183076774.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E5%8F%B0%E9%A2%A8%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3-typhoon-generation/1485849973?i=1485849978&uo=4",
+    "year": 2000
+  },
+  {
+    "id": 5,
+    "title": "感謝カンゲキ雨嵐",
+    "artist": "α波オルゴール",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/72/96/17/72961723-ab10-8fff-7ddf-bc3f930e9a8b/mzaf_15685646372010606049.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E6%84%9F%E8%AC%9D%E3%82%AB%E3%83%B3%E3%82%B2%E3%82%AD%E9%9B%A8%E5%B5%90/302649747?i=302649788&uo=4",
+    "year": 2008
+  },
+  {
+    "id": 6,
+    "title": "君のために僕がいる",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d8/8b/41/d88b411b-9013-6ce3-8ecb-c49ba5433aef/mzaf_18063808792559992710.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E5%90%9B%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AB%E5%83%95%E3%81%8C%E3%81%84%E3%82%8B/1485848225?i=1485848233&uo=4",
+    "year": 2001
+  },
+  {
+    "id": 7,
+    "title": "全部だきしめて",
+    "artist": "KinKi Kids",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4c/4e/64/4c4e642c-db0c-093a-7b45-b55926b0df91/mzaf_8152873559537733070.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E5%85%A8%E9%83%A8%E3%81%A0%E3%81%8D%E3%81%97%E3%82%81%E3%81%A6/1810392694?i=1810392695&uo=4",
+    "year": 1998
+  },
+  {
+    "id": 8,
+    "title": "a Day in Our Life",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e8/41/85/e841859d-7fb1-d2bf-f8d9-14b6eaa5fecc/mzaf_10100305725943337342.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/a-day-in-our-life/1485857228?i=1485857231&uo=4",
+    "year": 2002
+  },
+  {
+    "id": 9,
+    "title": "ナイスな心意気",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d3/83/69/d3836901-f42b-9a96-fe7b-be0989774afd/mzaf_7200277497587897595.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E3%83%8A%E3%82%A4%E3%82%B9%E3%81%AA%E5%BF%83%E6%84%8F%E6%B0%97/1485847924?i=1485847925&uo=4",
+    "year": 2002
+  },
+  {
+    "id": 10,
+    "title": "PIKA☆NCHI",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/fd/3e/42/fd3e4217-4142-00e7-485d-a100e8382366/mzaf_9049100431541991932.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/pika-nchi/1485858505?i=1485858508&uo=4",
+    "year": 2002
+  },
+  {
+    "id": 11,
+    "title": "とまどいながら",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/37/9a/97/379a979e-3833-57c7-e29c-afea2f92b738/mzaf_14755799715355417500.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E3%81%A8%E3%81%BE%E3%81%A9%E3%81%84%E3%81%AA%E3%81%8C%E3%82%89/1485849764?i=1485849768&uo=4",
+    "year": 2003
+  },
+  {
+    "id": 12,
+    "title": "言葉より大切なもの",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/0c/38/77/0c3877ce-cb3e-8c65-eedb-298bbecace3b/mzaf_12812835441292541931.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E8%A8%80%E8%91%89%E3%82%88%E3%82%8A%E5%A4%A7%E5%88%87%E3%81%AA%E3%82%82%E3%81%AE/1485848558?i=1485848568&uo=4",
+    "year": 2003
+  },
+  {
+    "id": 13,
+    "title": "言葉より大切なもの",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/0c/38/77/0c3877ce-cb3e-8c65-eedb-298bbecace3b/mzaf_12812835441292541931.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E8%A8%80%E8%91%89%E3%82%88%E3%82%8A%E5%A4%A7%E5%88%87%E3%81%AA%E3%82%82%E3%81%AE/1485848558?i=1485848568&uo=4",
+    "year": 2003
+  },
+  {
+    "id": 14,
+    "title": "PIKA★★NCHI DOUBLE (Crystal Merody)",
+    "artist": "クリスタルメロディー",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/Music3/v4/84/4a/a6/844aa604-2a64-ce48-d5a4-f75e6ac5b404/mzaf_3635731311367066224.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/pika-nchi-double-crystal-merody/956444060?i=956444061&uo=4",
+    "year": 2014
+  },
+  {
+    "id": 15,
+    "title": "瞳の中のGalaxy",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/eb/a8/a4/eba8a424-724e-1268-63a1-914eb3102fda/mzaf_13133265280023215262.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E7%9E%B3%E3%81%AE%E4%B8%AD%E3%81%AEgalaxy/1485848094?i=1485848096&uo=4",
+    "year": 2004
+  },
+  {
+    "id": 16,
+    "title": "Hero",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/4e/7d/75/4e7d750a-d2e7-237f-cbc9-f70298e1946b/mzaf_7814279744726017130.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/hero/1485848094?i=1485848099&uo=4",
+    "year": 2004
+  },
+  {
+    "id": 17,
+    "title": "サクラ咲ケ",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/96/ed/5d/96ed5d64-c214-ad31-dcb9-efc5b91ba393/mzaf_17160221934080647630.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E3%82%B5%E3%82%AF%E3%83%A9%E5%92%B2%E3%82%B1/1485848645?i=1485848978&uo=4",
+    "year": 2005
+  },
+  {
+    "id": 18,
+    "title": "WISH",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/48/d7/3e/48d73e61-8af9-0dca-0ec0-c083e5e440ea/mzaf_8204539849687402211.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/wish/1497127906?i=1497127935&uo=4",
+    "year": 2005
+  },
+  {
+    "id": 19,
+    "title": "きっと大丈夫",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/be/fd/6e/befd6eb0-67e1-f331-98cd-b291006535ba/mzaf_8838026863968656380.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E3%81%8D%E3%81%A3%E3%81%A8%E5%A4%A7%E4%B8%88%E5%A4%AB/1497127906?i=1497128291&uo=4",
+    "year": 2006
+  },
+  {
+    "id": 20,
+    "title": "アオゾラペダル",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/88/8a/e1/888ae13e-8229-2e76-d1b6-51eff53a12a3/mzaf_4879099531795738658.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E3%82%A2%E3%82%AA%E3%82%BE%E3%83%A9%E3%83%9A%E3%83%80%E3%83%AB/1485849314?i=1485849322&uo=4",
+    "year": 2006
+  },
+  {
+    "id": 21,
+    "title": "Love so sweet",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/30/58/b4/3058b4b0-e6e3-a1a1-c211-aa8254d1751b/mzaf_4185919129968547381.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/love-so-sweet/1485857244?i=1485857408&uo=4",
+    "year": 2007
+  },
+  {
+    "id": 22,
+    "title": "We can make it !",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d6/d9/16/d6d916eb-f2d2-da11-720d-63db8c200cb8/mzaf_9081585170916797438.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/we-can-make-it/1485858618?i=1485858623&uo=4",
+    "year": 2007
+  },
+  {
+    "id": 23,
+    "title": "Happiness",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/45/87/1f/45871fb7-424a-5057-012e-f1e5b545efee/mzaf_6653201962130921419.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/happiness/1573386004?i=1573386877&uo=4",
+    "year": 2007
+  },
+  {
+    "id": 24,
+    "title": "Step and Go",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/80/bc/02/80bc0214-903e-5921-c920-85053a1d6abd/mzaf_11033041832139161376.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/step-and-go/1485851160?i=1485851161&uo=4",
+    "year": 2008
+  },
+  {
+    "id": 25,
+    "title": "One Love : Reborn",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/18/22/bd/1822bdb9-208e-6d8b-277c-b42d153e0564/mzaf_9215420243742130076.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/one-love-reborn/1498271854?i=1498272219&uo=4",
+    "year": 2020
+  },
+  {
+    "id": 26,
+    "title": "truth",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/cc/5e/e2/cc5ee250-2520-88cb-89ce-d8a6176e6ee2/mzaf_4671409853524755602.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/truth/1485849653?i=1485849661&uo=4",
+    "year": 2008
+  },
+  {
+    "id": 27,
+    "title": "風の向こうへ",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/f2/12/47/f21247e3-c8fb-b4cf-2c47-a2ba2d81d1b7/mzaf_16329369218386257315.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E9%A2%A8%E3%81%AE%E5%90%91%E3%81%93%E3%81%86%E3%81%B8/1485849653?i=1485849971&uo=4",
+    "year": 2008
+  },
+  {
+    "id": 28,
+    "title": "Beautiful days",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/47/64/86/47648698-7234-b9b9-1064-fa65df223286/mzaf_4068713059014622934.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/beautiful-days/1485857186?i=1485857187&uo=4",
+    "year": 2008
+  },
+  {
+    "id": 29,
+    "title": "Believe",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/48/fd/0f/48fd0f06-c8b3-079e-ea8c-2c451b1ccd3f/mzaf_17664052677036399658.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/believe/1485856038?i=1485856045&uo=4",
+    "year": 2009
+  },
+  {
+    "id": 30,
+    "title": "明日の記憶",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/7a/73/ad/7a73ad87-08e1-403f-b861-82041d8a6457/mzaf_12419453408399667468.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E6%98%8E%E6%97%A5%E3%81%AE%E8%A8%98%E6%86%B6/1485848037?i=1485848038&uo=4",
+    "year": 2009
+  },
+  {
+    "id": 31,
+    "title": "Crazy Moon〜キミ・ハ・ムテキ〜",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/05/f8/7f/05f87ffe-49b8-0fc1-0cc4-fe0097b0990f/mzaf_11123365042024609311.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/crazy-moon-%E3%82%AD%E3%83%9F-%E3%83%8F-%E3%83%A0%E3%83%86%E3%82%AD/1573386004?i=1573387134&uo=4",
+    "year": 2009
+  },
+  {
+    "id": 32,
+    "title": "Everything",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/c1/2f/d9/c12fd9fc-a48e-c15b-0371-cdb6e97bf935/mzaf_7564593661643792235.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/everything/1485848438?i=1485848454&uo=4",
+    "year": 2009
+  },
+  {
+    "id": 33,
+    "title": "マイガール",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/da/63/af/da63af14-1e74-8411-796e-6075a58c556e/mzaf_9860581825523388302.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E3%83%9E%E3%82%A4%E3%82%AC%E3%83%BC%E3%83%AB/1485855965?i=1485856448&uo=4",
+    "year": 2009
+  },
+  {
+    "id": 34,
+    "title": "Troublemaker",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/07/16/5f/07165f5a-7a36-7eeb-b1f0-6979c65c1d0c/mzaf_1227120171702280177.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/troublemaker/1497130086?i=1497130113&uo=4",
+    "year": 2010
+  },
+  {
+    "id": 35,
+    "title": "Monster",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/00/68/ef/0068efde-1704-d868-d573-509072a18c3a/mzaf_4270560400848417442.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/monster/1573386004?i=1573387359&uo=4",
+    "year": 2010
+  },
+  {
+    "id": 36,
+    "title": "To be free",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/46/a5/88/46a58813-c255-9619-a3e8-6fc457d50596/mzaf_12633464248325862179.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/to-be-free/1485861150?i=1485861152&uo=4",
+    "year": 2010
+  },
+  {
+    "id": 37,
+    "title": "RAINBOW",
+    "artist": "三代目 J SOUL BROTHERS from EXILE TRIBE feat. Yellow Claw",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/9b/cf/ff/9bcfff6d-e4b2-718c-4588-ecb540ad5a7e/mzaf_14412052782925645987.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/rainbow/1385502809?i=1385502811&uo=4",
+    "year": 2018
+  },
+  {
+    "id": 38,
+    "title": "Dear Snow",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/39/5c/f6/395cf657-4382-a7fe-0c48-9cac8c64e39b/mzaf_7779668748309254918.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/dear-snow/1573386004?i=1573387368&uo=4",
+    "year": 2010
+  },
+  {
+    "id": 39,
+    "title": "果てない空",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/7d/df/0e/7ddf0ee3-52c5-d10b-d8c4-0d1b52ae064d/mzaf_5770627658954207668.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E6%9E%9C%E3%81%A6%E3%81%AA%E3%81%84%E7%A9%BA/1485849200?i=1485849202&uo=4",
+    "year": 2010
+  },
+  {
+    "id": 40,
+    "title": "Lotus",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e2/b4/fc/e2b4fc07-d3b3-028a-eef0-a4afc08005c1/mzaf_12656857244642627317.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/lotus/1497113856?i=1497114529&uo=4",
+    "year": 2011
+  },
+  {
+    "id": 41,
+    "title": "迷宮ラブソング",
+    "artist": "Hanauta Chill Tracks",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/59/52/6d/59526d7f-9572-ff2f-d91a-9bbd2e4555aa/mzaf_6817555851225328948.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E8%BF%B7%E5%AE%AE%E3%83%A9%E3%83%96%E3%82%BD%E3%83%B3%E3%82%B0/1637364948?i=1637364954&uo=4",
+    "year": 2022
+  },
+  {
+    "id": 42,
+    "title": "ワイルド アット ハート[ラッキーセブン]",
+    "artist": "プレミアムオルゴールサウンド",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/76/f9/5d/76f95d69-cc37-d085-1583-f361bb062252/mzaf_7248537171199942688.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E3%83%AF%E3%82%A4%E3%83%AB%E3%83%89-%E3%82%A2%E3%83%83%E3%83%88-%E3%83%8F%E3%83%BC%E3%83%88-%E3%83%A9%E3%83%83%E3%82%AD%E3%83%BC%E3%82%BB%E3%83%96%E3%83%B3/1481442451?i=1481442468&uo=4",
+    "year": 2019
+  },
+  {
+    "id": 43,
+    "title": "Face Down",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/32/5e/70/325e7013-91ad-c484-53b1-6272459f865a/mzaf_5216336281651325646.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/face-down/1485850638?i=1485850639&uo=4",
+    "year": 2012
+  },
+  {
+    "id": 44,
+    "title": "Your Eyes",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e9/dd/2f/e9dd2f30-79ac-c959-5471-9d48e292c8a3/mzaf_6603351344377858941.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/your-eyes/1485858819?i=1485858820&uo=4",
+    "year": 2012
+  },
+  {
+    "id": 45,
+    "title": "Calling",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/f7/e4/23/f7e42384-e6eb-ab66-5b51-0ed34579d944/mzaf_15021805159221696645.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/calling/1485850244?i=1485850246&uo=4",
+    "year": 2013
+  },
+  {
+    "id": 46,
+    "title": "Endless Game",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/1d/ec/b5/1decb598-67b5-ed93-0cc2-9971703f914a/mzaf_17317547593195896550.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/endless-game/1485851156?i=1485851159&uo=4",
+    "year": 2013
+  },
+  {
+    "id": 47,
+    "title": "GUTS!",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c7/eb/99/c7eb99aa-7367-3c23-7360-7404dc67aeda/mzaf_12838584860816530264.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/guts/1497121613?i=1497121977&uo=4",
+    "year": 2014
+  },
+  {
+    "id": 48,
+    "title": "誰も知らない",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e1/42/10/e14210c3-6411-c298-93ce-07abe0cd7728/mzaf_2354818468293109910.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E8%AA%B0%E3%82%82%E7%9F%A5%E3%82%89%E3%81%AA%E3%81%84/1497121613?i=1497122198&uo=4",
+    "year": 2014
+  },
+  {
+    "id": 49,
+    "title": "Sakura",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/5b/a8/e4/5ba8e4fb-191d-87fa-0c86-11ad79dd2a9a/mzaf_9633643045153192413.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/sakura/1485847853?i=1485847855&uo=4",
+    "year": 2015
+  },
+  {
+    "id": 50,
+    "title": "愛を叫べ",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/93/5a/c9/935ac9e2-01a9-4333-dffd-d832006fd457/mzaf_11571028916242615927.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E6%84%9B%E3%82%92%E5%8F%AB%E3%81%B9/1497122160?i=1497122991&uo=4",
+    "year": 2015
+  },
+  {
+    "id": 51,
+    "title": "復活Love",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/37/66/7b/37667b58-8f4d-f09b-deae-063ac9240731/mzaf_2766629107885856954.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E5%BE%A9%E6%B4%BBlove/1485848589?i=1485848593&uo=4",
+    "year": 2016
+  },
+  {
+    "id": 52,
+    "title": "I seek",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/01/c7/20/01c72092-282e-c638-c099-a7698b688689/mzaf_3058684096159442582.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/i-seek/1485851697?i=1485851700&uo=4",
+    "year": 2016
+  },
+  {
+    "id": 53,
+    "title": "Power of the Paradise",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/0b/f4/3e/0bf43e39-f675-e413-5de2-7e2067f46f2d/mzaf_16704852457478665187.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/power-of-the-paradise/1497112188?i=1497113079&uo=4",
+    "year": 2016
+  },
+  {
+    "id": 54,
+    "title": "I'll be there",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e0/cb/df/e0cbdff4-4b4e-83aa-f0d0-0ab21d16c2b4/mzaf_12323891154466453118.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/ill-be-there/1497112188?i=1497113469&uo=4",
+    "year": 2017
+  },
+  {
+    "id": 55,
+    "title": "つなぐ Originally Performed By 嵐 (オルゴール)",
+    "artist": "オルゴールサウンド J-POP",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/14/19/db/1419db0c-634e-d266-68e2-e1a1b8f9cd50/mzaf_11364443280538146856.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E3%81%A4%E3%81%AA%E3%81%90-originally-performed-by-%E5%B5%90-%E3%82%AA%E3%83%AB%E3%82%B4%E3%83%BC%E3%83%AB/1291803660?i=1291803661&uo=4",
+    "year": 2017
+  },
+  {
+    "id": 56,
+    "title": "Doors~勇気の軌跡~ (オルゴール)",
+    "artist": "α波オルゴール",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/22/56/b9/2256b93e-d99b-3a6e-7e15-5a5ffbd89c84/mzaf_9721305045445094280.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/doors-%E5%8B%87%E6%B0%97%E3%81%AE%E8%BB%8C%E8%B7%A1-%E3%82%AA%E3%83%AB%E3%82%B4%E3%83%BC%E3%83%AB/1519239834?i=1519239843&uo=4",
+    "year": 2020
+  },
+  {
+    "id": 57,
+    "title": "BRAVE",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/1b/2f/11/1b2f1188-63bb-1b58-c0cf-1fa4ebe2d6f4/mzaf_17122481488045040918.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/brave/1485847144?i=1485847387&uo=4",
+    "year": 2019
+  },
+  {
+    "id": 58,
+    "title": "カイト",
+    "artist": "槇原敬之",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/87/dc/cc/87dccc8b-bf48-145f-3977-29a768c35fef/mzaf_2054629175251336142.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E3%82%AB%E3%82%A4%E3%83%88/1623798423?i=1623798581&uo=4",
+    "year": 2007
+  },
+  {
+    "id": 59,
+    "title": "IN THE SUMMER",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/df/65/48/df6548a5-a0c1-6c11-c767-9fc736192c80/mzaf_17496186042117895606.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/in-the-summer/1521806834?i=1521806843&uo=4",
+    "year": 2020
+  },
+  {
+    "id": 60,
+    "title": "Whenever You Call",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/ba/58/b4/ba58b443-8c2f-2fd6-7718-875e9a465be3/mzaf_17170630246832809244.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/whenever-you-call/1529852429?i=1529852435&uo=4",
+    "year": 2020
+  },
+  {
+    "id": 61,
+    "title": "Party Starters",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/13/d0/28/13d02809-4c33-79f1-336b-b5a0d161a5c3/mzaf_2487746922216908744.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/party-starters/1541306803?i=1541306824&uo=4",
+    "year": 2020
+  },
+  {
+    "id": 62,
+    "title": "A-RA-SHI : Reborn",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/91/50/48/915048e5-afe5-1e0a-59e3-a8fc9f4cddab/mzaf_17336271274560039860.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/a-ra-shi-reborn/1491710194?i=1491710500&uo=4",
+    "year": 2019
+  },
+  {
+    "id": 63,
+    "title": "Face Down : Reborn",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/15/4a/22/154a2208-e7de-fda2-f610-7392a94ebda7/mzaf_9373558304648973411.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/face-down-reborn/1518730926?i=1518730929&uo=4",
+    "year": 2020
+  },
+  {
+    "id": 64,
+    "title": "5×20",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/69/66/32/6966326c-d2d6-ce19-182e-4d5aa228a6fb/mzaf_13218852516359654269.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/5-20/1573386004?i=1573388541&uo=4",
+    "year": 2019
+  },
+  {
+    "id": 65,
+    "title": "Love Situation",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/44/20/7a/44207abb-cbee-2b0e-036e-839d19917891/mzaf_10673867400257148206.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/love-situation/1497106611?i=1497107587&uo=4",
+    "year": 2007
+  },
+  {
+    "id": 66,
+    "title": "CARNIVAL NIGHT part 2",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/55/a4/1b/55a41b4b-80b8-d175-bf0a-252027ab634f/mzaf_12549211190991301557.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/carnival-night-part-2/1497127906?i=1497129071&uo=4",
+    "year": 2006
+  },
+  {
+    "id": 67,
+    "title": "Up to you",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/99/28/fa/9928fa3d-7fd0-86fd-dcb2-bd6f74fc9145/mzaf_1001252886410630718.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/up-to-you/1497113203?i=1497114591&uo=4",
+    "year": 2012
+  },
+  {
+    "id": 68,
+    "title": "the Deep End",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/16/64/94/166494ba-dcf0-e3cb-c755-849726b37032/mzaf_4243865504474688534.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/the-deep-end/1497156886?i=1497157936&uo=4",
+    "year": 2015
+  },
+  {
+    "id": 69,
+    "title": "Rise and Shine",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/71/e1/83/71e183ea-891d-6785-91af-fd19fa39d213/mzaf_15446768263329155127.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/rise-and-shine/1573381202?i=1573381949&uo=4",
+    "year": 2015
+  },
+  {
+    "id": 70,
+    "title": "A・RA・SHI",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/38/41/35/384135c7-457c-6676-b7b4-4759c2bb6f7c/mzaf_13866037915139607151.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/a-ra-shi/1485856826?i=1485856827&uo=4",
+    "year": 1999
+  },
+  {
+    "id": 71,
+    "title": "P・A・R・A・D・O・X",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/59/14/43/5914431e-b37c-c2ce-6a8d-3ac30a63f280/mzaf_2238567049706538237.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/p-a-r-a-d-o-x/1497106743?i=1497106973&uo=4",
+    "year": 2013
+  },
+  {
+    "id": 72,
+    "title": "Don't You Get It",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/49/1d/a7/491da782-4b8b-2c03-da61-bd3256ad6a68/mzaf_6430925062010402848.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/dont-you-get-it/1497122160?i=1497123004&uo=4",
+    "year": 2016
+  },
+  {
+    "id": 73,
+    "title": "「未完」",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1b/09/87/1b098725-bbfb-d56a-f10b-3d5c19772ebf/mzaf_6543901082598215288.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E6%9C%AA%E5%AE%8C/1497112188?i=1497112203&uo=4",
+    "year": 2017
+  },
+  {
+    "id": 74,
+    "title": "NOW or NEVER",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/78/a6/b5/78a6b5bd-f849-3486-cc0c-f15201ac2a1a/mzaf_15538023863168733503.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/now-or-never/1573381041?i=1573381824&uo=4",
+    "year": 2017
+  },
+  {
+    "id": 75,
+    "title": "コイゴコロ",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e5/6c/99/e56c9973-a86e-02ac-f163-2a5fa0f4706c/mzaf_6395620010831726822.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/%E3%82%B3%E3%82%A4%E3%82%B4%E3%82%B3%E3%83%AD/1573381037?i=1573381832&uo=4",
+    "year": 2003
+  },
+  {
+    "id": 76,
+    "title": "One Love",
+    "artist": "嵐",
+    "audioUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/cd/65/47/cd65474e-5723-8efb-bb51-5ffc1e2ac7c7/mzaf_31823344065417898.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/jp/album/one-love/1485847812?i=1485847813&uo=4",
+    "year": 2008
+  }
+]

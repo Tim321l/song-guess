@@ -54,6 +54,7 @@ export function initLobbyHandlers() {
                 if (cat === 'songsCn') label = 'Chinese Hits';
                 if (cat === 'songsTh') label = 'Thai Hits';
                 if (cat === 'songsEason') label = 'Eason Chan Hits';
+                if (cat === 'songsArashi') label = 'Arashi (嵐)';
                 if (cat === 'songsJayChou') label = 'Jay Chou Collection';
 
                 if (cat.startsWith('spotify:')) {

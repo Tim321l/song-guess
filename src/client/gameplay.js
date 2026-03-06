@@ -144,6 +144,10 @@ export function initGameplayHandlers() {
         document.getElementById('ready-status-container').classList.add('hidden');
         document.getElementById('options-grid').classList.remove('hidden');
         if (state.isHost) document.getElementById('host-controls').classList.remove('hidden');
+
+        // Show bar info
+        document.getElementById('bar-game-info').classList.remove('hidden');
+        document.getElementById('bar-leave-btn').classList.remove('hidden');
     });
 
     socket.on('newTurn', (data) => {
@@ -157,6 +161,7 @@ export function initGameplayHandlers() {
         if (favBtn) favBtn.classList.add('hidden');
 
         const turnMsg = document.getElementById('turn-message');
+        const barTurnMsg = document.getElementById('bar-turn-message');
         document.getElementById('round-display').innerText = `${data.round} / ${data.totalRounds}`;
         const grid = document.getElementById('options-grid');
         grid.innerHTML = '';
@@ -187,9 +192,12 @@ export function initGameplayHandlers() {
 
         if (turnMsg) {
             const prefix = `Round ${data.round}: `;
-            if (data.mode === 'lyrics') turnMsg.innerText = prefix + 'Read the lyrics and guess the next line!';
-            else if (data.mode === 'next') turnMsg.innerText = prefix + 'What is next?';
-            else turnMsg.innerText = prefix + 'Match the Song!';
+            let text = prefix + 'Match the Song!';
+            if (data.mode === 'lyrics') text = prefix + 'Read the lyrics and guess the next line!';
+            else if (data.mode === 'next') text = prefix + 'What is next?';
+
+            turnMsg.innerText = text;
+            if (barTurnMsg) barTurnMsg.innerText = text;
         }
 
         const lyricsContainer = document.getElementById('lyrics-display-container');
@@ -250,6 +258,8 @@ export function initGameplayHandlers() {
                 if (!audioPlayer.paused) {
                     audioPlayer.pause();
                     document.getElementById('visualizer').classList.remove('playing');
+                    const barVis = document.getElementById('bar-visualizer');
+                    if (barVis) barVis.classList.remove('playing');
                 }
                 if (!state.hasGuessed) {
                     document.querySelectorAll('.option-btn').forEach(b => {
@@ -269,8 +279,13 @@ export function initGameplayHandlers() {
 
             const fill = document.getElementById('progress-fill');
             if (fill) fill.style.width = `${(timeLeft / totalTime) * 100}%`;
+            const barFill = document.getElementById('bar-progress-fill');
+            if (barFill) barFill.style.width = `${(timeLeft / totalTime) * 100}%`;
+
             const timeLabel = document.getElementById('time-left');
             if (timeLabel) timeLabel.innerText = `0:${Math.ceil(timeLeft).toString().padStart(2, '0')}`;
+            const barTimeLabel = document.getElementById('bar-time-left');
+            if (barTimeLabel) barTimeLabel.innerText = `0:${Math.ceil(timeLeft).toString().padStart(2, '0')}`;
         }, 100);
     });
 
@@ -489,9 +504,11 @@ export function initGameplayHandlers() {
             ranking.appendChild(d);
         });
 
-        // Hide host controls
+        // Hide host controls and bar info
         const hostControls = document.getElementById('host-controls');
         if (hostControls) hostControls.classList.add('hidden');
+        document.getElementById('bar-game-info').classList.add('hidden');
+        document.getElementById('bar-leave-btn').classList.add('hidden');
 
         // Play Again button (host only)
         const playAgainBtn = document.getElementById('play-again-btn');
@@ -545,10 +562,11 @@ export function initGameplayHandlers() {
             readyBtn.style.pointerEvents = 'auto';
             readyBtn.textContent = 'Click Here to Ready & Enable Audio';
         }
-        const hostControls = document.getElementById('host-controls');
-        if (hostControls) hostControls.classList.add('hidden');
         const pauseOverlay = document.getElementById('pause-overlay');
         if (pauseOverlay) pauseOverlay.classList.add('hidden');
+
+        document.getElementById('bar-game-info').classList.add('hidden');
+        document.getElementById('bar-leave-btn').classList.add('hidden');
 
         switchScreen('lobby');
     });
@@ -576,11 +594,12 @@ export function initGameplayHandlers() {
     });
 
     const leaveBtn = document.getElementById('game-leave-btn');
-    if (leaveBtn) {
-        leaveBtn.onclick = () => {
-            if (confirm(localStorage.getItem('songGuessLang') === 'ZH' ? '確定要離開房間嗎？' : 'Are you sure you want to leave the room?')) {
-                leaveRoom();
-            }
-        };
-    }
+    const barLeaveBtn = document.getElementById('bar-leave-btn');
+    const handleLeave = () => {
+        if (confirm(localStorage.getItem('songGuessLang') === 'ZH' ? '確定要離開房間嗎？' : 'Are you sure you want to leave the room?')) {
+            leaveRoom();
+        }
+    };
+    if (leaveBtn) leaveBtn.onclick = handleLeave;
+    if (barLeaveBtn) barLeaveBtn.onclick = handleLeave;
 }

@@ -58,44 +58,50 @@
   <div id="app">
     <div id="particles-bg"></div>
 
-    <!-- Global Settings Toolbar (top-left) -->
-    <div id="global-settings-bar" style="
-      position: fixed; top: 14px; left: 14px; z-index: 9999;
-      display: flex; align-items: center; gap: 10px;
-      background: rgba(20, 20, 35, 0.85);
-      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 50px;
-      padding: 10px 20px;
-      box-shadow: 0 6px 30px rgba(0,0,0,0.5);
-      transition: opacity 0.3s;
-    ">
-      <!-- Language Toggle -->
-      <button id="lang-toggle-btn" title="Switch Language" style="
-        background: none; border: 1px solid rgba(255,255,255,0.25);
-        color: #c8d0e8; border-radius: 20px; padding: 5px 14px;
-        font-size: 0.9em; font-weight: 600; cursor: pointer; font-family: inherit;
-        transition: all 0.2s; white-space: nowrap;
-      ">🌐 EN</button>
+    <!-- Unified Control & Info Bar (Persistent across screens) -->
+    <div id="global-settings-bar">
+      <!-- Left: System Controls -->
+      <div class="bar-section left">
+        <button id="lang-toggle-btn" title="Switch Language">🌐 EN</button>
+        <div class="divider"></div>
+        <button id="theme-toggle-btn" title="Toggle Light/Dark Mode">🌙</button>
+        <div class="divider"></div>
+        <div class="volume-control">
+          <span id="vol-icon">🔊</span>
+          <input type="range" id="global-volume-slider" min="0" max="1" step="0.05" value="1">
+        </div>
+      </div>
 
-      <!-- Divider -->
-      <div style="width:1px; height:22px; background: rgba(255,255,255,0.2);"></div>
+      <!-- Center: Game Status & Info (Visible during game) -->
+      <div class="bar-section center" id="bar-game-info">
+        <div id="bar-turn-indicator" class="hidden">
+          <span id="bar-turn-message">Match the Song!</span>
+        </div>
+        <div id="bar-audio-info" class="hidden">
+          <div class="bar-visualizer" id="bar-visualizer">
+            <div class="v-bar"></div>
+            <div class="v-bar"></div>
+            <div class="v-bar"></div>
+            <div class="v-bar"></div>
+            <div class="v-bar"></div>
+            <div class="v-bar"></div>
+          </div>
+          <div class="bar-progress">
+            <div class="bar-progress-fill" id="bar-progress-fill"></div>
+          </div>
+          <span id="bar-time-left">0:05</span>
+        </div>
+      </div>
 
-      <!-- Light/Dark Mode Toggle -->
-      <button id="theme-toggle-btn" title="Toggle Light/Dark Mode" style="
-        background: none; border: none; color: #c8d0e8;
-        font-size: 1.4em; cursor: pointer; padding: 0 4px;
-        transition: transform 0.3s; line-height: 1;
-      ">🌙</button>
-
-      <!-- Divider -->
-      <div style="width:1px; height:22px; background: rgba(255,255,255,0.2);"></div>
-
-      <!-- Volume -->
-      <span style="font-size: 1.2em; cursor: default;" id="vol-icon">🔊</span>
-      <input type="range" id="global-volume-slider" min="0" max="1" step="0.05" value="1" style="
-        width: 100px; height: 5px; accent-color: #7f8cff; cursor: pointer;
-      ">
+      <!-- Right: Social & Navigation -->
+      <div class="bar-section right">
+        <!-- Chat Toggle Button -->
+        <button id="chat-bar-toggle" class="bar-btn" title="Open Chat">
+          💬 <span data-i18n="chat-title">Chat</span>
+        </button>
+        <div class="divider"></div>
+        <button id="bar-leave-btn" class="bar-btn hidden" style="color: #ff4757;">🚪</button>
+      </div>
     </div>
 
     <!-- Landing Screen -->
@@ -539,7 +545,7 @@
         </div>
       </header>
 
-      <div class="turn-indicator" id="turn-indicator" style="margin-bottom: 10px;">
+      <div class="turn-indicator hidden" id="turn-indicator" style="margin-bottom: 10px;">
         <span id="turn-message">Match the Song!</span>
       </div>
 
@@ -576,7 +582,7 @@
         </div>
       </div>
 
-      <div class="audio-player-container" style="margin-bottom: 20px;">
+      <div class="audio-player-container hidden" style="margin-bottom: 20px;">
         <div class="visualizer" id="visualizer">
           <div class="bar"></div>
           <div class="bar"></div>

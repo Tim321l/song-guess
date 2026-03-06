@@ -11,6 +11,7 @@ export function initChatHandlers() {
     const scopeGlobalBtn = document.getElementById('scope-global-btn');
     const scopeRoomBtn = document.getElementById('scope-room-btn');
     const chatToggleBtn = document.getElementById('chat-toggle-btn');
+    const chatBarToggle = document.getElementById('chat-bar-toggle');
 
     if (!chatContainer || !chatHeader || !chatInput || !chatSendBtn || !chatMessages || !scopeGlobalBtn || !scopeRoomBtn || !chatToggleBtn) {
         console.warn("[Chat] Some UI elements missing. Chat system disabled.");
@@ -126,6 +127,18 @@ export function initChatHandlers() {
         e.stopPropagation();
         toggleChat();
     };
+
+    if (chatBarToggle) {
+        chatBarToggle.onclick = (e) => {
+            e.stopPropagation();
+            if (chatContainer.classList.contains('hidden')) {
+                chatContainer.classList.remove('hidden');
+                if (chatContainer.classList.contains('collapsed')) toggleChat();
+            } else {
+                chatContainer.classList.add('hidden');
+            }
+        };
+    }
 
     // Scope switching
     scopeGlobalBtn.onclick = () => {
