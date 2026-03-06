@@ -237,9 +237,7 @@ body {
 /* --- Chat System --- */
 #chat-container {
   position: fixed;
-  top: 70px;
-  /* Below the top bar */
-  right: 20px;
+  /* Initial position handled by JS/Persistence */
   width: 350px;
   height: 500px;
   background: rgba(20, 20, 35, 0.95);

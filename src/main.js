@@ -12,6 +12,7 @@ import { applyLanguage } from './client/i18n.js';
 import { handleSpotifyRedirect } from './client/spotify.js';
 import { audioPlayer } from './client/audio.js';
 import { initChatHandlers } from './client/chat.js';
+import { initLandingHandlers } from './client/landing.js';
 
 // --- Initialization ---
 initSocket();
@@ -25,6 +26,7 @@ initSocialHandlers();
 initSettingsHandlers();
 initTeamHandlers();
 initChatHandlers();
+initLandingHandlers();
 handleSpotifyRedirect();
 
 // --- Global UI Logic ---

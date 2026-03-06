@@ -113,17 +113,17 @@
           experience. Join thousands of players and prove your musical knowledge!</p>
 
         <div class="feature-grid">
-          <div class="feature-card">
+          <div class="feature-card" id="feature-card-songs" style="cursor: pointer;">
             <span class="feature-icon">🎸</span>
             <h3 data-i18n="feature-songs-title">10,000+ Songs</h3>
             <p data-i18n="feature-songs-desc">Massive library across all genres and decades.</p>
           </div>
-          <div class="feature-card">
+          <div class="feature-card" id="feature-card-multi" style="cursor: pointer;">
             <span class="feature-icon">👥</span>
             <h3 data-i18n="feature-multi-title">Multiplayer</h3>
             <p data-i18n="feature-multi-desc">Compete with friends or players worldwide in real-time.</p>
           </div>
-          <div class="feature-card">
+          <div class="feature-card" id="feature-card-leaderboard" style="cursor: pointer;">
             <span class="feature-icon">🏆</span>
             <h3 data-i18n="feature-leader-title">Leaderboards</h3>
             <p data-i18n="feature-leader-desc">Climb the ranks and become a legendary Song Guesser.</p>
@@ -606,12 +606,8 @@
           </div>
         </div>
 
-        <div class="btn-grid hidden" id="options-grid" style="width: 100%;">
-          <!-- Options will be injected via JS -->
-        </div>
-
-        <div class="audio-player-container" id="game-audio-container"
-          style="margin-top: 25px; width: 100%; max-width: 500px;">
+        <div id="game-audio-container" class="audio-player-container hidden"
+          style="margin-bottom: 25px; width: 100%; max-width: 500px;">
           <div class="visualizer" id="visualizer">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -627,6 +623,10 @@
             </div>
             <span id="time-left">0:05</span>
           </div>
+        </div>
+
+        <div class="btn-grid hidden" id="options-grid" style="width: 100%;">
+          <!-- Options will be injected via JS -->
         </div>
 
         <!-- Promote Status List (Shown during turnResult) -->
@@ -1086,6 +1086,18 @@
       data-i18n="footer-privacy">Privacy Policy</a> |
     <span style="margin-left: 10px;" data-i18n="footer-copyright">© 2026 Song Guess Online</span>
   </footer>
+
+  <!-- Landing Page Info Modal -->
+  <div id="landing-modal" class="modal-overlay hidden" style="z-index: 20000;">
+    <div class="glass-panel"
+      style="max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; padding: 30px;">
+      <button id="close-landing-modal" class="bar-btn"
+        style="position: absolute; top: 15px; right: 15px; font-size: 1.5rem; opacity: 0.6;">✖</button>
+      <div id="landing-modal-content">
+        <!-- Content injected here -->
+      </div>
+    </div>
+  </div>
 
   <script type="module" src="/src/main.js"></script>
 </body>

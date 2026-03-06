@@ -39,6 +39,10 @@ export function initChatHandlers() {
             chatContainer.style.left = pos.left;
             chatContainer.style.top = pos.top;
             chatContainer.style.margin = '0';
+        } else {
+            // Default position (top-right below the bar)
+            chatContainer.style.top = '75px';
+            chatContainer.style.right = '20px';
         }
     };
     loadPersistence();
