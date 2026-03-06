@@ -1369,6 +1369,12 @@ h1 .highlight {
 
 .modal-overlay.hidden {
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
   display: flex !important;
+}
+
+.modal-overlay .glass-panel {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }

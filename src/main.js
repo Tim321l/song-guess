@@ -1,4 +1,3 @@
-import './style.css';
 import { socket, initSocket } from './client/socket.js';
 import { state } from './client/state.js';
 import { initAuthHandlers, handleLoginSuccess } from './client/auth.js';
@@ -14,19 +13,31 @@ import { audioPlayer } from './client/audio.js';
 import { initChatHandlers } from './client/chat.js';
 import { initLandingHandlers } from './client/landing.js';
 
+console.log("[Main] Starting initialization...");
 // --- Initialization ---
+console.log("[Main] Calling initSocket...");
 initSocket();
 socket.on('connect', () => {
+    console.log("[Main] Socket connected:", socket.id);
     state.myId = socket.id;
 });
+console.log("[Main] Calling initAuthHandlers...");
 initAuthHandlers();
+console.log("[Main] Calling initLobbyHandlers...");
 initLobbyHandlers();
+console.log("[Main] Calling initGameplayHandlers...");
 initGameplayHandlers();
+console.log("[Main] Calling initSocialHandlers...");
 initSocialHandlers();
+console.log("[Main] Calling initSettingsHandlers...");
 initSettingsHandlers();
+console.log("[Main] Calling initTeamHandlers...");
 initTeamHandlers();
+console.log("[Main] Calling initChatHandlers...");
 initChatHandlers();
+console.log("[Main] Calling initLandingHandlers...");
 initLandingHandlers();
+console.log("[Main] Calling handleSpotifyRedirect...");
 handleSpotifyRedirect();
 
 // --- Global UI Logic ---
