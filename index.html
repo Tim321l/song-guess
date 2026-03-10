@@ -2,25 +2,1104 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; url=/play.html" />
-    <title>估歌仔 - Song Guess Online</title>
-    <style>
-        body {
-            background: #0f0c29;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            font-family: 'Outfit', sans-serif;
-            margin: 0;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>估歌仔 - Song Guess Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script>
+    // Global Proxy for Google Sign-In Callback (Ensures it's found before main script loads)
+    window.handleGoogleLogin = function (response) {
+      if (window._handleGoogleLoginActual) {
+        window._handleGoogleLoginActual(response);
+      } else {
+        console.warn("[Google Auth] Real handler not yet ready. Stashing response...");
+        window._stashedGoogleResponse = response;
+      }
+    };
+  </script>
+  <style>
+    .mt-3 {
+      margin-top: 15px;
+    }
+
+    .mb-3 {
+      margin-bottom: 15px;
+    }
+
+    .flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .player-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px;
+      margin-bottom: 5px;
+      border-radius: 8px;
+    }
+
+    .player-score-inline {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 8px 15px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 1.1rem;
+    }
+  </style>
 </head>
 
 <body>
-    <p>Redirecting... <a href="/play.html" style="color:#00f2fe">Click here if not redirected</a></p>
+  <div id="app">
+    <div id="particles-bg"></div>
+
+    <!-- Unified Control & Info Bar (Persistent across screens) -->
+    <div id="global-settings-bar">
+      <!-- Left: System Controls -->
+      <div class="bar-section left">
+        <button id="lang-toggle-btn" title="Switch Language">🌐 EN</button>
+        <div class="divider"></div>
+        <button id="theme-toggle-btn" title="Toggle Light/Dark Mode">🌙</button>
+        <div class="divider"></div>
+        <div class="volume-control">
+          <span id="vol-icon">🔊</span>
+          <input type="range" id="global-volume-slider" min="0" max="1" step="0.05" value="1">
+        </div>
+      </div>
+
+      <!-- Center: Game Status & Info (Visible during game) -->
+      <div class="bar-section center" id="bar-game-info">
+        <div id="bar-turn-indicator" class="hidden">
+          <span id="bar-turn-message">Match the Song!</span>
+        </div>
+        <div id="bar-audio-info" class="hidden">
+          <div class="bar-visualizer" id="bar-visualizer">
+            <div class="v-bar"></div>
+            <div class="v-bar"></div>
+            <div class="v-bar"></div>
+            <div class="v-bar"></div>
+            <div class="v-bar"></div>
+            <div class="v-bar"></div>
+          </div>
+          <div class="bar-progress">
+            <div class="bar-progress-fill" id="bar-progress-fill"></div>
+          </div>
+          <span id="bar-time-left">0:05</span>
+        </div>
+      </div>
+
+      <!-- Right: Social & Navigation -->
+      <div class="bar-section right">
+        <!-- Chat Toggle Button -->
+        <button id="chat-bar-toggle" class="bar-btn" title="Open Chat">
+          💬 <span data-i18n="chat-title">Chat</span>
+        </button>
+        <div class="divider"></div>
+        <button id="bar-leave-btn" class="bar-btn hidden" style="color: #ff4757;">🚪</button>
+      </div>
+    </div>
+
+    <!-- Landing Screen -->
+    <section id="landing-screen" class="screen active glass-panel">
+      <div class="landing-hero">
+        <div class="icon-pulse">🎮</div>
+        <h1 data-i18n="landing-hero-title">Guess the Song, Beat the Clock!</h1>
+        <p class="subtitle" data-i18n="landing-hero-subtitle">The ultimate real-time multiplayer music trivia
+          experience. Join thousands of players and prove your musical knowledge!</p>
+
+        <div class="feature-grid">
+          <div class="feature-card" id="feature-card-songs" style="cursor: pointer;">
+            <span class="feature-icon">🎸</span>
+            <h3 data-i18n="feature-songs-title">10,000+ Songs</h3>
+            <p data-i18n="feature-songs-desc">Massive library across all genres and decades.</p>
+          </div>
+          <div class="feature-card" id="feature-card-multi" style="cursor: pointer;">
+            <span class="feature-icon">👥</span>
+            <h3 data-i18n="feature-multi-title">Multiplayer</h3>
+            <p data-i18n="feature-multi-desc">Compete with friends or players worldwide in real-time.</p>
+          </div>
+          <div class="feature-card" id="feature-card-leaderboard" style="cursor: pointer;">
+            <span class="feature-icon">🏆</span>
+            <h3 data-i18n="feature-leader-title">Leaderboards</h3>
+            <p data-i18n="feature-leader-desc">Climb the ranks and become a legendary Song Guesser.</p>
+          </div>
+        </div>
+
+        <div class="cta-container">
+          <button id="play-now-btn" class="huge-btn" data-i18n="play-now-btn">Play Now 🎵</button>
+        </div>
+        <div style="margin-top: 40px; font-size: 0.8em; color: var(--text-muted); opacity: 0.6;">
+          &copy; 2026 Song Guess Team. All rights reserved.
+        </div>
+      </div>
+    </section>
+
+    <!-- Auth Screen -->
+    <section id="auth-screen" class="screen hidden glass-panel">
+      <div class="logo-container">
+        <div class="icon-pulse">🎵</div>
+        <h1>Song <span class="highlight">Guess</span> Online</h1>
+      </div>
+      <p class="subtitle">Login to save your scores!</p>
+
+      <!-- Connection Status Indicator -->
+      <div id="connection-status-msg"
+        style="text-align: center; margin-bottom: 15px; font-size: 0.85em; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <span class="status-dot" style="width: 8px; height: 8px; border-radius: 50%; background: #f1c40f;"></span>
+        <span id="status-text" style="color: #f1c40f;">Connecting to server... (Render wake-up)</span>
+      </div>
+
+      <div class="setup-container">
+        <!-- Phishing Mitigation Disclaimer -->
+        <div
+          style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 10px; margin-bottom: 20px; text-align: left;">
+          <p style="font-size: 0.75em; color: var(--text-muted); line-height: 1.4; margin: 0;">
+            <strong style="color: #00f2fe;">NOTICE:</strong> Song Guess Online is an <strong>independent fan-made music
+              trivia community</strong>.
+            We are NOT affiliated with, endorsed by, or representing Google, Spotify, or any other third-party service
+            providers.
+          </p>
+        </div>
+
+        <div class="input-group">
+          <label>Username</label>
+          <input type="text" id="auth-username" placeholder="Enter username">
+        </div>
+        <div class="input-group" style="margin-top: 10px;">
+          <label data-i18n="password-label">Password</label>
+          <input type="password" id="auth-password" data-i18n-placeholder="password-placeholder"
+            placeholder="Enter password">
+        </div>
+
+        <div style="margin-top: 15px; display: flex; align-items: flex-start; gap: 10px; text-align: left;">
+          <input type="checkbox" id="auth-policy-check"
+            style="width: 20px; height: 20px; margin-top: 2px; cursor: pointer;">
+          <label for="auth-policy-check" style="font-size: 0.85em; color: #a8b0cc; cursor: pointer; line-height: 1.4;">
+            <span data-i18n="policy-accept-part1">I have read and agree to the</span>
+            <a href="/privacy.html" target="_blank"
+              style="color: #00f2fe; text-decoration: none; font-weight: 600;">Privacy Policy</a>
+          </label>
+        </div>
+
+        <div style="display: flex; gap: 15px; margin-top: 20px;">
+          <button id="login-btn" class="primary-btn pulse" style="flex: 1;">Login</button>
+          <button id="register-btn" class="secondary-btn" style="flex: 1;">Register</button>
+        </div>
+
+        <div style="margin-top: 15px; text-align: center;">
+          <a href="#" id="forgot-password-link" style="color: #a8b0cc; font-size: 0.85em; text-decoration: none;">Forgot
+            Password?</a>
+        </div>
+
+        <div style="margin: 20px 0; display: flex; align-items: center; color: #a8b0cc; font-size: 0.8em;">
+          <hr style="flex: 1; border: 0; border-top: 1px solid rgba(255,255,255,0.1);">
+          <span style="padding: 0 10px;">OR</span>
+          <hr style="flex: 1; border: 0; border-top: 1px solid rgba(255,255,255,0.1);">
+        </div>
+
+        <div id="google-login-container" class="flex-center">
+          <div id="g_id_onload"
+            data-client_id="213791803890-mif0l8jcm45jkpotjq92k59o3jn4ngah.apps.googleusercontent.com"
+            data-context="signin" data-ux_mode="popup" data-callback="handleGoogleLogin" data-auto_prompt="false">
+          </div>
+          <div id="google-signin-btn" class="g_id_signin" data-type="standard" data-shape="rectangular"
+            data-theme="outline" data-text="signin_with" data-size="large" data-logo_alignment="left">
+          </div>
+        </div>
+
+        <div class="game-info-footer"
+          style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.85em; color: var(--text-muted); text-align: left;">
+          <h4 style="color: var(--primary-accent); margin-bottom: 8px;" data-i18n="about-title">What is Song Guess
+            Online?</h4>
+          <p data-i18n="about-desc">Song Guess is a real-time multiplayer music trivia game. Challenge your friends to
+            identify songs from different eras and languages!</p>
+          <ul style="margin-top: 10px; margin-left: 20px; color: var(--text-muted);">
+            <li data-i18n="about-list-1">10,000+ Songs across English, Chinese, and more</li>
+            <li data-i18n="about-list-2">Real-time multiplayer lobbies</li>
+            <li data-i18n="about-list-3">Custom playlists and team features</li>
+          </ul>
+        </div>
+        <p id="auth-message" style="color: #ff4757; margin-top: 10px; font-size: 0.9em; text-align: center;"></p>
+      </div>
+    </section>
+
+    <!-- Forgot Password Screen -->
+    <section id="forgot-password-screen" class="screen hidden glass-panel">
+      <div class="logo-container">
+        <h1 data-i18n="reset-title">Reset <span class="highlight">Password</span></h1>
+      </div>
+      <p class="subtitle" data-i18n="reset-subtitle">Enter your email <strong>or</strong> username to request a reset.
+      </p>
+
+      <div class="setup-container">
+        <div class="input-group">
+          <label data-i18n="recovery-label">Email or Username</label>
+          <input type="text" id="recovery-email" data-i18n-placeholder="recovery-placeholder"
+            placeholder="Enter your email or username">
+        </div>
+        <button id="send-recovery-btn" class="action-btn" style="width: 100%; margin-top: 10px;"
+          data-i18n="send-recovery-btn">Send Request</button>
+        <button id="back-to-login-btn" class="action-btn"
+          style="width: 100%; margin-top: 10px; background: transparent; border-color: rgba(255,255,255,0.2);"
+          data-i18n="back-to-login-btn">Back to Login</button>
+      </div>
+    </section>
+
+    <!-- Start Screen -->
+    <section id="start-screen" class="screen hidden glass-panel">
+      <div class="logo-container">
+        <div class="icon-pulse">🎵</div>
+        <h1 data-i18n="app-title">估歌仔 <span class="highlight">Song Guess</span></h1>
+      </div>
+      <p class="subtitle" data-i18n="start-subtitle">Join the room with your friends!</p>
+
+      <div class="setup-container">
+        <div style="text-align: center; margin-bottom: 15px;">
+          <span style="color: #a8b0cc;" data-i18n="welcome-text">Welcome back, </span>
+          <strong id="display-username" style="color: var(--text-main); font-size: 1.1em;">Player</strong>
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-top: 10px;">
+          <button id="show-create-btn" class="action-btn" style="flex: 1; justify-content: center;"
+            data-i18n="show-create-btn">Create Room</button>
+          <button id="show-join-btn" class="action-btn" style="flex: 1; justify-content: center;"
+            data-i18n="show-join-btn">Join Room</button>
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-top: 10px;">
+          <button id="show-leaderboard-btn" class="action-btn"
+            style="flex: 2; justify-content: center; background: rgba(46, 204, 113, 0.1); border-color: #2ecc71; color: #2ecc71;"
+            data-i18n="show-leaderboard-btn">
+            🏆 Leaderboard
+          </button>
+
+          <button id="show-settings-btn" class="action-btn"
+            style="flex: 1; justify-content: center; background: rgba(255, 255, 255, 0.1); border-color: #a8b0cc; color: #fff;"
+            data-i18n="show-settings-btn">
+            ⚙️ Settings
+          </button>
+        </div>
+
+        <button id="show-favorites-btn" class="action-btn"
+          style="width: 100%; margin-top: 10px; justify-content: center; background: rgba(241, 196, 15, 0.1); border-color: #f1c40f; color: #f1c40f;"
+          data-i18n="show-favorites-btn">
+          ⭐ My Favorites
+        </button>
+
+        <button id="show-community-btn" class="action-btn"
+          style="width: 100%; margin-top: 10px; justify-content: center; background: rgba(155, 89, 182, 0.1); border-color: #9b59b6; color: #9b59b6;"
+          data-i18n="show-community-btn">
+          🎵 Community Playlists
+        </button>
+
+        <button id="show-teams-btn" class="action-btn"
+          style="width: 100%; margin-top: 10px; justify-content: center; background: rgba(52, 152, 219, 0.1); border-color: #3498db; color: #3498db;"
+          data-i18n="show-teams-btn">
+          👥 Teams
+        </button>
+
+        <button id="logout-btn" class="action-btn"
+          style="width: 100%; margin-top: 20px; justify-content: center; background: rgba(255, 71, 87, 0.1); border-color: #ff4757; color: #ff4757; font-size: 0.8em; opacity: 0.7;"
+          data-i18n="logout-btn">
+          🚪 Logout
+        </button>
+
+        <!-- Create Room Form -->
+        <div id="create-room-form" class="hidden" style="margin-top: 20px;">
+          <div class="input-group">
+            <label for="lang-select" data-i18n="music-category-label">Music Category</label>
+            <select id="lang-select">
+              <option value="all" data-i18n="cat-all">Mixed / All Categories</option>
+            </select>
+          </div>
+
+          <!-- Spotify Playlist (connect in Settings first) -->
+          <div id="spotify-in-room-section"
+            style="margin-top: 15px; padding: 10px; background: rgba(29, 185, 84, 0.08); border: 1px solid rgba(29, 185, 84, 0.25); border-radius: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg"
+                style="width: 18px; height: 18px;" alt="Spotify">
+              <span id="spotify-room-status" style="font-size: 0.85em; color: #a8b0cc;">Not connected — go to Settings
+                to link Spotify</span>
+            </div>
+            <div id="spotify-playlist-picker-container" class="hidden" style="margin-top: 8px;">
+              <label style="font-size: 0.8em; color: #a8b0cc; margin-bottom: 4px; display: block;"
+                data-i18n="pick-playlist-label">Pick a playlist:</label>
+              <select id="spotify-playlist-select"
+                style="width: 100%; background: var(--input-bg); border: 1px solid var(--glass-border); color: var(--text-main); padding: 8px; border-radius: 5px;">
+                <option value="">-- Select Playlist --</option>
+              </select>
+              <p id="spotify-status" style="font-size: 0.75em; color: #a8b0cc; margin-top: 5px;"></p>
+            </div>
+          </div>
+          <div class="input-group" style="margin-top: 10px;">
+            <label for="diff-select" data-i18n="difficulty-label">Difficulty</label>
+            <select id="diff-select">
+              <option value="10" data-i18n="diff-easy">Easy (10 seconds)</option>
+              <option value="5" selected data-i18n="diff-medium">Medium (5 seconds)</option>
+              <option value="1" data-i18n="diff-hard">Hard (1 second)</option>
+            </select>
+          </div>
+          <div class="input-group" style="margin-top: 10px;">
+            <label for="mode-select" data-i18n="game-mode-label">Game Mode</label>
+            <select id="mode-select">
+              <option value="standard" selected data-i18n="mode-standard">Standard (Fixed Rounds)</option>
+              <option value="elimination" data-i18n="mode-elimination">Elimination (Survival)</option>
+              <option value="fastest" data-i18n="mode-fastest">Fastest Answer (Bonus Points)</option>
+              <option value="next" data-i18n="mode-next">What's Next? (ABCD -> E)</option>
+              <option value="lyrics" data-i18n="mode-lyrics">Lyrics Mode (Guess Next Line)</option>
+              <option value="competition" data-i18n="mode-competition">Competition Mode (1v1 Tournament)</option>
+              <option value="team_vs_team" data-i18n="mode-team">Team vs Team (Red vs Blue)</option>
+            </select>
+          </div>
+          <div class="input-group" style="margin-top: 10px;" id="rounds-group">
+            <label for="rounds-select" data-i18n="rounds-label">Rounds</label>
+            <select id="rounds-select">
+              <option value="5" data-i18n="rounds-5">5 Rounds</option>
+              <option value="10" data-i18n="rounds-10">10 Rounds</option>
+              <option value="20" data-i18n="rounds-20">20 Rounds</option>
+              <option value="30" data-i18n="rounds-30">30 Rounds</option>
+            </select>
+          </div>
+          <div class="input-group hidden" style="margin-top: 10px;" id="hearts-group">
+            <label for="hearts-select" data-i18n="hearts-label">Starting Hearts ❤️</label>
+            <input type="number" id="hearts-select" min="1" max="99" value="3"
+              style="width:100%;padding:10px 14px;background:var(--input-bg);border:1px solid var(--glass-border);border-radius:10px;color:var(--text-main);font-family:inherit;font-size:1rem;"
+              placeholder="e.g. 3">
+          </div>
+          <div class="input-group" style="margin-top: 10px;">
+            <label for="room-visibility-select" data-i18n="room-visibility-label">Room Visibility</label>
+            <select id="room-visibility-select">
+              <option value="public" selected data-i18n="visibility-public">Public (Show in list)</option>
+              <option value="private" data-i18n="visibility-private">Private (Invite only)</option>
+            </select>
+          </div>
+          <button id="create-btn" class="primary-btn pulse mt-3" data-i18n="create-btn">Create</button>
+        </div>
+
+        <div id="join-room-form" class="hidden" style="margin-top: 20px;">
+          <div class="input-group">
+            <label data-i18n="room-code-label">Room Code</label>
+            <input type="text" id="room-code-input" data-i18n-placeholder="room-code-placeholder"
+              placeholder="e.g. A1B2" style="text-transform: uppercase;">
+          </div>
+          <button id="join-btn" class="primary-btn pulse mt-3" data-i18n="join-btn">Join</button>
+
+          <div id="public-rooms-container"
+            style="margin-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+              <h3 style="font-size: 1.1em; color: var(--text-main);" data-i18n="public-rooms-title">Public Rooms</h3>
+              <button id="refresh-rooms-btn" class="icon-btn"
+                style="width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9em; background: rgba(255,255,255,0.1);">🔄</button>
+            </div>
+            <input type="text" id="room-search-input" data-i18n-placeholder="room-search-placeholder"
+              placeholder="Search by mode or category..."
+              style="width: 100%; margin-bottom: 10px; font-size: 0.9em; padding: 8px 12px; border-radius: 8px;">
+            <div id="public-rooms-list"
+              style="display: flex; flex-direction: column; gap: 8px; max-height: 250px; overflow-y: auto; padding-right: 5px;">
+              <div style="text-align: center; color: var(--text-muted); font-size: 0.85em; padding: 20px;"
+                data-i18n="searching-rooms">Searching for rooms...</div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Settings Screen -->
+    <section id="settings-screen" class="screen hidden glass-panel">
+      <h2 data-i18n="settings-title">⚙️ Settings</h2>
+
+      <div class="setup-container">
+        <div class="input-group">
+          <label data-i18n="profile-icon-label">Profile Icon / Emoji</label>
+          <div style="display: flex; gap: 10px; margin-top: 5px; flex-wrap: wrap;" id="icon-selector">
+            <button class="icon-btn active">👤</button>
+            <button class="icon-btn">🐱</button>
+            <button class="icon-btn">🐶</button>
+            <button class="icon-btn">🦊</button>
+            <button class="icon-btn">🐼</button>
+            <button class="icon-btn">👽</button>
+            <button class="icon-btn">👻</button>
+            <button class="icon-btn">🤖</button>
+            <button id="upload-icon-btn" class="action-btn"
+              style="padding: 5px 12px; font-size: 0.9em; border-color: #a8b0cc; color: #a8b0cc;"
+              data-i18n="upload-photo-btn">📷 Upload Photo</button>
+          </div>
+          <input type="file" id="icon-upload-input" accept="image/*" class="hidden">
+          <input type="hidden" id="selected-icon" value="👤">
+        </div>
+
+        <div class="input-group">
+          <label data-i18n="display-name-label">Display Name (Visible to others)</label>
+          <input type="text" id="settings-display-name" data-i18n-placeholder="display-name-placeholder"
+            placeholder="How others see you" style="width: 100%; margin-top: 5px;">
+        </div>
+
+        <div class="input-group" style="margin-top: 20px;">
+          <label data-i18n="email-label">Email (for Password Recovery)</label>
+          <input type="email" id="settings-email" data-i18n-placeholder="email-placeholder"
+            placeholder="Enter your email" style="width: 100%; margin-top: 5px;">
+        </div>
+
+        <!-- Spotify Connect Section -->
+        <div
+          style="margin-top: 20px; padding: 14px; background: rgba(29, 185, 84, 0.08); border: 1px solid rgba(29, 185, 84, 0.3); border-radius: 10px;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg"
+              style="width: 22px; height: 22px;" alt="Spotify">
+            <span style="font-weight: bold; color: #1DB954; font-size: 1em;">Spotify</span>
+            <span id="spotify-settings-badge" style="margin-left: auto; font-size: 0.75em; color: #a8b0cc;">Not
+              connected</span>
+          </div>
+          <button id="spotify-connect-btn" class="action-btn"
+            style="width: 100%; justify-content: center; background: #1DB954; color: #fff; border: none; font-size: 0.9em;">
+            🎵 Connect your Spotify
+          </button>
+          <p style="font-size: 0.72em; color: #a8b0cc; margin-top: 6px; text-align: center;">Connect once here, then use
+            your playlists when creating a room.</p>
+        </div>
+
+        <div class="input-group" style="margin-top: 20px;">
+          <label data-i18n="volume-label-text">Game Volume <span id="volume-label">(100%)</span></label>
+          <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="1"
+            style="width: 100%; margin-top: 10px; cursor: pointer;">
+        </div>
+
+        <div style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+          <h3 style="font-size: 1rem; margin-bottom: 10px; color: #a8b0cc;" data-i18n="change-password-heading">Change
+            Password</h3>
+          <div class="input-group">
+            <input type="password" id="old-password" data-i18n-placeholder="current-pw-placeholder"
+              placeholder="Current Password">
+          </div>
+          <div class="input-group" style="margin-top: 10px;">
+            <input type="password" id="new-password" data-i18n-placeholder="new-pw-placeholder"
+              placeholder="New Password (Optional)">
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-top: 20px;">
+          <button id="save-settings-btn" class="primary-btn pulse" style="flex: 1;" data-i18n="save-settings-btn">Save
+            Changes</button>
+          <button id="cancel-settings-btn" class="action-btn" style="flex: 1;" data-i18n="cancel-settings-btn">Back to
+            Menu</button>
+        </div>
+        <p id="settings-message" style="margin-top: 10px; font-size: 0.9em; text-align: center; color: #2ecc71;"></p>
+      </div>
+    </section>
+
+    <!-- Lobby Screen -->
+    <section id="lobby-screen" class="screen hidden glass-panel">
+      <h2 data-i18n-prefix="room-title">Room: <span id="lobby-room-code" class="highlight"></span></h2>
+      <p class="subtitle" data-i18n="lobby-subtitle">Waiting for players...</p>
+      <div id="players-list" class="players-list"
+        style="margin: 20px 0; font-size: 1.2rem; text-align: center; display: flex; flex-direction: column; gap: 10px;">
+      </div>
+      <button id="lobby-start-btn" class="primary-btn hidden mt-3" data-i18n="start-game-btn">Start Game</button>
+      <button id="lobby-leave-btn" class="action-btn mt-3"
+        style="width: 100%; justify-content: center; background: rgba(255, 71, 87, 0.1); border-color: #ff4757; color: #ff4757;"
+        data-i18n="leave-room-btn">🚪 Leave Room</button>
+    </section>
+
+    <!-- Game Screen -->
+    <section id="game-screen" class="screen hidden glass-panel">
+      <header class="game-header" style="flex-direction: column; gap: 15px;">
+        <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+          <div class="round-info">
+            <span class="label">Round</span>
+            <span class="value" id="round-display">1 / 5</span>
+          </div>
+          <!-- Host Controls: Pause/Resume -->
+          <div id="host-controls" class="hidden" style="display: flex; gap: 10px; align-items: center;">
+            <button id="pause-btn" class="action-btn"
+              style="padding: 5px 15px; font-size: 0.85em; border-color: #f1c40f; color: #f1c40f;">
+              <span id="pause-btn-icon">⏸️</span> <span id="pause-btn-text" data-i18n="pause-btn">Pause</span>
+            </button>
+          </div>
+          <!-- Leave Room Button -->
+          <div style="display: flex; gap: 8px;">
+            <button id="favorite-song-btn" class="action-btn hidden"
+              style="padding: 5px 12px; font-size: 0.8em; border-color: #f1c40f; color: #f1c40f; background: rgba(241, 196, 15, 0.08);"
+              data-i18n="favorite-song-btn">⭐ Favorite</button>
+            <button id="report-song-btn" class="action-btn hidden"
+              style="padding: 5px 12px; font-size: 0.8em; border-color: #e67e22; color: #e67e22; background: rgba(230, 126, 34, 0.05);"
+              data-i18n="report-song-btn">🚩 Report</button>
+            <button id="game-leave-btn" class="action-btn"
+              style="padding: 5px 12px; font-size: 0.8em; border-color: #ff4757; color: #ff4757; background: rgba(255, 71, 87, 0.05);"
+              data-i18n="leave-room-header-btn">🚪 Leave</button>
+          </div>
+        </div>
+        <div class="scores" id="scores-display"
+          style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+        </div>
+      </header>
+
+      <div class="turn-indicator hidden" id="turn-indicator" style="margin-bottom: 10px;">
+        <span id="turn-message">Match the Song!</span>
+      </div>
+
+      <!-- 1v1 Match Score Bar (Competition Mode) -->
+      <div id="match-score-bar" class="hidden"
+        style="width: 100%; max-width: 500px; margin: 0 auto 20px; background: rgba(0,0,0,0.4); border-radius: 50px; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; border: 1px solid rgba(0, 242, 254, 0.3); box-shadow: 0 0 15px rgba(0, 242, 254, 0.1);">
+        <div id="p1-score-side" style="display: flex; align-items: center; gap: 10px; flex: 1;">
+          <span id="match-p1-name"
+            style="font-weight: 600; font-size: 0.9em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px;">P1</span>
+          <div
+            style="flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; overflow: hidden; position: relative;">
+            <div id="match-p1-fill"
+              style="position: absolute; right: 0; top: 0; height: 100%; width: 0%; background: var(--primary-accent); transition: width 0.3s ease;">
+            </div>
+          </div>
+          <span id="match-p1-score"
+            style="font-weight: 800; color: var(--primary-accent); width: 35px; text-align: right;">0</span>
+        </div>
+
+        <div style="padding: 0 15px; font-weight: 800; color: var(--text-muted); font-size: 0.8em;">VS</div>
+
+        <div id="p2-score-side"
+          style="display: flex; align-items: center; gap: 10px; flex: 1; flex-direction: row-reverse;">
+          <span id="match-p2-name"
+            style="font-weight: 600; font-size: 0.9em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px;">P2</span>
+          <div
+            style="flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; overflow: hidden; position: relative;">
+            <div id="match-p2-fill"
+              style="position: absolute; left: 0; top: 0; height: 100%; width: 0%; background: var(--secondary-accent); transition: width 0.3s ease;">
+            </div>
+          </div>
+          <span id="match-p2-score"
+            style="font-weight: 800; color: var(--secondary-accent); width: 35px; text-align: left;">0</span>
+        </div>
+      </div>
+
+
+      <div class="guess-container" style="display: flex; flex-direction: column; align-items: center;">
+        <!-- Needs click interaction before audio plays on some browsers -->
+        <button id="ready-btn" class="primary-btn pulse hidden" style="margin-bottom: 20px; font-size: 1rem;">Click Here
+          to Ready & Enable Audio</button>
+
+        <!-- Ready Status List (Shown during gameStarting) -->
+        <div id="ready-status-container" class="hidden"
+          style="width: 100%; max-width: 400px; background: var(--input-bg); border-radius: 10px; padding: 15px; margin-bottom: 20px;">
+          <h3 style="text-align: center; margin-bottom: 15px; font-size: 1.1em; color: var(--text-muted);">Player Status
+          </h3>
+          <div id="ready-players-list" style="display: flex; flex-direction: column; gap: 8px;">
+          </div>
+          <button id="force-start-btn" class="action-btn hidden"
+            style="width: 100%; margin-top: 15px; border-color: #f39c12; color: #f39c12; background: var(--input-bg);">⚡
+            Force Start Game
+            (Host)</button>
+        </div>
+
+        <!-- Lyrics Mode Display Container -->
+        <div id="lyrics-display-container" class="hidden"
+          style="width: 100%; max-width: 500px; padding: 20px; background: var(--glass-bg); border-radius: 12px; margin-bottom: 20px; text-align: center; border: 1px solid var(--glass-border); box-shadow: 0 4px 15px rgba(0,242,254,0.1);">
+          <div
+            style="font-size: 0.9em; color: #00f2fe; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; font-weight: bold;"
+            data-i18n="guess-next-lyric">Guess the next lyric:</div>
+          <div id="lyrics-text"
+            style="font-size: 1.4em; color: var(--text-main); font-weight: 500; line-height: 1.5; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+            <!-- Lyrics Lines injected here -->
+          </div>
+        </div>
+
+        <div id="game-audio-container" class="audio-player-container hidden"
+          style="margin-bottom: 25px; width: 100%; max-width: 500px;">
+          <div class="visualizer" id="visualizer">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+
+          <div class="time-progress">
+            <div class="progress-bar" id="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <span id="time-left">0:05</span>
+          </div>
+        </div>
+
+        <div class="btn-grid hidden" id="options-grid" style="width: 100%;">
+          <!-- Options will be injected via JS -->
+        </div>
+
+        <!-- Promote Status List (Shown during turnResult) -->
+        <div id="promote-container" class="hidden"
+          style="width: 100%; max-width: 400px; text-align: center; margin-top: 20px;">
+        </div>
+
+        <!-- Competition Bracket Container -->
+        <div id="bracket-container" class="hidden"
+          style="width: 100%; max-width: 600px; margin-top: 30px; padding: 25px; background: rgba(20, 20, 35, 0.7); border-radius: 20px; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px); box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
+          <h3
+            style="text-align: center; margin-bottom: 25px; color: var(--primary-accent); font-weight: 800; text-transform: uppercase; letter-spacing: 2px;"
+            data-i18n="tournament-bracket">Tournament Chart</h3>
+          <div id="bracket-display" style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
+            <!-- Bracket tree will be injected here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Pause Overlay -->
+      <div id="pause-overlay" class="hidden"
+        style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.8); z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; backdrop-filter: blur(5px); border-radius: inherit;">
+        <div class="pulse" style="font-size: 4rem; margin-bottom: 20px;">⏸️</div>
+        <h2 style="color: #f1c40f; font-size: 2em; text-transform: uppercase; letter-spacing: 5px;"
+          data-i18n="game-paused-title">Game Paused</h2>
+        <p style="color: var(--text-muted); margin-top: 10px;" data-i18n="waiting-for-host">Waiting for host to
+          resume...</p>
+        <button id="overlay-resume-btn" class="primary-btn pulse hidden"
+          style="margin-top: 30px; padding: 15px 40px; font-size: 1.2rem; border-radius: 30px; box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);">
+          ▶️ <span data-i18n="resume-btn">Resume Game</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Result Screen -->
+    <section id="result-screen" class="screen hidden glass-panel">
+      <h2 data-i18n="results-title">Final Results!</h2>
+      <div id="final-ranking" class="final-ranking"
+        style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin: 20px 0; width: 100%;">
+      </div>
+
+      <div id="global-ranking-container" class="mt-4 hidden"
+        style="background: var(--glass-bg); padding: 20px; border-radius: 15px; border: 1px solid var(--glass-border); width: 100%;">
+        <h3 style="color: var(--primary-accent); margin-bottom: 15px; font-size: 1.1em;"><span
+            data-i18n="lb-res-global">🌍 Global Ranking for</span> <span id="res-cat-mode-text"
+            style="color: var(--text-main);"></span></h3>
+        <div id="global-ranking-list" style="display: flex; flex-direction: column; gap: 10px;"></div>
+      </div>
+      <div style="display: flex; gap: 10px; width: 100%;" class="mt-3">
+        <button id="restart-btn" class="action-btn" style="flex: 1; justify-content: center;"
+          data-i18n="back-to-main-btn">Back to Main</button>
+        <button id="play-again-btn" class="primary-btn hidden" style="flex: 1; justify-content: center;"
+          data-i18n="play-again-btn">Play Again</button>
+      </div>
+    </section>
+
+    <!-- Leaderboard Screen -->
+    <section id="leaderboard-screen" class="screen hidden glass-panel">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <h2 data-i18n="leaderboard-title" style="margin: 0;">🏆 Leaderboard</h2>
+        <div class="lb-type-toggle"
+          style="display: flex; gap: 5px; background: rgba(0,0,0,0.2); padding: 4px; border-radius: 20px;">
+          <button id="lb-type-players" class="action-btn"
+            style="padding: 4px 12px; font-size: 0.8em; border-radius: 15px; border: none; background: var(--primary-accent); color: white;">Players</button>
+          <button id="lb-type-teams" class="action-btn"
+            style="padding: 4px 12px; font-size: 0.8em; border-radius: 15px; border: none; background: transparent; color: var(--text-main);">Teams</button>
+        </div>
+      </div>
+      <div class="leaderboard-filters mt-3" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+        <select id="lb-category-select" class="action-btn"
+          style="padding: 8px 15px; font-size: 0.85em; background: var(--input-bg); color: var(--text-main); border-radius: 20px; border: 1px solid var(--glass-border);">
+          <option value="all" data-i18n="lb-cat-all">Total Scores</option>
+          <option value="songsEn" data-i18n="cat-en">English</option>
+          <option value="songsCn" data-i18n="cat-cn">Chinese</option>
+          <option value="songsHk" data-i18n="cat-hk">Hong Kong</option>
+          <option value="songsJp" data-i18n="cat-jp">Japanese</option>
+          <option value="songsKr" data-i18n="cat-kr">Korean</option>
+          <option value="songsTh" data-i18n="cat-th">Thai</option>
+          <option value="songsFr" data-i18n="cat-fr">French</option>
+          <option value="songsEason" data-i18n="cat-eason">Eason Chan Hits</option>
+          <option value="songsJayChou" data-i18n="cat-jaychou">Jay Chou Collection</option>
+        </select>
+        <select id="lb-mode-select" class="action-btn"
+          style="padding: 8px 15px; font-size: 0.85em; background: var(--input-bg); color: var(--text-main); border-radius: 20px; border: 1px solid var(--glass-border);">
+          <option value="standard" data-i18n="lb-mode-standard">Standard</option>
+          <option value="elimination" data-i18n="lb-mode-elimination">Elimination</option>
+          <option value="next" data-i18n="lb-mode-next">What's Next?</option>
+          <option value="lyrics" data-i18n="lb-mode-lyrics">Lyrics Mode</option>
+          <option value="competition" data-i18n="lb-mode-competition">Competition</option>
+          <option value="team_vs_team" data-i18n="lb-mode-team">Team Mode</option>
+        </select>
+      </div>
+      <div id="leaderboard-list" class="leaderboard-container mt-3"
+        style="min-height: 200px; display: flex; flex-direction: column; gap: 10px;">
+        <!-- Populated via JS -->
+      </div>
+      <button id="back-to-start-btn" class="action-btn mt-3" style="width: 100%; justify-content: center;"
+        data-i18n="back-to-menu-btn">Back to Menu</button>
+    </section>
+
+    <!-- Teams UI Screen -->
+    <section id="teams-screen" class="screen hidden glass-panel">
+      <h2 style="color: #3498db;" data-i18n="teams-title">👥 Team Management</h2>
+      <p class="subtitle" id="teams-subtitle">Manage your team or join one</p>
+      <p style="font-size: 0.75em; color: var(--text-muted); text-align: center; margin-top: -10px;">
+        <span data-i18n="teams-help">Note: Member contributions track points earned after the update. Only
+          Leaders/Managers can edit roles.</span>
+      </p>
+
+      <div id="no-team-view" class="mt-3">
+        <h3 style="font-size: 1em; color: var(--text-muted); margin-bottom: 15px;">You are not in a team.</h3>
+
+        <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+          <h4 style="margin-top: 0; color: #3498db;">Create a New Team</h4>
+          <input type="text" id="create-team-input" class="modern-input" placeholder="Enter Team Name..."
+            style="width: 100%; margin-bottom: 10px; box-sizing: border-box;">
+          <button id="create-team-btn" class="action-btn"
+            style="width: 100%; justify-content: center; background: #3498db; border: none;">Create Team</button>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px;">
+          <h4 style="margin-top: 0; color: #2ecc71;">Join an Existing Team</h4>
+          <input type="text" id="join-team-input" class="modern-input" placeholder="Enter Team ID..."
+            style="width: 100%; margin-bottom: 10px; box-sizing: border-box;">
+          <button id="join-team-btn" class="action-btn"
+            style="width: 100%; justify-content: center; background: #2ecc71; border: none;">Join Team</button>
+        </div>
+      </div>
+
+      <div id="active-team-view" class="hidden mt-3">
+        <div
+          style="background: rgba(52, 152, 219, 0.1); border: 1px solid rgba(52, 152, 219, 0.3); border-radius: 10px; padding: 15px; text-align: center; margin-bottom: 15px;">
+          <div style="font-size: 2.5em; margin-bottom: 5px;" id="active-team-icon-display">👥</div>
+          <h3 style="margin: 0; font-size: 1.5em; color: var(--text-main);"><span id="active-team-name">Team Name</span>
+          </h3>
+          <p style="margin: 5px 0 0 0; font-size: 0.8em; color: var(--text-muted);">Team ID: <span id="active-team-id"
+              style="user-select: all; font-family: monospace; color: #fff;">---</span></p>
+          <p style="margin: 10px 0 0 0; font-size: 1.1em; color: #f1c40f;">🏆 Team Score: <strong
+              id="active-team-score">0</strong></p>
+
+          <div id="team-admin-controls" class="hidden"
+            style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
+            <label style="font-size: 0.8em; color: var(--text-muted); display: block; margin-bottom: 5px;"
+              data-i18n="change-team-icon">Change Team Icon</label>
+            <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;" id="team-icon-selector">
+              <button class="icon-btn">👥</button>
+              <button class="icon-btn">⚔️</button>
+              <button class="icon-btn">🛡️</button>
+              <button class="icon-btn">🔥</button>
+              <button class="icon-btn">👑</button>
+              <button class="icon-btn">🚀</button>
+            </div>
+          </div>
+        </div>
+
+        <h4 style="margin-bottom: 10px; color: var(--text-main);">Members (<span id="team-member-count">0</span>)</h4>
+        <div id="team-members-list"
+          style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; max-height: 250px; overflow-y: auto;">
+          <!-- Dynamically populated -->
+        </div>
+
+        <button id="leave-team-btn" class="action-btn"
+          style="width: 100%; justify-content: center; background: rgba(255, 71, 87, 0.2); border-color: #ff4757; color: #ff4757;">Leave
+          Team</button>
+      </div>
+
+      <button id="teams-back-btn" class="action-btn mt-3" style="width: 100%; justify-content: center;"
+        data-i18n="back-to-menu-btn">Back to Menu</button>
+    </section>
+
+    <!-- Favorites Screen -->
+    <section id="favorites-screen" class="screen hidden glass-panel">
+      <h2 style="color: var(--primary-accent);" data-i18n="favorites-title">⭐ My Favorites</h2>
+      <p class="subtitle" id="favorites-subtitle" data-i18n="favorites-subtitle">Songs you've saved</p>
+      <div id="favorites-list" class="leaderboard-container mt-3"
+        style="min-height: 200px; max-height: 400px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding-right: 5px;">
+        <!-- Populated via JS -->
+      </div>
+      <button id="back-from-fav-btn" class="action-btn mt-3" style="width: 100%; justify-content: center;"
+        data-i18n="back-to-menu-btn">Back to Menu</button>
+    </section>
+
+    <!-- Community Playlists Screen -->
+    <section id="community-screen" class="screen hidden glass-panel" style="max-height: 90vh; overflow-y: auto;">
+      <h2 data-i18n="community-title" style="margin-bottom: 5px;">🎵 Community Playlists</h2>
+      <p class="subtitle" data-i18n="community-subtitle">Discover and play custom playlists created by the community.
+      </p>
+
+      <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+        <button id="create-playlist-btn" class="action-btn"
+          style="flex: 1; justify-content: center; background: var(--input-bg); border-color: #2ecc71; color: #2ecc71; border-radius: 10px;"
+          data-i18n="create-playlist-btn">
+          ➕ Create Playlist
+        </button>
+        <button id="refresh-community-btn" class="icon-btn"
+          style="width: 45px; border-radius: 10px; font-size: 1.2rem;">🔄</button>
+      </div>
+
+      <!-- Genre Filters -->
+      <div id="community-genre-filters"
+        style="display: flex; gap: 8px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 10px; margin-top: -5px; scrollbar-width: none;">
+        <!-- Chips populated by JS -->
+      </div>
+
+      <!-- Search Bar -->
+      <input type="text" id="community-search-input" data-i18n-placeholder="community-search"
+        placeholder="Search playlists or creators..." style="width: 100%; margin-bottom: 15px; border-radius: 10px;">
+
+      <!-- Playlists Grid -->
+      <div id="community-playlists-list" style="display: flex; flex-direction: column; gap: 10px; min-height: 200px;">
+        <!-- Cards populated by JS -->
+        <div style="text-align: center; color: var(--text-muted); margin-top: 20px;">Loading playlists...</div>
+      </div>
+
+      <button id="back-to-menu-community-btn" class="action-btn mt-3"
+        style="width: 100%; justify-content: center; border-color: var(--glass-border); margin-top: 20px;"
+        data-i18n="back-to-menu-btn">Back to Menu</button>
+    </section>
+  </div>
+
+  <!-- Chat System UI -->
+  <div id="chat-container" class="hidden">
+    <div class="chat-header" id="chat-header">
+      <h3 data-i18n="chat-title">💬 Chat</h3>
+      <button id="chat-toggle-btn"
+        style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:1.2em;">🔼</button>
+    </div>
+
+    <div id="chat-messages">
+      <!-- Messages appear here -->
+      <div class="chat-msg system" data-i18n="chat-welcome">Welcome to Song Guess Chat!</div>
+    </div>
+
+    <div class="chat-scope-toggle">
+      <button id="scope-global-btn" class="active" data-i18n="chat-scope-global">Global</button>
+      <button id="scope-room-btn" data-i18n="chat-scope-room">Room</button>
+    </div>
+
+    <div class="chat-input-area">
+      <input type="text" id="chat-input" data-i18n-placeholder="chat-placeholder" placeholder="Type a message...">
+      <button id="chat-send-btn" class="action-btn"
+        style="padding: 5px 12px; font-size: 0.85em; border-color: var(--primary-accent); color: var(--primary-accent);">
+        <span data-i18n="chat-send">Send</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Playlist Creator Modal -->
+  <div id="playlist-modal" class="hidden"
+    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 15px;">
+    <div class="glass-panel"
+      style="width: 100%; max-width: 500px; max-height: 95vh; overflow-y: auto; padding: 25px; display: flex; flex-direction: column; opacity: 1 !important; transform: translateY(0) !important;">
+      <h3 style="margin-bottom: 15px; text-align: center;" data-i18n="playlist-creator-title">Create Playlist</h3>
+
+      <div class="input-group">
+        <label>Playlist Name</label>
+        <input type="text" id="pl-modal-name" placeholder="e.g. My 2000s Pop Mix" style="width: 100%;">
+      </div>
+
+      <div class="input-group" style="margin-top: 15px;">
+        <label>Genre / Category</label>
+        <select id="pl-modal-genre" style="width: 100%;">
+          <option value="English">English</option>
+          <option value="Cantonese">Cantonese</option>
+          <option value="Mandarin">Mandarin</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Korean">Korean</option>
+          <option value="French">French</option>
+          <option value="Country">Country</option>
+          <option value="Male Singer">Male Singer</option>
+          <option value="Female Singer">Female Singer</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+        <label style="font-size: 0.9em; color: #a8b0cc; margin-bottom: 5px; display: block;">Search Songs (iTunes
+          API)</label>
+        <div style="display: flex; gap: 8px;">
+          <input type="text" id="pl-modal-search" placeholder="Song title or artist..." style="flex: 1;">
+          <button id="pl-modal-search-btn" class="action-btn" style="padding: 8px 12px;">🔍</button>
+        </div>
+        <div id="pl-modal-search-results"
+          style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px; max-height: 150px; overflow-y: auto; background: rgba(0,0,0,0.2); border-radius: 8px; padding: 5px;">
+          <!-- Search results here -->
+          <div style="color: #666; text-align: center; padding: 10px; font-size: 0.85em;">Search for a song...</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; flex: 1;">
+        <label style="font-size: 0.9em; color: #a8b0cc; margin-bottom: 5px; display: block;">Current Songs (<span
+            id="pl-modal-count">0</span>)</label>
+        <div id="pl-modal-tracks"
+          style="display: flex; flex-direction: column; gap: 8px; max-height: 180px; overflow-y: auto; background: rgba(46, 204, 113, 0.05); border-radius: 8px; padding: 5px;">
+          <!-- Added songs here -->
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 10px; margin-top: 20px;">
+        <button id="pl-modal-save-btn" class="primary-btn" style="flex: 1;">🚀 Publish Playlist</button>
+        <button id="pl-modal-cancel-btn" class="action-btn"
+          style="flex: 1; background: transparent; border-color: rgba(255,255,255,0.2);">Cancel</button>
+      </div>
+      <input type="hidden" id="pl-modal-id">
+    </div>
+  </div>
+
+  <!-- Team Details Modal -->
+  <div id="team-detail-modal" class="hidden"
+    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 15px;">
+    <div class="glass-panel"
+      style="width: 100%; max-width: 450px; max-height: 90vh; overflow-y: auto; padding: 25px; display: flex; flex-direction: column; opacity: 1 !important; transform: none !important;">
+      <div style="text-align: center; margin-bottom: 20px;">
+        <div id="team-detail-icon" style="font-size: 3em; margin-bottom: 10px;">👥</div>
+        <h3 id="team-detail-name" style="font-size: 1.8em; margin: 0; color: #3498db;">Team Name</h3>
+        <p id="team-detail-id" style="font-size: 0.8em; color: var(--text-muted); margin-top: 5px;">ID: ---</p>
+        <p style="font-size: 1.2em; color: #f1c40f; margin-top: 10px;">Total Score: <strong
+            id="team-detail-score">0</strong></p>
+      </div>
+
+      <div style="flex: 1; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+        <h4 style="margin-bottom: 10px;">Member Contributions</h4>
+        <div id="team-detail-member-list"
+          style="display: flex; flex-direction: column; gap: 10px; max-height: 300px; overflow-y: auto;">
+          <!-- Member list with individual scores -->
+        </div>
+      </div>
+
+      <button id="team-detail-close-btn" class="action-btn"
+        style="margin-top: 20px; width: 100%; justify-content: center;">Close</button>
+    </div>
+  </div>
+
+  <!-- Role Management Modal -->
+  <div id="role-modal" class="hidden"
+    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 10000; display: flex; align-items: center; justify-content: center; padding: 15px;">
+    <div class="glass-panel"
+      style="width: 100%; max-width: 400px; padding: 25px; display: flex; flex-direction: column; opacity: 1 !important; transform: none !important;">
+      <h3>Manage Member</h3>
+      <p id="role-modal-username" style="font-weight: bold; color: var(--primary-accent); margin-top: 5px;">Username</p>
+
+      <div class="input-group" style="margin-top: 20px;">
+        <label>Assign Role</label>
+        <select id="role-modal-select" style="width: 100%;">
+          <option value="member" data-i18n="role-member">Member</option>
+          <option value="elder" data-i18n="role-elder">Elder</option>
+          <option value="manager" data-i18n="role-manager">Manager</option>
+        </select>
+      </div>
+
+      <div id="role-descriptions"
+        style="margin-top: 15px; background: rgba(0,0,0,0.2); padding: 12px; border-radius: 8px; font-size: 0.85em; color: var(--text-muted); line-height: 1.5;">
+        <div class="role-desc" data-role="member" data-i18n="role-desc-member">Important member of the team.</div>
+        <div class="role-desc hidden" data-role="elder" data-i18n="role-desc-elder">Can kick members to maintain order.
+        </div>
+        <div class="role-desc hidden" data-role="manager" data-i18n="role-desc-manager">Can kick members, change icon,
+          and manage roles.</div>
+      </div>
+
+      <div style="display: flex; gap: 10px; margin-top: 25px;">
+        <button id="role-modal-save-btn" class="primary-btn" style="flex: 2;">Save Role</button>
+        <button id="role-modal-kick-btn" class="action-btn"
+          style="flex: 1; border-color: #e74c3c; color: #e74c3c; background: transparent;">Kick</button>
+        <button id="role-modal-cancel-btn" class="action-btn"
+          style="flex: 1; background: transparent; border-color: rgba(255,255,255,0.2);">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Song Report Modal -->
+  <div id="song-report-modal" class="hidden"
+    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 10000; display: flex; align-items: center; justify-content: center; padding: 15px;">
+    <div class="glass-panel"
+      style="width: 100%; max-width: 400px; padding: 25px; display: flex; flex-direction: column; opacity: 1 !important; transform: none !important;">
+      <h3 data-i18n="report-song-btn">🚩 Report Song</h3>
+      <p style="font-size: 0.9em; color: var(--text-muted); margin-top: 10px;" id="report-modal-song-title">Song Title
+      </p>
+
+      <div class="input-group" style="margin-top: 20px;">
+        <label data-i18n="report-reason-label">Reason for report</label>
+        <textarea id="report-modal-reason"
+          style="width: 100%; height: 100px; background: var(--input-bg); border: 1px solid var(--glass-border); border-radius: 12px; color: var(--text-main); padding: 12px; font-family: var(--font-main); outline: none; margin-top: 8px;"
+          placeholder="e.g. Broken audio, incorrect singer, etc."></textarea>
+      </div>
+
+      <div style="display: flex; gap: 10px; margin-top: 25px;">
+        <button id="report-modal-submit-btn" class="primary-btn" style="flex: 2;" data-i18n="report-submit-btn">Submit
+          Report</button>
+        <button id="report-modal-cancel-btn" class="action-btn"
+          style="flex: 1; background: transparent; border-color: rgba(255,255,255,0.2);"
+          data-i18n="report-cancel-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── News / Announcement Popup ─────────────────────────────── -->
+  <div id="news-popup-overlay" style="
+    display:none; position:fixed; inset:0; z-index:99999;
+    background:rgba(0,0,0,0.65); backdrop-filter:blur(6px);
+    align-items:center; justify-content:center;
+  ">
+    <div style="
+      background: linear-gradient(135deg, rgba(30,20,60,0.97), rgba(15,12,41,0.98));
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      max-width: 480px; width: 90%;
+      padding: 0;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+      overflow: hidden;
+      animation: modalIn 0.25s ease;
+    ">
+      <!-- Header -->
+      <div style="
+        background: linear-gradient(90deg, #4a00e0, #8e2de2);
+        padding: 18px 22px;
+        display: flex; align-items: center; justify-content: space-between;
+      ">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="font-size:1.4em;">📢</span>
+          <span id="news-popup-title" style="font-size:1.05rem; font-weight:700; color:#fff;">News Update</span>
+        </div>
+        <button id="news-popup-close-x" onclick="closeNewsPopup(false)" style="
+          background:rgba(255,255,255,0.15); border:none; color:#fff;
+          width:30px; height:30px; border-radius:50%; cursor:pointer;
+          font-size:1rem; display:flex; align-items:center; justify-content:center;
+          transition: background 0.2s;
+        ">✕</button>
+      </div>
+      <!-- Body -->
+      <div id="news-popup-body" style="
+        padding: 24px 24px 10px 24px;
+        color: #c8d0e8; font-size: 0.95rem; line-height: 1.6;
+        min-height: 80px;
+      "></div>
+      <!-- Footer -->
+      <div style="
+        padding: 14px 24px 20px 24px;
+        display:flex; justify-content:space-between; align-items:center;
+        border-top: 1px solid rgba(255,255,255,0.08); margin-top:10px;
+      ">
+        <span id="news-popup-date" style="font-size:0.75rem; color:#6c7a9c;"></span>
+        <button onclick="closeNewsPopup(true)" style="
+          background: linear-gradient(90deg, #4a00e0, #8e2de2);
+          border:none; color:#fff; padding: 9px 22px;
+          border-radius:10px; cursor:pointer; font-weight:600; font-size:0.9rem;
+          transition: opacity 0.2s;
+        ">✓ Close for today</button>
+      </div>
+    </div>
+  </div>
+
+  <footer
+    style="position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; padding: 15px; font-size: 0.85em; color: var(--text-muted); background: var(--glass-bg); backdrop-filter: blur(5px); z-index: 9998; border-top: 1px solid var(--glass-border);">
+    <a href="/about.html" style="color: #00f2fe; text-decoration: none; margin: 0 15px; font-weight: 500;"
+      data-i18n="footer-about">About</a> |
+    <a href="/privacy.html" style="color: #00f2fe; text-decoration: none; margin: 0 15px; font-weight: 500;"
+      data-i18n="footer-privacy">Privacy Policy</a> |
+    <span style="margin-left: 10px;" data-i18n="footer-copyright">© 2026 Song Guess Online</span>
+  </footer>
+
+  <!-- Landing Page Info Modal -->
+  <div id="landing-modal" class="modal-overlay hidden" style="z-index: 20000;">
+    <div class="glass-panel"
+      style="max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; padding: 30px;">
+      <button id="close-landing-modal" class="bar-btn"
+        style="position: absolute; top: 15px; right: 15px; font-size: 1.5rem; opacity: 0.6;">✖</button>
+      <div id="landing-modal-content">
+        <!-- Content injected here -->
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
 </body>
 
 </html>
