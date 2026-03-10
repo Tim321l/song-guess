@@ -258,7 +258,7 @@ socket.on('kick', (reason) => {
 // ── News / Announcement Popup ────────────────────────────────────────────────
 window.closeNewsPopup = function (dismissForToday) {
     const overlay = document.getElementById('news-popup-overlay');
-    if (overlay) overlay.style.display = 'none';
+    if (overlay) overlay.classList.add('hidden');
     if (dismissForToday) {
         const today = new Date().toISOString().slice(0, 10); // "YYYY-MM-DD"
         localStorage.setItem('sgNewsDismissed', today);
@@ -283,7 +283,7 @@ export function showNewsPopupIfNeeded() {
         if (dateEl && updatedAt) {
             dateEl.textContent = 'Updated: ' + new Date(updatedAt).toLocaleDateString();
         }
-        overlay.style.display = 'flex';
+        overlay.classList.remove('hidden');
     });
 }
 

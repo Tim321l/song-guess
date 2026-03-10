@@ -78,16 +78,7 @@ export function updateScores() {
         if (teamBar) teamBar.classList.add('hidden');
     }
 
-    // --- Pause / Resume ---
-    const pauseBtn = document.getElementById('pause-btn');
-    if (pauseBtn) {
-        pauseBtn.onclick = () => socket.emit('togglePause', state.roomId);
-    }
 
-    const overlayResumeBtn = document.getElementById('overlay-resume-btn');
-    if (overlayResumeBtn) {
-        overlayResumeBtn.onclick = () => socket.emit('togglePause', state.roomId);
-    }
 
     socket.on('gamePaused', () => {
         state.isPaused = true;
@@ -608,4 +599,18 @@ export function initGameplayHandlers() {
     };
     if (leaveBtn) leaveBtn.onclick = handleLeave;
     if (barLeaveBtn) barLeaveBtn.onclick = handleLeave;
+
+    // --- Pause / Resume Initialization ---
+    const pauseBtn = document.getElementById('pause-btn');
+    if (pauseBtn) {
+        pauseBtn.onclick = () => {
+            console.log("[Gameplay] Pause button clicked, emitting togglePause for roomId:", state.roomId);
+            socket.emit('togglePause', state.roomId);
+        };
+    }
+
+    const overlayResumeBtn = document.getElementById('overlay-resume-btn');
+    if (overlayResumeBtn) {
+        overlayResumeBtn.onclick = () => socket.emit('togglePause', state.roomId);
+    }
 }

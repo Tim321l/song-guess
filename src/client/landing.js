@@ -12,7 +12,7 @@ export function initLandingHandlers() {
     }
 
     // Use direct style to bypass any CSS class conflicts
-    modal.style.display = 'none';
+
 
     const cards = {
         'feature-card-songs': {
@@ -120,10 +120,7 @@ export function initLandingHandlers() {
         if (!config) return;
 
         content.innerHTML = config.render();
-        // Use direct style - bypasses the global .hidden CSS class conflict
-        modal.style.display = 'flex';
-        modal.style.opacity = '1';
-        modal.style.visibility = 'visible';
+        modal.classList.remove('hidden');
 
         if (cardId === 'feature-card-leaderboard') {
             socket.emit('getLeaderboard', { category: 'all', mode: 'standard' }, (data) => {
@@ -133,7 +130,7 @@ export function initLandingHandlers() {
     };
 
     const closeModal = () => {
-        modal.style.display = 'none';
+        modal.classList.add('hidden');
     };
 
     // Close on background click only (not on modal content)
