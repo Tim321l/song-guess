@@ -421,7 +421,7 @@ h1 .highlight {
 
 /* Utilities */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .visually-hidden {
@@ -1371,7 +1371,7 @@ h1 .highlight {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  display: flex;
+  display: flex !important;
 }
 
 #host-controls {
